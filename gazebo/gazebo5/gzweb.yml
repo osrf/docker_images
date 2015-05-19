@@ -1,0 +1,19 @@
+gzweb:
+    image: "gazebo:gzweb5"
+    ports:
+        - "8080:8080"
+    links:
+        - "gzserver"
+    environment:
+        - "GAZEBO_MASTER_URI=http://gzserver:11345"
+    # volumes:
+    #     - "/home/ruffsl/ws/gazebo/gzweb2:/home/test/gzweb2"
+    # command: "gzserver --verbose"
+    # command: "~/gzweb/./start_gzweb.sh && ping gzserver"
+    command: "'~/gzweb/./start_gzweb.sh && ping gzserver > /dev/null'"
+
+
+gzserver:
+    extends:
+        file: gzserver.yml
+        service: gzserver
