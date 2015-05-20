@@ -1,7 +1,8 @@
 gzweb:
     image: "gazebo:gzweb5"
     ports:
-        - "8080:8080"
+        - "80:8080"
+        - "7681:7681"
     links:
         - "gzserver"
     environment:
@@ -15,5 +16,7 @@ gzweb:
 
 gzserver:
     extends:
-        file: gzserver.yml
-        service: gzserver
+        file: "gzserver.yml"
+        service: "gzserver"
+
+# map $GZSERVER_PORT_7681_TCP_ADDR -p $GZSERVER_PORT_11345_TCP_PORT,$GZSERVER_PORT_7681_TCP_PORT
