@@ -1,20 +1,22 @@
 gzclient:
-    build: gzclient5/.
+    image: "gazebo:gzclient5"
     volumes:
-        - /tmp/.X11-unix:/tmp/.X11-unix:rw
-        - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+        - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+        - "/tmp/.docker.xauth:/tmp/.docker.xauth:rw"
     devices:
-        - /dev/nvidia0
-        - /dev/nvidiactl
-    # ports:
-    #     - "11345:11345"
-    environment:
-        - DISPLAY
-        - QT_X11_NO_MITSHM=1
+        - "/dev/nvidia0"
+        - "/dev/nvidiactl"
     links:
-        - gzserver
-    command: gzclient --verbose
+        - "gzserver"
+    environment:
+        - "DISPLAY"
+        - "QT_X11_NO_MITSHM=1"
+        - "GAZEBO_MASTER_URI=http://gzserver:11345"
+    command: "gzclient --verbose"
 
 gzserver:
     extends:
-        file: gzserver.yml
+        file: "gzserver.yml"
+        service: "gzserver"
+
+# map $GZSERVER_PORT_7681_TCP_ADDR -p $GZSERVER_PORT_11345_TCP_PORT,$GZSERVER_PORT_7681_TCP_PORT
