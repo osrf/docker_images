@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb5
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2015-05-19 17:02:03 -0700
+# generated on 2015-05-19 19:19:05 -0700
 FROM gazebo:gzserver5
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
