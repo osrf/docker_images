@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:indigo-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2015-05-22 12:15:34 -0700
+# generated on 2015-05-22 14:14:59 -0700
 FROM ubuntu:trusty
 MAINTAINER Dirk Thomas dthomas+buildfarm@osrfoundation.org
 
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -q -y \
     wget
 
 # setup keys
-RUN wget http://packages.ros.org/ros.key -O - | apt-key add -
+RUN wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | apt-key add -
 
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
