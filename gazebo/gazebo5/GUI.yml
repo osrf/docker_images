@@ -1,15 +1,21 @@
 gzweb:
-    image: gazebo:gzweb-nvidia
+    image: gazebo:gazebo5
     volumes:
-        - ~/ws/gazebo:/ws/gazebo
-        - /tmp/.X11-unix:/tmp/.X11-unix:rw
-        - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
-    devices:
-        - /dev/nvidia0
-        - /dev/nvidiactl
-    ports:
-        - "8080:8080"
-        - "7681:7681"
+        # - ~/ws/gazebo:/ws/gazebo
+        # - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    	- /tmp/.X11-unix:/tmp/.X11-unix
+        # - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+    	- /dev/snd:/dev/snd
+    	- /etc/passwd:/etc/passwd:ro
+    	- /etc/group:/etc/group:ro
+    	- /etc/localtime:/etc/localtime:ro
+    	# - /home:/home
+    # devices:
+    #     - /dev/nvidia0
+    #     - /dev/nvidiactl
+    # ports:
+    #     - "8080:8080"
+    #     - "7681:7681"
     environment:
         - DISPLAY
         - QT_X11_NO_MITSHM=1

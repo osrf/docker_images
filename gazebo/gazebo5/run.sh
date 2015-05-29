@@ -20,11 +20,17 @@ OMNIMAPER_ROOT="/home/ruffsl/ws/gazebo"
 
 docker run \
 	-it --rm \
-	--volume=$OMNIMAPER_ROOT:/ws/gazebo \
 	--device /dev/nvidia0:/dev/nvidia0 \
 	--device /dev/nvidiactl:/dev/nvidiactl \
 	-p 8080:8080 \
 	-p 7681:7681 \
+	--volume=/run/user/${USER_UID}/pulse:/run/pulse \
+	--volume=$XSOCK:$XSOCK:rw \
+	--volume=$XAUTH:$XAUTH:rw \
+	--env="XAUTHORITY=${XAUTH}" \
+	--env="DISPLAY=${DISPLAY}" \
+	--env="USER_UID=${USER_UID}" \
+	--env="USER_GID=${USER_GID}" \
 	$args
 
 	# -u dox \
