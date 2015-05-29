@@ -1,5 +1,5 @@
-gzclient:
-    image: "gazebo:gzclient5"
+gzserver:
+    image: gazebo:gzserver5-nvidia
     user: ruffsl
     working_dir: /home/ruffsl
     volumes:
@@ -14,15 +14,7 @@ gzclient:
     devices:
         - "/dev/nvidia0"
         - "/dev/nvidiactl"
-    links:
-        - "gzserver"
     environment:
         - "DISPLAY"
         - "QT_X11_NO_MITSHM=1"
-        - "GAZEBO_MASTER_URI=http://gzserver:11345"
-    command: "'gzclient'"
-
-gzserver:
-    extends:
-        file: "gzserver.yml"
-        service: "gzserver"
+    command: gzserver --verbose
