@@ -40,6 +40,3 @@ tag:
 	@docker tag -f ros:indigo-ros-base 		osrf/ros:indigo-ros-base
 	@docker tag -f ros:indigo-robot 		osrf/ros:indigo-robot
 	@docker tag -f ros:indigo-perception 	osrf/ros:indigo-perception
-
-terminator bash:
-	@bash run.sh -i -t cogrob/omnimapper-dox $@
