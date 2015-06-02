@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import pkg_resources
 import sys
 import yaml
 
@@ -15,6 +14,29 @@ from ros_buildfarm.templates import create_dockerfile
 from ros_buildfarm.common import get_debian_package_name
 from ros_buildfarm.docker_common import DockerfileArgParser
 from ros_buildfarm.docker_common import OrderedLoad
+
+from rosdistro import get_distribution_file
+from rosdistro import get_index
+from rosdistro import get_index_url
+
+
+def get_ros_package_names(rosdistro_name, ros_packages, dist_file):
+    """Return list of ros_package_name strings with latest versions"""
+
+    ros_package_names = []
+    for pkg_name in sorted(ros_packages):
+        pkg_name = pkg_name.replace("-", "_")
+        pkg = dist_file.release_packages[pkg_name]
+        repo_name = pkg.repository_name
+        repo = dist_file.repositories[repo_name]
+
+        version = repo.release_repository.version
+        debian_package_name = get_debian_package_name(rosdistro_name, pkg_name)
+
+        ros_package_name = debian_package_name + '=' + version + '*'
+        ros_package_names.append(ros_package_name)
+
+    return ros_package_names
 
 
 def main(argv=sys.argv[1:]):
@@ -45,7 +67,7 @@ def main(argv=sys.argv[1:]):
         # use safe_load instead load
         platform = yaml.safe_load(f)['platform']
 
-    # Ream image perams using platform perams
+    # Read image perams using platform perams
     images_yaml = StringIO()
     try:
         interpreter = Interpreter(output=images_yaml)
@@ -60,6 +82,11 @@ def main(argv=sys.argv[1:]):
     # Use ordered dict
     images = OrderedLoad(images_yaml, yaml.SafeLoader)['images']
 
+    # Fetch rosdistro data
+    index_url = get_index_url()
+    index = get_index(index_url)
+    dist_file = get_distribution_file(index, platform['rosdistro_name'])
+
     # For each image tag
     for image in images:
 
@@ -71,12 +98,9 @@ def main(argv=sys.argv[1:]):
         data.update(platform)
 
         # Get debian package names for ros
-        ros_packages = []
-        for ros_package_name in data['ros_packages']:
-            ros_packages.append(
-                get_debian_package_name(
-                    data['rosdistro_name'], ros_package_name))
-        data['ros_packages'] = ros_packages
+        data['ros_packages'] = get_ros_package_names(data['rosdistro_name'],
+                                                     data['ros_packages'],
+                                                     dist_file)
 
         # Get path to save Docker file
         dockerfile_dir = os.path.join(output_path, image)

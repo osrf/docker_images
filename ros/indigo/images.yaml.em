@@ -5,10 +5,9 @@ images:
     @(rosdistro_name)-ros-core:
         base_image: @(os_name):@(os_code_name)
         template_name: docker_images/create_ros_core_image.Dockerfile.em
+        entrypoint_name: docker_images/ros_entrypoint.sh
         template_packages:
             - ros_docker_images
-        packages:
-            - wget
         ros_packages:
             - ros-core
     @(rosdistro_name)-ros-base:
