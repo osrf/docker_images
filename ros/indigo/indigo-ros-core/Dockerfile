@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:indigo-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2015-06-01 18:08:36 -0700
+# generated on 2015-06-02 14:40:22 -0700
 FROM ubuntu:trusty
 MAINTAINER Dirk Thomas dthomas+buildfarm@osrfoundation.org
 
@@ -33,7 +33,6 @@ RUN apt-get update && apt-get install -y \
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
-RUN chmod +x ./ros_entrypoint.sh
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
