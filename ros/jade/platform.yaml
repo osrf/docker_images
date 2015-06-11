@@ -1,0 +1,11 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: trusty
+    rosdistro_name: jade
+    user_name: ros
+    arch: amd64
+    type: distribution
+    version: 1
