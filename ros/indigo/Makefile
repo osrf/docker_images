@@ -12,12 +12,12 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:indigo-ros-core 	indigo-ros-core/.
-	@docker build --tag=ros:indigo-ros-base 	indigo-ros-base/.
-	@docker build --tag=ros:indigo-robot 		indigo-robot/.
-	@docker build --tag=ros:indigo-perception 	indigo-perception/.
-	@docker build --tag=ros:indigo-desktop 		indigo-desktop/.
-	@docker build --tag=ros:indigo-desktop-full indigo-desktop-full/.
+	@docker build --tag=ros:indigo-ros-core		indigo-ros-core/.
+	@docker build --tag=ros:indigo-ros-base		indigo-ros-base/.
+	@docker build --tag=ros:indigo-robot		indigo-robot/.
+	@docker build --tag=ros:indigo-perception	indigo-perception/.
+	@docker build --tag=ros:indigo-desktop		indigo-desktop/.
+	@docker build --tag=ros:indigo-desktop-full	indigo-desktop-full/.
 
 pull:
 	@docker pull ros:indigo-ros-core
@@ -45,8 +45,8 @@ clean:
 
 tag:
 	@docker tag -f ros:indigo-ros-core		osrf/ros:indigo-ros-core
-	@docker tag -f ros:indigo-ros-base 		osrf/ros:indigo-ros-base
-	@docker tag -f ros:indigo-robot 		osrf/ros:indigo-robot
-	@docker tag -f ros:indigo-perception 	osrf/ros:indigo-perception
-	@docker tag -f ros:indigo-desktop 		osrf/ros:indigo-desktop
-	@docker tag -f ros:indigo-desktop-full 	osrf/ros:indigo-desktop-full
+	@docker tag -f ros:indigo-ros-base		osrf/ros:indigo-ros-base
+	@docker tag -f ros:indigo-robot			osrf/ros:indigo-robot
+	@docker tag -f ros:indigo-perception	osrf/ros:indigo-perception
+	@docker tag -f ros:indigo-desktop		osrf/ros:indigo-desktop
+	@docker tag -f ros:indigo-desktop-full	osrf/ros:indigo-desktop-full
