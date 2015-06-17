@@ -31,3 +31,17 @@ images:
             - ros_docker_images
         ros_packages:
             - perception
+    @(rosdistro_name)-desktop:
+        base_image: @(user_name):@(rosdistro_name)-ros-base
+        template_name: docker_images/create_ros_image.Dockerfile.em
+        template_packages:
+            - ros_docker_images
+        ros_packages:
+            - desktop
+    @(rosdistro_name)-desktop-full:
+        base_image: osrf/@(user_name):@(rosdistro_name)-desktop
+        template_name: docker_images/create_ros_image.Dockerfile.em
+        template_packages:
+            - ros_docker_images
+        ros_packages:
+            - desktop-full
