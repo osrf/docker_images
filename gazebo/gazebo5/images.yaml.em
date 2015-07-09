@@ -5,7 +5,7 @@ images:
     gzserver@(version):
         base_image: @(os_name):@(os_code_name)
         template_name: docker_images/create_gzserver_image.Dockerfile.em
-        entrypoint_name: docker_images/gazebo_entrypoint.sh
+        entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
             - ros_docker_images
         gazebo_packages:
