@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver5
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2015-06-30 16:19:09 -0700
+# generated on 2015-07-09 15:51:15 -0700
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -q -y \
 EXPOSE 11345
 
 # setup entrypoint
-COPY ./gazebo_entrypoint.sh /
+COPY ./gzserver_entrypoint.sh /
 
-ENTRYPOINT ["/gazebo_entrypoint.sh"]
-CMD ["bash"]
+ENTRYPOINT ["/gzserver_entrypoint.sh"]
+CMD ["gzserver"]

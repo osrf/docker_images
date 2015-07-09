@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-# setup ros environment
+# setup gazebo environment
 source "/usr/share/gazebo/setup.sh"
 exec "$@"
