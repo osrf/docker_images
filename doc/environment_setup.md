@@ -1,8 +1,8 @@
-## Environment Setup
-### Setup from source
+# Environment Setup
+## Setup from source
 To first setup the necessary environment:
 
-> Follow the Virtualenv guide in ros_build [environment](https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/environment.rst) setup.
+> Follow the Virtualenv section in ros_build [environment](https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/environment.rst) setup.
 
     mkdir ~/ws/deploy_ros_buildfarm
     cd ~/ws/deploy_ros_buildfarm
@@ -30,4 +30,4 @@ To first setup the necessary environment:
     export PATH=`pwd`/scripts:$PATH
     export PYTHONPATH=`pwd`:$PYTHONPATH
 
-## Setup from packages
+> This will include the necessary templates used by the autocorrelation scripts. 

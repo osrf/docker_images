@@ -1,5 +1,5 @@
 # OSRF Docker Images
-This repo hosts the dockerfiles used to gererate the official and unaficial images for OSRF projects, including onbuild repositories on Docker Hub:
+This repo hosts the Dockerfiles used to generate the official images for OSRF projects, including onbuild repositories on Docker Hub:
 
 #### Official Library
 * [ROS](https://registry.hub.docker.com/_/ros/)
@@ -10,4 +10,4 @@ This repo hosts the dockerfiles used to gererate the official and unaficial imag
 * [ROS2](https://registry.hub.docker.com/u/osrf/ros2/)
 * [Gazebo](https://registry.hub.docker.com/u/osrf/gazebo/)
 
-This repo also includes the neccesary scripts and config files to auto generate the dockerfiles.
+This repo also includes the necessary scripts and config files to auto generate the Dockerfiles. See the doc directory for further documentation.
