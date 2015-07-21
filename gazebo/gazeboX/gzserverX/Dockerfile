@@ -1,8 +1,31 @@
 # This is an auto generated Dockerfile for gazebo:gzserverX
 # generated from templates/docker_images/create_gzserverX_image.Dockerfile.em
-# generated on 2015-07-16 20:01:43 -0700
+# generated on 2015-07-21 14:40:36 -0700
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
+
+RUN apt-get update && apt-get install -y \
+    software-properties-common  \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-add-repository ppa:libccd-debs \
+    && apt-add-repository ppa:fcl-debs \
+    && apt-add-repository ppa:dartsim
+
+
+# Gazebo Setup #################################################################
+# setup keys
+RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
+
+# setup sources.list
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list
+
+# install gazebo packages
+RUN apt-get update && apt-get install -q -y \
+    libbullet2.82-dev \
+    libsimbody-dev \
+    libignition-math2-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -15,11 +38,11 @@ RUN apt-get update && apt-get install -q -y \
     libavcodec-dev \
     libavformat-dev \
     libboost-all-dev \
+    libfcl-dev \
     libccd-dev \
     libcegui-mk2-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
-    libfcl-dev \
     libflann-dev \
     libfreeimage-dev \
     libgts-dev \
@@ -44,23 +67,22 @@ RUN apt-get update && apt-get install -q -y \
     playerc++ \
     protobuf-compiler \
     python-pip \
+    libdart-core4-dev \
+    libbullet2.82-dev \
+    libsimbody-dev \
+    ruby-dev \
     && rm -rf /var/lib/apt/lists/*
 
-    
 # install python packages
 RUN pip install \
     catkin-pkg \
-    catkin-tools
-
+    catkin-tools \
+    empy
 # clone source
 ENV WS /root/ws/gazeboX
 RUN mkdir -p /root/ws/gazeboX/src
 WORKDIR /root/ws/gazeboX/src
-RUN git clone https://github.com/ros/catkin.git catkin --branch  master 
-RUN git clone https://github.com/bulletphysics/bullet3.git bullet3 --branch  master  \
-    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml > ${WS}/src/bullet3/package.xml
-RUN git clone https://github.com/dartsim/dart.git dart --branch  master  \
-    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml > ${WS}/src/dart/package.xml
+RUN git clone https://github.com/ros/catkin.git catkin --branch  indigo-devel 
 RUN hg clone https://bitbucket.org/osrf/sdformat sdformat --branch  default  \
     && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
 RUN hg clone https://bitbucket.org/osrf/gazebo gazebo --branch  default  \
@@ -72,10 +94,7 @@ RUN cd /root/ws/gazeboX \
     && catkin build \
     -vi \
     --cmake-args \
-    -DBUILD_CORE_ONLY=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DUSE_DOUBLE_PRECISION=ON
-
+    -DCMAKE_BUILD_TYPE=Debug
 # setup environment
 EXPOSE 11345
 

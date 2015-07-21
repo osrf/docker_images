@@ -8,6 +8,10 @@ images:
         entrypoint_name: docker_images/gzserverX_entrypoint.sh
         template_packages:
             - ros_docker_images
+        gazebo_packages:
+            - libbullet2.82-dev
+            - libsimbody-dev
+            - libignition-math2-dev
         packages:
             - build-essential
             - cmake
@@ -18,11 +22,11 @@ images:
             - libavcodec-dev
             - libavformat-dev
             - libboost-all-dev
+            - libfcl-dev
             - libccd-dev
             - libcegui-mk2-dev
             - libcurl4-openssl-dev
             - libeigen3-dev
-            - libfcl-dev
             - libflann-dev
             - libfreeimage-dev
             - libgts-dev
@@ -47,29 +51,22 @@ images:
             - playerc++
             - protobuf-compiler
             - python-pip
+            - libdart-core4-dev
+            - libbullet2.82-dev
+            - libsimbody-dev
+            - ruby-dev
         pip_install:
             - catkin-pkg
             - catkin-tools
+            - empy
         ws: /root/ws/gazebo@(version)
         cmake_args:
-            - -DBUILD_CORE_ONLY=ON
-            - -DBUILD_SHARED_LIBS=ON
-            - -DUSE_DOUBLE_PRECISION=ON
+            - -DCMAKE_BUILD_TYPE=Debug
         sources:
             catkin:
                 cmd: git clone
                 repo: https://github.com/ros/catkin.git
-                branch: master
-            bullet3:
-                cmd: git clone
-                package: https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_bullet.xml
-                repo: https://github.com/bulletphysics/bullet3.git
-                branch: master
-            dart:
-                cmd: git clone
-                package: https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_dart-core.xml
-                repo: https://github.com/dartsim/dart.git
-                branch: master
+                branch: indigo-devel
             sdformat:
                 cmd: hg clone
                 package: https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml

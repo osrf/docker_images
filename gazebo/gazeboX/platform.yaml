@@ -4,6 +4,7 @@
 platform:
     os_name: ubuntu
     os_code_name: trusty
+    rosdistro_name: indigo
     user_name: gazebo
     arch: amd64
     type: experimental
