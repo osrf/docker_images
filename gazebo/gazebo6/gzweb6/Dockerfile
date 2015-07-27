@@ -1,7 +1,7 @@
 # This is an auto generated Dockerfile for gazebo:gzweb6
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2015-07-27 10:30:15 -0700
-FROM gazebo:gzserver6
+# generated on 2015-07-27 15:53:56 -0700
+FROM gazebo:libgazebo6
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
 # install packages

@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver6
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2015-07-27 10:30:15 -0700
+# generated on 2015-07-27 15:53:55 -0700
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -13,7 +13,6 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     gazebo6=6.0.0* \
-    libgazebo6-dev=6.0.0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment

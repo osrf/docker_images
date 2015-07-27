@@ -10,9 +10,15 @@ images:
             - ros_docker_images
         gazebo_packages:
             - gazebo@(version)
+    libgazebo@(version):
+        base_image: @(user_name):gzserver@(version)
+        template_name: docker_images/create_gzclient_image.Dockerfile.em
+        template_packages:
+            - ros_docker_images
+        gazebo_packages:
             - libgazebo@(version)-dev
     gzweb@(version):
-        base_image: @(user_name):gzserver@(version)
+        base_image: @(user_name):libgazebo@(version)
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
             - ros_docker_images
