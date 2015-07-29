@@ -13,9 +13,11 @@ images:
             - cmake
             - cppcheck
             - git
+            - libopencv-dev
             - libopensplice64
             - python-empy
             - python3-empy
+            - python3-nose
             - python3-pip
             - python3-setuptools
             - python3-vcstool

@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2015-07-29 11:48:57 -0700
+# generated on 2015-07-29 14:18:19 -0700
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -29,9 +29,11 @@ RUN apt-get update && apt-get install -q -y \
     cmake \
     cppcheck \
     git \
+    libopencv-dev \
     libopensplice64 \
     python-empy \
     python3-empy \
+    python3-nose \
     python3-pip \
     python3-setuptools \
     python3-vcstool \
@@ -54,7 +56,7 @@ WORKDIR /root/ros2_ws/src/..
 RUN src/ament/ament_tools/scripts/ament.py \
     build \
     --build-tests \
-    --symlink-install || true
+    --symlink-install
 
 # setup entrypoint
 COPY ./ros2_entrypoint.sh /
