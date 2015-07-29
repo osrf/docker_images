@@ -98,9 +98,11 @@ def main(argv=sys.argv[1:]):
         data.update(platform)
 
         # Get debian package names for ros
-        data['ros_packages'] = get_ros_package_names(data['rosdistro_name'],
-                                                     data['ros_packages'],
-                                                     dist_file)
+        if 'ros_packages' in data:
+            data['ros_packages'] = get_ros_package_names(
+                data['rosdistro_name'],
+                data['ros_packages'],
+                dist_file)
 
         # Get path to save Docker file
         dockerfile_dir = os.path.join(output_path, image)

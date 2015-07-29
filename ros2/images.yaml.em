@@ -9,12 +9,24 @@ images:
         template_packages:
             - ros_docker_images
         packages:
-            - ros2
-        ws: /root/ws/gazebo@(version)
-        cmake_args:
-            - --DBUILD_CORE_ONLY=ON
-        sources:
-            catkin:
-                cmd: git clone
-                repo: https://github.com/ros/catkin.git
-                branch: master
+            - build-essential
+            - cmake
+            - cppcheck
+            - git
+            - libopensplice64
+            - python-empy
+            - python3-empy
+            - python3-pip
+            - python3-setuptools
+            - python3-vcstool
+            - wget
+        pip3_install:
+            - setuptools
+        ws: /root/ros2_ws/src
+        ament_args:
+            - build
+            - --build-tests
+            - --symlink-install
+        vcs:
+            ros2:
+                repos: https://raw.githubusercontent.com/ros2/examples/master/ros2.repos
