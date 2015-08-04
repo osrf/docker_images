@@ -81,7 +81,7 @@ def main(argv=sys.argv[1:]):
         data.update(platform)
 
         # Apply version
-        if 'gazebo_packages' in data:
+        if ('gazebo_packages' in data) and ('package_version' in data):
             data['gazebo_packages'] = applyVersion(data['gazebo_packages'], data['package_version'])
 
         # Get path to save Docker file

@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserverX
 # generated from templates/docker_images/create_gzserverX_image.Dockerfile.em
-# generated on 2015-07-21 14:40:36 -0700
+# generated on 2015-08-03 18:10:08 -0700
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -78,23 +78,24 @@ RUN pip install \
     catkin-pkg \
     catkin-tools \
     empy
+
 # clone source
-ENV WS /root/ws/gazeboX
 RUN mkdir -p /root/ws/gazeboX/src
 WORKDIR /root/ws/gazeboX/src
 RUN git clone https://github.com/ros/catkin.git catkin --branch  indigo-devel 
 RUN hg clone https://bitbucket.org/osrf/sdformat sdformat --branch  default  \
-    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > ${WS}/src/sdformat/package.xml
+    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_sdformat.xml > /root/ws/gazeboX/src/sdformat/package.xml
 RUN hg clone https://bitbucket.org/osrf/gazebo gazebo --branch  default  \
-    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > ${WS}/src/gazebo/package.xml
+    && curl https://bitbucket.org/scpeters/unix-stuff/raw/master/package_xml/package_gazebo.xml > /root/ws/gazeboX/src/gazebo/package.xml
 
 # build source
-RUN cd /root/ws/gazeboX \
-    && catkin init \
+WORKDIR /root/ws/gazeboX
+RUN catkin init \
     && catkin build \
     -vi \
     --cmake-args \
     -DCMAKE_BUILD_TYPE=Debug
+
 # setup environment
 EXPOSE 11345
 

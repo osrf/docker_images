@@ -9,4 +9,3 @@ platform:
     arch: amd64
     type: experimental
     version: X
-    package_version: X
