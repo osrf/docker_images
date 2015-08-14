@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb5
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2015-07-27 15:53:53 -0700
+# generated on 2015-08-13 20:02:55 -0700
 FROM gazebo:libgazebo5
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -37,3 +37,6 @@ RUN cd ~/gzweb \
 # setup environment
 EXPOSE 8080
 EXPOSE 7681
+
+# run gzserver and gzweb
+CMD ./root/gzweb/start_gzweb.sh && gzserver
