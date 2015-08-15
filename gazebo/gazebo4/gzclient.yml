@@ -1,0 +1,28 @@
+gzclient:
+    image: "gazebo:gzclient4"
+    # user: ubuntu
+    # working_dir: /home/ubuntu
+    volumes:
+        - "/home:/home"
+        - "/dev/snd:/dev/snd"
+        - "/etc/group:/etc/group:ro"
+        - "/etc/passwd:/etc/passwd:ro"
+        - "/etc/shadow:/etc/shadow:ro"
+        - "/etc/sudoers.d:/etc/sudoers.d:ro"
+        - "/etc/localtime:/etc/localtime:ro"
+        - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+    devices:
+        - "/dev/nvidia0"
+        - "/dev/nvidiactl"
+    links:
+        - "gzserver"
+    environment:
+        - "DISPLAY"
+        - "QT_X11_NO_MITSHM=1"
+        - "GAZEBO_MASTER_URI=http://gzserver:11345"
+    command: "'gzclient'"
+
+gzserver:
+    extends:
+        file: "gzserver.yml"
+        service: "gzserver"
