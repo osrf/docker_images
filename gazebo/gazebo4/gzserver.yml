@@ -1,0 +1,5 @@
+gzserver:
+    image: gazebo:gzserver4
+    # ports:
+    #     - "11345:11345"
+    command: gzserver --verbose
