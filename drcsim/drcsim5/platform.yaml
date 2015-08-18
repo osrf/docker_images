@@ -4,7 +4,7 @@
 platform:
     os_name: ubuntu
     os_code_name: trusty
-    base_image: gazebo:libgazebo4
+    base_image: ros:indigo-ros-core
     user_name: drcsim
     arch: amd64
     type: distribution
