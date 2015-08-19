@@ -35,9 +35,28 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
  -	[![](https://badge.imagelayers.io/gazebo:libgazebo6.svg)](https://imagelayers.io/?images=gazebo:libgazebo6 'Get your own badge on imagelayers.io')
 
 
-#### OSRF Profile
-* [ROS](https://registry.hub.docker.com/u/osrf/ros/)
-* [ROS2](https://registry.hub.docker.com/u/osrf/ros2/)
-* [Gazebo](https://registry.hub.docker.com/u/osrf/gazebo/)
+### [OSRF Profile](https://hub.docker.com/u/osrf/)
+#### [ROS](https://registry.hub.docker.com/u/osrf/ros/)
+-	[`indigo-desktop` (*ros/indigo/indigo-desktop/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/ros/indigo/indigo-desktop/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/ros:indigo-desktop.svg)](https://imagelayers.io/?images=osrf/ros:indigo-desktop 'Get your own badge on imagelayers.io')
+-	[`indigo-desktop-full` (*ros/indigo/indigo-desktop-full/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/ros/indigo/indigo-desktop-full/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/ros:indigo-desktop-full.svg)](https://imagelayers.io/?images=osrf/ros:indigo-desktop-full 'Get your own badge on imagelayers.io')
+-	[`jade-desktop` (*ros/jade/jade-desktop/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/ros:jade-desktop.svg)](https://imagelayers.io/?images=osrf/ros:jade-desktop 'Get your own badge on imagelayers.io')
+-	[`jade-desktop-full` (*ros/jade/jade-desktop-full/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop-full/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/ros:jade-desktop-full.svg)](https://imagelayers.io/?images=osrf/ros:jade-desktop-full 'Get your own badge on imagelayers.io')
+
+#### [ROS2](https://registry.hub.docker.com/u/osrf/ros2/)
+-	[`latest` (*ros2/ros2/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/ros2/ros2/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/ros2:latest.svg)](https://imagelayers.io/?images=osrf/ros2:latest 'Get your own badge on imagelayers.io')
+
+#### [Gazebo](https://registry.hub.docker.com/u/osrf/gazebo/)
+-	[`gzweb5` (*gazebo/gazebo5/gzweb5/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/gazebo/gazebo5/gzweb5/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/gazebo:gzweb5.svg)](https://imagelayers.io/?images=osrf/gazebo:gzweb5 'Get your own badge on imagelayers.io')
+-	[`gzweb6` (*gazebo/gazebo6/gzweb6/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/gazebo/gazebo6/gzweb6/Dockerfile)
+ -	[![](https://badge.imagelayers.io/osrf/gazebo:gzweb6.svg)](https://imagelayers.io/?images=osrf/gazebo:gzweb6 'Get your own badge on imagelayers.io')
+-	[`gzserverX` (*gazebo/gazeboX/gzserverX/Dockerfile*)](https://github.com/osrf/docker_images/blob/master/gazebo/gazeboX/gzserverX/Dockerfile)
+ -	
+
 
 This repo also includes the necessary scripts and config files to auto generate the Dockerfiles. See the doc directory for further documentation.
