@@ -31,4 +31,4 @@ images:
             - --symlink-install
         vcs:
             ros2:
-                repos: https://raw.githubusercontent.com/ros2/examples/master/ros2.repos
+                repos: https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos

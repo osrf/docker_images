@@ -48,7 +48,7 @@ RUN pip3 install -U \
 ENV WS /root/ros2_ws/src
 RUN mkdir -p /root/ros2_ws/src
 WORKDIR /root/ros2_ws/src
-RUN wget https://raw.githubusercontent.com/ros2/examples/master/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import /root/ros2_ws/src < ros2.repos
 
 # build source
