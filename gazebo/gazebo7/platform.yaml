@@ -1,0 +1,11 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: trusty
+    user_name: gazebo
+    arch: amd64
+    type: distribution
+    version: 7
+    package_version: 7.0.0
