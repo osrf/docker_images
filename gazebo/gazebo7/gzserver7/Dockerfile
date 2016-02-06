@@ -1,6 +1,6 @@
-# This is an auto generated Dockerfile for gazebo:gzserver5
+# This is an auto generated Dockerfile for gazebo:gzserver7
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2016-02-06 15:53:58 +0000
+# generated on 2016-02-06 15:43:45 +0000
 FROM ubuntu:trusty
 MAINTAINER Nate Koenig nkoenig@osrfoundation.org
 
@@ -12,7 +12,7 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_releas
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo5=5.1.0* \
+    gazebo7=7.0.0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
