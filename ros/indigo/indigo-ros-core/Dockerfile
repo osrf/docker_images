@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:indigo-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2015-06-02 14:40:22 -0700
+# generated on 2016-04-26 15:31:22 +0000
 FROM ubuntu:trusty
 MAINTAINER Dirk Thomas dthomas+buildfarm@osrfoundation.org
 
@@ -15,7 +15,6 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1
 RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
 
 # install bootstrap tools
-ENV ROS_DISTRO indigo
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python-rosdep \
     python-rosinstall \
@@ -27,6 +26,7 @@ RUN rosdep init \
     && rosdep update
 
 # install ros packages
+ENV ROS_DISTRO indigo
 RUN apt-get update && apt-get install -y \
     ros-indigo-ros-core=1.1.4-0* \
     && rm -rf /var/lib/apt/lists/*
