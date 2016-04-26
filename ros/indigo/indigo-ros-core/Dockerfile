@@ -1,8 +1,8 @@
 # This is an auto generated Dockerfile for ros:indigo-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2016-04-26 15:31:22 +0000
+# generated on 2016-04-26 21:55:54 +0000
 FROM ubuntu:trusty
-MAINTAINER Dirk Thomas dthomas+buildfarm@osrfoundation.org
+MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
 
 # setup environment
 RUN locale-gen en_US.UTF-8
