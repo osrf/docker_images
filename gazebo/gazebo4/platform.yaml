@@ -5,6 +5,7 @@ platform:
     os_name: ubuntu
     os_code_name: trusty
     user_name: gazebo
+    maintainer_name: Steven Peters scpeters+buildfarm@osrfoundation.org
     arch: amd64
     type: distribution
     version: 4

@@ -1,8 +1,8 @@
 # This is an auto generated Dockerfile for gazebo:gzclient5
 # generated from templates/docker_images/create_gzclient_image.Dockerfile.em
-# generated on 2015-07-27 15:53:53 -0700
+# generated on 2016-04-26 23:20:15 +0000
 FROM gazebo:gzserver5
-MAINTAINER Nate Koenig nkoenig@osrfoundation.org
+MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

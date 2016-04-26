@@ -1,8 +1,8 @@
 # This is an auto generated Dockerfile for gazebo:gzserver5
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2016-02-06 15:53:58 +0000
+# generated on 2016-04-26 23:20:15 +0000
 FROM ubuntu:trusty
-MAINTAINER Nate Koenig nkoenig@osrfoundation.org
+MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
