@@ -4,6 +4,7 @@
 images:
     gzserver@(version):
         base_image: @(os_name):@(os_code_name)
+        maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzserverX_image.Dockerfile.em
         entrypoint_name: docker_images/gzserverX_entrypoint.sh
         template_packages:
@@ -79,6 +80,7 @@ images:
                 branch: default
     # gzweb@(version):
     #     base_image: @(user_name):gzserver@(version)
+    #     maintainer_name: @(maintainer_name)
     #     template_name: docker_images/create_gzwebX_image.Dockerfile.em
     #     template_packages:
     #         - ros_docker_images

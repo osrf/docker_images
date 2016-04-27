@@ -4,6 +4,7 @@
 images:
     gzserver@(version):
         base_image: @(os_name):@(os_code_name)
+        maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzserver_image.Dockerfile.em
         entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
@@ -12,6 +13,7 @@ images:
             - gazebo@(version)
     libgazebo@(version):
         base_image: @(user_name):gzserver@(version)
+        maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
             - ros_docker_images
@@ -19,6 +21,7 @@ images:
             - libgazebo@(version)-dev
     gzweb@(version):
         base_image: @(user_name):libgazebo@(version)
+        maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
             - ros_docker_images
@@ -40,6 +43,7 @@ images:
             - libgazebo@(version)-dev
     gzclient@(version):
         base_image: @(user_name):gzserver@(version)
+        maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
             - ros_docker_images
