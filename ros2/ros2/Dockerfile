@@ -1,7 +1,7 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2016-04-26 23:27:59 +0000
-FROM ubuntu:trusty
+# generated on 2016-07-15 16:28:44 +0000
+FROM ubuntu:xenial
 MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
 
 # ROS1 Repo Setup ##############################################################
@@ -13,14 +13,14 @@ ENV LANG en_US.UTF-8
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
+RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
 
 # OSRF Repo Setup ##############################################################
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 
 # setup sources.list
-RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial main" > /etc/apt/sources.list.d/gazebo-latest.list
 
 # ROS2 Setup ###################################################################
 # install packages
@@ -38,6 +38,19 @@ RUN apt-get update && apt-get install -q -y \
     python3-setuptools \
     python3-vcstool \
     wget \
+    clang-format \
+    pydocstyle \
+    pyflakes \
+    python3-coverage \
+    python3-mock \
+    python3-pep8 \
+    uncrustify \
+    libboost-chrono-dev \
+    libboost-date-time-dev \
+    libboost-program-options-dev \
+    libboost-regex-dev \
+    libboost-system-dev \
+    libboost-thread-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # install python packages
