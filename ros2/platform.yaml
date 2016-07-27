@@ -3,8 +3,8 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: trusty
-    rosdistro_name: indigo
+    os_code_name: xenial
+    rosdistro_name: kinetic
     user_name: ros2
     maintainer_name: Tully Foote tfoote+buildfarm@osrfoundation.org
     arch: amd64
