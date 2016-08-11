@@ -19,5 +19,7 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 #### [Gazebo ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/gazebo.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/gazebo.svg)](https://registry.hub.docker.com/u/osrf/gazebo/)
 [![Compare Images](https://badge.imagelayers.io/osrf/gazebo:latest.svg)](https://imagelayers.io/?images=osrf/gazebo:gzweb5,osrf/gazebo:gzweb6,osrf/gazebo:gzweb7)
 
+#### [SROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/sros.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/sros.svg)](https://registry.hub.docker.com/u/osrf/sros/)
+[![Compare Images](https://badge.imagelayers.io/osrf/sros:latest.svg)](https://imagelayers.io/?images=osrf/sros:latest)
 
 This repo also includes the necessary scripts and config files to auto generate the Dockerfiles. See the doc directory for further documentation.
