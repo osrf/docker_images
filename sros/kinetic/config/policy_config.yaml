@@ -1,0 +1,62 @@
+nodes:
+  /listener:
+    parameters:
+      /enable_statistics:
+        allow: r
+      /tcp_keepalive:
+        allow: r
+      /use_sim_time:
+        allow: r
+    services:
+      /listener/get_loggers:
+        allow: x
+      /listener/set_logger_level:
+        allow: x
+    topics:
+      /chatter:
+        allow: s
+      /rosout:
+        allow: p
+  /roslaunch:
+    parameters:
+      /rosdistro:
+        allow: w
+      /roslaunch/uris/*:
+        allow: w
+      /rosversion:
+        allow: w
+      /run_id:
+        allow: rw
+  /rosoutpy:
+    parameters:
+      /enable_statistics:
+        allow: r
+      /tcp_keepalive:
+        allow: r
+      /use_sim_time:
+        allow: r
+    services:
+      /rosoutpy/get_loggers:
+        allow: x
+      /rosoutpy/set_logger_level:
+        allow: x
+    topics:
+      /rosout:
+        allow: ps
+      /rosout_agg:
+        allow: p
+  /talker:
+    parameters:
+      /use_sim_time:
+        allow: r
+    services:
+      /talker/get_loggers:
+        allow: x
+      /talker/set_logger_level:
+        allow: x
+    topics:
+      /chatter:
+        allow: p
+      /rosout:
+        allow: p
+version: '0'
