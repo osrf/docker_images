@@ -69,7 +69,7 @@ WORKDIR $CATKIN_WS
 ENV TERM xterm
 ENV PYTHONIOENCODING UTF-8
 RUN catkin config --install && \
-    catkin build
+    catkin build --no-status --summarize
 
 # setup demo config
 COPY ./config /root/.ros/sros/config/
