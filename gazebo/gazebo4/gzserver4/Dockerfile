@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver4
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2016-04-26 23:19:42 +0000
+# generated on 2016-09-26 17:54:29 +0000
 FROM ubuntu:trusty
 MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
@@ -13,7 +13,8 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_releas
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     gazebo4=4.1.3* \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
 # setup environment
 EXPOSE 11345

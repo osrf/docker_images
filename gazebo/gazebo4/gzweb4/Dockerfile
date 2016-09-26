@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb4
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2016-04-26 23:19:42 +0000
+# generated on 2016-09-26 17:54:29 +0000
 FROM gazebo:libgazebo4
 MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
@@ -19,12 +19,14 @@ RUN apt-get update && apt-get install -q -y \
     npm \
     pkg-config \
     psmisc\
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     libgazebo4-dev=4.1.3* \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
 # clone gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
