@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzclient7
 # generated from templates/docker_images/create_gzclient_image.Dockerfile.em
-# generated on 2016-10-13 17:16:25 +0000
+# generated on 2016-10-13 21:36:43 +0000
 FROM gazebo:gzserver7
 MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
@@ -14,5 +14,5 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo7=7.3.1* \
+    gazebo7=7.4.0* \
     && rm -rf /var/lib/apt/lists/*

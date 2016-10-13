@@ -9,4 +9,4 @@ platform:
     arch: amd64
     type: distribution
     version: 7
-    package_version: 7.3.1
+    package_version: 7.4.0
