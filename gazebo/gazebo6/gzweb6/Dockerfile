@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb6
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2016-09-26 17:54:23 +0000
+# generated on 2016-10-13 17:16:22 +0000
 FROM gazebo:libgazebo6
 MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
 
@@ -19,14 +19,12 @@ RUN apt-get update && apt-get install -q -y \
     npm \
     pkg-config \
     psmisc\
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     libgazebo6-dev=6.6.0* \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
