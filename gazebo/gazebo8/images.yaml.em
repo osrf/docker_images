@@ -9,6 +9,8 @@ images:
         entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
             - ros_docker_images
+        packages:
+            - lsb-release
         gazebo_packages:
             - gazebo@(version)
     libgazebo@(version):
@@ -17,6 +19,8 @@ images:
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
             - ros_docker_images
+        packages:
+            - lsb-release
         gazebo_packages:
             - libgazebo@(version)-dev
     gzweb@(version):
@@ -33,6 +37,7 @@ images:
             - libgts-dev
             - libjansson-dev
             - libtinyxml-dev
+            - lsb-release
             - mercurial
             - nodejs
             - nodejs-legacy
@@ -49,6 +54,7 @@ images:
             - ros_docker_images
         packages:
             - binutils
+            - lsb-release
             - mesa-utils
             - module-init-tools
             - x-window-system
