@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb8
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2017-01-26 20:31:00 +0000
+# generated on 2017-01-26 22:19:06 +0000
 FROM gazebo:libgazebo8
 MAINTAINER Jose Luis Rivero jrivero@osrfoundation.org
 
@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -q -y \
     libgts-dev \
     libjansson-dev \
     libtinyxml-dev \
-    lsb-release \
     mercurial \
     nodejs \
     nodejs-legacy \

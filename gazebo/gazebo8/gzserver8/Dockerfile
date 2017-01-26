@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver8
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2017-01-26 20:31:00 +0000
+# generated on 2017-01-26 22:19:06 +0000
 FROM ubuntu:xenial
 MAINTAINER Jose Luis Rivero jrivero@osrfoundation.org
 
