@@ -1,8 +1,7 @@
 # This is an auto generated Dockerfile for ros:indigo-robot
 # generated from templates/docker_images/create_ros_image.Dockerfile.em
-# generated on 2016-04-26 21:55:54 +0000
+# generated on 2017-01-27 02:33:52 +0000
 FROM ros:indigo-ros-base
-MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
 
 # install ros packages
 RUN apt-get update && apt-get install -y \

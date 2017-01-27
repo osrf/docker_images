@@ -1,8 +1,7 @@
 # This is an auto generated Dockerfile for ros:kinetic-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2016-05-13 23:38:52 +0000
+# generated on 2017-01-27 02:34:03 +0000
 FROM ubuntu:xenial
-MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
 
 # setup environment
 RUN locale-gen en_US.UTF-8
