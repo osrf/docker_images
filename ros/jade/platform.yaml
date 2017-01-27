@@ -6,7 +6,7 @@ platform:
     os_code_name: trusty
     rosdistro_name: jade
     user_name: ros
-    maintainer_name: Tully Foote tfoote+buildfarm@osrfoundation.org
+    maintainer_name:
     arch: amd64
     type: distribution
     version: 1

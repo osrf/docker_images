@@ -6,7 +6,7 @@ platform:
     os_code_name: trusty
     rosdistro_name: indigo
     user_name: gazebo
-    maintainer_name: Steven Peters scpeters+buildfarm@osrfoundation.org
+    maintainer_name:
     arch: amd64
     type: experimental
     version: X

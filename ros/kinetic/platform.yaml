@@ -6,7 +6,7 @@ platform:
     os_code_name: xenial
     rosdistro_name: kinetic
     user_name: ros
-    maintainer_name: Tully Foote tfoote+buildfarm@osrfoundation.org
+    maintainer_name:
     arch: amd64
     type: distribution
     version: 1
