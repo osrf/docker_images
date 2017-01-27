@@ -1,8 +1,8 @@
-# This is an auto generated Dockerfile for gazebo:gzweb7
+# This is an auto generated Dockerfile for gazebo:gzweb8
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2017-01-26 22:23:41 +0000
-FROM gazebo:libgazebo7
-MAINTAINER Steven Peters scpeters+buildfarm@osrfoundation.org
+# generated on 2017-01-26 22:19:06 +0000
+FROM gazebo:libgazebo8
+MAINTAINER Jose Luis Rivero jrivero@osrfoundation.org
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo7-dev=7.5.0* \
+    libgazebo8-dev=8.0.0* \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
