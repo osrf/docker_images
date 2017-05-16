@@ -16,6 +16,7 @@ images:
             - git
             - libopencv-dev
             - libopensplice64
+            - locales
             - python-empy
             - python3-empy
             - python3-nose
