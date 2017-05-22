@@ -1,10 +1,12 @@
 # This is an auto generated Dockerfile for ros:lunar-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2017-05-11 15:17:38 +0000
+# generated on 2017-05-22 15:18:23 +0000
 FROM ubuntu:xenial
 
 # setup environment
-RUN locale-gen en_US.UTF-8
+RUN apt-get update && apt-get install -y \
+    locales \
+    && locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 # setup keys
