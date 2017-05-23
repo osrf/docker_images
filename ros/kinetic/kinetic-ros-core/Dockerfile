@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:kinetic-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2017-01-27 02:34:03 +0000
+# generated on 2017-05-23 06:52:05 +0000
 FROM ubuntu:xenial
 
 

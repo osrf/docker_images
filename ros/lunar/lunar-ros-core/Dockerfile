@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:lunar-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2017-05-22 15:18:23 +0000
+# generated on 2017-05-23 06:52:09 +0000
 FROM ubuntu:xenial
 
 
