@@ -10,3 +10,4 @@ platform:
     type: distribution
     version: 8
     package_version: 8.0.0
+    gzweb_branch: gzweb_1.3.0

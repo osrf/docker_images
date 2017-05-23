@@ -41,6 +41,7 @@ images:
             - npm
             - pkg-config
             - psmisc
+            - xvfb
         gazebo_packages:
             - libgazebo@(version)-dev
     gzclient@(version):
