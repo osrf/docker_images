@@ -36,7 +36,7 @@ images:
         ros_packages:
             - perception
     @(rosdistro_name)-desktop:
-        base_image: @(user_name):@(rosdistro_name)-ros-base
+        base_image: @(user_name):@(rosdistro_name)-robot
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:

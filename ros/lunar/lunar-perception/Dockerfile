@@ -1,10 +1,10 @@
-# This is an auto generated Dockerfile for ros:indigo-robot
+# This is an auto generated Dockerfile for ros:lunar-perception
 # generated from templates/docker_images/create_ros_image.Dockerfile.em
-# generated on 2017-05-23 06:51:52 +0000
-FROM ros:indigo-ros-base
+# generated on 2017-05-23 06:52:09 +0000
+FROM ros:lunar-ros-base
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-indigo-robot=1.1.5-0* \
+    ros-lunar-perception=1.3.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
