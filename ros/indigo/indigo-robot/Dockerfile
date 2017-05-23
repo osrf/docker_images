@@ -5,6 +5,6 @@ FROM ros:indigo-ros-base
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-indigo-robot=1.1.4-0* \
+    ros-indigo-robot=1.1.5-0* \
     && rm -rf /var/lib/apt/lists/*
 
