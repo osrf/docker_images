@@ -1,14 +1,14 @@
-# This is an auto generated Dockerfile for ros:jade-ros-core
+# This is an auto generated Dockerfile for ros:lunar-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2017-05-23 06:51:59 +0000
-FROM ubuntu:trusty
+# generated on 2017-05-23 06:52:09 +0000
+FROM ubuntu:xenial
 
 
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
+RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -26,9 +26,9 @@ RUN rosdep init \
     && rosdep update
 
 # install ros packages
-ENV ROS_DISTRO jade
+ENV ROS_DISTRO lunar
 RUN apt-get update && apt-get install -y \
-    ros-jade-ros-core=1.2.0-0* \
+    ros-lunar-ros-core=1.3.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
