@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:indigo-desktop-full
 # generated from templates/docker_images/create_ros_image.Dockerfile.em
-# generated on 2017-05-23 06:51:52 +0000
+# generated on 2017-05-23 21:41:45 +0000
 FROM osrf/ros:indigo-desktop
 
 # install ros packages

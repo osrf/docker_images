@@ -1,8 +1,7 @@
 # This is an auto generated Dockerfile for ros:jade-ros-core
 # generated from templates/docker_images/create_ros_core_image.Dockerfile.em
-# generated on 2017-05-23 06:51:59 +0000
+# generated on 2017-05-23 21:41:28 +0000
 FROM ubuntu:trusty
-
 
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -12,15 +11,15 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    locales \
     python-rosdep \
     python-rosinstall \
     python-vcstools \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
@@ -28,7 +27,7 @@ RUN rosdep init \
 # install ros packages
 ENV ROS_DISTRO jade
 RUN apt-get update && apt-get install -y \
-    ros-jade-ros-core=1.2.0-0* \
+    ros-jade-ros-core=1.2.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
