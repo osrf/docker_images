@@ -5,6 +5,6 @@ FROM ros:jade-ros-base
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-jade-perception=1.2.1-0* \
+    ros-jade-perception=1.2.0-0* \
     && rm -rf /var/lib/apt/lists/*
 

@@ -5,6 +5,6 @@ FROM ros:kinetic-ros-base
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-perception=1.3.1-0* \
+    ros-kinetic-perception=1.3.0-0* \
     && rm -rf /var/lib/apt/lists/*
 
