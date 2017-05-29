@@ -9,4 +9,5 @@ platform:
     arch: amd64
     type: distribution
     version: 4
+    release: stable
     package_version:
