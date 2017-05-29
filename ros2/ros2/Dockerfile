@@ -1,14 +1,10 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2016-07-15 16:28:44 +0000
+# generated on 2017-05-16 19:00:01 +0000
 FROM ubuntu:xenial
-MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
+LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
 # ROS1 Repo Setup ##############################################################
-# setup environment
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
@@ -31,6 +27,7 @@ RUN apt-get update && apt-get install -q -y \
     git \
     libopencv-dev \
     libopensplice64 \
+    locales \
     python-empy \
     python3-empy \
     python3-nose \
@@ -52,6 +49,11 @@ RUN apt-get update && apt-get install -q -y \
     libboost-system-dev \
     libboost-thread-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# setup environment
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 # install python packages
 RUN pip3 install -U \
