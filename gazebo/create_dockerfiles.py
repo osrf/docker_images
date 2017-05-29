@@ -2,7 +2,10 @@
 
 import os
 import pkg_resources
+import re
+import string
 import sys
+import urllib.request
 import yaml
 
 try:
@@ -14,6 +17,36 @@ from em import Interpreter
 from ros_buildfarm.templates import create_dockerfile
 from ros_buildfarm.docker_common import DockerfileArgParser
 from ros_buildfarm.docker_common import OrderedLoad
+
+
+def checkVersion(data):
+    """Checks current package_version from online package index"""
+
+    # Determine URL
+    if data['release']:
+        url_pattern = "http://packages.osrfoundation.org/gazebo/$os_name-$release/dists/$os_code_name/main/binary-$arch/Packages"
+    else:
+        url_pattern = "http://packages.osrfoundation.org/gazebo/$os_name/dists/$os_code_name/main/binary-$arch/Packages"
+    urlTemplate = string.Template(url_pattern)
+    url = urlTemplate.substitute(data)
+
+    # Download package index
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
+        package_index = response.read().decode('utf-8')
+
+    # Determine seach pattern
+    patternTemplate = string.Template(r'(\bPackage: gazebo$version\n)(.*\n)')
+    pattern_raw = patternTemplate.substitute(data)
+    pattern = re.compile(pattern_raw)
+
+    # Parse for version_number
+    matchs = re.search(pattern, package_index)
+    version_line = matchs.groups(0)[1] # Grab the second line of the first match
+    version_number = re.search(r'\d(?!Version\:\s)(.+)(?=(~\w+\n))', version_line).group(0) # extract version_number
+
+    # Update the version_number
+    data['package_version'] = version_number
 
 
 def applyVersion(packages, package_version):
@@ -79,6 +112,10 @@ def main(argv=sys.argv[1:]):
 
         # Add platform perams
         data.update(platform)
+
+        # Check version
+        if not data['package_version']:
+            checkVersion(data)
 
         # Apply version
         if ('gazebo_packages' in data) and ('package_version' in data):
