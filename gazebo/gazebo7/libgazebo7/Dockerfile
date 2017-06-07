@@ -4,5 +4,5 @@
 FROM gazebo:gzserver7
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo7-dev=7.7.0-1* \
+    libgazebo7-dev=7.8.0-1* \
     && rm -rf /var/lib/apt/lists/*
