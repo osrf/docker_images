@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver7
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2017-05-29 06:20:37 +0000
+# generated on 2017-06-07 21:06:56 +0000
 FROM ubuntu:trusty
 
 # setup keys
