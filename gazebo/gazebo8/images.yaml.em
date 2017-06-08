@@ -9,8 +9,6 @@ images:
         entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
             - ros_docker_images
-        packages:
-            - lsb-release
         gazebo_packages:
             - gazebo@(version)
     libgazebo@(version):

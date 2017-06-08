@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb8
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2017-06-07 21:07:38 +0000
+# generated on 2017-06-08 00:05:04 +0000
 FROM gazebo:libgazebo8
 
 # install packages
@@ -32,7 +32,7 @@ RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
 # build gzweb
 RUN cd ~/gzweb \
     && hg up default \
-    && ./deploy.sh -m
+    && xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m
 
 # setup environment
 EXPOSE 8080
