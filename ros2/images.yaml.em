@@ -23,6 +23,8 @@ images:
             - python3-pip
             - python3-setuptools
             - python3-vcstool
+            - libtinyxml-dev
+            - libeigen3-dev
             - wget
             - clang-format
             - pydocstyle
@@ -31,6 +33,8 @@ images:
             - python3-mock
             - python3-pep8
             - uncrustify
+            - libasio-dev
+            - libtinyxml2-dev
             - libboost-chrono-dev
             - libboost-date-time-dev
             - libboost-program-options-dev

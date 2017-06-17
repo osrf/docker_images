@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2017-05-16 19:00:01 +0000
+# generated on 2017-06-17 03:12:52 +0000
 FROM ubuntu:xenial
 LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
@@ -34,6 +34,8 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     python3-setuptools \
     python3-vcstool \
+    libtinyxml-dev \
+    libeigen3-dev \
     wget \
     clang-format \
     pydocstyle \
@@ -42,6 +44,8 @@ RUN apt-get update && apt-get install -q -y \
     python3-mock \
     python3-pep8 \
     uncrustify \
+    libasio-dev \
+    libtinyxml2-dev \
     libboost-chrono-dev \
     libboost-date-time-dev \
     libboost-program-options-dev \
@@ -51,7 +55,9 @@ RUN apt-get update && apt-get install -q -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-RUN locale-gen en_US.UTF-8
+RUN apt-get update && apt-get install -y \
+    locales \
+    && locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
