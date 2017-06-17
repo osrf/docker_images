@@ -42,7 +42,8 @@ images:
             - libboost-system-dev
             - libboost-thread-dev
         pip3_install:
-            - setuptools
+            - flake8
+            - flake8-import-order
         ws: /root/ros2_ws/src
         ament_args:
             - build
