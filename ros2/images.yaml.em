@@ -47,7 +47,6 @@ images:
         ws: /root/ros2_ws/src
         ament_args:
             - build
-            - --build-tests
             - --symlink-install
         vcs:
             ros2:
