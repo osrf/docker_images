@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver7
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2017-06-08 00:05:01 +0000
+# generated on 2017-06-29 22:56:36 +0000
 FROM ubuntu:trusty
 
 # setup keys
@@ -13,7 +13,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo7=7.8.0-1* \
+    gazebo7=7.8.1-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
