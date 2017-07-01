@@ -15,14 +15,17 @@ images:
             - cppcheck
             - git
             - libopencv-dev
-            - libopensplice64
-            - locales
+            - libpoco-dev
+            - libpocofoundation9v5
+            - libpocofoundation9v5-dbg
             - python-empy
+            - python3-dev
             - python3-empy
             - python3-nose
             - python3-pip
             - python3-setuptools
             - python3-vcstool
+            - python3-yaml
             - libtinyxml-dev
             - libeigen3-dev
             - wget
@@ -42,6 +45,7 @@ images:
             - libboost-system-dev
             - libboost-thread-dev
         pip3_install:
+            - argcomplete
             - flake8
             - flake8-import-order
         ws: /root/ros2_ws/src

@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2017-06-29 22:35:15 +0000
+# generated on 2017-07-01 08:45:37 +0000
 FROM ubuntu:xenial
 LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
@@ -26,14 +26,17 @@ RUN apt-get update && apt-get install -q -y \
     cppcheck \
     git \
     libopencv-dev \
-    libopensplice64 \
-    locales \
+    libpoco-dev \
+    libpocofoundation9v5 \
+    libpocofoundation9v5-dbg \
     python-empy \
+    python3-dev \
     python3-empy \
     python3-nose \
     python3-pip \
     python3-setuptools \
     python3-vcstool \
+    python3-yaml \
     libtinyxml-dev \
     libeigen3-dev \
     wget \
@@ -63,6 +66,7 @@ ENV LC_ALL en_US.UTF-8
 
 # install python packages
 RUN pip3 install -U \
+    argcomplete \
     flake8 \
     flake8-import-order
 
