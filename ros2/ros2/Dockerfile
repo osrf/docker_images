@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2017-07-01 08:45:37 +0000
+# generated on 2017-07-01 09:00:05 +0000
 FROM ubuntu:xenial
 LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
@@ -81,6 +81,7 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
 WORKDIR /root/ros2_ws/src/..
 RUN src/ament/ament_tools/scripts/ament.py \
     build \
+    --build-tests \
     --symlink-install
 
 # setup entrypoint
