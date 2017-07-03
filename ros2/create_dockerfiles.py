@@ -15,10 +15,6 @@ from ros_buildfarm.common import get_debian_package_name
 from ros_buildfarm.docker_common import DockerfileArgParser
 from ros_buildfarm.docker_common import OrderedLoad
 
-from rosdistro import get_distribution_file
-from rosdistro import get_index
-from rosdistro import get_index_url
-
 
 def get_ros_package_names(rosdistro_name, ros_packages, dist_file):
     """Return list of ros_package_name strings with latest versions"""
@@ -82,11 +78,6 @@ def main(argv=sys.argv[1:]):
     # Use ordered dict
     images = OrderedLoad(images_yaml, yaml.SafeLoader)['images']
 
-    # Fetch rosdistro data
-    index_url = get_index_url()
-    index = get_index(index_url)
-    dist_file = get_distribution_file(index, platform['rosdistro_name'])
-
     # For each image tag
     for image in images:
 
@@ -96,13 +87,6 @@ def main(argv=sys.argv[1:]):
 
         # Add platform perams
         data.update(platform)
-
-        # Get debian package names for ros
-        if 'ros_packages' in data:
-            data['ros_packages'] = get_ros_package_names(
-                data['rosdistro_name'],
-                data['ros_packages'],
-                dist_file)
 
         # Get path to save Docker file
         dockerfile_dir = os.path.join(output_path, image)
