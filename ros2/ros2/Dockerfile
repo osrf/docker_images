@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ros2
 # generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2017-05-16 19:00:01 +0000
+# generated on 2017-07-01 09:00:05 +0000
 FROM ubuntu:xenial
 LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
@@ -26,14 +26,19 @@ RUN apt-get update && apt-get install -q -y \
     cppcheck \
     git \
     libopencv-dev \
-    libopensplice64 \
-    locales \
+    libpoco-dev \
+    libpocofoundation9v5 \
+    libpocofoundation9v5-dbg \
     python-empy \
+    python3-dev \
     python3-empy \
     python3-nose \
     python3-pip \
     python3-setuptools \
     python3-vcstool \
+    python3-yaml \
+    libtinyxml-dev \
+    libeigen3-dev \
     wget \
     clang-format \
     pydocstyle \
@@ -42,6 +47,8 @@ RUN apt-get update && apt-get install -q -y \
     python3-mock \
     python3-pep8 \
     uncrustify \
+    libasio-dev \
+    libtinyxml2-dev \
     libboost-chrono-dev \
     libboost-date-time-dev \
     libboost-program-options-dev \
@@ -51,13 +58,17 @@ RUN apt-get update && apt-get install -q -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-RUN locale-gen en_US.UTF-8
+RUN apt-get update && apt-get install -y \
+    locales \
+    && locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # install python packages
 RUN pip3 install -U \
-    setuptools
+    argcomplete \
+    flake8 \
+    flake8-import-order
 
 # clone source
 ENV WS /root/ros2_ws/src
