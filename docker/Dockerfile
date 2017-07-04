@@ -1,12 +1,12 @@
 FROM python:3
-MAINTAINER Dirk Thomas dthomas+buildfarm@osrfoundation.org
 
 WORKDIR /tmp/
 
 RUN pip3 install \
         empy \
-        rosdistro && \
-    git clone \
+        pyyaml
+
+RUN git clone \
         -b docker_images \
         https://github.com/ruffsl/ros_buildfarm.git && \
     git clone \

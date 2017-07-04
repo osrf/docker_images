@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 import os
+import re
+import string
 import sys
+import urllib.request
 import yaml
 
 try:
@@ -15,29 +18,54 @@ from ros_buildfarm.common import get_debian_package_name
 from ros_buildfarm.docker_common import DockerfileArgParser
 from ros_buildfarm.docker_common import OrderedLoad
 
-from rosdistro import get_distribution_file
-from rosdistro import get_index
-from rosdistro import get_index_url
 
+url_pattern = "http://packages.ros.org/$release/$os_name/dists/$os_code_name/main/binary-$arch/Packages"
 
-def get_ros_package_names(rosdistro_name, ros_packages, dist_file):
-    """Return list of ros_package_name strings with latest versions"""
+def getPackageIndex(data, url_pattern):
+    """Fetches current online package index"""
 
-    ros_package_names = []
-    for pkg_name in sorted(ros_packages):
-        pkg_name = pkg_name.replace("-", "_")
-        pkg = dist_file.release_packages[pkg_name]
-        repo_name = pkg.repository_name
-        repo = dist_file.repositories[repo_name]
+    # Determine URL
+    urlTemplate = string.Template(url_pattern)
+    url = urlTemplate.substitute(data)
 
-        version = repo.release_repository.version
-        debian_package_name = get_debian_package_name(rosdistro_name, pkg_name)
+    # Download package index
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
+        package_index = response.read().decode('utf-8')
 
-        ros_package_name = debian_package_name + '=' + version + '*'
-        ros_package_names.append(ros_package_name)
+    return package_index
 
-    return ros_package_names
+def getPackageVersions(packages, package_index, data):
+    """Use package index to get package versions"""
+    package_versions = []
 
+    for i, package in enumerate(packages):
+
+        # Determine seach pattern
+        patternTemplate = string.Template(r'(\bPackage: ros-$rosdistro_name-$package\n)(.*\n)')
+        pattern_raw = patternTemplate.substitute(data,package=package)
+        pattern = re.compile(pattern_raw)
+
+        # Parse for version_number
+        matchs = re.search(pattern, package_index)
+
+        version_line = matchs.groups(0)[1] # Grab the second line of the first match
+        version_number = re.search(r'\d(?!Version\:\s)(.+-\d*)(?=(.+-.+-.+-.+\n))', version_line).group(0) # extract version_number
+
+        package_version = 'ros-'+ data['rosdistro_name'] + '-' + package + '=' + version_number + '*'
+        package_versions.append(package_version)
+
+    return package_versions
+
+def avoidPackageVersions(packages, data):
+    """Don't overide any package versions"""
+    package_versions = []
+
+    for i, package in enumerate(packages):
+        package_version = 'ros-'+ data['rosdistro_name'] + '-' + package
+        package_versions.append(package_version)
+
+    return package_versions
 
 def main(argv=sys.argv[1:]):
     """Create Dockerfiles for images from platform and image yaml data"""
@@ -82,10 +110,9 @@ def main(argv=sys.argv[1:]):
     # Use ordered dict
     images = OrderedLoad(images_yaml, yaml.SafeLoader)['images']
 
-    # Fetch rosdistro data
-    index_url = get_index_url()
-    index = get_index(index_url)
-    dist_file = get_distribution_file(index, platform['rosdistro_name'])
+    # Check index if no version given
+    if platform['version'] is None:
+        package_index = getPackageIndex(platform, url_pattern)
 
     # For each image tag
     for image in images:
@@ -97,10 +124,12 @@ def main(argv=sys.argv[1:]):
         # Add platform perams
         data.update(platform)
 
-        # Get debian package names for ros
-        data['ros_packages'] = get_ros_package_names(data['rosdistro_name'],
-                                                     data['ros_packages'],
-                                                     dist_file)
+        # Apply package distro/version formatting
+        if 'ros_packages' in data:
+            if data['version'] is None:
+                data['ros_packages'] = getPackageVersions(data['ros_packages'], package_index, data)
+            else:
+                data['ros_packages'] = avoidPackageVersions(data['ros_packages'], data)
 
         # Get path to save Docker file
         dockerfile_dir = os.path.join(output_path, image)
