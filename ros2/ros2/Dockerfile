@@ -6,14 +6,14 @@ LABEL maintainer "Tully Foote tfoote+buildfarm@osrfoundation.org"
 
 # ROS1 Repo Setup ##############################################################
 # setup keys
-RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+RUN apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
 
 # OSRF Repo Setup ##############################################################
 # setup keys
-RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
+RUN apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 
 # setup sources.list
 RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial main" > /etc/apt/sources.list.d/gazebo-latest.list
