@@ -1,10 +1,9 @@
 # This is an auto generated Dockerfile for gazebo:gzserver7
 # generated from templates/docker_images/create_gzserver_image.Dockerfile.em
-# generated on 2017-06-29 22:56:36 +0000
 FROM ubuntu:trusty
 
 # setup keys
-RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
+RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 
 # setup sources.list
 RUN . /etc/os-release \
