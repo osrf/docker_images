@@ -1,6 +1,5 @@
 # This is an auto generated Dockerfile for gazebo:gzclient8
 # generated from templates/docker_images/create_gzclient_image.Dockerfile.em
-# generated on 2017-06-08 00:05:04 +0000
 FROM gazebo:gzserver8
 
 # install packages

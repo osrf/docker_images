@@ -1,6 +1,5 @@
 # This is an auto generated Dockerfile for gazebo:gzweb8
 # generated from templates/docker_images/create_gzweb_image.Dockerfile.em
-# generated on 2017-06-08 00:05:04 +0000
 FROM gazebo:libgazebo8
 
 # install packages
