@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# setup ros environment
+# setup ros2 environment
 echo "export ROS_SECURITY_ROOT_DIRECTORY=$ROS2_WS/demo_keys" >> ~/.bashrc
 echo "export ROS_SECURITY_ENABLE=true" >> ~/.bashrc
 echo "export ROS_SECURITY_STRATEGY=Enforce" >> ~/.bashrc
