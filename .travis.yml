@@ -1,0 +1,23 @@
+services: docker
+
+env:
+  - REPO=ros
+    - TAG=indigo
+      - VERSION=ros-core
+      - VERSION=ros-base
+      - VERSION=robot
+      - VERSION=perception
+      - VERSION=desktop
+      - VERSION=desktop-full
+    # - TAG=jade
+    # - TAG=kinetic
+    # - TAG=lunar
+
+# env:
+#   - VERSION=ros-core
+#   - VERSION=ros-base
+#   - VERSION=robot
+#   - VERSION=perception
+
+script:
+  - docker build -t "$REPO:$TAG-$VERSION" "$REPO/$TAG/$TAG-$VERSION"
