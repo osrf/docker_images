@@ -2,11 +2,6 @@
 # generated from templates/docker_images/create_ros2_deb_image.Dockerfile.em
 FROM ubuntu:xenial
 
-# install packages
-RUN apt-get update && apt-get install -y \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-
 # setup keys
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
@@ -17,6 +12,11 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+
+# install packages
+RUN apt-get update && apt-get install -q -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
 
 # install python packages
 RUN pip3 install -U \

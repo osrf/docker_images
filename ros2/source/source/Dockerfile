@@ -7,14 +7,11 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 421
 
 # setup sources.list
 RUN . /etc/os-release \
-    && echo "deb http://packages.ros.org/ros/$ID $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list
+    && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
 
-# setup keys
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
-
-# setup sources.list
-RUN . /etc/os-release \
-    && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable $VERSION_CODENAME main" > /etc/apt/sources.list.d/gazebo-latest.list
+# setup environment
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -50,10 +47,6 @@ RUN apt-get update && apt-get install -q -y \
     uncrustify \
     wget \
     && rm -rf /var/lib/apt/lists/*
-
-# setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
 
 # install python packages
 RUN pip3 install -U \
