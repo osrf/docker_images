@@ -2,7 +2,7 @@
 # ROS2 Dockerfile database
 ---
 images:
-    ros2:
+    ros2-source:
         base_image: @(os_name):@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros2_image.Dockerfile.em
@@ -30,7 +30,6 @@ images:
             - python3-coverage
             - python3-dev
             - python3-empy
-            - python3-empy
             - python3-mock
             - python3-nose
             - python3-pep8
@@ -38,8 +37,8 @@ images:
             - python3-setuptools
             - python3-vcstool
             - uncrustify
-            - wget
             - vim
+            - wget
         pip3_install:
             - flake8-import-order
             - argcomplete
