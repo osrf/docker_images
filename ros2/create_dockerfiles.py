@@ -135,13 +135,13 @@ def main(argv=sys.argv[1:]):
             if data['version'] is None:
                 data['ros_packages'] = getPackageVersions(data['ros_packages'], ros_package_index, data, data['rosdistro_name'])
             else:
-                data['ros_packages'] = avoidPackageVersions(data['ros_packages'], data, data['rosdistro_name'])
+                data['ros_packages'] = avoidPackageVersions(data['ros_packages'], data, "$ROS_DISTRO")
 
         if 'ros2_packages' in data:
             if data['version'] is None:
                 data['ros2_packages'] = getPackageVersions(data['ros2_packages'], ros2_package_index, data, data['ros2distro_name'])
             else:
-                data['ros2_packages'] = avoidPackageVersions(data['ros2_packages'], data, data['ros2distro_name'])
+                data['ros2_packages'] = avoidPackageVersions(data['ros2_packages'], data, "$ROS2_DISTRO")
 
         # Get path to save Docker file
         dockerfile_dir = os.path.join(output_path, image)
