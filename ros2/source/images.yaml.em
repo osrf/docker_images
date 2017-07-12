@@ -2,14 +2,15 @@
 # ROS2 Dockerfile database
 ---
 images:
-    ros2-source:
+    source:
         base_image: @(os_name):@(os_code_name)
         maintainer_name: @(maintainer_name)
-        template_name: docker_images/create_ros2_image.Dockerfile.em
+        template_name: docker_images/create_ros2_source_image.Dockerfile.em
         entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
             - ros_docker_images
         packages:
+            - bash-completion
             - build-essential
             - clang-format
             - cmake
@@ -27,6 +28,7 @@ images:
             - openssl
             - pydocstyle
             - pyflakes
+            - python-empy
             - python3-coverage
             - python3-dev
             - python3-empy
@@ -36,20 +38,22 @@ images:
             - python3-pip
             - python3-setuptools
             - python3-vcstool
+            - python3-yaml
             - uncrustify
-            - vim
             - wget
         pip3_install:
-            - flake8-import-order
             - argcomplete
-        ws: /root/ros2_ws/src
+            - flake8
+            - flake8-import-order
+        ws: /root/ros2_ws
         ament_args:
             - build
-            - --symlink-install
+            - --build-tests
+            - --cmake-args
+                -DSECURITY=ON --
             - --isolated
             - --parallel
-            - --cmake-args
-            - -DSECURITY=ON --
+            - --symlink-install
         vcs:
             ros2:
-                repos: https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos
+                repos: https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
