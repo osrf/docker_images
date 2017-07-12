@@ -79,10 +79,10 @@ RUN src/ament/ament_tools/scripts/ament.py \
     --symlink-install
 
 # setup entrypoint
-COPY ./ros2_entrypoint.sh /
+COPY ./ros2_source_entrypoint.sh /
 
 # setup bashrc
 RUN cp /etc/skel/.bashrc ~/
 
-ENTRYPOINT ["/ros2_entrypoint.sh"]
+ENTRYPOINT ["/ros2_source_entrypoint.sh"]
 CMD ["bash"]
