@@ -1,23 +1,26 @@
-services: docker
+# services: docker
+sudo: false
+
+language: python
+python:
+  - '3.6'
 
 env:
-  - REPO=ros
-    - TAG=indigo
-      - VERSION=ros-core
-      - VERSION=ros-base
-      - VERSION=robot
-      - VERSION=perception
-      - VERSION=desktop
-      - VERSION=desktop-full
-    # - TAG=jade
-    # - TAG=kinetic
-    # - TAG=lunar
+  - REPO=ros TAG=indigo
+  # - REPO=ros TAG=jade
+  # - REPO=ros TAG=kinetic
+  # - REPO=ros TAG=lunar
+  # - REPO=gazebo TAG=gazebo4
+  # - REPO=gazebo TAG=gazebo5
+  # - REPO=gazebo TAG=gazebo6
+  # - REPO=gazebo TAG=gazebo7
+  # - REPO=gazebo TAG=gazebo8
 
-# env:
-#   - VERSION=ros-core
-#   - VERSION=ros-base
-#   - VERSION=robot
-#   - VERSION=perception
+script: env && ./.travis/travis.py
 
-script:
-  - docker build -t "$REPO:$TAG-$VERSION" "$REPO/$TAG/$TAG-$VERSION"
+# jobs:
+#   include:
+#     - stage: ros-core
+#       script: echo docker build -t $REPO:$TAG-ros-core $REPO/$TAG/$TAG-ros-core
+#     - stage: ros-base
+#       script: echo docker build -t $REPO:$TAG-ros-base $REPO/$TAG/$TAG-ros-base
