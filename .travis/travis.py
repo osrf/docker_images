@@ -35,17 +35,17 @@ def main(argv=sys.argv[1:]):
     """Check travis context and trigger docker builds"""
 
     # Check environment
-    REPO = os.environ.get('REPO','ros')
-    TAG = os.environ.get('TAG','indigo')
-    TRAVIS_BRANCH = os.environ.get('TRAVIS_BRANCH','master')
-    TRAVIS_PULL_REQUEST_BRANCH = os.environ.get('TRAVIS_PULL_REQUEST_BRANCH','')
-    TRAVIS_BUILD_DIR = os.environ.get('TRAVIS_BUILD_DIR',os.path.join(PWD,'..'))
+    # REPO = os.environ.get('REPO','ros')
+    # TAG = os.environ.get('TAG','indigo')
+    # TRAVIS_BRANCH = os.environ.get('TRAVIS_BRANCH','master')
+    # TRAVIS_PULL_REQUEST_BRANCH = os.environ.get('TRAVIS_PULL_REQUEST_BRANCH','')
+    # TRAVIS_BUILD_DIR = os.environ.get('TRAVIS_BUILD_DIR',os.path.join(PWD,'..'))
 
-    # REPO = os.environ['REPO']
-    # TAG = os.environ['TAG']
-    # TRAVIS_BRANCH = os.environ['TRAVIS_BRANCH']
-    # TRAVIS_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
-    # TRAVIS_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
+    REPO = os.environ['REPO']
+    TAG = os.environ['TAG']
+    TRAVIS_BRANCH = os.environ['TRAVIS_BRANCH']
+    TRAVIS_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
+    TRAVIS_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
 
     print("REPO: ", REPO)
     print("TAG: ", TAG)
@@ -64,7 +64,7 @@ def main(argv=sys.argv[1:]):
     spec.loader.exec_module(create_dockerfiles)
 
     # Run the dockerfile generation script
-    # create_dockerfiles.main(('dir', '-d' + docker_repo_tag_dir))
+    create_dockerfiles.main(('dir', '-d' + docker_repo_tag_dir))
 
     # Create a git diff for the current repo
     repo = git.Repo(TRAVIS_BUILD_DIR) #, odbt=git.GitCmdObjectDB)

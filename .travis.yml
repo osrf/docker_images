@@ -4,7 +4,9 @@ sudo: false
 language: python
 python:
   - '3.6'
-install: "pip install -r docker/requirements.txt"
+install:
+  - 'pip install -r docker/requirements.txt'
+  - 'pip install -r .travis/requirements.txt'
 
 env:
   - REPO=ros TAG=indigo
@@ -17,7 +19,7 @@ env:
   # - REPO=gazebo TAG=gazebo7
   # - REPO=gazebo TAG=gazebo8
 
-script: env && ./.travis/travis.py
+script: ./.travis/travis.py
 
 # jobs:
 #   include:
