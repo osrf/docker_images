@@ -79,6 +79,14 @@ def main(argv=sys.argv[1:]):
         # and that all dockerfiles are up to date
         test_diffs(diffs)
 
+        target = repo.branches[TRAVIS_BRANCH].commit
+        pull_request = repo.branches[TRAVIS_PULL_REQUEST_BRANCH].commit
+        pr_diffs = target.diff(pull_request, paths=[REPO])
+
+        if pr_diffs:
+            # Test that the dockerfiles build
+            test_builds(docker_repo_tag_dir)
+
         # TODO: check if PR branch has a diff in docker_repo_dir or specificly docker_repo_tag_dir
         # if there is a diff there, then test build, otherwise pass
 
