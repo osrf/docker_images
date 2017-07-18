@@ -13,7 +13,7 @@ except ImportError:
     from io import StringIO
 from em import Interpreter
 
-from ros_buildfarm.templates import create_dockerfile
+from docker_templates.create import create_files
 from docker_templates.argparse import DockerfileArgParser
 from docker_templates.collections import OrderedLoad
 
@@ -136,7 +136,7 @@ def main(argv=sys.argv[1:]):
         data['dockerfile_dir'] = dockerfile_dir
 
         # generate Dockerfile
-        create_dockerfile(data['template_name'], data, data['dockerfile_dir'], verbose=False)
+        create_files(data)
 
 if __name__ == '__main__':
     main()
