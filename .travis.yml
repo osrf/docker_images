@@ -1,5 +1,5 @@
-# services: docker
-sudo: false
+services: docker
+# sudo: false
 
 language: python
 python:
@@ -10,7 +10,7 @@ install:
 
 env:
   - REPO=ros TAG=indigo
-  # - REPO=ros TAG=jade
+  - REPO=ros TAG=jade
   # - REPO=ros TAG=kinetic
   # - REPO=ros TAG=lunar
   # - REPO=gazebo TAG=gazebo4

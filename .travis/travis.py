@@ -80,8 +80,9 @@ def main(argv=sys.argv[1:]):
         test_diffs(diffs)
 
         target = repo.branches[TRAVIS_BRANCH].commit
-        pull_request = repo.branches[TRAVIS_PULL_REQUEST_BRANCH].commit
-        pr_diffs = target.diff(pull_request, paths=[REPO])
+        pull_request = repo.head.commit
+        path_of_interest = os.path.join(REPO,TAG)
+        pr_diffs = target.diff(pull_request, paths=[path_of_interest])
 
         if pr_diffs:
             # Test that the dockerfiles build
