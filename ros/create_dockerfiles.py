@@ -13,15 +13,9 @@ except ImportError:
     from io import StringIO
 from em import Interpreter
 
-# import ros_buildfarm.templates
 from ros_buildfarm.templates import create_dockerfile
 from docker_templates.argparse import DockerfileArgParser
 from docker_templates.collections import OrderedLoad
-
-# import docker_templates
-# template_prefix_path = os.path.join(
-#     os.path.dirname(docker_templates.__file__), 'templates')
-# ros_buildfarm.templates.template_prefix_path.insert(0, template_prefix_path)
 
 url_pattern = "http://packages.ros.org/$release/$os_name/dists/$os_code_name/main/binary-$arch/Packages"
 
