@@ -8,7 +8,7 @@ images:
         template_name: docker_images/create_gzserver_image.Dockerfile.em
         entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
-            - ros_docker_images
+            - docker_templates
         gazebo_packages:
             - gazebo@(version)
     libgazebo@(version):
@@ -16,7 +16,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         gazebo_packages:
             - libgazebo@(version)-dev
     gzweb@(version):
@@ -24,7 +24,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         packages:
             - build-essential
             - cmake
@@ -47,7 +47,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         packages:
             - binutils
             - mesa-utils

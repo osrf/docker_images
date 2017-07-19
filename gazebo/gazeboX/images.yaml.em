@@ -8,7 +8,7 @@ images:
         template_name: docker_images/create_gzserverX_image.Dockerfile.em
         entrypoint_name: docker_images/gzserverX_entrypoint.sh
         template_packages:
-            - ros_docker_images
+            - docker_templates
         gazebo_packages:
             - libbullet2.82-dev
             - libsimbody-dev
@@ -83,7 +83,7 @@ images:
     #     maintainer_name: @(maintainer_name)
     #     template_name: docker_images/create_gzwebX_image.Dockerfile.em
     #     template_packages:
-    #         - ros_docker_images
+    #         - docker_templates
     #     packages:
     #         - build-essential
     #         - cmake
