@@ -8,7 +8,7 @@ images:
         template_name: docker_images/create_ros2_deb_image.Dockerfile.em
         entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
-            - ros_docker_images
+            - docker_templates
         packages:
             - python3-pip
         pip3_install:

@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros2:ubuntu
-# generated from templates/docker_images/create_ros2_deb_image.Dockerfile.em
+# generated from docker_images/create_ros2_deb_image.Dockerfile.em
 FROM ubuntu:xenial
 
 # setup keys
