@@ -6,24 +6,17 @@ python:
   - '3.6'
 install:
   - 'pip install -r docker/requirements.txt'
-  - 'pip install -r .travis/requirements.txt'
 
 env:
-  - REPO=ros TAG=indigo
-  - REPO=ros TAG=jade
-  - REPO=ros TAG=kinetic
-  - REPO=ros TAG=lunar
   - REPO=gazebo TAG=gazebo4
   - REPO=gazebo TAG=gazebo5
   - REPO=gazebo TAG=gazebo6
   - REPO=gazebo TAG=gazebo7
   - REPO=gazebo TAG=gazebo8
+  - REPO=ros TAG=indigo
+  - REPO=ros TAG=jade
+  - REPO=ros TAG=kinetic
+  - REPO=ros TAG=lunar
+  - REPO=ros2 TAG=ubuntu
 
 script: ./.travis/travis.py
-
-# jobs:
-#   include:
-#     - stage: ros-core
-#       script: echo docker build -t $REPO:$TAG-ros-core $REPO/$TAG/$TAG-ros-core
-#     - stage: ros-base
-#       script: echo docker build -t $REPO:$TAG-ros-base $REPO/$TAG/$TAG-ros-base

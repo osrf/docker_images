@@ -1,0 +1,12 @@
+%YAML 1.1
+# ROS2 Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: xenial
+    rosdistro_name: kinetic
+    user_name: ros2
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version: 2
