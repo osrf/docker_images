@@ -1,0 +1,7 @@
+#
+####### requirements.txt #######
+#
+###### Requirements with Repo Specifiers ######
+#   See https://pip.readthedocs.io/en/stable/reference/pip_install/#git
+git+git://github.com/ros-infrastructure/ros_buildfarm.git@master#egg=ros_buildfarm
+git+git://github.com/ruffsl/docker_templates.git@master#egg=docker_templates

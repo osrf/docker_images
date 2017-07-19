@@ -13,11 +13,9 @@ except ImportError:
     from io import StringIO
 from em import Interpreter
 
-from ros_buildfarm.templates import create_dockerfile
-from ros_buildfarm.common import get_debian_package_name
-from ros_buildfarm.docker_common import DockerfileArgParser
-from ros_buildfarm.docker_common import OrderedLoad
-
+from docker_templates.create import create_files
+from docker_templates.argparse import DockerfileArgParser
+from docker_templates.collections import OrderedLoad
 
 url_pattern = "http://packages.ros.org/$release/$os_name/dists/$os_code_name/main/binary-$arch/Packages"
 
@@ -138,7 +136,7 @@ def main(argv=sys.argv[1:]):
         data['dockerfile_dir'] = dockerfile_dir
 
         # generate Dockerfile
-        create_dockerfile(data)
+        create_files(data)
 
 if __name__ == '__main__':
     main()

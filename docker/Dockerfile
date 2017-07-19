@@ -2,9 +2,8 @@ FROM python:3
 
 WORKDIR /tmp/
 
-RUN pip3 install \
-        empy \
-        pyyaml
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 RUN git clone \
         -b docker_images \

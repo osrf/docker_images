@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros:lunar-ros-core
-# generated from templates/docker_images/create_ros_core_image.Dockerfile.em
+# generated from docker_images/create_ros_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
 # setup keys

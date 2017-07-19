@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for gazebo:gzweb6
-# generated from templates/docker_images/create_gzweb_image.Dockerfile.em
+# generated from docker_images/create_gzweb_image.Dockerfile.em
 FROM gazebo:libgazebo6
 
 # install packages
