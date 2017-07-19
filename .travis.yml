@@ -20,10 +20,3 @@ env:
   - REPO=gazebo TAG=gazebo8
 
 script: ./.travis/travis.py
-
-# jobs:
-#   include:
-#     - stage: ros-core
-#       script: echo docker build -t $REPO:$TAG-ros-core $REPO/$TAG/$TAG-ros-core
-#     - stage: ros-base
-#       script: echo docker build -t $REPO:$TAG-ros-base $REPO/$TAG/$TAG-ros-base
