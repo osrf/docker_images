@@ -6,14 +6,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN git clone \
-        -b docker_images \
-        https://github.com/ruffsl/ros_buildfarm.git && \
-    git clone \
         -b master \
-        https://github.com/osrf/docker_images.git && \
-    git clone \
-        -b master \
-        https://github.com/osrf/docker_templates.git
+        https://github.com/osrf/docker_images.git
 
 ENV PYTHONPATH=/tmp/ros_buildfarm:/tmp/docker_images:/tmp/docker_templates:
 

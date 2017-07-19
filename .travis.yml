@@ -6,7 +6,6 @@ python:
   - '3.6'
 install:
   - 'pip install -r docker/requirements.txt'
-  - 'pip install -r .travis/requirements.txt'
 
 env:
   - REPO=ros TAG=indigo
