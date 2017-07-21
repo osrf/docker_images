@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -q -y \
     nodejs-legacy \
     npm \
     pkg-config \
-    psmisc\
+    psmisc \
+    xvfb\
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
