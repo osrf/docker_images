@@ -1,7 +1,7 @@
 # OSRF Docker Images
 This repo hosts the Dockerfiles used to generate the official images for OSRF projects, including onbuild repositories on Docker Hub:
 
-[![Build Status](https://travis-ci.org/ruffsl/docker_images.svg?branch=master)](https://travis-ci.org/ruffsl/docker_images)
+[![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images)
 
 ### Official Library
 #### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg)](https://registry.hub.docker.com/_/ros/)
