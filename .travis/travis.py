@@ -88,9 +88,6 @@ def main(argv=sys.argv[1:]):
             # Test that the dockerfiles build
             test_builds(docker_repo_tag_dir)
 
-        # TODO: check if PR branch has a diff in docker_repo_dir or specificly docker_repo_tag_dir
-        # if there is a diff there, then test build, otherwise pass
-
     else:
         print("Testing CronJob for Branch: ", TRAVIS_BRANCH)
 
