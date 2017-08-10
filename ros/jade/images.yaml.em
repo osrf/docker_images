@@ -8,7 +8,7 @@ images:
         template_name: docker_images/create_ros_core_image.Dockerfile.em
         entrypoint_name: docker_images/ros_entrypoint.sh
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - ros-core
     @(rosdistro_name)-ros-base:
@@ -16,7 +16,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - ros-base
     @(rosdistro_name)-robot:
@@ -24,7 +24,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - robot
     @(rosdistro_name)-perception:
@@ -32,7 +32,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - perception
     @(rosdistro_name)-desktop:
@@ -40,7 +40,7 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - desktop
     @(rosdistro_name)-desktop-full:
@@ -48,6 +48,6 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         ros_packages:
             - desktop-full

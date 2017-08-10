@@ -4,10 +4,10 @@
 platform:
     os_name: ubuntu
     os_code_name: trusty
+    gazebo_version: 7
     user_name: gazebo
     maintainer_name:
     arch: amd64
     type: distribution
-    version: 7
+    version:
     release: stable
-    package_version:

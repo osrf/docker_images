@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros:lunar-desktop-full
-# generated from templates/docker_images/create_ros_image.Dockerfile.em
+# generated from docker_images/create_ros_image.Dockerfile.em
 FROM osrf/ros:lunar-desktop
 
 # install ros packages

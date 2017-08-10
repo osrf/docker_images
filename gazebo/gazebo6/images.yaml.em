@@ -2,29 +2,29 @@
 # ROS Dockerfile database
 ---
 images:
-    gzserver@(version):
+    gzserver@(gazebo_version):
         base_image: @(os_name):@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzserver_image.Dockerfile.em
         entrypoint_name: docker_images/gzserver_entrypoint.sh
         template_packages:
-            - ros_docker_images
+            - docker_templates
         gazebo_packages:
-            - gazebo@(version)
-    libgazebo@(version):
-        base_image: @(user_name):gzserver@(version)
+            - gazebo@(gazebo_version)
+    libgazebo@(gazebo_version):
+        base_image: @(user_name):gzserver@(gazebo_version)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         gazebo_packages:
-            - libgazebo@(version)-dev
-    gzweb@(version):
-        base_image: @(user_name):libgazebo@(version)
+            - libgazebo@(gazebo_version)-dev
+    gzweb@(gazebo_version):
+        base_image: @(user_name):libgazebo@(gazebo_version)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         packages:
             - build-essential
             - cmake
@@ -39,18 +39,19 @@ images:
             - npm
             - pkg-config
             - psmisc
+            - xvfb
         gazebo_packages:
-            - libgazebo@(version)-dev
-    gzclient@(version):
-        base_image: @(user_name):gzserver@(version)
+            - libgazebo@(gazebo_version)-dev
+    gzclient@(gazebo_version):
+        base_image: @(user_name):gzserver@(gazebo_version)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
-            - ros_docker_images
+            - docker_templates
         packages:
             - binutils
             - mesa-utils
             - module-init-tools
             - x-window-system
         gazebo_packages:
-            - gazebo@(version)
+            - gazebo@(gazebo_version)

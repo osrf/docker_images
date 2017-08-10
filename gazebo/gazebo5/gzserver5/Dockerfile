@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for gazebo:gzserver5
-# generated from templates/docker_images/create_gzserver_image.Dockerfile.em
+# generated from docker_images/create_gzserver_image.Dockerfile.em
 FROM ubuntu:trusty
 
 # setup keys

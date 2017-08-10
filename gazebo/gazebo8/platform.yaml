@@ -4,10 +4,10 @@
 platform:
     os_name: ubuntu
     os_code_name: xenial
+    gazebo_version: 8
     user_name: gazebo
     maintainer_name:
     arch: amd64
     type: distribution
-    version: 8
+    version:
     release: stable
-    package_version:

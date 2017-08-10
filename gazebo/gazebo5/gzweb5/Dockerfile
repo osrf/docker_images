@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for gazebo:gzweb5
-# generated from templates/docker_images/create_gzweb_image.Dockerfile.em
+# generated from docker_images/create_gzweb_image.Dockerfile.em
 FROM gazebo:libgazebo5
 
 # install packages
@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -q -y \
     nodejs-legacy \
     npm \
     pkg-config \
-    psmisc\
+    psmisc \
+    xvfb\
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
