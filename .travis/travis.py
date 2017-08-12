@@ -58,8 +58,9 @@ def main(argv=sys.argv[1:]):
     print("TRAVIS_PULL_REQUEST_BRANCH: ", TRAVIS_PULL_REQUEST_BRANCH)
 
     # Expand the repo/tag directory
-    docker_repo_dir = os.path.join(TRAVIS_BUILD_DIR, REPO, OS_NAME, OS_CODE_NAME)
-    docker_repo_tag_dir = os.path.join(docker_repo_dir, TAG)
+    docker_repo_dir = os.path.join(TRAVIS_BUILD_DIR, REPO)
+    docker_file_dir = os.path.join(docker_repo_dir, OS_NAME, OS_CODE_NAME)
+    docker_repo_tag_dir = os.path.join(docker_file_dir, TAG)
 
     # Import the dockerfile generation script
     spec = importlib.util.spec_from_file_location(
