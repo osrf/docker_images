@@ -1,0 +1,65 @@
+%YAML 1.1
+# ROS Dockerfolder manifest
+---
+default: &DEFAULT
+    archs: &DEFAULT_ARCHS
+        - amd64
+        - armhf
+    templates: &DEFAULT_TEMPLATES
+        images: images.yaml.em
+        makefile: Makefile.em
+        platform: platform.yaml.em
+
+release_names :
+    indigo:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        tags:
+                            indigo-ros-base-trusty:
+                                - indigo
+    jade:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        tags:
+                            jade-ros-base-trusty:
+                                - jade
+    kinetic:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        <<: *DEFAULT
+                        tags:
+                            kinetic-ros-base-xenial:
+                                - kinetic
+                                - latest
+            debian:
+                os_code_names:
+                    jessie:
+                        <<: *DEFAULT
+    lunar:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64
+                            - armhf
+                        tags:
+                            lunar-ros-base-xenial:
+                                - lunar
+            debian:
+                os_code_names:
+                    stretch:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64
