@@ -43,17 +43,22 @@ def main(argv=sys.argv[1:]):
 
     REPO = os.environ['REPO']
     TAG = os.environ['TAG']
+    OS_NAME = os.getenv('OS_NAME', '')
+    OS_CODE_NAME = os.getenv('OS_CODE_NAME', '')
+
     TRAVIS_BRANCH = os.environ['TRAVIS_BRANCH']
     TRAVIS_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
     TRAVIS_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
 
     print("REPO: ", REPO)
     print("TAG: ", TAG)
+    print("OS_NAME: ", OS_NAME)
+    print("OS_CODE_NAME: ", OS_CODE_NAME)
     print("TRAVIS_BRANCH: ", TRAVIS_BRANCH)
     print("TRAVIS_PULL_REQUEST_BRANCH: ", TRAVIS_PULL_REQUEST_BRANCH)
 
     # Expand the repo/tag directory
-    docker_repo_dir = os.path.join(TRAVIS_BUILD_DIR, REPO)
+    docker_repo_dir = os.path.join(TRAVIS_BUILD_DIR, REPO, OS_NAME, OS_CODE_NAME)
     docker_repo_tag_dir = os.path.join(docker_repo_dir, TAG)
 
     # Import the dockerfile generation script
@@ -81,7 +86,7 @@ def main(argv=sys.argv[1:]):
 
         target = repo.branches[TRAVIS_BRANCH].commit
         pull_request = repo.head.commit
-        path_of_interest = os.path.join(REPO,TAG)
+        path_of_interest = os.path.join(REPO, OS_NAME, OS_CODE_NAME, TAG)
         pr_diffs = target.diff(pull_request, paths=[path_of_interest])
 
         if pr_diffs:
