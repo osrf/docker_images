@@ -13,10 +13,12 @@ env:
   - REPO=gazebo TAG=gazebo6
   - REPO=gazebo TAG=gazebo7
   - REPO=gazebo TAG=gazebo8
-  - REPO=ros TAG=indigo
-  - REPO=ros TAG=jade
-  - REPO=ros TAG=kinetic
-  - REPO=ros TAG=lunar
+  - REPO=ros TAG=indigo     OS_NAME=ubuntu OS_CODE_NAME=trusty
+  - REPO=ros TAG=jade       OS_NAME=ubuntu OS_CODE_NAME=trusty
+  - REPO=ros TAG=kinetic    OS_NAME=ubuntu OS_CODE_NAME=xenial
+  - REPO=ros TAG=kinetic    OS_NAME=debian OS_CODE_NAME=jessie
+  - REPO=ros TAG=lunar      OS_NAME=ubuntu OS_CODE_NAME=xenial
+  - REPO=ros TAG=lunar      OS_NAME=debian OS_CODE_NAME=stretch
   - REPO=ros2 TAG=ubuntu
 
 script: ./.travis/travis.py

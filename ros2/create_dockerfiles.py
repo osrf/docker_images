@@ -10,7 +10,7 @@ except ImportError:
     from io import StringIO
 from em import Interpreter
 
-from docker_templates.argparse import argsToPaths, DockerfileArgParser
+from docker_templates.argparse import DockerfileArgParser
 from docker_templates.create import create_files
 from docker_templates.collections import OrderedLoad
 from docker_templates.packages import expandPackages
@@ -22,11 +22,10 @@ def main(argv=sys.argv[1:]):
     parser = DockerfileArgParser(
         description="Generate the 'Dockerfile's for the base docker images")
     parser.set()
-    args = parser.parse_args(argv)
-    paths = argsToPaths(args)
+    args = parser.parse(argv)
 
     # Read platform perams
-    with open(paths['platform_path'], 'r') as f:
+    with open(args.platform, 'r') as f:
         # use safe_load instead load
         platform = yaml.safe_load(f)['platform']
 
@@ -34,7 +33,7 @@ def main(argv=sys.argv[1:]):
     images_yaml = StringIO()
     try:
         interpreter = Interpreter(output=images_yaml)
-        interpreter.file(open(paths['images_path'], 'r'), locals=platform)
+        interpreter.file(open(args.images, 'r'), locals=platform)
         images_yaml = images_yaml.getvalue()
     except Exception as e:
         print("Error processing %s" % images_path)
@@ -59,7 +58,7 @@ def main(argv=sys.argv[1:]):
         expandPackages(data)
 
         # Get path to save Docker file
-        dockerfile_dir = os.path.join(paths['output_path'], image)
+        dockerfile_dir = os.path.join(args.output, image)
         if not os.path.exists(dockerfile_dir):
             os.makedirs(dockerfile_dir)
         data['dockerfile_dir'] = dockerfile_dir
