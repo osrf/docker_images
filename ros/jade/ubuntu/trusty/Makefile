@@ -10,25 +10,25 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:jade-ros-core          jade-ros-core/.
-	@docker build --tag=ros:jade-ros-base          jade-ros-base/.
-	@docker build --tag=ros:jade-robot             jade-robot/.
-	@docker build --tag=ros:jade-perception        jade-perception/.
-	@docker build --tag=osrf/ros:jade-desktop      jade-desktop/.
-	@docker build --tag=osrf/ros:jade-desktop-full jade-desktop-full/.
+	@docker build --tag=ros:jade-ros-core-trusty          ros-core/.
+	@docker build --tag=ros:jade-ros-base-trusty          ros-base/.
+	@docker build --tag=ros:jade-robot-trusty             robot/.
+	@docker build --tag=ros:jade-perception-trusty        perception/.
+	@docker build --tag=osrf/ros:jade-desktop-trusty      desktop/.
+	@docker build --tag=osrf/ros:jade-desktop-full-trusty desktop-full/.
 
 pull:
-	@docker pull ros:jade-ros-core
-	@docker pull ros:jade-ros-base
-	@docker pull ros:jade-robot
-	@docker pull ros:jade-perception
-	@docker pull osrf/ros:jade-desktop
-	@docker pull osrf/ros:jade-desktop-full
+	@docker pull ros:jade-ros-core-trusty
+	@docker pull ros:jade-ros-base-trusty
+	@docker pull ros:jade-robot-trusty
+	@docker pull ros:jade-perception-trusty
+	@docker pull osrf/ros:jade-desktop-trusty
+	@docker pull osrf/ros:jade-desktop-full-trusty
 
 clean:
-	@docker rmi -f ros:jade-ros-core
-	@docker rmi -f ros:jade-ros-base
-	@docker rmi -f ros:jade-robot
-	@docker rmi -f ros:jade-perception
-	@docker rmi -f osrf/ros:jade-desktop
-	@docker rmi -f osrf/ros:jade-desktop-full
+	@docker rmi -f ros:jade-ros-core-trusty
+	@docker rmi -f ros:jade-ros-base-trusty
+	@docker rmi -f ros:jade-robot-trusty
+	@docker rmi -f ros:jade-perception-trusty
+	@docker rmi -f osrf/ros:jade-desktop-trusty
+	@docker rmi -f osrf/ros:jade-desktop-full-trusty

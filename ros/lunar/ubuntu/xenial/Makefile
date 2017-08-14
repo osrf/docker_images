@@ -10,25 +10,25 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:lunar-ros-core          lunar-ros-core/.
-	@docker build --tag=ros:lunar-ros-base          lunar-ros-base/.
-	@docker build --tag=ros:lunar-robot             lunar-robot/.
-	@docker build --tag=ros:lunar-perception        lunar-perception/.
-	@docker build --tag=osrf/ros:lunar-desktop      lunar-desktop/.
-	@docker build --tag=osrf/ros:lunar-desktop-full lunar-desktop-full/.
+	@docker build --tag=ros:lunar-ros-core-xenial          ros-core/.
+	@docker build --tag=ros:lunar-ros-base-xenial          ros-base/.
+	@docker build --tag=ros:lunar-robot-xenial             robot/.
+	@docker build --tag=ros:lunar-perception-xenial        perception/.
+	@docker build --tag=osrf/ros:lunar-desktop-xenial      desktop/.
+	@docker build --tag=osrf/ros:lunar-desktop-full-xenial desktop-full/.
 
 pull:
-	@docker pull ros:lunar-ros-core
-	@docker pull ros:lunar-ros-base
-	@docker pull ros:lunar-robot
-	@docker pull ros:lunar-perception
-	@docker pull osrf/ros:lunar-desktop
-	@docker pull osrf/ros:lunar-desktop-full
+	@docker pull ros:lunar-ros-core-xenial
+	@docker pull ros:lunar-ros-base-xenial
+	@docker pull ros:lunar-robot-xenial
+	@docker pull ros:lunar-perception-xenial
+	@docker pull osrf/ros:lunar-desktop-xenial
+	@docker pull osrf/ros:lunar-desktop-full-xenial
 
 clean:
-	@docker rmi -f ros:lunar-ros-core
-	@docker rmi -f ros:lunar-ros-base
-	@docker rmi -f ros:lunar-robot
-	@docker rmi -f ros:lunar-perception
-	@docker rmi -f osrf/ros:lunar-desktop
-	@docker rmi -f osrf/ros:lunar-desktop-full
+	@docker rmi -f ros:lunar-ros-core-xenial
+	@docker rmi -f ros:lunar-ros-base-xenial
+	@docker rmi -f ros:lunar-robot-xenial
+	@docker rmi -f ros:lunar-perception-xenial
+	@docker rmi -f osrf/ros:lunar-desktop-xenial
+	@docker rmi -f osrf/ros:lunar-desktop-full-xenial
