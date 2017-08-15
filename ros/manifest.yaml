@@ -6,7 +6,7 @@ defaults:
     default: &DEFAULT
         archs: &DEFAULT_ARCHS
             - amd64
-            - armhf
+            - arm32v7
         templates: &DEFAULT_TEMPLATES
             images: images.yaml.em
             makefile: Makefile.em
@@ -148,8 +148,8 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm64
-                            - armhf
+                            - arm64v8
+                            - arm32v7
                         tag_names:
                             ros-core:
                                 aliases:
@@ -174,7 +174,7 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm64
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
@@ -192,7 +192,6 @@ release_names:
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
-        - Ruffin White <ruffin+buildfarm@osrfoundation.org> (@ruffsl)
     template_name: docker_library/ros.em
     template_packages:
         - docker_templates
