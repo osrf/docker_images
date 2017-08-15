@@ -2,7 +2,7 @@
 # ROS Dockerfile database
 ---
 images:
-    @(rosdistro_name)-ros-core:
+    ros-core:
         base_image: @(os_name):@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_core_image.Dockerfile.em
@@ -14,7 +14,7 @@ images:
             - gnupg2
         ros_packages:
             - ros-core
-    @(rosdistro_name)-ros-base:
+    ros-base:
         base_image: @(user_name):@(rosdistro_name)-ros-core
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
@@ -22,7 +22,7 @@ images:
             - docker_templates
         ros_packages:
             - ros-base
-    @(rosdistro_name)-robot:
+    robot:
         base_image: @(user_name):@(rosdistro_name)-ros-base
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
@@ -30,7 +30,7 @@ images:
             - docker_templates
         ros_packages:
             - robot
-    @(rosdistro_name)-perception:
+    perception:
         base_image: @(user_name):@(rosdistro_name)-ros-base
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
@@ -38,7 +38,7 @@ images:
             - docker_templates
         ros_packages:
             - perception
-    @(rosdistro_name)-desktop:
+    desktop:
         base_image: @(user_name):@(rosdistro_name)-robot
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
@@ -46,7 +46,7 @@ images:
             - docker_templates
         ros_packages:
             - desktop
-    @(rosdistro_name)-desktop-full:
+    desktop-full:
         base_image: osrf/@(user_name):@(rosdistro_name)-desktop
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
