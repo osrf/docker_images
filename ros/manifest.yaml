@@ -12,39 +12,6 @@ defaults:
             makefile: Makefile.em
             platform: platform.yaml.em
 
-    ubuntu_tag_names: &DEFAULT_UBUNTU_TAG_NAMES
-        ros-core:
-            aliases:
-                - "$release_name-ros-core"
-                - "$os_code_name-$release_name-ros-core"
-        ros-base:
-            aliases:
-                - "$release_name-ros-base"
-                - "$os_code_name-$release_name-ros-base"
-                - "$release_name"
-        robot:
-            aliases:
-                - "$release_name-robot"
-                - "$os_code_name-$release_name-robot"
-        perception:
-            aliases:
-                - "$release_name-perception"
-                - "$os_code_name-$release_name-perception"
-
-    tag_names: &DEFAULT_TAG_NAMES
-        ros-core:
-            aliases:
-                - "$os_code_name-$release_name-ros-core"
-        ros-base:
-            aliases:
-                - "$os_code_name-$release_name-ros-base"
-        robot:
-            aliases:
-                - "$os_code_name-$release_name-robot"
-        perception:
-            aliases:
-                - "$os_code_name-$release_name-perception"
-
 release_names:
     indigo:
         eol: 2019-04
@@ -57,20 +24,20 @@ release_names:
                             ros-core:
                                 aliases:
                                     - "$release_name-ros-core"
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
                                     - "$release_name-ros-base"
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
                             robot:
                                 aliases:
                                     - "$release_name-robot"
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
                                     - "$release_name-perception"
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
     jade:
         eol: 2017-04
         os_names:
@@ -82,20 +49,20 @@ release_names:
                             ros-core:
                                 aliases:
                                     - "$release_name-ros-core"
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
                                     - "$release_name-ros-base"
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
                             robot:
                                 aliases:
                                     - "$release_name-robot"
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
                                     - "$release_name-perception"
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
     kinetic:
         eol: 2021-04
         os_names:
@@ -107,21 +74,21 @@ release_names:
                             ros-core:
                                 aliases:
                                     - "$release_name-ros-core"
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
                                     - "$release_name-ros-base"
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
                                     - latest
                             robot:
                                 aliases:
                                     - "$release_name-robot"
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
                                     - "$release_name-perception"
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
             debian:
                 os_code_names:
                     jessie:
@@ -129,16 +96,16 @@ release_names:
                         tag_names:
                             ros-core:
                                 aliases:
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                             robot:
                                 aliases:
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
     lunar:
         eol: 2019-05
         os_names:
@@ -154,20 +121,20 @@ release_names:
                             ros-core:
                                 aliases:
                                     - "$release_name-ros-core"
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
                                     - "$release_name-ros-base"
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
                             robot:
                                 aliases:
                                     - "$release_name-robot"
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
                                     - "$release_name-perception"
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
             debian:
                 os_code_names:
                     stretch:
@@ -178,16 +145,16 @@ release_names:
                         tag_names:
                             ros-core:
                                 aliases:
-                                    - "$os_code_name-$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
                             ros-base:
                                 aliases:
-                                    - "$os_code_name-$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
                             robot:
                                 aliases:
-                                    - "$os_code_name-$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
                             perception:
                                 aliases:
-                                    - "$os_code_name-$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
 
 meta:
     maintainers:
