@@ -87,7 +87,7 @@ def main(argv=sys.argv[1:]):
     template_name = data['template_name']
     template_packages = data['template_packages']
     expand_template_prefix_path(template_packages)
-    create_dockerlibrary(template_name, data, sub_repo, verbose=True)
+    create_dockerlibrary(template_name, data, sub_repo)
 
 
 if __name__ == '__main__':
