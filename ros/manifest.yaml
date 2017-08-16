@@ -4,9 +4,6 @@
 defaults:
 
     default: &DEFAULT
-        archs: &DEFAULT_ARCHS
-            - amd64
-            - arm32v7
         templates: &DEFAULT_TEMPLATES
             images: images.yaml.em
             makefile: Makefile.em
@@ -20,6 +17,9 @@ release_names:
                 os_code_names:
                     trusty:
                         <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm32v7
                         tag_names:
                             ros-core:
                                 aliases:
@@ -45,6 +45,9 @@ release_names:
                 os_code_names:
                     trusty:
                         <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm32v7
                         tag_names:
                             ros-core:
                                 aliases:
@@ -70,6 +73,10 @@ release_names:
                 os_code_names:
                     xenial:
                         <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm32v7
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
@@ -93,6 +100,9 @@ release_names:
                 os_code_names:
                     jessie:
                         <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
@@ -115,8 +125,8 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm64v8
                             - arm32v7
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
