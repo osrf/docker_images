@@ -1,0 +1,12 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: trusty
+    base_image: ros:indigo-ros-core
+    user_name: drcsim
+    arch: amd64
+    type: distribution
+    version: 5
+    package_version: 5.1.1
