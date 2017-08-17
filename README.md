@@ -1,11 +1,15 @@
 # OSRF Docker Images
 This repo hosts the Dockerfiles used to generate the official images for OSRF projects, including onbuild repositories on Docker Hub:
 
-[![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images)
+##### Dockerfile CI [![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images)
 
 ### Official Library
 #### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg)](https://registry.hub.docker.com/_/ros/)
 [![Compare Images](https://images.microbadger.com/badges/image/library/ros.svg)](https://microbadger.com/#/images/library/ros)
+
+* arm32v7 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm32v7/ros)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/ros/)
+
+* arm64v8 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm64v8/ros)](https://doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/ros/)
 
 #### [Gazebo ![Docker Pulls](https://img.shields.io/docker/pulls/_/gazebo.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/gazebo.svg)](https://registry.hub.docker.com/_/gazebo/)
 [![Compare Images](https://images.microbadger.com/badges/image/library/gazebo.svg)](https://microbadger.com/#/images/library/gazebo)
