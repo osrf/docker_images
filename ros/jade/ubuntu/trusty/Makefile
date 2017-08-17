@@ -14,21 +14,21 @@ build:
 	@docker build --tag=ros:jade-ros-base-trusty          ros-base/.
 	@docker build --tag=ros:jade-robot-trusty             robot/.
 	@docker build --tag=ros:jade-perception-trusty        perception/.
-	@docker build --tag=osrf/ros:jade-desktop-trusty      desktop/.
-	@docker build --tag=osrf/ros:jade-desktop-full-trusty desktop-full/.
+	# @docker build --tag=osrf/ros:jade-desktop-trusty      desktop/.
+	# @docker build --tag=osrf/ros:jade-desktop-full-trusty desktop-full/.
 
 pull:
 	@docker pull ros:jade-ros-core-trusty
 	@docker pull ros:jade-ros-base-trusty
 	@docker pull ros:jade-robot-trusty
 	@docker pull ros:jade-perception-trusty
-	@docker pull osrf/ros:jade-desktop-trusty
-	@docker pull osrf/ros:jade-desktop-full-trusty
+	# @docker pull osrf/ros:jade-desktop-trusty
+	# @docker pull osrf/ros:jade-desktop-full-trusty
 
 clean:
 	@docker rmi -f ros:jade-ros-core-trusty
 	@docker rmi -f ros:jade-ros-base-trusty
 	@docker rmi -f ros:jade-robot-trusty
 	@docker rmi -f ros:jade-perception-trusty
-	@docker rmi -f osrf/ros:jade-desktop-trusty
-	@docker rmi -f osrf/ros:jade-desktop-full-trusty
+	# @docker rmi -f osrf/ros:jade-desktop-trusty
+	# @docker rmi -f osrf/ros:jade-desktop-full-trusty
