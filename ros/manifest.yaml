@@ -3,6 +3,10 @@
 ---
 defaults:
 
+    default_hooks: &DEFAULT_HOOKS
+        hook_names:
+            post_push: hooks/post_push.em
+
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
             images: images.yaml.em
@@ -173,3 +177,45 @@ meta:
     template_packages:
         - docker_templates
     repo_url: https://github.com/osrf/docker_images.git
+
+hacks:
+    indigo:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            desktop-full:
+                                <<: *DEFAULT_HOOKS
+    jade:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            desktop-full:
+                                <<: *DEFAULT_HOOKS
+    kinetic:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            desktop-full:
+                                <<: *DEFAULT_HOOKS
+    lunar:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            desktop-full:
+                                <<: *DEFAULT_HOOKS
