@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -q -y \
     python-rospkg \
     && rm -rf /var/lib/apt/lists/*
 
-
 # install ros packages
 ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
