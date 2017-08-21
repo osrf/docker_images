@@ -34,10 +34,10 @@ RUN pip3 install -U \
 # install ros2 packages
 ENV ROS2_DISTRO r2b2
 RUN apt-get update && apt-get install -y \
-    ros-r2b2-demo-nodes-cpp=0.0.2-1* \
-    ros-r2b2-demo-nodes-py=0.0.2-1* \
-    ros-r2b2-ros2run=0.0.2-0* \
-    ros-r2b2-sros2=0.0.2-0* \
+    ros-r2b2-demo-nodes-cpp \
+    ros-r2b2-demo-nodes-py \
+    ros-r2b2-ros2run \
+    ros-r2b2-sros2 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

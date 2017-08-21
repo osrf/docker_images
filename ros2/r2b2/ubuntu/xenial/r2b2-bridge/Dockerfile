@@ -11,14 +11,14 @@ RUN apt-get update && apt-get install -q -y \
 # install ros packages
 ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-catkin=0.7.6-0* \
-    ros-kinetic-common-msgs=1.12.5-0* \
-    ros-kinetic-rosbash=1.13.5-0* \
-    ros-kinetic-roscpp=1.12.7-0* \
-    ros-kinetic-roscpp-tutorials=0.7.1-0* \
-    ros-kinetic-roslaunch=1.12.7-0* \
-    ros-kinetic-rosmsg=1.12.7-0* \
-    ros-kinetic-rospy-tutorials=0.7.1-0* \
-    ros-kinetic-tf2-msgs=0.5.16-0* \
+    ros-kinetic-catkin \
+    ros-kinetic-common-msgs \
+    ros-kinetic-rosbash \
+    ros-kinetic-roscpp \
+    ros-kinetic-roscpp-tutorials \
+    ros-kinetic-roslaunch \
+    ros-kinetic-rosmsg \
+    ros-kinetic-rospy-tutorials \
+    ros-kinetic-tf2-msgs \
     && rm -rf /var/lib/apt/lists/*
 
