@@ -2,7 +2,14 @@
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
-# setup keys
+# setup ros1 keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+# setup sources.list
+RUN . /etc/os-release \
+    && echo "deb http://packages.ros.org/ros/ubuntu $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list
+
+# setup ros2 keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list

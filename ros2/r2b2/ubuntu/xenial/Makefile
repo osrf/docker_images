@@ -10,10 +10,13 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros2:ubuntu			ubuntu/.
+	@docker build --tag=ros2:r2b2-core			r2b2-core/.
+	@docker build --tag=ros2:r2b2-bridge		r2b2-bridge/.
 
 pull:
-	@docker pull ros2:ubuntu
+	@docker pull ros2:r2b2-core
+	@docker pull ros2:r2b2-bridge
 
 clean:
-	@docker rmi -f ros2:ubuntu
+	@docker rmi -f ros2:r2b2-core
+	@docker rmi -f ros2:r2b2-bridge
