@@ -25,20 +25,5 @@ images:
         entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
             - docker_templates
-        packages:
-            - python-rospkg
-        ros_packages:
-            - catkin
-            - common-msgs
-            - rosbash
-            - roscpp
-            - roscpp-tutorials
-            - roslaunch
-            - rosmsg
-            - rospy-tutorials
-            - tf2-msgs
-            - .*-*msg
         ros2_packages:
             - ros1-bridge
-            - turtlebot2-*
-            - .*-*msg
