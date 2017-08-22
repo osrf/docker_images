@@ -1,8 +1,15 @@
-# This is an auto generated Dockerfile for ros2:ubuntu
-# generated from docker_images/create_ros2_deb_image.Dockerfile.em
+# This is an auto generated Dockerfile for ros2:r2b2-core
+# generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
-# setup keys
+# setup ros1 keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+# setup sources.list
+RUN . /etc/os-release \
+    && echo "deb http://packages.ros.org/ros/ubuntu $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list
+
+# setup ros2 keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
@@ -12,6 +19,8 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+ENV ROS_DISTRO kinetic
+ENV ROS2_DISTRO r2b2
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -25,12 +34,11 @@ RUN pip3 install -U \
     flake8-import-order
 
 # install ros2 packages
-ENV ROS2_DISTRO r2b2
 RUN apt-get update && apt-get install -y \
-    ros-r2b2-demo-nodes-cpp=0.0.2-1* \
-    ros-r2b2-demo-nodes-py=0.0.2-1* \
-    ros-r2b2-ros2run=0.0.2-0* \
-    ros-r2b2-sros2=0.0.2-0* \
+    ros-r2b2-demo-nodes-cpp \
+    ros-r2b2-demo-nodes-py \
+    ros-r2b2-ros2run \
+    ros-r2b2-sros2 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

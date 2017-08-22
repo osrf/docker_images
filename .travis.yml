@@ -19,6 +19,6 @@ env:
   - REPO=ros TAG=kinetic    OS_NAME=debian OS_CODE_NAME=jessie
   - REPO=ros TAG=lunar      OS_NAME=ubuntu OS_CODE_NAME=xenial
   - REPO=ros TAG=lunar      OS_NAME=debian OS_CODE_NAME=stretch
-  - REPO=ros2 TAG=ubuntu
+  - REPO=ros2 TAG=r2b2      OS_NAME=ubuntu OS_CODE_NAME=xenial
 
 script: ./.travis/travis.py
