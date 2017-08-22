@@ -4,11 +4,9 @@
 platform:
     os_name: ubuntu
     os_code_name: xenial
-    rosdistro_name: kinetic
     ros2distro_name: r2b2
     user_name: ros2
     maintainer_name:
     arch: amd64
     type: distribution
     version: false
-    release: ros

@@ -19,7 +19,6 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO kinetic
 ENV ROS2_DISTRO r2b2
 
 # install packages
@@ -29,9 +28,7 @@ RUN apt-get update && apt-get install -q -y \
 
 # install python packages
 RUN pip3 install -U \
-    argcomplete \
-    flake8 \
-    flake8-import-order
+    argcomplete
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \

@@ -11,12 +11,12 @@ help:
 
 build:
 	@docker build --tag=osrf/ros2:r2b2-core			r2b2-core/.
-	@docker build --tag=osrf/ros2:r2b2-bridge		r2b2-bridge/.
+	@docker build --tag=osrf/ros2:r2b2-ros1-bridge	r2b2-ros1-bridge/.
 
 pull:
 	@docker pull osrf/ros2:r2b2-core
-	@docker pull osrf/ros2:r2b2-bridge
+	@docker pull osrf/ros2:r2b2-ros1-bridge
 
 clean:
 	@docker rmi -f osrf/ros2:r2b2-core
-	@docker rmi -f osrf/ros2:r2b2-bridge
+	@docker rmi -f osrf/ros2:r2b2-ros1-bridge
