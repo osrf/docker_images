@@ -18,7 +18,7 @@ images:
             - demo-nodes-py
             - ros2run
             - sros2
-    @(ros2distro_name)-bridge:
+    @(ros2distro_name)-ros1-bridge:
         base_image: osrf/@(user_name):@(ros2distro_name)-core
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros2_image.Dockerfile.em
