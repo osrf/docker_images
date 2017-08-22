@@ -19,7 +19,6 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO kinetic
 ENV ROS2_DISTRO r2b2
 
 # install packages
