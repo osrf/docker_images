@@ -39,3 +39,8 @@ images:
             - rosmsg
             - rospy-tutorials
             - tf2-msgs
+            - .*-*msg
+        ros2_packages:
+            - ros1-bridge
+            - turtlebot2-*
+            - .*-*msg

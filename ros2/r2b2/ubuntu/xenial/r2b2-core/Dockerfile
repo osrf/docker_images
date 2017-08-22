@@ -19,6 +19,8 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+ENV ROS_DISTRO kinetic
+ENV ROS2_DISTRO r2b2
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -32,7 +34,6 @@ RUN pip3 install -U \
     flake8-import-order
 
 # install ros2 packages
-ENV ROS2_DISTRO r2b2
 RUN apt-get update && apt-get install -y \
     ros-r2b2-demo-nodes-cpp \
     ros-r2b2-demo-nodes-py \

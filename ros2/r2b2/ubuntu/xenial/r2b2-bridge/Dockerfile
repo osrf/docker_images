@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -q -y \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros packages
-ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
     ros-kinetic-catkin \
     ros-kinetic-common-msgs \
@@ -19,5 +18,13 @@ RUN apt-get update && apt-get install -y \
     ros-kinetic-rosmsg \
     ros-kinetic-rospy-tutorials \
     ros-kinetic-tf2-msgs \
+    ros-kinetic-.*-*msg \
+    && rm -rf /var/lib/apt/lists/*
+
+# install ros2 packages
+RUN apt-get update && apt-get install -y \
+    ros-r2b2-ros1-bridge \
+    ros-r2b2-turtlebot2-* \
+    ros-r2b2-.*-*msg \
     && rm -rf /var/lib/apt/lists/*
 
