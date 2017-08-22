@@ -13,8 +13,6 @@ images:
             - python3-pip
         pip3_install:
             - argcomplete
-            - flake8
-            - flake8-import-order
         ros2_packages:
             - demo-nodes-cpp
             - demo-nodes-py
