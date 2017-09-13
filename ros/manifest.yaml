@@ -9,9 +9,9 @@ defaults:
 
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
-            images: images.yaml.em
-            makefile: Makefile.em
-            platform: platform.yaml.em
+            images: .config/images.yaml.em
+            makefile: .config/Makefile.em
+            platform: .config/platform.yaml.em
 
 release_names:
     indigo:
