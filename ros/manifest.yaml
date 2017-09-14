@@ -20,6 +20,16 @@ defaults:
             platform: .config/eol/platform.yaml.em
 
 release_names:
+    boxturtle:
+        eol: <opening crawl>
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
     cturtle:
         eol: a long time ago
         os_names:
