@@ -1,4 +1,4 @@
-# This is an auto generated Dockerfile for ros2:r2b2-core
+# This is an auto generated Dockerfile for ros2:r2b3-core
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
@@ -19,7 +19,7 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS2_DISTRO r2b2
+ENV ROS2_DISTRO r2b3
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -32,10 +32,10 @@ RUN pip3 install -U \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-r2b2-demo-nodes-cpp \
-    ros-r2b2-demo-nodes-py \
-    ros-r2b2-ros2run \
-    ros-r2b2-sros2 \
+    ros-r2b3-demo-nodes-cpp \
+    ros-r2b3-demo-nodes-py \
+    ros-r2b3-ros2run \
+    ros-r2b3-sros2 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
