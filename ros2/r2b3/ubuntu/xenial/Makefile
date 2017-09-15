@@ -10,13 +10,13 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:r2b2-core			r2b2-core/.
-	@docker build --tag=osrf/ros2:r2b2-ros1-bridge	r2b2-ros1-bridge/.
+	@docker build --tag=osrf/ros2:r2b3-core			r2b3-core/.
+	@docker build --tag=osrf/ros2:r2b3-ros1-bridge	r2b3-ros1-bridge/.
 
 pull:
-	@docker pull osrf/ros2:r2b2-core
-	@docker pull osrf/ros2:r2b2-ros1-bridge
+	@docker pull osrf/ros2:r2b3-core
+	@docker pull osrf/ros2:r2b3-ros1-bridge
 
 clean:
-	@docker rmi -f osrf/ros2:r2b2-core
-	@docker rmi -f osrf/ros2:r2b2-ros1-bridge
+	@docker rmi -f osrf/ros2:r2b3-core
+	@docker rmi -f osrf/ros2:r2b3-ros1-bridge

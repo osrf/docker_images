@@ -4,7 +4,7 @@
 platform:
     os_name: ubuntu
     os_code_name: xenial
-    ros2distro_name: r2b2
+    ros2distro_name: r2b3
     user_name: ros2
     maintainer_name:
     arch: amd64
