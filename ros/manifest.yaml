@@ -5,15 +5,91 @@ defaults:
 
     default_hooks: &DEFAULT_HOOKS
         hook_names:
-            post_push: hooks/post_push.em
+            post_push: .hooks/post_push.em
 
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
-            images: images.yaml.em
-            makefile: Makefile.em
-            platform: platform.yaml.em
+            images: .config/images.yaml.em
+            makefile: .config/Makefile.em
+            platform: .config/platform.yaml.em
+
+    default: &DEFAULT_EOL
+        templates: &DEFAULT_TEMPLATES_EOL
+            images: .config/eol/images.yaml.em
+            makefile: .config/eol/Makefile.em
+            platform: .config/eol/platform.yaml.em
 
 release_names:
+    boxturtle:
+        eol: <opening crawl>
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    cturtle:
+        eol: a long time ago
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    diamondback:
+        eol: in a galaxy far, far away....
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    electric:
+        eol: came forth a ros distro
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    fuerte:
+        eol: to resore balance to the overlay
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    groovy:
+        eol: 2014-07
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
+    hydro:
+        eol: 2015-05
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        <<: *DEFAULT_EOL
+                        archs:
+                            - amd64
+                        tag_names:
     indigo:
         eol: 2019-04
         os_names:

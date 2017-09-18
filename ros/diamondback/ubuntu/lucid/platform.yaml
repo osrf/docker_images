@@ -1,0 +1,13 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: lucid
+    rosdistro_name: diamondback
+    user_name: ros
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version: False
+    release: ros
