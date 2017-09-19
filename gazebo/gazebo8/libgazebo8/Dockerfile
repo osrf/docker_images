@@ -4,4 +4,4 @@ FROM gazebo:gzserver8
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     libgazebo8-dev=8.1.1-1* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*

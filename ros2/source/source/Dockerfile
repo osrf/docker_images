@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -q -y \
     python3-yaml \
     uncrustify \
     wget \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install python packages
 RUN pip3 install -U \

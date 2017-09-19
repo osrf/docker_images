@@ -13,7 +13,7 @@ RUN . /etc/os-release \
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     gazebo8=8.1.1-1* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # setup environment
 EXPOSE 11345

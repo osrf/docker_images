@@ -5,5 +5,5 @@ FROM ros:indigo-ros-base-trusty
 # install ros packages
 RUN apt-get update && apt-get install -y \
     ros-indigo-perception=1.1.5-0* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
