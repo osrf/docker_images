@@ -5,5 +5,5 @@ FROM ros:jade-ros-core-trusty
 # install ros packages
 RUN apt-get update && apt-get install -y \
     ros-jade-ros-base=1.2.1-0* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 

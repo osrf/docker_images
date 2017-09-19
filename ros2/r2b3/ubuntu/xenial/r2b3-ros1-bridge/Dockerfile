@@ -5,5 +5,5 @@ FROM osrf/ros2:r2b3-core
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-r2b3-ros1-bridge \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 

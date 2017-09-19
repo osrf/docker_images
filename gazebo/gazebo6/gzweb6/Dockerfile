@@ -18,12 +18,12 @@ RUN apt-get update && apt-get install -q -y \
     pkg-config \
     psmisc \
     xvfb\
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     libgazebo6-dev=6.7.0-1* \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb

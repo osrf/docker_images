@@ -5,7 +5,7 @@ FROM ubuntu:xenial
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dirmngr \
     gnupg2 \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -29,7 +29,7 @@ RUN apt-get update && \
             tree \
             wget \
             python-pip && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # setup environment
 ENV LANG C.UTF-8
@@ -63,7 +63,7 @@ RUN apt-get update && \
       --rosdistro ${ROS_DISTRO} \
       --as-root=apt:false && \
     pip install --upgrade ../rospkg/ && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # HACK, replacing shell with bash for later docker build commands
 RUN mv /bin/sh /bin/sh-old && \

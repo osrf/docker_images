@@ -24,7 +24,7 @@ ENV ROS2_DISTRO r2b3
 # install packages
 RUN apt-get update && apt-get install -q -y \
     python3-pip \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install python packages
 RUN pip3 install -U \
@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
     ros-r2b3-demo-nodes-py \
     ros-r2b3-ros2run \
     ros-r2b3-sros2 \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
 COPY ./ros2_entrypoint.sh /
