@@ -46,7 +46,7 @@ def populate_hooks(data, path):
         os.makedirs(path)
     for hook_name, hook_tempate in data['hook_names'].items():
         tags = ' '.join([data['release_name'] + '-' + data['tag_name']])
-        hookfile = interpret_tempate(hook_tempate, {'tags':tags}, AltTemplate)
+        hookfile = interpret_tempate(hook_tempate, {'tags':tags,'release_name':data['release_name']}, AltTemplate)
         hookfile_path = os.path.join(path, hook_name)
         with open(hookfile_path, 'w') as f:
             f.write(hookfile)

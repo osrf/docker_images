@@ -7,6 +7,10 @@ defaults:
         hook_names:
             post_push: .hooks/post_push.em
 
+    default_hooks: &DEFAULT_HOOKS_EOL
+        hook_names:
+            post_push: .hooks/eol/post_push.em
+
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
             images: .config/images.yaml.em
@@ -255,6 +259,63 @@ meta:
     repo_url: https://github.com/osrf/docker_images.git
 
 hacks:
+
+    boxturtle:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    cturtle:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    diamondback:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    electric:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    lucid:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    fuerte:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    groovy:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
+    hydro:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    precise:
+                        tag_names:
+                            ros:
+                                <<: *DEFAULT_HOOKS_EOL
     indigo:
         os_names:
             ubuntu:
