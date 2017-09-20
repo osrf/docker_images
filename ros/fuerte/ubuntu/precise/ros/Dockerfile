@@ -19,7 +19,8 @@ ENV LC_ALL C.UTF-8
 ENV ROS_DISTRO fuerte
 RUN apt-get update && apt-get install -y \
     ros-fuerte-ros \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir /var/lib/apt/lists/partial
 
 # setup entrypoint
 COPY ./ros_eol_entrypoint.sh /ros_entrypoint.sh
