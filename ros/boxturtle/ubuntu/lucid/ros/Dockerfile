@@ -12,8 +12,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN echo "deb http://packages.ros.org/ros/ubuntu lucid main" > /etc/apt/sources.list.d/ros-latest.list
 
 # setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
 
 # install ros packages
 ENV ROS_DISTRO boxturtle
