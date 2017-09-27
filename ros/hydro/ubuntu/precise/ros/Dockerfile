@@ -1,8 +1,8 @@
 # This is an auto generated Dockerfile for ros:ros
-# generated from docker_images/create_ros_eol_image.Dockerfile.em
+# generated from docker_images_legacy/create_ros_core_image.Dockerfile.em
 FROM ubuntu:precise
 
-# setup source.list to eol
+# setup source.list to old-releases
 RUN sed -i -e 's/archive/old-releases/g' /etc/apt/sources.list
 
 # setup keys
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
     && mkdir /var/lib/apt/lists/partial
 
 # setup entrypoint
-COPY ./ros_eol_entrypoint.sh /ros_entrypoint.sh
+COPY ./ros_entrypoint.sh /ros_entrypoint.sh
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
