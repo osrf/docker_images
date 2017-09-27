@@ -7,9 +7,9 @@ defaults:
         hook_names:
             post_push: .hooks/post_push.em
 
-    default_hooks: &DEFAULT_HOOKS_EOL
+    default_hooks: &DEFAULT_HOOKS_LEGACY
         hook_names:
-            post_push: .hooks/eol/post_push.em
+            post_push: .hooks/legacy/post_push.em
 
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
@@ -17,11 +17,11 @@ defaults:
             makefile: .config/Makefile.em
             platform: .config/platform.yaml.em
 
-    default: &DEFAULT_EOL
-        templates: &DEFAULT_TEMPLATES_EOL
-            images: .config/eol/images.yaml.em
-            makefile: .config/eol/Makefile.em
-            platform: .config/eol/platform.yaml.em
+    default: &DEFAULT_LEGACY
+        templates: &DEFAULT_TEMPLATES_LEGACY
+            images: .config/legacy/images.yaml.em
+            makefile: .config/legacy/Makefile.em
+            platform: .config/legacy/platform.yaml.em
 
 release_names:
     boxturtle:
@@ -30,7 +30,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -40,7 +40,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -50,7 +50,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -60,7 +60,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -70,7 +70,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -80,7 +80,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -90,7 +90,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_EOL
+                        <<: *DEFAULT_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -267,7 +267,7 @@ hacks:
                     lucid:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     cturtle:
         os_names:
             ubuntu:
@@ -275,7 +275,7 @@ hacks:
                     lucid:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     diamondback:
         os_names:
             ubuntu:
@@ -283,7 +283,7 @@ hacks:
                     lucid:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     electric:
         os_names:
             ubuntu:
@@ -291,7 +291,7 @@ hacks:
                     lucid:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     fuerte:
         os_names:
             ubuntu:
@@ -299,7 +299,7 @@ hacks:
                     precise:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     groovy:
         os_names:
             ubuntu:
@@ -307,7 +307,7 @@ hacks:
                     precise:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     hydro:
         os_names:
             ubuntu:
@@ -315,7 +315,7 @@ hacks:
                     precise:
                         tag_names:
                             ros:
-                                <<: *DEFAULT_HOOKS_EOL
+                                <<: *DEFAULT_HOOKS_LEGACY
     indigo:
         os_names:
             ubuntu:
