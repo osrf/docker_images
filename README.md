@@ -19,7 +19,7 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 
 * amd64 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/amd64/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/gazebo/)
 
----
+
 
 ## [OSRF Profile](https://hub.docker.com/u/osrf/)
 ### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros.svg)](https://registry.hub.docker.com/u/osrf/ros/)
