@@ -1,5 +1,3 @@
-# this file is generated via https://github.com/osrf/docker_images/blob/3e8b29c44f02c85b71a156be51c94902d4092929/ros/create_dockerlibrary.py
-
 Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
 GitRepo: https://github.com/osrf/docker_images.git
 
