@@ -160,7 +160,7 @@ def main(argv=sys.argv[1:]):
                         repo=repo, name=REPO_SLUG, url=REMOTE_TOKEN_URL)
                     repo.git.checkout(b=pr_branch_name)
                     repo.git.push(REPO_SLUG, pr_branch_name, u=True)
-                except as error:
+                except:
                     raise ValueError(
                         'Push failed, so I must hide the secrits')
 
