@@ -53,31 +53,34 @@ def main(argv=sys.argv[1:]):
     repo = git.Repo(os.path.join(PWD,'..')) #, odbt=git.GitCmdObjectDB)
 
     # For each release
-    for release_name, release_data in manifest['release_names'].items():
+    for release_name, release_data in list(manifest['release_names'].items()):
         print('release_name: ', release_name)
         # For each os supported
-        for os_name, os_data in release_data['os_names'].items():
+        for os_name, os_data in list(release_data['os_names'].items()):
             print('os_name: ', os_name)
-            # For each os distro supported
-            for os_code_name, os_code_data in os_data['os_code_names'].items():
+            # For each os code name supported
+            for os_code_name, os_code_data in list(os_data['os_code_names'].items()):
                 print('os_code_name: ', os_code_name)
                 commit_path = os.path.join(sub_repo, release_name, os_name, os_code_name)
                 commit_sha = latest_commit_sha(repo, commit_path)
-                for tag_name, tag_data in os_code_data['tag_names'].items():
-                    print('tag_name: ', tag_name)
-                    tags = []
-                    for alias_pattern in tag_data['aliases']:
-                        alias_template = string.Template(alias_pattern)
-                        alias = alias_template.substitute(
-                            release_name=release_name,
-                            os_name=os_name,
-                            os_code_name=os_code_name)
-                        tags.append(alias)
-                    print('tags: ', tags)
-                    tag_data['Tags'] = tags
-                    tag_data['Architectures'] = os_code_data['archs']
-                    tag_data['GitCommit'] = commit_sha
-                    tag_data['Directory'] = os.path.join(commit_path, tag_name)
+                if os_code_data['tag_names']:
+                    for tag_name, tag_data in os_code_data['tag_names'].items():
+                        print('tag_name: ', tag_name)
+                        tags = []
+                        for alias_pattern in tag_data['aliases']:
+                            alias_template = string.Template(alias_pattern)
+                            alias = alias_template.substitute(
+                                release_name=release_name,
+                                os_name=os_name,
+                                os_code_name=os_code_name)
+                            tags.append(alias)
+                        print('tags: ', tags)
+                        tag_data['Tags'] = tags
+                        tag_data['Architectures'] = os_code_data['archs']
+                        tag_data['GitCommit'] = commit_sha
+                        tag_data['Directory'] = os.path.join(commit_path, tag_name)
+                else:
+                    del manifest['release_names'][release_name]
 
     data = {**manifest, **manifest['meta']}
     script_path = os.path.join(sub_repo, __file__)
@@ -87,7 +90,7 @@ def main(argv=sys.argv[1:]):
     template_name = data['template_name']
     template_packages = data['template_packages']
     expand_template_prefix_path(template_packages)
-    create_dockerlibrary(template_name, data, sub_repo)
+    create_dockerlibrary(template_name, data, args.output)
 
 
 if __name__ == '__main__':
