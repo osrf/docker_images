@@ -12,9 +12,6 @@ RUN apt-get update && apt-get install -q -y \
     libjansson-dev \
     libtinyxml-dev \
     mercurial \
-    nodejs \
-    nodejs-legacy \
-    npm \
     pkg-config \
     psmisc \
     xvfb\
@@ -28,14 +25,23 @@ RUN apt-get update && apt-get install -q -y \
 # clone gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
 
+# install nvm and node
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+ENV NVM_DIR /root/.nvm
+ENV NODE_VERSION 6.1.0
+RUN . /root/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION
+ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
 # build gzweb
 RUN cd ~/gzweb \
     && hg up default \
-    && xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m
+    && npm run deploy
 
 # setup environment
 EXPOSE 8080
 EXPOSE 7681
 
 # run gzserver and gzweb
-CMD ./root/gzweb/start_gzweb.sh && gzserver
+CMD cd /root/gzweb && npm start &
+CMD gzserver
