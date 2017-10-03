@@ -138,7 +138,7 @@ def main(argv=sys.argv[1:]):
                     "This is an automated CI commit"
                 repo.git.commit(m=message)
 
-                g = github.Github(login_or_token=GITHUB_TOKEN)
+                g = github.Github(login_or_token=TOKEN)
                 g_repo = g.get_repo(full_name_or_id=REPO_SLUG)
                 try:
                     g_branch = g_repo.get_branch(branch=pr_branch_name)
