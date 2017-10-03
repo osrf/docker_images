@@ -84,8 +84,9 @@ def main(argv=sys.argv[1:]):
 
     data = {**manifest, **manifest['meta']}
     script_path = os.path.join(sub_repo, __file__)
-    scripts_sha = latest_commit_sha(repo, commit_path)
-    data['script_url'] = urllib.parse.urljoin(data['repo_url'][0:-4]+'/blob/',os.path.join(scripts_sha,script_path))
+    # scripts_sha = latest_commit_sha(repo, commit_path)
+    # data['script_url'] = urllib.parse.urljoin(data['repo_url'][0:-4]+'/blob/',os.path.join(scripts_sha,script_path))
+    data['script_url'] = data['repo_url']
 
     template_name = data['template_name']
     template_packages = data['template_packages']
