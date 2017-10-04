@@ -15,7 +15,7 @@ defaults:
 
 release_names:
     '4':
-        eol: 2019-04
+        eol: 2016-01-25
         os_names:
             ubuntu:
                 os_code_names:
@@ -31,7 +31,7 @@ release_names:
                                 aliases:
                                     - "libgazebo4"
     '5':
-        eol: 2019-04
+        eol: 2017-01-25
         os_names:
             ubuntu:
                 os_code_names:
@@ -47,7 +47,7 @@ release_names:
                                 aliases:
                                     - "libgazebo5"
     '6':
-        eol: 2019-04
+        eol: 2017-01-25
         os_names:
             ubuntu:
                 os_code_names:
@@ -63,7 +63,7 @@ release_names:
                                 aliases:
                                     - "libgazebo6"
     '7':
-        eol: 2019-04
+        eol: 2021-01-25
         os_names:
             ubuntu:
                 os_code_names:
@@ -79,7 +79,7 @@ release_names:
                                 aliases:
                                     - "libgazebo7"
     '8':
-        eol: 2019-04
+        eol: 2019-01-25
         os_names:
             ubuntu:
                 os_code_names:
