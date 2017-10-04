@@ -46,4 +46,10 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 * amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/sros.svg)](https://hub.docker.com/r/osrf/sros/builds/)
 
 
+### [ROS Legacy ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros_legacy.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros_legacy.svg)](https://registry.hub.docker.com/u/osrf/ros_legacy/)
+[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros_legacy.svg)](https://microbadger.com/#/images/osrf/ros_legacy)
+
+* amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros_legacy.svg)](https://hub.docker.com/r/osrf/ros_legacy/builds/)
+
+
 This repo also includes the necessary scripts and config files to auto generate the Dockerfiles. See the doc directory for further documentation.
