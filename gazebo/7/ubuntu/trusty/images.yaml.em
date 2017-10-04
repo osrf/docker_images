@@ -1,5 +1,5 @@
 %YAML 1.1
-# ROS Dockerfile database
+# Gazebo Dockerfile database
 ---
 images:
     gzserver@(gazebo_version):
