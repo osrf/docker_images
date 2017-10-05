@@ -1,0 +1,105 @@
+%YAML 1.1
+# Gazebo Dockerfolder manifest
+---
+defaults:
+
+    default_hooks: &DEFAULT_HOOKS
+        hook_names:
+            post_push: .hooks/post_push.em
+
+    default: &DEFAULT
+        templates: &DEFAULT_TEMPLATES
+            images: .config/images.yaml.em
+            makefile: .config/Makefile.em
+            platform: .config/platform.yaml.em
+
+release_names:
+    '4':
+        eol: 2016-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver4:
+                                aliases:
+                                    - "gzserver4"
+                            libgazebo4:
+                                aliases:
+                                    - "libgazebo4"
+    '5':
+        eol: 2017-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver5:
+                                aliases:
+                                    - "gzserver5"
+                            libgazebo5:
+                                aliases:
+                                    - "libgazebo5"
+    '6':
+        eol: 2017-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver6:
+                                aliases:
+                                    - "gzserver6"
+                            libgazebo6:
+                                aliases:
+                                    - "libgazebo6"
+    '7':
+        eol: 2021-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    trusty:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver7:
+                                aliases:
+                                    - "gzserver7"
+                            libgazebo7:
+                                aliases:
+                                    - "libgazebo7"
+    '8':
+        eol: 2019-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver8:
+                                aliases:
+                                    - "gzserver8"
+                            libgazebo8:
+                                aliases:
+                                    - "libgazebo8"
+                                    - latest
+
+meta:
+    maintainers:
+        - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
+    template_name: docker_library/gazebo.em
+    template_packages:
+        - docker_templates
+    repo_url: https://github.com/osrf/docker_images.git
