@@ -1,0 +1,40 @@
+%YAML 1.1
+# ROS2 Dockerfolder manifest
+---
+defaults:
+
+    default_hooks: &DEFAULT_HOOKS
+        hook_names:
+            post_push: .hooks/post_push.em
+
+    default: &DEFAULT
+        templates: &DEFAULT_TEMPLATES
+            images: .config/images.yaml.em
+            makefile: .config/Makefile.em
+            platform: .config/platform.yaml.em
+
+release_names:
+    r2b3:
+        eol:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            r2b3-core:
+                                aliases:
+                                    - "$release_name-core"
+                            r2b3-ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+
+meta:
+    maintainers:
+        - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
+    template_name: docker_library/ros2.em
+    template_packages:
+        - docker_templates
+    repo_url: https://github.com/osrf/docker_images.git
