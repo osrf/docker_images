@@ -180,7 +180,7 @@ def main(argv=sys.argv[1:]):
                 repo.git.commit(m=message, author=GIT_AUTHOR)
 
                 # Create new branch from current head
-                new_branch = repo.create_head(pr_branch_name)
+                pr_branch_head = repo.create_head(pr_branch_name)  # noqa
 
                 try:
                     # Check if branch already exists
