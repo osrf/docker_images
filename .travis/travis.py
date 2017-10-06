@@ -21,6 +21,7 @@ PWD = os.path.dirname(os.path.abspath(__file__))
 GIT_DEFAULT_BRANCH = 'master'
 PR_MESSAGE_BODY = os.path.join(PWD, 'pr_body.md')
 
+
 def import_create_dockerfiles(location_dir):
     """Import the dockerfile generation script"""
     location = os.path.join(location_dir, 'create_dockerfiles.py')
@@ -91,7 +92,8 @@ def main(argv=sys.argv[1:]):
     GIT_EMAIL = os.environ['GITHUB_EMAIL']
     GIT_TOKEN = os.environ['GITHUB_TOKEN']
     GIT_AUTHOR = "{user} <{email}>".format(user=GIT_USER, email=GIT_EMAIL)
-    GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + GIT_UPSTREAM_REPO_SLUG.split('/')[1]
+    GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + \
+        GIT_UPSTREAM_REPO_SLUG.split('/')[1]
     GIT_REMOTE_ORIGIN_TOKEN_URL = "https://{user}:{token}@github.com/{repo_slug}.git".format(
         user=GIT_USER,
         token=GIT_TOKEN,
