@@ -187,12 +187,13 @@ def main(argv=sys.argv[1:]):
                 # Check if branch exists remotely
                 try:
                     g_branch = g_origin_repo.get_branch(branch=pr_branch_name)  # noqa
-                    pr_branch_exists = True
                 except github.GithubException as exception:
                     if exception.data['message'] == "Branch not found":
                         pr_branch_exists = False
                     else:
                         raise
+                else:
+                    pr_branch_exists = True
 
                 if pr_branch_exists:
                     # Try fource pushing if remote branch already exists
