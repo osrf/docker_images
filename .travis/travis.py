@@ -21,6 +21,7 @@ PWD = os.path.dirname(os.path.abspath(__file__))
 GIT_DEFAULT_BRANCH = 'master'
 PR_MESSAGE_BODY = os.path.join(PWD, 'pr_body.md')
 
+
 def import_create_dockerfiles(location_dir):
     """Import the dockerfile generation script"""
     location = os.path.join(location_dir, 'create_dockerfiles.py')
@@ -98,7 +99,7 @@ def main(argv=sys.argv[1:]):
         repo_slug=GIT_ORIGIN_REPO_SLUG
     )
 
-    # Initlise git interfaces
+    # Initialize git interfaces
     repo = git.Repo(GIT_BUILD_DIR)  # , odbt=git.GitCmdObjectDB)
 
     # Expand the repo:tag directory
@@ -139,10 +140,9 @@ def main(argv=sys.argv[1:]):
             # and that all dockerfiles are up to date
             test_diffs(diffs)
         except ValueError as err:
-            # If there are changes, only proceed for the deafult branch
+            # If there are changes, only proceed for the default branch
             if GIT_BRANCH == GIT_DEFAULT_BRANCH:
-
-                # Initlise github interfaces
+                # Initialize github interfaces
                 g = github.Github(login_or_token=GIT_TOKEN)
                 g_origin_repo = g.get_repo(
                     full_name_or_id=GIT_ORIGIN_REPO_SLUG)
