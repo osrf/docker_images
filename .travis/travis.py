@@ -204,7 +204,7 @@ def main(argv=sys.argv[1:]):
                         inst.stderr = None
                         raise ValueError(
                             ("Force push to branch:{branch} failed! "
-                             "Stderr ommited to protect secrits.").format(branch=pr_branch_name))
+                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
                 else:
                     # Otherwise try setting up the remote upsteam branch
                     try:
@@ -214,7 +214,7 @@ def main(argv=sys.argv[1:]):
                         inst.stderr = None
                         raise ValueError(
                             ("Set-upstream push to branch:{branch} failed! "
-                             "Stderr ommited to protect secrits.").format(branch=pr_branch_name))
+                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
 
                 # Add some commentary for new PR
                 title = "Updating {}".format(pr_branch_name)
