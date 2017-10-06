@@ -179,12 +179,15 @@ def main(argv=sys.argv[1:]):
                     "This is an automated CI commit"
                 repo.git.commit(m=message, author=GIT_AUTHOR)
 
+                # Create new branch from current head
+                new_branch = repo.create_head(pr_branch_name)
+
                 try:
                     # Check if branch already exists
                     g_branch = g_origin_repo.get_branch(branch=pr_branch_name)
                     try:
                         repo.git.push(
-                            'upstream_pr', GIT_BRANCH + ':' + pr_branch_name, force=True)
+                            'upstream_pr', pr_branch_name + ':' + pr_branch_name, force=True)
                     except Exception as inst:
                         inst.stderr = None
                         raise ValueError(
@@ -196,7 +199,7 @@ def main(argv=sys.argv[1:]):
                     if exception.data['message'] == "Branch not found":
                         try:
                             repo.git.push(
-                                'upstream_pr', GIT_BRANCH + ':' + pr_branch_name, u=True)
+                                'upstream_pr', pr_branch_name + ':' + pr_branch_name, u=True)
                         except Exception as inst:
                             inst.stderr = None
                             raise ValueError(
