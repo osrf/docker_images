@@ -184,9 +184,18 @@ def main(argv=sys.argv[1:]):
                 # Create new branch from current head
                 pr_branch_head = repo.create_head(pr_branch_name)  # noqa
 
+                # Check if branch exists remotely
                 try:
-                    # Check if branch already exists
                     g_branch = g_origin_repo.get_branch(branch=pr_branch_name)
+                    pr_branch_exists = True
+                except github.GithubException as exception:
+                    if exception.data['message'] == "Branch not found":
+                        pr_branch_exists = False
+                    else:
+                        raise
+
+                if pr_branch_exists:
+                    # Try fource puching if remote branch already exists
                     try:
                         repo.git.push(
                             'upstream_pr', pr_branch_name + ':' + pr_branch_name, force=True)
@@ -195,18 +204,16 @@ def main(argv=sys.argv[1:]):
                         raise ValueError(
                             ("Force push to branch:{branch} failed! "
                              "Stderr ommited to protect secrits.").format(branch=pr_branch_name))
-
-                except github.GithubException as exception:
-                    # Continue if branch does not already exist
-                    if exception.data['message'] == "Branch not found":
-                        try:
-                            repo.git.push(
-                                'upstream_pr', pr_branch_name + ':' + pr_branch_name, u=True)
-                        except Exception as inst:
-                            inst.stderr = None
-                            raise ValueError(
-                                ("Set-upstream push to branch:{branch} failed! "
-                                 "Stderr ommited to protect secrits.").format(branch=pr_branch_name))
+                else:
+                    # Otherwise try setting up the remote upsteam branch
+                    try:
+                        repo.git.push(
+                            'upstream_pr', pr_branch_name + ':' + pr_branch_name, u=True)
+                    except Exception as inst:
+                        inst.stderr = None
+                        raise ValueError(
+                            ("Set-upstream push to branch:{branch} failed! "
+                             "Stderr ommited to protect secrits.").format(branch=pr_branch_name))
 
                 # Add some commentary for new PR
                 title = "Updating {}".format(pr_branch_name)
