@@ -141,10 +141,9 @@ def main(argv=sys.argv[1:]):
             # and that all dockerfiles are up to date
             test_diffs(diffs)
         except ValueError as err:
-            # If there are changes, only proceed for the deafult branch
+            # If there are changes, only proceed for the default branch
             if GIT_BRANCH == GIT_DEFAULT_BRANCH:
-
-                # Initlise github interfaces
+                # Initialize github interfaces
                 g = github.Github(login_or_token=GIT_TOKEN)
                 g_origin_repo = g.get_repo(
                     full_name_or_id=GIT_ORIGIN_REPO_SLUG)
