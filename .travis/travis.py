@@ -100,7 +100,7 @@ def main(argv=sys.argv[1:]):
         repo_slug=GIT_ORIGIN_REPO_SLUG
     )
 
-    # Initlise git interfaces
+    # Initialize git interfaces
     repo = git.Repo(GIT_BUILD_DIR, odbt=git.GitCmdObjectDB)
 
     # Expand the repo:tag directory
@@ -185,7 +185,7 @@ def main(argv=sys.argv[1:]):
 
                 # Check if branch exists remotely
                 try:
-                    g_branch = g_origin_repo.get_branch(branch=pr_branch_name)
+                    g_branch = g_origin_repo.get_branch(branch=pr_branch_name)  # noqa
                     pr_branch_exists = True
                 except github.GithubException as exception:
                     if exception.data['message'] == "Branch not found":
@@ -194,7 +194,7 @@ def main(argv=sys.argv[1:]):
                         raise
 
                 if pr_branch_exists:
-                    # Try fource puching if remote branch already exists
+                    # Try fource pushing if remote branch already exists
                     try:
                         repo.git.push(
                             'upstream_pr', pr_branch_name + ':' + pr_branch_name, force=True)
@@ -233,7 +233,7 @@ def main(argv=sys.argv[1:]):
                 # Check if PR already exists
                 if g_pulls.get_page(0):
                     raise ValueError(
-                        ("Relevent PR from {pr_head_name} "
+                        ("Relevant PR from {pr_head_name} "
                          "is already open.").format(pr_head_name=pr_head_name))
                 else:
                     # Create new PR for remote banch
@@ -243,7 +243,7 @@ def main(argv=sys.argv[1:]):
                         base=GIT_BRANCH,
                         head=pr_head_name)
                     raise ValueError(
-                        ("Relevent PR from {pr_head_name} "
+                        ("Relevant PR from {pr_head_name} "
                          "has been created.").format(pr_head_name=pr_head_name))
             raise
 
