@@ -99,7 +99,7 @@ def main(argv=sys.argv[1:]):
     )
 
     # Initlise git interfaces
-    repo = git.Repo(GIT_BUILD_DIR)  # , odbt=git.GitCmdObjectDB)
+    repo = git.Repo(GIT_BUILD_DIR, odbt=git.GitCmdObjectDB)
 
     # Expand the repo:tag directory
     hub_repo_dir = os.path.join(GIT_BUILD_DIR, HUB_REPO)
