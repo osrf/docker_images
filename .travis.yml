@@ -4,21 +4,26 @@ services: docker
 language: python
 python:
   - '3.6'
+
 install:
   - 'pip install -r docker/requirements.txt'
+  - 'pip install -r .travis/requirements.txt'
 
 env:
-  - REPO=gazebo TAG=4     OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=gazebo TAG=5     OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=gazebo TAG=6     OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=gazebo TAG=7     OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=gazebo TAG=8     OS_NAME=ubuntu OS_CODE_NAME=xenial
-  - REPO=ros TAG=indigo     OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=ros TAG=jade       OS_NAME=ubuntu OS_CODE_NAME=trusty
-  - REPO=ros TAG=kinetic    OS_NAME=ubuntu OS_CODE_NAME=xenial
-  - REPO=ros TAG=kinetic    OS_NAME=debian OS_CODE_NAME=jessie
-  - REPO=ros TAG=lunar      OS_NAME=ubuntu OS_CODE_NAME=xenial
-  - REPO=ros TAG=lunar      OS_NAME=debian OS_CODE_NAME=stretch
-  - REPO=ros2 TAG=r2b3      OS_NAME=ubuntu OS_CODE_NAME=xenial
+  # ros2
+  - HUB_REPO=ros2   HUB_RELEASE=r2b3    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
+  # ros
+  - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
+  - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
+  - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
+  - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=debian HUB_OS_CODE_NAME=jessie
+  - HUB_REPO=ros    HUB_RELEASE=jade    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
+  - HUB_REPO=ros    HUB_RELEASE=indigo  HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
+  # gazebo
+  - HUB_REPO=gazebo HUB_RELEASE=8       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
+  - HUB_REPO=gazebo HUB_RELEASE=7       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
+  - HUB_REPO=gazebo HUB_RELEASE=6       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
+  - HUB_REPO=gazebo HUB_RELEASE=5       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
+  - HUB_REPO=gazebo HUB_RELEASE=4       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
 
-script: ./.travis/travis.py
+script: .travis/travis.py
