@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
-import git
-import github
 import importlib.util
 import os
 import subprocess
 import sys
+
+import git
+import github
 
 # Try to import, but its not critical
 libnames = ['bot_jokes']
