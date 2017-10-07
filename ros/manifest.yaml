@@ -229,6 +229,23 @@ release_names:
                                 aliases:
                                     - "$release_name-perception"
                                     - "$release_name-perception-$os_code_name"
+                    zesty:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base-$os_code_name"
+                            robot:
+                                aliases:
+                                    - "$release_name-robot-$os_code_name"
+                            perception:
+                                aliases:
+                                    - "$release_name-perception-$os_code_name"
             debian:
                 os_code_names:
                     stretch:
