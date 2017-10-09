@@ -3,7 +3,7 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: trusty
+    os_code_name: xenial
     gazebo_version: 7
     user_name: gazebo
     maintainer_name:

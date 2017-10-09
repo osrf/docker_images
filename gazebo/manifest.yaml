@@ -67,7 +67,7 @@ release_names:
         os_names:
             ubuntu:
                 os_code_names:
-                    trusty:
+                    xenial:
                         <<: *DEFAULT
                         archs:
                             - amd64
