@@ -89,9 +89,9 @@ def main(argv=sys.argv[1:]):
     print("GIT_PULL_REQUEST_BRANCH: ", GIT_PULL_REQUEST_BRANCH)
 
     # Private environment variables, not available for pull requests from forks
-    GIT_USER = os.environ['GITHUB_USER']
-    GIT_EMAIL = os.environ['GITHUB_EMAIL']
-    GIT_TOKEN = os.environ['GITHUB_TOKEN']
+    GIT_USER = os.environ.get('GITHUB_USER','')
+    GIT_EMAIL = os.environ.get('GITHUB_EMAIL','')
+    GIT_TOKEN = os.environ.get('GITHUB_TOKEN','')
     GIT_AUTHOR = "{user} <{email}>".format(user=GIT_USER, email=GIT_EMAIL)
     GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + \
         GIT_UPSTREAM_REPO_SLUG.split('/')[1]
