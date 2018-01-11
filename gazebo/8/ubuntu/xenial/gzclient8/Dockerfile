@@ -12,5 +12,5 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo8=8.1.1-1* \
+    gazebo8=8.2.0-1* \
     && rm -rf /var/lib/apt/lists/*
