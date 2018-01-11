@@ -60,12 +60,12 @@ Directory: gazebo/6/ubuntu/trusty/libgazebo6
 
 Tags: gzserver7
 Architectures: amd64
-GitCommit: 72c476d68274d62762ffdd553bf57d8ae6a92d07
+GitCommit: b593ba3dafc4ab63b424bd2dc39d0f4e6710ea6e
 Directory: gazebo/7/ubuntu/xenial/gzserver7
 
 Tags: libgazebo7
 Architectures: amd64
-GitCommit: 72c476d68274d62762ffdd553bf57d8ae6a92d07
+GitCommit: b593ba3dafc4ab63b424bd2dc39d0f4e6710ea6e
 Directory: gazebo/7/ubuntu/xenial/libgazebo7
 
 
