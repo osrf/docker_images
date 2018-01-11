@@ -22,20 +22,21 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo7-dev=7.8.1-1* \
+    libgazebo7-dev=7.9.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
-RUN hg clone https://bitbucket.org/osrf/gzweb ~/gzweb
+ENV GZWEB_WS /root/gzweb
+RUN hg clone https://bitbucket.org/osrf/gzweb $GZWEB_WS
+WORKDIR $GZWEB_WS
 
 # build gzweb
-RUN cd ~/gzweb \
-    && hg up default \
-    && xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m
+RUN hg up default \
+    && xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m -t
 
 # setup environment
 EXPOSE 8080
 EXPOSE 7681
 
 # run gzserver and gzweb
-CMD ./root/gzweb/start_gzweb.sh && gzserver
+CMD gzserver --verbose & npm start
