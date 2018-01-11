@@ -43,12 +43,12 @@ Directory: gazebo/5/ubuntu/trusty/libgazebo5
 
 Tags: gzserver6
 Architectures: amd64
-GitCommit: 1154349c9f81a11ce50d73fd2e07020f4eb7c0b9
+GitCommit: 039483e1c90f52df528381de9d495679c412e84f
 Directory: gazebo/6/ubuntu/trusty/gzserver6
 
 Tags: libgazebo6
 Architectures: amd64
-GitCommit: 1154349c9f81a11ce50d73fd2e07020f4eb7c0b9
+GitCommit: 039483e1c90f52df528381de9d495679c412e84f
 Directory: gazebo/6/ubuntu/trusty/libgazebo6
 
 
