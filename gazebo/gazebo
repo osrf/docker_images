@@ -9,12 +9,12 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: gzserver4
 Architectures: amd64
-GitCommit: 1154349c9f81a11ce50d73fd2e07020f4eb7c0b9
+GitCommit: 4459e46b70e082d0662237e1c62ea26cdcd8ee2c
 Directory: gazebo/4/ubuntu/trusty/gzserver4
 
 Tags: libgazebo4
 Architectures: amd64
-GitCommit: 1154349c9f81a11ce50d73fd2e07020f4eb7c0b9
+GitCommit: 4459e46b70e082d0662237e1c62ea26cdcd8ee2c
 Directory: gazebo/4/ubuntu/trusty/libgazebo4
 
 
