@@ -65,16 +65,15 @@ RUN apt-get update && \
     pip install --upgrade ../rospkg/ && \
     rm -rf /var/lib/apt/lists/*
 
-# HACK, replacing shell with bash for later docker build commands
-RUN mv /bin/sh /bin/sh-old && \
-    ln -s /bin/bash /bin/sh
-
 # build repo
 WORKDIR $CATKIN_WS
 ENV TERM xterm
 ENV PYTHONIOENCODING UTF-8
 RUN catkin config --install && \
     catkin build --no-status --summarize
+
+# setup demo bashrc
+RUN echo 'source "$CATKIN_WS/install/setup.bash"' >> ~/.bashrc
 
 # setup demo config
 COPY ./config /root/.ros/sros/config/
