@@ -2,18 +2,28 @@ Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
 GitRepo: https://github.com/osrf/docker_images.git
 
 ################################################################################
-# Release: r2b3
+# Release: ardent
 
 ########################################
 # Distro: ubuntu:xenial
 
-Tags: r2b3-core
+Tags: ardent-core
 Architectures: amd64
-GitCommit: 100f733a1689fd853f0ea68a2fc0b542cb4bc673
-Directory: ros2/r2b3/ubuntu/xenial/r2b3-core
+GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+Directory: ros2/ardent/ubuntu/xenial/ardent-core
 
-Tags: r2b3-ros1-bridge
+Tags: ardent-basic
 Architectures: amd64
-GitCommit: 100f733a1689fd853f0ea68a2fc0b542cb4bc673
-Directory: ros2/r2b3/ubuntu/xenial/r2b3-ros1-bridge
+GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+Directory: ros2/ardent/ubuntu/xenial/ardent-basic
+
+Tags: ardent-full
+Architectures: amd64
+GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+Directory: ros2/ardent/ubuntu/xenial/ardent-full
+
+Tags: ardent-ros1-bridge
+Architectures: amd64
+GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+Directory: ros2/ardent/ubuntu/xenial/ardent-ros1-bridge
 
