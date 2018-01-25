@@ -17,7 +17,6 @@ env:
   - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
   - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=debian HUB_OS_CODE_NAME=jessie
-  - HUB_REPO=ros    HUB_RELEASE=jade    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
   - HUB_REPO=ros    HUB_RELEASE=indigo  HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
   # gazebo
   - HUB_REPO=gazebo HUB_RELEASE=8       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
