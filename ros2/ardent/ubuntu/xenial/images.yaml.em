@@ -54,6 +54,7 @@ images:
         template_packages:
             - docker_templates
         ros2_packages:
+            # - ament*
             - astra-camera
             - cartographer-ros
             - depthimage-to-laserscan
