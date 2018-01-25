@@ -11,7 +11,7 @@ install:
 
 env:
   # ros2
-  - HUB_REPO=ros2   HUB_RELEASE=r2b3    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
+  - HUB_REPO=ros2   HUB_RELEASE=ardent    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   # ros
   - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=zesty
   - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
