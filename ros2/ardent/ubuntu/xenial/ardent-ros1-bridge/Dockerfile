@@ -1,10 +1,11 @@
-# This is an auto generated Dockerfile for ros2:r2b3-ros1-bridge
+# This is an auto generated Dockerfile for ros2:ardent-ros1-bridge
 # generated from docker_images/create_ros2_image.Dockerfile.em
-FROM osrf/ros2:r2b3-core
+FROM osrf/ros2:ardent-full
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-r2b3-ros1-bridge \
+    ros-ardent-ros1-bridge \
+    ros-ardent-turtlebot2* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

@@ -1,4 +1,4 @@
-# This is an auto generated Dockerfile for ros2:r2b3-core
+# This is an auto generated Dockerfile for ros2:ardent-core
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
@@ -20,23 +20,18 @@ RUN . /etc/os-release \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV ROS_DISTRO kinetic
-ENV ROS2_DISTRO r2b3
+ENV ROS2_DISTRO ardent
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# install python packages
-RUN pip3 install -U \
-    argcomplete
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-r2b3-demo-nodes-cpp \
-    ros-r2b3-demo-nodes-py \
-    ros-r2b3-ros2run \
-    ros-r2b3-sros2 \
+    ros-ardent-rclcpp \
+    ros-ardent-rclpy \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
