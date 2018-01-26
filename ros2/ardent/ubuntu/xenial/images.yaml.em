@@ -18,7 +18,6 @@ images:
         base_image: osrf/@(user_name):@(ros2distro_name)-core
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros2_image.Dockerfile.em
-        entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
             - docker_templates
         packages:
@@ -50,7 +49,6 @@ images:
         base_image: osrf/@(user_name):@(ros2distro_name)-basic
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros2_image.Dockerfile.em
-        entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
             - docker_templates
         ros2_packages:

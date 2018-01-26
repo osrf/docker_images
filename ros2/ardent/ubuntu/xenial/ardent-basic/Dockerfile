@@ -34,7 +34,3 @@ RUN apt-get update && apt-get install -y \
     ros-ardent-topic-monitor \
     && rm -rf /var/lib/apt/lists/*
 
-# setup entrypoint
-COPY ./ros2_entrypoint.sh /
-
-ENTRYPOINT ["/ros2_entrypoint.sh"]
