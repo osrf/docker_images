@@ -9,21 +9,21 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: ardent-core
 Architectures: amd64
-GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+GitCommit: d8fa59baab89746795cb80a56153730d7902e815
 Directory: ros2/ardent/ubuntu/xenial/ardent-core
 
 Tags: ardent-basic
 Architectures: amd64
-GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+GitCommit: d8fa59baab89746795cb80a56153730d7902e815
 Directory: ros2/ardent/ubuntu/xenial/ardent-basic
 
 Tags: ardent-full
 Architectures: amd64
-GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+GitCommit: d8fa59baab89746795cb80a56153730d7902e815
 Directory: ros2/ardent/ubuntu/xenial/ardent-full
 
 Tags: ardent-ros1-bridge
 Architectures: amd64
-GitCommit: 83ba18815e9d30de2ba65224937289292ab3e402
+GitCommit: d8fa59baab89746795cb80a56153730d7902e815
 Directory: ros2/ardent/ubuntu/xenial/ardent-ros1-bridge
 
