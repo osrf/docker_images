@@ -12,3 +12,4 @@ RUN apt-get update && apt-get install -y \
 COPY ./ros1_bridge_entrypoint.sh /
 
 ENTRYPOINT ["/ros1_bridge_entrypoint.sh"]
+CMD ["bash"]
