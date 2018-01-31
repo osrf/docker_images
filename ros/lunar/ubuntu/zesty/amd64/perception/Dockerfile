@@ -4,6 +4,6 @@ FROM ros:lunar-ros-base-zesty
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-lunar-perception=1.3.1-0* \
+    ros-lunar-perception=1.3.1-0zesty-20180115-005715-0800 \
     && rm -rf /var/lib/apt/lists/*
 

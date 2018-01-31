@@ -32,7 +32,7 @@ RUN rosdep init \
 # install ros packages
 ENV ROS_DISTRO lunar
 RUN apt-get update && apt-get install -y \
-    ros-lunar-ros-core=1.3.1-0* \
+    ros-lunar-ros-core=1.3.1-0xenial-20171109-152417-0800 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

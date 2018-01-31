@@ -4,6 +4,6 @@ FROM osrf/ros:kinetic-desktop-xenial
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-desktop-full=1.3.1-0* \
+    ros-kinetic-desktop-full=1.3.1-0xenial-20180125-165614-0800 \
     && rm -rf /var/lib/apt/lists/*
 

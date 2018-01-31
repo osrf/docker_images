@@ -4,6 +4,6 @@ FROM ros:indigo-ros-base-trusty
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-indigo-robot=1.1.5-0* \
+    ros-indigo-robot=1.1.5-0trusty-20180110-194715-0800 \
     && rm -rf /var/lib/apt/lists/*
 

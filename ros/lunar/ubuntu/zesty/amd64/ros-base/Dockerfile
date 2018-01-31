@@ -4,6 +4,6 @@ FROM ros:lunar-ros-core-zesty
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-lunar-ros-base=1.3.1-0* \
+    ros-lunar-ros-base=1.3.1-0zesty-20171120-104743-0800 \
     && rm -rf /var/lib/apt/lists/*
 

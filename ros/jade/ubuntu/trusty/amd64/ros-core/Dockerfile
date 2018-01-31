@@ -32,7 +32,7 @@ RUN rosdep init \
 # install ros packages
 ENV ROS_DISTRO jade
 RUN apt-get update && apt-get install -y \
-    ros-jade-ros-core=1.2.1-0* \
+    ros-jade-ros-core=1.2.1-0trusty-20170714-103833-0800 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

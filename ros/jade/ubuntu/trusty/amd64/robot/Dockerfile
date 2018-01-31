@@ -4,6 +4,6 @@ FROM ros:jade-ros-base-trusty
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-jade-robot=1.2.1-0* \
+    ros-jade-robot=1.2.1-0trusty-20170728-003523-0800 \
     && rm -rf /var/lib/apt/lists/*
 

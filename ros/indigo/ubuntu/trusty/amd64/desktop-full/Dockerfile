@@ -4,6 +4,6 @@ FROM osrf/ros:indigo-desktop-trusty
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-indigo-desktop-full=1.1.5-0* \
+    ros-indigo-desktop-full=1.1.5-0trusty-20180110-214435-0800 \
     && rm -rf /var/lib/apt/lists/*
 

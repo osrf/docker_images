@@ -4,6 +4,6 @@ FROM ros:kinetic-robot-jessie
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-desktop=1.3.1-0* \
+    ros-kinetic-desktop=1.3.1-0jessie-20180125-164036-0800 \
     && rm -rf /var/lib/apt/lists/*
 

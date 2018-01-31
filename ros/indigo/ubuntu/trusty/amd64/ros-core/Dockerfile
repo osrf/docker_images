@@ -32,7 +32,7 @@ RUN rosdep init \
 # install ros packages
 ENV ROS_DISTRO indigo
 RUN apt-get update && apt-get install -y \
-    ros-indigo-ros-core=1.1.5-0* \
+    ros-indigo-ros-core=1.1.5-0trusty-20170714-103836-0800 \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

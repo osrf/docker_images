@@ -4,6 +4,6 @@ FROM ros:lunar-robot-stretch
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-lunar-desktop=1.3.1-0* \
+    ros-lunar-desktop=1.3.1-0stretch-20180125-130757-0800 \
     && rm -rf /var/lib/apt/lists/*
 
