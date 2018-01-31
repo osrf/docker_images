@@ -94,6 +94,24 @@ release_names:
                             libgazebo8:
                                 aliases:
                                     - "libgazebo8"
+    '9':
+        eol: 2023-01-25
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            gzserver8:
+                                aliases:
+                                    - "gzserver9"
+                                    - "gzserver9-$os_code_name"
+                            libgazebo8:
+                                aliases:
+                                    - "libgazebo9"
+                                    - "libgazebo9-$os_code_name"
                                     - latest
 
 meta:

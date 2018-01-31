@@ -1,0 +1,13 @@
+%YAML 1.1
+# Gazebo Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: xenial
+    gazebo_version: 9
+    user_name: gazebo
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version:
+    release: stable
