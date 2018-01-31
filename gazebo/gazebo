@@ -80,8 +80,25 @@ Architectures: amd64
 GitCommit: 413df81c5f25236563fda9505c89a84f18448132
 Directory: gazebo/8/ubuntu/xenial/gzserver8
 
-Tags: libgazebo8, latest
+Tags: libgazebo8
 Architectures: amd64
 GitCommit: 413df81c5f25236563fda9505c89a84f18448132
 Directory: gazebo/8/ubuntu/xenial/libgazebo8
+
+
+################################################################################
+# Release: 9
+
+########################################
+# Distro: ubuntu:xenial
+
+Tags: gzserver9, gzserver9-xenial
+Architectures: amd64
+GitCommit: b8deb76898b59e0d43518f2cbdca6c90afc1debe
+Directory: gazebo/9/ubuntu/xenial/gzserver8
+
+Tags: libgazebo9, libgazebo9-xenial, latest
+Architectures: amd64
+GitCommit: b8deb76898b59e0d43518f2cbdca6c90afc1debe
+Directory: gazebo/9/ubuntu/xenial/libgazebo8
 
