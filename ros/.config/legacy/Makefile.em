@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:$release_name-ros-$os_code_name          ros/.
+	@docker build --tag=$repo/ros:$release_name-ros-$os_code_name          ros/.
 
 pull:
-	@docker pull ros:$release_name-ros-$os_code_name
+	@docker pull $repo/ros:$release_name-ros-$os_code_name
 
 clean:
-	@docker rmi -f ros:$release_name-ros-$os_code_name
+	@docker rmi -f $repo/ros:$release_name-ros-$os_code_name
