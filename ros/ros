@@ -9,23 +9,31 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: indigo-ros-core, indigo-ros-core-trusty
 Architectures: amd64, arm32v7
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/indigo/ubuntu/trusty/ros-core
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/indigo/ubuntu/trusty/amd64/ros-core
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/indigo/ubuntu/trusty/arm32v7/ros-core
 
 Tags: indigo-ros-base, indigo-ros-base-trusty, indigo
 Architectures: amd64, arm32v7
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/indigo/ubuntu/trusty/ros-base
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/indigo/ubuntu/trusty/amd64/ros-base
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/indigo/ubuntu/trusty/arm32v7/ros-base
 
 Tags: indigo-robot, indigo-robot-trusty
 Architectures: amd64, arm32v7
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/indigo/ubuntu/trusty/robot
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/indigo/ubuntu/trusty/amd64/robot
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/indigo/ubuntu/trusty/arm32v7/robot
 
 Tags: indigo-perception, indigo-perception-trusty
 Architectures: amd64, arm32v7
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/indigo/ubuntu/trusty/perception
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/indigo/ubuntu/trusty/amd64/perception
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/indigo/ubuntu/trusty/arm32v7/perception
 
 
 ################################################################################
@@ -36,46 +44,70 @@ Directory: ros/indigo/ubuntu/trusty/perception
 
 Tags: kinetic-ros-core, kinetic-ros-core-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/kinetic/ubuntu/xenial/ros-core
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/ubuntu/xenial/amd64/ros-core
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/kinetic/ubuntu/xenial/arm32v7/ros-core
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/ubuntu/xenial/arm64v8/ros-core
 
 Tags: kinetic-ros-base, kinetic-ros-base-xenial, kinetic, latest
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/kinetic/ubuntu/xenial/ros-base
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/ubuntu/xenial/amd64/ros-base
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/kinetic/ubuntu/xenial/arm32v7/ros-base
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/ubuntu/xenial/arm64v8/ros-base
 
 Tags: kinetic-robot, kinetic-robot-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/kinetic/ubuntu/xenial/robot
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/ubuntu/xenial/amd64/robot
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/kinetic/ubuntu/xenial/arm32v7/robot
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/ubuntu/xenial/arm64v8/robot
 
 Tags: kinetic-perception, kinetic-perception-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/kinetic/ubuntu/xenial/perception
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/ubuntu/xenial/amd64/perception
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/kinetic/ubuntu/xenial/arm32v7/perception
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/ubuntu/xenial/arm64v8/perception
 
 ########################################
 # Distro: debian:jessie
 
 Tags: kinetic-ros-core-jessie
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/kinetic/debian/jessie/ros-core
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/debian/jessie/amd64/ros-core
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/debian/jessie/arm64v8/ros-core
 
 Tags: kinetic-ros-base-jessie
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/kinetic/debian/jessie/ros-base
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/debian/jessie/amd64/ros-base
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/debian/jessie/arm64v8/ros-base
 
 Tags: kinetic-robot-jessie
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/kinetic/debian/jessie/robot
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/debian/jessie/amd64/robot
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/debian/jessie/arm64v8/robot
 
 Tags: kinetic-perception-jessie
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/kinetic/debian/jessie/perception
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/kinetic/debian/jessie/amd64/perception
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/kinetic/debian/jessie/arm64v8/perception
 
 
 ################################################################################
@@ -86,44 +118,68 @@ Directory: ros/kinetic/debian/jessie/perception
 
 Tags: lunar-ros-core, lunar-ros-core-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/lunar/ubuntu/xenial/ros-core
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/ubuntu/xenial/amd64/ros-core
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/lunar/ubuntu/xenial/arm32v7/ros-core
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/ubuntu/xenial/arm64v8/ros-core
 
 Tags: lunar-ros-base, lunar-ros-base-xenial, lunar
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/lunar/ubuntu/xenial/ros-base
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/ubuntu/xenial/amd64/ros-base
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/lunar/ubuntu/xenial/arm32v7/ros-base
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/ubuntu/xenial/arm64v8/ros-base
 
 Tags: lunar-robot, lunar-robot-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/lunar/ubuntu/xenial/robot
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/ubuntu/xenial/amd64/robot
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/lunar/ubuntu/xenial/arm32v7/robot
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/ubuntu/xenial/arm64v8/robot
 
 Tags: lunar-perception, lunar-perception-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
-Directory: ros/lunar/ubuntu/xenial/perception
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/ubuntu/xenial/amd64/perception
+arm32v7-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm32v7-Directory: ros/lunar/ubuntu/xenial/arm32v7/perception
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/ubuntu/xenial/arm64v8/perception
 
 ########################################
 # Distro: debian:stretch
 
 Tags: lunar-ros-core-stretch
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/lunar/debian/stretch/ros-core
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/debian/stretch/amd64/ros-core
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/debian/stretch/arm64v8/ros-core
 
 Tags: lunar-ros-base-stretch
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/lunar/debian/stretch/ros-base
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/debian/stretch/amd64/ros-base
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/debian/stretch/arm64v8/ros-base
 
 Tags: lunar-robot-stretch
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/lunar/debian/stretch/robot
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/debian/stretch/amd64/robot
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/debian/stretch/arm64v8/robot
 
 Tags: lunar-perception-stretch
 Architectures: amd64, arm64v8
-GitCommit: 3e8b29c44f02c85b71a156be51c94902d4092929
-Directory: ros/lunar/debian/stretch/perception
+amd64-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+amd64-Directory: ros/lunar/debian/stretch/amd64/perception
+arm64v8-GitCommit: c0e4e78109214770958b25e1f442ed906b4dafb7
+arm64v8-Directory: ros/lunar/debian/stretch/arm64v8/perception
 
