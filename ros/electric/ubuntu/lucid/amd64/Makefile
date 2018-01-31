@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:electric-ros-lucid          ros/.
+	@docker build --tag=amd64/ros:electric-ros-lucid          ros/.
 
 pull:
-	@docker pull ros:electric-ros-lucid
+	@docker pull amd64/ros:electric-ros-lucid
 
 clean:
-	@docker rmi -f ros:electric-ros-lucid
+	@docker rmi -f amd64/ros:electric-ros-lucid

@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:groovy-ros-precise          ros/.
+	@docker build --tag=amd64/ros:groovy-ros-precise          ros/.
 
 pull:
-	@docker pull ros:groovy-ros-precise
+	@docker pull amd64/ros:groovy-ros-precise
 
 clean:
-	@docker rmi -f ros:groovy-ros-precise
+	@docker rmi -f amd64/ros:groovy-ros-precise

@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:fuerte-ros-precise          ros/.
+	@docker build --tag=amd64/ros:fuerte-ros-precise          ros/.
 
 pull:
-	@docker pull ros:fuerte-ros-precise
+	@docker pull amd64/ros:fuerte-ros-precise
 
 clean:
-	@docker rmi -f ros:fuerte-ros-precise
+	@docker rmi -f amd64/ros:fuerte-ros-precise

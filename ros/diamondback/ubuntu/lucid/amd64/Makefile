@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:diamondback-ros-lucid          ros/.
+	@docker build --tag=amd64/ros:diamondback-ros-lucid          ros/.
 
 pull:
-	@docker pull ros:diamondback-ros-lucid
+	@docker pull amd64/ros:diamondback-ros-lucid
 
 clean:
-	@docker rmi -f ros:diamondback-ros-lucid
+	@docker rmi -f amd64/ros:diamondback-ros-lucid

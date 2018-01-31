@@ -1,0 +1,13 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: trusty
+    rosdistro_name: indigo
+    user_name: ros
+    maintainer_name:
+    arch: armhf
+    type: distribution
+    version:
+    release: ros

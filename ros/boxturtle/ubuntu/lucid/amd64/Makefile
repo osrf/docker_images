@@ -10,10 +10,10 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:boxturtle-ros-lucid          ros/.
+	@docker build --tag=amd64/ros:boxturtle-ros-lucid          ros/.
 
 pull:
-	@docker pull ros:boxturtle-ros-lucid
+	@docker pull amd64/ros:boxturtle-ros-lucid
 
 clean:
-	@docker rmi -f ros:boxturtle-ros-lucid
+	@docker rmi -f amd64/ros:boxturtle-ros-lucid
