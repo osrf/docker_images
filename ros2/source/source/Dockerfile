@@ -31,13 +31,11 @@ RUN apt-get update && apt-get install -q -y \
     libglu1-mesa-dev \
     libopencv-dev \
     libpoco-dev \
-    libpocofoundation9v5 \
-    libpocofoundation9v5-dbg \
     libqt5core5a \
     libqt5gui5 \
     libqt5opengl5 \
     libqt5widgets5 \
-    libopensplice67 \
+    # libopensplice67 \
     libssl-dev \
     libtinyxml-dev \
     libtinyxml2-dev \
