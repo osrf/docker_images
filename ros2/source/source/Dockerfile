@@ -13,6 +13,9 @@ RUN . /etc/os-release \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+RUN apt-get update && apt-get install -q -y tzdata \
+    && rm -rf /var/lib/apt/lists/*
+
 # install packages
 RUN apt-get update && apt-get install -q -y \
     bash-completion \
