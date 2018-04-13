@@ -1,14 +1,14 @@
 # This is an auto generated Dockerfile for ros2:source
 # generated from docker_images/create_ros2_source_image.Dockerfile.em
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+# RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN . /etc/os-release \
-    && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
-
+# RUN . /etc/os-release \
+#     && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
+ENV DEBIAN_FRONTEND noninteractive
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
@@ -55,7 +55,7 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     python3-pyparsing \
     python3-setuptools \
-    python3-vcstool \
+    # python3-vcstool \
     python3-yaml \
     qtbase5-dev \
     uncrustify \
@@ -76,7 +76,8 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest \
     pytest-cov \
-    pytest-runner
+    pytest-runner \
+    vcstool
 
 # clone source
 ENV ROS2_WS /root/ros2_ws
