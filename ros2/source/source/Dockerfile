@@ -63,6 +63,7 @@ RUN apt-get update && apt-get install -q -y \
 # install python packages
 RUN pip3 install -U \
     argcomplete \
+    catkin_pkg \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -77,24 +78,42 @@ RUN pip3 install -U \
     pytest-runner \
     vcstool
 
+# clone and build buildtool
+ENV COLCON_WS /root/ros2/colcon
+RUN mkdir -p $COLCON_WS/src
+WORKDIR $COLCON_WS
+RUN wget https://raw.githubusercontent.com/colcon/colcon.readthedocs.org/master/colcon.repos && \
+    vcs import src < colcon.repos
+RUN ./src/colcon-core/bin/colcon build --paths src/*
+RUN . install/prefix.sh && colcon build
 # clone source
-ENV ROS2_WS /root/ros2_ws
+ENV ROS2_WS /root/ros2/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
-RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import src < ros2.repos
 
+RUN echo "sasdadfuhds"
 # build source
 WORKDIR $ROS2_WS
-RUN src/ament/ament_tools/scripts/ament.py \
+RUN touch $ROS2_WS/src/ros2/rviz/AMENT_IGNORE
+RUN . $COLCON_WS/install/prefix.sh && colcon \
     build \
-    --build-tests \
-    --cmake-args -DSECURITY=ON -- \
-    --isolated \
-    --parallel \
-    --symlink-install
+    --cmake-args " -DSECURITY=ON -DBUILD_TESTING=ON" \
+    --symlink-install \
+    --event-handler console_cohesion+
 
+# --executor sequential
+
+# RUN src/ament/ament_tools/scripts/ament.py \
+#      build \
+#     --build-tests \
+#     --cmake-args -DSECURITY=ON -- \
+#     --isolated \
+#     --parallel \
+#     --symlink-install
 # setup bashrc
+ENV ROS2_WS /root/ros2/ros2_ws
 RUN cp /etc/skel/.bashrc ~/
 
 # setup entrypoint
