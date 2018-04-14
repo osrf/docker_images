@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -q -y \
     cppcheck \
     git \
     libasio-dev \
-    libassimp-dev \
+    # libassimp-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
     libfreetype6-dev \
@@ -99,14 +99,11 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
 RUN echo "sasdadfuhds"
 # build source
 WORKDIR $ROS2_WS
-RUN touch $ROS2_WS/src/ros2/rviz/AMENT_IGNORE
 RUN . $COLCON_WS/install/prefix.sh && colcon \
     build \
     --cmake-args " -DSECURITY=ON -DBUILD_TESTING=ON" \
     --symlink-install \
     --event-handler console_cohesion+
-
-# --executor sequential
 
 # RUN src/ament/ament_tools/scripts/ament.py \
 #      build \
