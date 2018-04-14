@@ -105,13 +105,6 @@ RUN . $COLCON_WS/install/prefix.sh && colcon \
     --symlink-install \
     --event-handler console_cohesion+
 
-# RUN src/ament/ament_tools/scripts/ament.py \
-#      build \
-#     --build-tests \
-#     --cmake-args -DSECURITY=ON -- \
-#     --isolated \
-#     --parallel \
-#     --symlink-install
 # setup bashrc
 ENV ROS2_WS /root/ros2/ros2_ws
 RUN cp /etc/skel/.bashrc ~/
