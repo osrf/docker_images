@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -q -y \
     cppcheck \
     git \
     libasio-dev \
+    libassimp-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
     libgles2-mesa-dev \
