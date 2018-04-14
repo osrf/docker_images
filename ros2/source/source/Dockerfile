@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -q -y \
     libassimp-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
+    libfreetype6-dev \
     libgles2-mesa-dev \
     libglu1-mesa-dev \
     libopencv-dev \
@@ -59,6 +60,7 @@ RUN apt-get update && apt-get install -q -y \
     qtbase5-dev \
     uncrustify \
     wget \
+    xorg-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # install python packages
