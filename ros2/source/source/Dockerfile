@@ -78,6 +78,8 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest \
     pytest-cov \
+    pytest-repeat \
+    pytest-rerunfailures \
     pytest-runner \
     vcstool
 
@@ -89,6 +91,7 @@ RUN wget https://raw.githubusercontent.com/colcon/colcon.readthedocs.org/master/
     vcs import src < colcon.repos
 RUN ./src/colcon-core/bin/colcon build --paths src/*
 RUN . install/prefix.sh && colcon build
+
 # clone source
 ENV ROS2_WS /root/ros2/ros2_ws
 RUN mkdir -p $ROS2_WS/src
@@ -96,7 +99,6 @@ WORKDIR $ROS2_WS
 RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import src < ros2.repos
 
-RUN echo "sasdadfuhds"
 # build source
 WORKDIR $ROS2_WS
 RUN . $COLCON_WS/install/prefix.sh && colcon \
