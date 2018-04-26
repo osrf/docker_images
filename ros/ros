@@ -86,22 +86,22 @@ Directory: ros/kinetic/debian/jessie/perception
 
 Tags: lunar-ros-core, lunar-ros-core-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
+GitCommit: d81c0004d43383a6cd0f7b5a9b3020300f3cb1ca
 Directory: ros/lunar/ubuntu/xenial/ros-core
 
 Tags: lunar-ros-base, lunar-ros-base-xenial, lunar
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
+GitCommit: d81c0004d43383a6cd0f7b5a9b3020300f3cb1ca
 Directory: ros/lunar/ubuntu/xenial/ros-base
 
 Tags: lunar-robot, lunar-robot-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
+GitCommit: d81c0004d43383a6cd0f7b5a9b3020300f3cb1ca
 Directory: ros/lunar/ubuntu/xenial/robot
 
 Tags: lunar-perception, lunar-perception-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 5399f380af0a7735405a4b6a07c6c40b867563bd
+GitCommit: d81c0004d43383a6cd0f7b5a9b3020300f3cb1ca
 Directory: ros/lunar/ubuntu/xenial/perception
 
 ########################################
