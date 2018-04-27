@@ -4,6 +4,6 @@ FROM ros:lunar-robot-xenial
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
-    ros-lunar-desktop=1.3.1-0* \
+    ros-lunar-desktop=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*
 
