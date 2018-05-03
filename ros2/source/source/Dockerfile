@@ -103,7 +103,7 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
 WORKDIR $ROS2_WS
 RUN . $COLCON_WS/install/prefix.sh && colcon \
     build \
-    --cmake-args " -DSECURITY=ON -DBUILD_TESTING=ON" \
+    --cmake-args " -DSECURITY=ON" " -DBUILD_TESTING=ON" \
     --symlink-install \
     --event-handler console_cohesion+
 
