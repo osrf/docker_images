@@ -268,7 +268,55 @@ release_names:
                             perception:
                                 aliases:
                                     - "$release_name-perception-$os_code_name"
-
+    melodic:
+        eol: 2023-05
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm32v7
+                            - arm64v8
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
+                            robot:
+                                aliases:
+                                    - "$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
+                            perception:
+                                aliases:
+                                    - "$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
+            debian:
+                os_code_names:
+                    stretch:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64v8
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base-$os_code_name"
+                            robot:
+                                aliases:
+                                    - "$release_name-robot-$os_code_name"
+                            perception:
+                                aliases:
+                                    - "$release_name-perception-$os_code_name"
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
@@ -371,6 +419,16 @@ hacks:
             ubuntu:
                 os_code_names:
                     xenial:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            desktop-full:
+                                <<: *DEFAULT_HOOKS
+    melodic:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
                         tag_names:
                             desktop:
                                 <<: *DEFAULT_HOOKS
