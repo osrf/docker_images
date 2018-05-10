@@ -13,6 +13,8 @@ env:
   # ros2
   - HUB_REPO=ros2   HUB_RELEASE=ardent    HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   # ros
+  - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
+  - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
   - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
   - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
