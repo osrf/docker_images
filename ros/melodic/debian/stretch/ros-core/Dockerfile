@@ -2,10 +2,6 @@
 # generated from docker_images/create_ros_core_image.Dockerfile.em
 FROM debian:stretch
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    tzdata \
-    && rm -rf /var/lib/apt/lists/*
-
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dirmngr \

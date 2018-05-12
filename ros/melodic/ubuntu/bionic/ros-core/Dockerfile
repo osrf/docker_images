@@ -2,9 +2,10 @@
 # generated from docker_images/create_ros_core_image.Dockerfile.em
 FROM ubuntu:bionic
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    tzdata \
-    && rm -rf /var/lib/apt/lists/*
+RUN echo 'Etc/UTC' > /etc/timezone
+RUN ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime
+RUN apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+
 
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
