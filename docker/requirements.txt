@@ -9,7 +9,7 @@ pyyaml
 ###### Requirements with Repo Specifiers ######
 #   See https://pip.readthedocs.io/en/stable/reference/pip_install/#git
 git+git://github.com/ros-infrastructure/ros_buildfarm.git@master#egg=ros_buildfarm
-git+git://github.com/osrf/docker_templates.git@master#egg=docker_templates
+git+git://github.com/osrf/docker_templates.git@colcon#egg=docker_templates
 
 ###### Requirements with Version Specifiers ######
 #   See https://www.python.org/dev/peps/pep-0440/#version-specifiers

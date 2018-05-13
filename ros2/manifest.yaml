@@ -15,7 +15,7 @@ defaults:
 
 release_names:
     ardent:
-        eol:
+        eol: 2018-12
         os_names:
             ubuntu:
                 os_code_names:
@@ -24,18 +24,41 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ardent-core:
+                            core:
                                 aliases:
                                     - "$release_name-core"
-                            ardent-basic:
+                            basic:
                                 aliases:
                                     - "$release_name-basic"
-                            ardent-full:
+                            full:
                                 aliases:
                                     - "$release_name-full"
-                            ardent-ros1-bridge:
+                            ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
+    # bouncy:
+    #     eol: 2019-12
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 bionic:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                         - arm64v8
+    #                     tag_names:
+    #                         core:
+    #                             aliases:
+    #                                 - "$release_name-core"
+    #                         basic:
+    #                             aliases:
+    #                                 - "$release_name-basic"
+    #                         full:
+    #                             aliases:
+    #                                 - "$release_name-full"
+    #                         ros1-bridge:
+    #                             aliases:
+    #                                 - "$release_name-ros1-bridge"
 
 meta:
     maintainers:

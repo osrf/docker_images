@@ -4,9 +4,10 @@
 platform:
     os_name: ubuntu
     os_code_name: bionic
-    rosdistro_name: melodic
+    rosdistro_name: kinetic
+    ros2distro_name: bouncy
     user_name: ros2
     maintainer_name:
     arch: amd64
     type: distribution
-    version: 2
+    version: false
