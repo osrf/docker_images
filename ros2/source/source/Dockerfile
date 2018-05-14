@@ -1,17 +1,20 @@
 # This is an auto generated Dockerfile for ros2:source
 # generated from docker_images/create_ros2_source_image.Dockerfile.em
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+# RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN . /etc/os-release \
-    && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
-
+# RUN . /etc/os-release \
+#     && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
+ENV DEBIAN_FRONTEND noninteractive
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+
+RUN apt-get update && apt-get install -q -y tzdata \
+    && rm -rf /var/lib/apt/lists/*
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -22,19 +25,19 @@ RUN apt-get update && apt-get install -q -y \
     cppcheck \
     git \
     libasio-dev \
+    # libassimp-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
+    libfreetype6-dev \
     libgles2-mesa-dev \
     libglu1-mesa-dev \
     libopencv-dev \
     libpoco-dev \
-    libpocofoundation9v5 \
-    libpocofoundation9v5-dbg \
     libqt5core5a \
     libqt5gui5 \
     libqt5opengl5 \
     libqt5widgets5 \
-    libopensplice67 \
+    # libopensplice67 \
     libssl-dev \
     libtinyxml-dev \
     libtinyxml2-dev \
@@ -52,16 +55,18 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     python3-pyparsing \
     python3-setuptools \
-    python3-vcstool \
+    # python3-vcstool \
     python3-yaml \
     qtbase5-dev \
     uncrustify \
     wget \
+    xorg-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # install python packages
 RUN pip3 install -U \
     argcomplete \
+    catkin_pkg \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -73,26 +78,37 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest \
     pytest-cov \
-    pytest-runner
+    pytest-repeat \
+    pytest-rerunfailures \
+    pytest-runner \
+    vcstool
+
+# clone and build buildtool
+ENV COLCON_WS /root/ros2/colcon
+RUN mkdir -p $COLCON_WS/src
+WORKDIR $COLCON_WS
+RUN wget https://raw.githubusercontent.com/colcon/colcon.readthedocs.org/master/colcon.repos && \
+    vcs import src < colcon.repos
+RUN ./src/colcon-core/bin/colcon build --paths src/*
+RUN . install/prefix.sh && colcon build
 
 # clone source
-ENV ROS2_WS /root/ros2_ws
+ENV ROS2_WS /root/ros2/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
-RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import src < ros2.repos
 
 # build source
 WORKDIR $ROS2_WS
-RUN src/ament/ament_tools/scripts/ament.py \
+RUN . $COLCON_WS/install/prefix.sh && colcon \
     build \
-    --build-tests \
-    --cmake-args -DSECURITY=ON -- \
-    --isolated \
-    --parallel \
-    --symlink-install
+    --cmake-args " -DSECURITY=ON" " -DBUILD_TESTING=ON" \
+    --symlink-install \
+    --event-handler console_cohesion+
 
 # setup bashrc
+ENV ROS2_WS /root/ros2/ros2_ws
 RUN cp /etc/skel/.bashrc ~/
 
 # setup entrypoint
