@@ -127,3 +127,53 @@ Architectures: amd64, arm64v8
 GitCommit: 4d697291568d826da713ef8b20be58fa8e86e4f5
 Directory: ros/lunar/debian/stretch/perception
 
+
+################################################################################
+# Release: melodic
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: melodic-ros-core, melodic-ros-core-bionic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/ubuntu/bionic/ros-core
+
+Tags: melodic-ros-base, melodic-ros-base-bionic, melodic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/ubuntu/bionic/ros-base
+
+Tags: melodic-robot, melodic-robot-bionic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/ubuntu/bionic/robot
+
+Tags: melodic-perception, melodic-perception-bionic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/ubuntu/bionic/perception
+
+########################################
+# Distro: debian:stretch
+
+Tags: melodic-ros-core-stretch
+Architectures: amd64, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/debian/stretch/ros-core
+
+Tags: melodic-ros-base-stretch
+Architectures: amd64, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/debian/stretch/ros-base
+
+Tags: melodic-robot-stretch
+Architectures: amd64, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/debian/stretch/robot
+
+Tags: melodic-perception-stretch
+Architectures: amd64, arm64v8
+GitCommit: 0b131b18d6b55681d429b73e94da0ce18fa84811
+Directory: ros/melodic/debian/stretch/perception
+
