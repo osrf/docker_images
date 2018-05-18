@@ -25,7 +25,7 @@ images:
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
             - docker_templates
-        packages:
+        upstream_packages:
             - build-essential
             - cmake
             - imagemagick
@@ -48,7 +48,7 @@ images:
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
             - docker_templates
-        packages:
+        upstream_packages:
             - binutils
             - mesa-utils
             - module-init-tools
