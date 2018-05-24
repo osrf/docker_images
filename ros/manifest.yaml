@@ -172,7 +172,6 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
-                                    - latest
                             robot:
                                 aliases:
                                     - "$release_name-robot"
@@ -289,6 +288,7 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
+                                    - latest
                             robot:
                                 aliases:
                                     - "$release_name-robot"
