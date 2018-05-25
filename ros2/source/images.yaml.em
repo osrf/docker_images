@@ -50,7 +50,7 @@ images:
             - qtbase5-dev
             - uncrustify
             - wget
-        packages:
+        ros2_repo_packages:
             - libopensplice67
             - python3-vcstool
         pip3_install:
