@@ -9,7 +9,7 @@ images:
         entrypoint_name: docker_images/ros2_entrypoint.sh
         template_packages:
             - docker_templates
-        packages:
+        upstream_packages:
             - python3-pip
         ros2_packages:
             - rclcpp
@@ -20,7 +20,7 @@ images:
         template_name: docker_images/create_ros2_image.Dockerfile.em
         template_packages:
             - docker_templates
-        packages:
+        upstream_packages:
             - python3-pip
         pip3_install:
             - argcomplete
