@@ -9,9 +9,6 @@ images:
         entrypoint_name: docker_images/ros_entrypoint.sh
         template_packages:
             - docker_templates
-        packages:
-            - dirmngr
-            - gnupg2
         ros_packages:
             - ros-core
     ros-base:
