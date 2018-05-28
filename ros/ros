@@ -59,22 +59,22 @@ Directory: ros/kinetic/ubuntu/xenial/perception
 
 Tags: kinetic-ros-core-jessie
 Architectures: amd64, arm64v8
-GitCommit: 974fbc89317b858efd413073417de5996467a6d5
+GitCommit: 9ed28e05366468c387af9aac3c07ee4a91634a10
 Directory: ros/kinetic/debian/jessie/ros-core
 
 Tags: kinetic-ros-base-jessie
 Architectures: amd64, arm64v8
-GitCommit: 974fbc89317b858efd413073417de5996467a6d5
+GitCommit: 9ed28e05366468c387af9aac3c07ee4a91634a10
 Directory: ros/kinetic/debian/jessie/ros-base
 
 Tags: kinetic-robot-jessie
 Architectures: amd64, arm64v8
-GitCommit: 974fbc89317b858efd413073417de5996467a6d5
+GitCommit: 9ed28e05366468c387af9aac3c07ee4a91634a10
 Directory: ros/kinetic/debian/jessie/robot
 
 Tags: kinetic-perception-jessie
 Architectures: amd64, arm64v8
-GitCommit: 974fbc89317b858efd413073417de5996467a6d5
+GitCommit: 9ed28e05366468c387af9aac3c07ee4a91634a10
 Directory: ros/kinetic/debian/jessie/perception
 
 
