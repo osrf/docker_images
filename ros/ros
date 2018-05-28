@@ -109,22 +109,22 @@ Directory: ros/lunar/ubuntu/xenial/perception
 
 Tags: lunar-ros-core-stretch
 Architectures: amd64, arm64v8
-GitCommit: 4d697291568d826da713ef8b20be58fa8e86e4f5
+GitCommit: 3f160bd014297b6de3b7c4c615e5435819745bad
 Directory: ros/lunar/debian/stretch/ros-core
 
 Tags: lunar-ros-base-stretch
 Architectures: amd64, arm64v8
-GitCommit: 4d697291568d826da713ef8b20be58fa8e86e4f5
+GitCommit: 3f160bd014297b6de3b7c4c615e5435819745bad
 Directory: ros/lunar/debian/stretch/ros-base
 
 Tags: lunar-robot-stretch
 Architectures: amd64, arm64v8
-GitCommit: 4d697291568d826da713ef8b20be58fa8e86e4f5
+GitCommit: 3f160bd014297b6de3b7c4c615e5435819745bad
 Directory: ros/lunar/debian/stretch/robot
 
 Tags: lunar-perception-stretch
 Architectures: amd64, arm64v8
-GitCommit: 4d697291568d826da713ef8b20be58fa8e86e4f5
+GitCommit: 3f160bd014297b6de3b7c4c615e5435819745bad
 Directory: ros/lunar/debian/stretch/perception
 
 
