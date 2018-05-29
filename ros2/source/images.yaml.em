@@ -85,7 +85,7 @@ images:
             - pytest
             - pytest-cov
             - pytest-repeat
-            - pytest-rerun-failures
+            - pytest-rerunfailures
             - pytest-runner
         ws: /root/ros2_ws
         colcon_args:
