@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -q -y \
     npm \
     pkg-config \
     psmisc \
-    xvfb\
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
