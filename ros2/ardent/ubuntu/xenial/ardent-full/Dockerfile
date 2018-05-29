@@ -1,7 +1,6 @@
 # This is an auto generated Dockerfile for ros2:ardent-full
 # generated from docker_images/create_ros2_image.Dockerfile.em
 FROM osrf/ros2:ardent-basic
-
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-ardent-astra-camera \
