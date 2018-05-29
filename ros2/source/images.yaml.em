@@ -87,7 +87,6 @@ images:
             - pytest-repeat
             - pytest-rerun-failures
             - pytest-runner
-            - vcstool
         ws: /root/ros2_ws
         colcon_args:
             - build
