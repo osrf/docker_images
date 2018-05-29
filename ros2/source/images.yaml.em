@@ -37,7 +37,6 @@ images:
             - pydocstyle
             - pyflakes
             - python-empy
-            - python3-colcon-common-extensions
             - python3-coverage
             - python3-dev
             - python3-empy
@@ -52,6 +51,24 @@ images:
             - wget
         ros2_repo_packages:
             - libopensplice67
+            - python3-colcon-argcomplete
+            - python3-colcon-bash
+            - python3-colcon-cmake
+            - python3-colcon-core
+            - python3-colcon-defaults
+            - python3-colcon-devtools
+            - python3-colcon-library-path
+            - python3-colcon-metadata
+            - python3-colcon-output
+            - python3-colcon-package-information
+            - python3-colcon-package-selection
+            - python3-colcon-parallel-executor
+            - python3-colcon-powershell
+            - python3-colcon-python-setup-py
+            - python3-colcon-recursive-crawl
+            - python3-colcon-ros
+            - python3-colcon-test-result
+            - python3-colcon-zsh
             - python3-vcstool
         pip3_install:
             - argcomplete
