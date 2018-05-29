@@ -2,17 +2,6 @@
 # generated from docker_images/create_ros2_source_image.Dockerfile.em
 FROM ubuntu:xenial
 
-# setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
-
-# setup sources.list
-RUN . /etc/os-release \
-    && echo "deb http://repo.ros2.org/$ID/main $VERSION_CODENAME main" > /etc/apt/sources.list.d/ros2-latest.list
-
-# setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-
 # install packages
 RUN apt-get update && apt-get install -q -y \
     bash-completion \
@@ -20,7 +9,9 @@ RUN apt-get update && apt-get install -q -y \
     clang-format \
     cmake \
     cppcheck \
+    dirmngr \
     git \
+    gnupg2 \
     libasio-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
@@ -34,11 +25,11 @@ RUN apt-get update && apt-get install -q -y \
     libqt5gui5 \
     libqt5opengl5 \
     libqt5widgets5 \
-    libopensplice67 \
     libssl-dev \
     libtinyxml-dev \
     libtinyxml2-dev \
     libxaw7-dev \
+    lsb-release \
     openssl \
     pydocstyle \
     pyflakes \
@@ -52,11 +43,27 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     python3-pyparsing \
     python3-setuptools \
-    python3-vcstool \
     python3-yaml \
     qtbase5-dev \
     uncrustify \
     wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# setup keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+# setup sources.list
+RUN . /etc/os-release \
+    && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
+
+# setup environment
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+# install packages from the ROS repositories
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libopensplice67 \
+    python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
 # install python packages
