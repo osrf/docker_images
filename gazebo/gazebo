@@ -26,12 +26,12 @@ Directory: gazebo/4/ubuntu/trusty/libgazebo4
 
 Tags: gzserver5, gzserver5-trusty
 Architectures: amd64
-GitCommit: 49d22242e02e9c541a9e85b657e1785617b6f470
+GitCommit: 9cb9efd3fe34c6af05f611ec47419d1b3af1a507
 Directory: gazebo/5/ubuntu/trusty/gzserver5
 
 Tags: libgazebo5, libgazebo5-trusty
 Architectures: amd64
-GitCommit: 49d22242e02e9c541a9e85b657e1785617b6f470
+GitCommit: 9cb9efd3fe34c6af05f611ec47419d1b3af1a507
 Directory: gazebo/5/ubuntu/trusty/libgazebo5
 
 
