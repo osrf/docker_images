@@ -43,7 +43,6 @@ images:
             - python3-mock
             - python3-nose
             - python3-pep8
-            - python3-pip
             - python3-pyparsing
             - python3-setuptools
             - python3-yaml
