@@ -91,7 +91,7 @@ images:
         colcon_args:
             - build
             - --cmake-args
-                " -DBUILD_TESTING=ON" " -DSECURITY=ON"
+                " -DBUILD_TESTING=ON" " -DSECURITY=ON" " --no-warn-unused-cli"
             - --symlink-install
         vcs:
             ros2:
