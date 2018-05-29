@@ -1,6 +1,11 @@
 # This is an auto generated Dockerfile for ros2:source
 # generated from docker_images/create_ros2_source_image.Dockerfile.em
-FROM ubuntu:xenial
+FROM ubuntu:bionic
+
+RUN echo 'Etc/UTC' > /etc/timezone && \
+    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
+    apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -15,12 +20,11 @@ RUN apt-get update && apt-get install -q -y \
     libasio-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
+    libfreetype6-dev \
     libgles2-mesa-dev \
     libglu1-mesa-dev \
     libopencv-dev \
     libpoco-dev \
-    libpocofoundation9v5 \
-    libpocofoundation9v5-dbg \
     libqt5core5a \
     libqt5gui5 \
     libqt5opengl5 \
@@ -29,6 +33,7 @@ RUN apt-get update && apt-get install -q -y \
     libtinyxml-dev \
     libtinyxml2-dev \
     libxaw7-dev \
+    libxrandr-dev \
     lsb-release \
     openssl \
     pydocstyle \
@@ -63,12 +68,31 @@ ENV LC_ALL C.UTF-8
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libopensplice67 \
+    python3-colcon-argcomplete \
+    python3-colcon-bash \
+    python3-colcon-cmake \
+    python3-colcon-core \
+    python3-colcon-defaults \
+    python3-colcon-devtools \
+    python3-colcon-library-path \
+    python3-colcon-metadata \
+    python3-colcon-output \
+    python3-colcon-package-information \
+    python3-colcon-package-selection \
+    python3-colcon-parallel-executor \
+    python3-colcon-powershell \
+    python3-colcon-python-setup-py \
+    python3-colcon-recursive-crawl \
+    python3-colcon-ros \
+    python3-colcon-test-result \
+    python3-colcon-zsh \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
 # install python packages
 RUN pip3 install -U \
     argcomplete \
+    catkin_pkg \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -80,23 +104,22 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest \
     pytest-cov \
+    pytest-repeat \
+    pytest-rerunfailures \
     pytest-runner
 
 # clone source
 ENV ROS2_WS /root/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
-RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import src < ros2.repos
 
 # build source
 WORKDIR $ROS2_WS
-RUN src/ament/ament_tools/scripts/ament.py \
+RUN colcon \
     build \
-    --build-tests \
-    --cmake-args -DSECURITY=ON -- \
-    --isolated \
-    --parallel \
+    --cmake-args " -DBUILD_TESTING=ON" " -DSECURITY=ON" " --no-warn-unused-cli" \
     --symlink-install
 
 # setup bashrc
