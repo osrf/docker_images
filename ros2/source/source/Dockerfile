@@ -119,7 +119,7 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
 WORKDIR $ROS2_WS
 RUN colcon \
     build \
-    --cmake-args -DBUILD_TESTING=ON -DSECURITY=ON --no-warn-unused-cli \
+    --cmake-args -DSECURITY=ON --no-warn-unused-cli \
     --symlink-install
 
 # setup bashrc
