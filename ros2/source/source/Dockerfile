@@ -68,24 +68,7 @@ ENV LC_ALL C.UTF-8
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libopensplice67 \
-    python3-colcon-argcomplete \
-    python3-colcon-bash \
-    python3-colcon-cmake \
-    python3-colcon-core \
-    python3-colcon-defaults \
-    python3-colcon-devtools \
-    python3-colcon-library-path \
-    python3-colcon-metadata \
-    python3-colcon-output \
-    python3-colcon-package-information \
-    python3-colcon-package-selection \
-    python3-colcon-parallel-executor \
-    python3-colcon-powershell \
-    python3-colcon-python-setup-py \
-    python3-colcon-recursive-crawl \
-    python3-colcon-ros \
-    python3-colcon-test-result \
-    python3-colcon-zsh \
+    python3-colcon-common-extensions \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
