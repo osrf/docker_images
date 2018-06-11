@@ -188,18 +188,19 @@ release_names:
                             - amd64
                             - arm64v8
                         tag_names:
-                            ros-core:
-                                aliases:
-                                    - "$release_name-ros-core-$os_code_name"
-                            ros-base:
-                                aliases:
-                                    - "$release_name-ros-base-$os_code_name"
-                            robot:
-                                aliases:
-                                    - "$release_name-robot-$os_code_name"
-                            perception:
-                                aliases:
-                                    - "$release_name-perception-$os_code_name"
+                            # EOL
+                            # ros-core:
+                            #     aliases:
+                            #         - "$release_name-ros-core-$os_code_name"
+                            # ros-base:
+                            #     aliases:
+                            #         - "$release_name-ros-base-$os_code_name"
+                            # robot:
+                            #     aliases:
+                            #         - "$release_name-robot-$os_code_name"
+                            # perception:
+                            #     aliases:
+                            #         - "$release_name-perception-$os_code_name"
     lunar:
         eol: 2019-05
         os_names:
