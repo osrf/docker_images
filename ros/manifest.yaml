@@ -11,11 +11,17 @@ defaults:
         hook_names:
             post_push: .hooks/legacy/post_push.em
 
-    default: &DEFAULT
-        templates: &DEFAULT_TEMPLATES
-            images: .config/images.yaml.em
-            makefile: .config/Makefile.em
-            platform: .config/platform.yaml.em
+    default: &DEFAULT_V1
+        templates: &DEFAULT_TEMPLATES_V1
+            images: .config/v1/images.yaml.em
+            makefile: .config/v1/Makefile.em
+            platform: .config/v1/platform.yaml.em
+
+    default: &DEFAULT_V2
+        templates: &DEFAULT_TEMPLATES_V2
+            images: .config/v2/images.yaml.em
+            makefile: .config/v2/Makefile.em
+            platform: .config/v2/platform.yaml.em
 
     default: &DEFAULT_LEGACY
         templates: &DEFAULT_TEMPLATES_LEGACY
@@ -100,7 +106,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     trusty:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm32v7
@@ -128,7 +134,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     trusty:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm32v7
@@ -157,7 +163,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     xenial:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm32v7
@@ -183,7 +189,7 @@ release_names:
             debian:
                 os_code_names:
                     jessie:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm64v8
@@ -207,7 +213,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     xenial:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm32v7
@@ -231,7 +237,7 @@ release_names:
                                     - "$release_name-perception"
                                     - "$release_name-perception-$os_code_name"
                     zesty:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                         tag_names:
@@ -251,7 +257,7 @@ release_names:
             debian:
                 os_code_names:
                     stretch:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V1
                         archs:
                             - amd64
                             - arm64v8
@@ -274,7 +280,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     bionic:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V2
                         archs:
                             - amd64
                             - arm32v7
@@ -301,7 +307,7 @@ release_names:
             debian:
                 os_code_names:
                     stretch:
-                        <<: *DEFAULT
+                        <<: *DEFAULT_V2
                         archs:
                             - amd64
                             - arm64v8

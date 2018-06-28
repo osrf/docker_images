@@ -43,6 +43,9 @@ images:
             - docker_templates
         ros_packages:
             - desktop
+        post_env:
+            NVIDIA_VISIBLE_DEVICES: "${NVIDIA_VISIBLE_DEVICES:-all}"
+            NVIDIA_DRIVER_CAPABILITIES: "${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics"
     desktop-full:
         base_image: osrf/@(user_name):@(rosdistro_name)-desktop-@(os_code_name)
         maintainer_name: @(maintainer_name)
