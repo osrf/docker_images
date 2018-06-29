@@ -92,13 +92,26 @@ Directory: gazebo/8/ubuntu/xenial/libgazebo8
 ########################################
 # Distro: ubuntu:xenial
 
-Tags: gzserver9, gzserver9-xenial
+Tags: gzserver9-xenial
 Architectures: amd64
 GitCommit: 12f5819139c90d3f9709ad2bddfd75235a840153
 Directory: gazebo/9/ubuntu/xenial/gzserver9
 
-Tags: libgazebo9, libgazebo9-xenial, latest
+Tags: libgazebo9-xenial
 Architectures: amd64
 GitCommit: 12f5819139c90d3f9709ad2bddfd75235a840153
 Directory: gazebo/9/ubuntu/xenial/libgazebo9
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: gzserver9, gzserver9-bionic
+Architectures: amd64
+GitCommit: 91c4368c1077639d16318c2f92e9d21f07ea40b9
+Directory: gazebo/9/ubuntu/bionic/gzserver9
+
+Tags: libgazebo9, libgazebo9-bionic, latest
+Architectures: amd64
+GitCommit: 91c4368c1077639d16318c2f92e9d21f07ea40b9
+Directory: gazebo/9/ubuntu/bionic/libgazebo9
 
