@@ -18,7 +18,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo8=8.5.0-1* \
+    gazebo8=8.6.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
