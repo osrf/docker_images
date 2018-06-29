@@ -77,12 +77,12 @@ Directory: gazebo/7/ubuntu/xenial/libgazebo7
 
 Tags: gzserver8, gzserver8-xenial
 Architectures: amd64
-GitCommit: 9bc89cc4888a0c1ad967554a3754f8c84f925d3d
+GitCommit: 696ab1515ff046acd7260e8df945c52bbb0b8bf0
 Directory: gazebo/8/ubuntu/xenial/gzserver8
 
 Tags: libgazebo8, libgazebo8-xenial
 Architectures: amd64
-GitCommit: 9bc89cc4888a0c1ad967554a3754f8c84f925d3d
+GitCommit: 696ab1515ff046acd7260e8df945c52bbb0b8bf0
 Directory: gazebo/8/ubuntu/xenial/libgazebo8
 
 
