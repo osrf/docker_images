@@ -15,7 +15,7 @@ defaults:
 
 release_names:
     ardent:
-        eol:
+        eol: 2018-12
         os_names:
             ubuntu:
                 os_code_names:
