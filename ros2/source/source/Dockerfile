@@ -18,11 +18,12 @@ RUN apt-get update && apt-get install -q -y \
     git \
     gnupg2 \
     libasio-dev \
+    libassimp-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
     libfreetype6-dev \
     libgles2-mesa-dev \
-    libglu1-mesa-dev \
+    libglu1-mesa \
     libopencv-dev \
     libpoco-dev \
     libqt5core5a \
@@ -38,7 +39,6 @@ RUN apt-get update && apt-get install -q -y \
     openssl \
     pydocstyle \
     pyflakes \
-    python-empy \
     python3-coverage \
     python3-dev \
     python3-empy \
@@ -47,10 +47,12 @@ RUN apt-get update && apt-get install -q -y \
     python3-pep8 \
     python3-pip \
     python3-pyparsing \
+    python3-pytest \
+    python3-pytest-cov \
+    python3-pytest-runner \
     python3-setuptools \
     python3-yaml \
     qtbase5-dev \
-    uncrustify \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -68,6 +70,7 @@ ENV LC_ALL C.UTF-8
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libopensplice67 \
+    python3-catkin-pkg-modules \
     python3-colcon-common-extensions \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -75,7 +78,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install python packages
 RUN pip3 install -U \
     argcomplete \
-    catkin_pkg \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -85,11 +87,8 @@ RUN pip3 install -U \
     flake8-docstrings \
     flake8-import-order \
     flake8-quotes \
-    pytest \
-    pytest-cov \
     pytest-repeat \
-    pytest-rerunfailures \
-    pytest-runner
+    pytest-rerunfailures
 
 # clone source
 ENV ROS2_WS /root/ros2_ws
