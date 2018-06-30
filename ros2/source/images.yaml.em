@@ -17,11 +17,12 @@ images:
             - cppcheck
             - git
             - libasio-dev
+            - libassimp-dev
             - libcurl4-openssl-dev
             - libeigen3-dev
             - libfreetype6-dev
             - libgles2-mesa-dev
-            - libglu1-mesa-dev
+            - libglu1-mesa
             - libopencv-dev
             - libpoco-dev
             - libqt5core5a
@@ -36,7 +37,7 @@ images:
             - openssl
             - pydocstyle
             - pyflakes
-            - python-empy
+            # - python-empy
             - python3-coverage
             - python3-dev
             - python3-empy
@@ -44,6 +45,9 @@ images:
             - python3-nose
             - python3-pep8
             - python3-pyparsing
+            - python3-pytest
+            - python3-pytest-cov
+            - python3-pytest-runner
             - python3-setuptools
             - python3-yaml
             - qtbase5-dev
@@ -51,10 +55,10 @@ images:
             - wget
         ros2_repo_packages:
             - libopensplice67
+            - python3-catkin-pkg-modules
             - python3-vcstool
         pip3_install:
             - argcomplete
-            - catkin_pkg
             - flake8
             - flake8-blind-except
             - flake8-builtins
@@ -64,11 +68,8 @@ images:
             - flake8-docstrings
             - flake8-import-order
             - flake8-quotes
-            - pytest
-            - pytest-cov
             - pytest-repeat
             - pytest-rerunfailures
-            - pytest-runner
         ws: /root/ros2_ws
         colcon_args:
             - build
