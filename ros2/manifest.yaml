@@ -20,6 +20,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     xenial:
+                        rosdistro_name: kinetic
                         <<: *DEFAULT
                         archs:
                             - amd64
@@ -42,6 +43,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     bionic:
+                        rosdistro_name: melodic
                         <<: *DEFAULT
                         archs:
                             - amd64
