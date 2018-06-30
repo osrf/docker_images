@@ -37,7 +37,6 @@ images:
             - openssl
             - pydocstyle
             - pyflakes
-            # - python-empy
             - python3-coverage
             - python3-dev
             - python3-empy
@@ -51,7 +50,6 @@ images:
             - python3-setuptools
             - python3-yaml
             - qtbase5-dev
-            - uncrustify
             - wget
         ros2_repo_packages:
             - libopensplice67
