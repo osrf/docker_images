@@ -3,6 +3,7 @@
 FROM osrf/ros2:bouncy-basic
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
+    ros-bouncy-angles \
     ros-bouncy-astra-camera \
     ros-bouncy-cartographer-ros \
     ros-bouncy-depthimage-to-laserscan \

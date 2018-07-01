@@ -21,8 +21,11 @@ RUN apt-get update && apt-get install -y \
     ros-bouncy-launch \
     ros-bouncy-lifecycle \
     ros-bouncy-logging-demo \
+    ros-bouncy-ros2launch \
+    ros-bouncy-ros2lifecycle \
     ros-bouncy-ros2msg \
     ros-bouncy-ros2node \
+    ros-bouncy-ros2param \
     ros-bouncy-ros2pkg \
     ros-bouncy-ros2run \
     ros-bouncy-ros2service \

@@ -38,6 +38,7 @@ ENV ROS2_DISTRO bouncy
 RUN apt-get update && apt-get install -y \
     ros-bouncy-rclcpp \
     ros-bouncy-rclpy \
+    ros-bouncy-ros-environment \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
