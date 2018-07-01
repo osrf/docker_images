@@ -12,6 +12,7 @@ images:
         ros2_packages:
             - rclcpp
             - rclpy
+            - ros-environment
     @(ros2distro_name)-basic:
         base_image: osrf/@(user_name):@(ros2distro_name)-core
         maintainer_name: @(maintainer_name)
@@ -30,8 +31,11 @@ images:
             - launch
             - lifecycle
             - logging-demo
+            - ros2launch
+            - ros2lifecycle
             - ros2msg
             - ros2node
+            - ros2param
             - ros2pkg
             - ros2run
             - ros2service
@@ -48,6 +52,7 @@ images:
         template_packages:
             - docker_templates
         ros2_packages:
+            - angles
             - astra-camera
             - cartographer-ros
             - depthimage-to-laserscan
