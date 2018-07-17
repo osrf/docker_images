@@ -60,6 +60,10 @@ release_names:
                             bouncy-ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
+                            bouncy-source:
+                                aliases:
+                                    - "$release_name-source"
+
 
 meta:
     maintainers:

@@ -14,15 +14,18 @@ build:
 	@docker build --tag=osrf/ros2:bouncy-basic			bouncy-basic/.
 	@docker build --tag=osrf/ros2:bouncy-full			bouncy-full/.
 	@docker build --tag=osrf/ros2:bouncy-ros1-bridge			bouncy-ros1-bridge/.
+	@docker build --tag=osrf/ros2:bouncy-source			bouncy-source/.
 
 pull:
 	@docker pull osrf/ros2:bouncy-core
 	@docker pull osrf/ros2:bouncy-basic
 	@docker pull osrf/ros2:bouncy-full
 	@docker pull osrf/ros2:bouncy-ros1-bridge
+	@docker pull osrf/ros2:bouncy-source
 
 clean:
 	@docker rmi -f osrf/ros2:bouncy-core
 	@docker rmi -f osrf/ros2:bouncy-basic
 	@docker rmi -f osrf/ros2:bouncy-full
 	@docker rmi -f osrf/ros2:bouncy-ros1-bridge
+	@docker rmi -f osrf/ros2:bouncy-source
