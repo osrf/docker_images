@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:bouncy-core			bouncy-core/.
-	@docker build --tag=osrf/ros2:bouncy-basic			bouncy-basic/.
-	@docker build --tag=osrf/ros2:bouncy-full			bouncy-full/.
+	@docker build --tag=osrf/ros2:bouncy-ros-core			bouncy-ros-core/.
+	@docker build --tag=osrf/ros2:bouncy-ros-base			bouncy-ros-base/.
+	@docker build --tag=osrf/ros2:bouncy-desktop			bouncy-desktop/.
 	@docker build --tag=osrf/ros2:bouncy-ros1-bridge			bouncy-ros1-bridge/.
 
 pull:
-	@docker pull osrf/ros2:bouncy-core
-	@docker pull osrf/ros2:bouncy-basic
-	@docker pull osrf/ros2:bouncy-full
+	@docker pull osrf/ros2:bouncy-ros-core
+	@docker pull osrf/ros2:bouncy-ros-base
+	@docker pull osrf/ros2:bouncy-desktop
 	@docker pull osrf/ros2:bouncy-ros1-bridge
 
 clean:
-	@docker rmi -f osrf/ros2:bouncy-core
-	@docker rmi -f osrf/ros2:bouncy-basic
-	@docker rmi -f osrf/ros2:bouncy-full
+	@docker rmi -f osrf/ros2:bouncy-ros-core
+	@docker rmi -f osrf/ros2:bouncy-ros-base
+	@docker rmi -f osrf/ros2:bouncy-desktop
 	@docker rmi -f osrf/ros2:bouncy-ros1-bridge

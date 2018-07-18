@@ -48,15 +48,15 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            bouncy-core:
+                            bouncy-ros-core:
                                 aliases:
-                                    - "$release_name-core"
-                            bouncy-basic:
+                                    - "$release_name-ros-core"
+                            bouncy-ros-basic:
                                 aliases:
-                                    - "$release_name-basic"
-                            bouncy-full:
+                                    - "$release_name-ros-basic"
+                            bouncy-desktop:
                                 aliases:
-                                    - "$release_name-full"
+                                    - "$release_name-desktop"
                             bouncy-ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
