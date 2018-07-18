@@ -15,11 +15,12 @@ defaults:
 
 release_names:
     ardent:
-        eol:
+        eol: 2018-12
         os_names:
             ubuntu:
                 os_code_names:
                     xenial:
+                        rosdistro_name: kinetic
                         <<: *DEFAULT
                         archs:
                             - amd64
@@ -34,6 +35,29 @@ release_names:
                                 aliases:
                                     - "$release_name-full"
                             ardent-ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+    bouncy:
+        eol: 2019-07
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        rosdistro_name: melodic
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                        tag_names:
+                            bouncy-core:
+                                aliases:
+                                    - "$release_name-core"
+                            bouncy-basic:
+                                aliases:
+                                    - "$release_name-basic"
+                            bouncy-full:
+                                aliases:
+                                    - "$release_name-full"
+                            bouncy-ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
 

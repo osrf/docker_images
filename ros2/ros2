@@ -27,3 +27,30 @@ Architectures: amd64
 GitCommit: 80970653ea5fa178ef6ccbc7986a3b36ea36c845
 Directory: ros2/ardent/ubuntu/xenial/ardent-ros1-bridge
 
+
+################################################################################
+# Release: bouncy
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: bouncy-core
+Architectures: amd64
+GitCommit: 1cb171542012bcf9dda5aa658b0cbf76db95a3c8
+Directory: ros2/bouncy/ubuntu/bionic/bouncy-core
+
+Tags: bouncy-basic
+Architectures: amd64
+GitCommit: 1cb171542012bcf9dda5aa658b0cbf76db95a3c8
+Directory: ros2/bouncy/ubuntu/bionic/bouncy-basic
+
+Tags: bouncy-full
+Architectures: amd64
+GitCommit: 1cb171542012bcf9dda5aa658b0cbf76db95a3c8
+Directory: ros2/bouncy/ubuntu/bionic/bouncy-full
+
+Tags: bouncy-ros1-bridge
+Architectures: amd64
+GitCommit: 1cb171542012bcf9dda5aa658b0cbf76db95a3c8
+Directory: ros2/bouncy/ubuntu/bionic/bouncy-ros1-bridge
+
