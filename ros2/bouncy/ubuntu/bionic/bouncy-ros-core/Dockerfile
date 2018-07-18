@@ -1,4 +1,4 @@
-# This is an auto generated Dockerfile for ros2:bouncy-core
+# This is an auto generated Dockerfile for ros2:bouncy-ros-core
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:bionic
 
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -q -y \
     dirmngr \
     gnupg2 \
     lsb-release \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # setup ros1 keys
@@ -33,12 +34,13 @@ ENV LC_ALL C.UTF-8
 ENV ROS_DISTRO melodic
 ENV ROS2_DISTRO bouncy
 
+# install python packages
+RUN pip3 install -U \
+    argcomplete
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-bouncy-rclcpp \
-    ros-bouncy-rclpy \
-    ros-bouncy-ros-environment \
+    ros-bouncy-ros-core \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
