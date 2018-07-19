@@ -10,49 +10,13 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 # install packages
 RUN apt-get update && apt-get install -q -y \
     bash-completion \
-    build-essential \
-    clang-format \
-    cmake \
-    cppcheck \
     dirmngr \
     git \
     gnupg2 \
     libasio-dev \
-    libassimp-dev \
-    libcurl4-openssl-dev \
-    libeigen3-dev \
-    libfreetype6-dev \
-    libgles2-mesa-dev \
-    libglu1-mesa \
-    libopencv-dev \
-    libpoco-dev \
-    libqt5core5a \
-    libqt5gui5 \
-    libqt5opengl5 \
-    libqt5widgets5 \
-    libssl-dev \
-    libtinyxml-dev \
     libtinyxml2-dev \
-    libxaw7-dev \
-    libxrandr-dev \
     lsb-release \
-    openssl \
-    pydocstyle \
-    pyflakes \
-    python3-coverage \
-    python3-dev \
-    python3-empy \
-    python3-mock \
-    python3-nose \
-    python3-pep8 \
     python3-pip \
-    python3-pyparsing \
-    python3-pytest \
-    python3-pytest-cov \
-    python3-pytest-runner \
-    python3-setuptools \
-    python3-yaml \
-    qtbase5-dev \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -63,13 +27,21 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN . /etc/os-release \
     && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
+# install rosdep
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    python-rosdep \
+    && rm -rf /var/lib/apt/lists/*
+
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+# bootstrap rosdep
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
+RUN rosdep init \
+    && rosdep update
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libopensplice67 \
     python3-catkin-pkg-modules \
     python3-colcon-common-extensions \
     python3-vcstool \
@@ -96,6 +68,12 @@ RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
 RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
     && vcs import src < ros2.repos
+
+# install dependencies
+RUN apt-get update && rosdep install \
+    --from-paths src --ignore-src --rosdistro bouncy -y \
+    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers" \
+    && rm -rf /var/lib/apt/lists/*
 
 # build source
 WORKDIR $ROS2_WS
