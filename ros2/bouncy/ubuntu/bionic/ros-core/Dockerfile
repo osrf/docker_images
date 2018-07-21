@@ -1,12 +1,18 @@
-# This is an auto generated Dockerfile for ros2:ardent-core
+# This is an auto generated Dockerfile for ros2:ros-core
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
-FROM ubuntu:xenial
+FROM ubuntu:bionic
+
+RUN echo 'Etc/UTC' > /etc/timezone && \
+    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
+    apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
     dirmngr \
     gnupg2 \
     lsb-release \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # setup ros1 keys
@@ -25,14 +31,16 @@ RUN . /etc/os-release \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO kinetic
-ENV ROS2_DISTRO ardent
+ENV ROS_DISTRO melodic
+ENV ROS2_DISTRO bouncy
 
+# install python packages
+RUN pip3 install -U \
+    argcomplete
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-ardent-rclcpp \
-    ros-ardent-rclpy \
+    ros-bouncy-ros-core \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

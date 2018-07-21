@@ -25,16 +25,16 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ardent-core:
+                            ros-core:
                                 aliases:
-                                    - "$release_name-core"
-                            ardent-basic:
+                                    - "$release_name-ros-core"
+                            ros-base:
                                 aliases:
-                                    - "$release_name-basic"
-                            ardent-full:
+                                    - "$release_name-ros-base"
+                            desktop:
                                 aliases:
-                                    - "$release_name-full"
-                            ardent-ros1-bridge:
+                                    - "$release_name-desktop"
+                            ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
     bouncy:
@@ -48,16 +48,16 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            bouncy-core:
+                            ros-core:
                                 aliases:
-                                    - "$release_name-core"
-                            bouncy-basic:
+                                    - "$release_name-ros-core"
+                            ros-base:
                                 aliases:
-                                    - "$release_name-basic"
-                            bouncy-full:
+                                    - "$release_name-ros-base"
+                            desktop:
                                 aliases:
-                                    - "$release_name-full"
-                            bouncy-ros1-bridge:
+                                    - "$release_name-desktop"
+                            ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
 

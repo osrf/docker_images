@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:ardent-core			ardent-core/.
-	@docker build --tag=osrf/ros2:ardent-basic			ardent-basic/.
-	@docker build --tag=osrf/ros2:ardent-full			ardent-full/.
-	@docker build --tag=osrf/ros2:ardent-ros1-bridge			ardent-ros1-bridge/.
+	@docker build --tag=osrf/ros2:ardent-ros-core			ros-core/.
+	@docker build --tag=osrf/ros2:ardent-ros-base			ros-base/.
+	@docker build --tag=osrf/ros2:ardent-desktop			desktop/.
+	@docker build --tag=osrf/ros2:ardent-ros1-bridge			ros1-bridge/.
 
 pull:
-	@docker pull osrf/ros2:ardent-core
-	@docker pull osrf/ros2:ardent-basic
-	@docker pull osrf/ros2:ardent-full
+	@docker pull osrf/ros2:ardent-ros-core
+	@docker pull osrf/ros2:ardent-ros-base
+	@docker pull osrf/ros2:ardent-desktop
 	@docker pull osrf/ros2:ardent-ros1-bridge
 
 clean:
-	@docker rmi -f osrf/ros2:ardent-core
-	@docker rmi -f osrf/ros2:ardent-basic
-	@docker rmi -f osrf/ros2:ardent-full
+	@docker rmi -f osrf/ros2:ardent-ros-core
+	@docker rmi -f osrf/ros2:ardent-ros-base
+	@docker rmi -f osrf/ros2:ardent-desktop
 	@docker rmi -f osrf/ros2:ardent-ros1-bridge
