@@ -12,5 +12,5 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo9=9.3.0-1* \
+    gazebo9=9.3.1-1* \
     && rm -rf /var/lib/apt/lists/*
