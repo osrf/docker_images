@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzclient8
 # generated from docker_images/create_gzclient_image.Dockerfile.em
-FROM gazebo:gzserver8
+FROM gazebo:gzserver8-xenial
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
