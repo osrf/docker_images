@@ -134,6 +134,23 @@ release_names:
                                     - "libgazebo9"
                                     - "libgazebo9-$os_code_name"
                                     - latest
+            debian:
+                os_code_names:
+                    stretch:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64v8
+                        tag_names:
+                            gzserver9:
+                                aliases:
+                                    - "gzserver9"
+                                    - "gzserver9-$os_code_name"
+                            libgazebo9:
+                                aliases:
+                                    - "libgazebo9"
+                                    - "libgazebo9-$os_code_name"
+                                    - latest
 
 meta:
     maintainers:
