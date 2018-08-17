@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb6
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo6
+FROM gazebo:libgazebo6-trusty
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

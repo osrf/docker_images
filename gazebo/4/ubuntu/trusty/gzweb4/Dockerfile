@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb4
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo4
+FROM gazebo:libgazebo4-trusty
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

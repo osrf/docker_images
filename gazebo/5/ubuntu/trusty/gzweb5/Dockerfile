@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb5
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo5
+FROM gazebo:libgazebo5-trusty
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzclient5
 # generated from docker_images/create_gzclient_image.Dockerfile.em
-FROM gazebo:gzserver5
+FROM gazebo:gzserver5-trusty
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

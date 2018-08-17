@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb8
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo8
+FROM gazebo:libgazebo8-xenial
 
 # install packages
 RUN apt-get update && apt-get install -q -y \

@@ -12,7 +12,7 @@ images:
         gazebo_packages:
             - gazebo@(gazebo_version)
     libgazebo@(gazebo_version):
-        base_image: @(user_name):gzserver@(gazebo_version)
+        base_image: @(user_name):gzserver@(gazebo_version)-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
@@ -20,7 +20,7 @@ images:
         gazebo_packages:
             - libgazebo@(gazebo_version)-dev
     gzweb@(gazebo_version):
-        base_image: @(user_name):libgazebo@(gazebo_version)
+        base_image: @(user_name):libgazebo@(gazebo_version)-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzweb_image.Dockerfile.em
         template_packages:
@@ -43,7 +43,7 @@ images:
         gazebo_packages:
             - libgazebo@(gazebo_version)-dev
     gzclient@(gazebo_version):
-        base_image: @(user_name):gzserver@(gazebo_version)
+        base_image: @(user_name):gzserver@(gazebo_version)-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_gzclient_image.Dockerfile.em
         template_packages:
