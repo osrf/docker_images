@@ -1,6 +1,15 @@
 # This is an auto generated Dockerfile for ros2:ros1-bridge
-# generated from docker_images/create_ros2_image.Dockerfile.em
+# generated from docker_images/create_ros2_ros1_bridge_image.Dockerfile.em
 FROM osrf/ros2:ardent-desktop
+
+# setup keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+# setup sources.list
+RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
+
+ENV ROS1_DISTRO kinetic
+ENV ROS2_DISTRO ardent
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-ardent-ros1-bridge \
