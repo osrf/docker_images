@@ -9,22 +9,22 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: ardent-ros-core
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/ardent/ubuntu/xenial/ros-core
 
 Tags: ardent-ros-base
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/ardent/ubuntu/xenial/ros-base
 
 Tags: ardent-desktop
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/ardent/ubuntu/xenial/desktop
 
 Tags: ardent-ros1-bridge
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/ardent/ubuntu/xenial/ros1-bridge
 
 
@@ -36,21 +36,21 @@ Directory: ros2/ardent/ubuntu/xenial/ros1-bridge
 
 Tags: bouncy-ros-core
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/bouncy/ubuntu/bionic/ros-core
 
 Tags: bouncy-ros-base
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/bouncy/ubuntu/bionic/ros-base
 
 Tags: bouncy-desktop
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/bouncy/ubuntu/bionic/desktop
 
 Tags: bouncy-ros1-bridge
 Architectures: amd64
-GitCommit: 30642238dbf1f266f8b2fe3547174a6521c3327e
+GitCommit: e1efe9d2d35af87c9135801a9a3d64fd2e7e16d3
 Directory: ros2/bouncy/ubuntu/bionic/ros1-bridge
 
