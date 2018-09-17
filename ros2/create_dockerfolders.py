@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import yaml
 
@@ -20,7 +19,7 @@ def main(argv=sys.argv[1:]):
     parser.set()
     args = parser.parse(argv)
 
-    # Read manifest perams
+    # Read manifest params
     with open(args.manifest, 'r') as f:
         manifest = OrderedLoad(f, yaml.SafeLoader)
 

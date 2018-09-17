@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import yaml
 
@@ -16,11 +15,11 @@ def main(argv=sys.argv[1:]):
 
     # Create the top-level parser
     parser = DockerfolderArgParser(
-        description="Generate the 'Dockerfolders for the base docker images")
+        description="Generate the Dockerfolders for the base docker images")
     parser.set()
     args = parser.parse(argv)
 
-    # Read manifest perams
+    # Read manifest params
     with open(args.manifest, 'r') as f:
         manifest = OrderedLoad(f, yaml.SafeLoader)
 

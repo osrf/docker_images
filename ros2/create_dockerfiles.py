@@ -24,19 +24,19 @@ def main(argv=sys.argv[1:]):
     parser.set()
     args = parser.parse(argv)
 
-    # Read platform perams
+    # Read platform params
     with open(args.platform, 'r') as f:
         # use safe_load instead load
         platform = yaml.safe_load(f)['platform']
 
-    # Read image perams using platform perams
+    # Read image params using platform params
     images_yaml = StringIO()
     try:
         interpreter = Interpreter(output=images_yaml)
         interpreter.file(open(args.images, 'r'), locals=platform)
         images_yaml = images_yaml.getvalue()
     except Exception as e:
-        print("Error processing %s" % images_path)
+        print("Error processing %s" % args.images)
         raise
     finally:
         interpreter.shutdown()
@@ -51,7 +51,7 @@ def main(argv=sys.argv[1:]):
         data = dict(images[image])
         data['tag_name'] = image
 
-        # Add platform perams
+        # Add platform params
         data.update(platform)
 
         # Apply package distro/version formatting
