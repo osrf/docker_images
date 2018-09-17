@@ -8,7 +8,8 @@ The `platform.yaml` file defines the configuration of the platform in a high lev
 
 * `os_name`: distribution name, eg. `ubuntu`
 * `os_code_name`: distribution name version, eg. `trusty` or `14.04`
-* `rosdistro_name`: project version, eg. `indigo`
+* `rosdistro_name`: ROS 1 distribution version, eg. `indigo`
+* `ros2distro_name`: ROS 2 distribution version, eg. `bouncy`
 * `arch`: image architecture, eg, `amd64`
 * `type`: release type, eg. `distribution` or `experimental`
 
@@ -17,8 +18,10 @@ The `images.yaml.em` file defines the configuration of each tag image to generat
 
 * `@(rosdistro_name)-ros-core`: the tag name used, note the empy use of the platform parameters
  * `base_image`: defines the parent FROM image for tag, eg. `@(os_name):@(os_code_name)`
- * template_name: the name of the empy template to use, eg. `docker_images/create_ros_core_image.Dockerfile.em`
+ * `template_name`: the name of the empy template to use, eg. `docker_images/create_ros_core_image.Dockerfile.em`
  * `entrypoint_name`: the name of the entry point to include in the Dockerfile, eg. `docker_images/ros_entrypoint.sh`
  * `template_packages`: the hysterical list of template packages to look for template
- * `packages`: list of general project dependencies to install
- * `ros_packages`: list of project specific packages to install, perhaps after project package sources are installed by template.
+ * `upstream_packages`: list of general project dependencies to install
+ * `ros_packages`: list of project specific packages to install from the ROS apt repository, perhaps after project package sources are installed by template.
+ * `ros2_repo_packages`: list of project specific packages to install from the ROS 2 apt repository.
+ * `pip3_install`: list of packages to install from pip3.
