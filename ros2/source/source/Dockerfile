@@ -31,11 +31,6 @@ RUN . /etc/os-release \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
-RUN rosdep init \
-    && rosdep update
-
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-catkin-pkg-modules \
@@ -58,6 +53,11 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest-repeat \
     pytest-rerunfailures
+
+# bootstrap rosdep
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
+RUN rosdep init \
+    && rosdep update
 
 # clone source
 ENV ROS2_WS /root/ros2_ws
