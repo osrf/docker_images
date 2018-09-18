@@ -27,11 +27,6 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN . /etc/os-release \
     && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
-# install packages
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    python-rosdep \
-    && rm -rf /var/lib/apt/lists/*
-
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
@@ -45,6 +40,7 @@ RUN rosdep init \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-catkin-pkg-modules \
     python3-colcon-common-extensions \
+    python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
