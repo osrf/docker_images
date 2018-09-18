@@ -15,6 +15,8 @@ images:
             - libasio-dev
             - libtinyxml2-dev
             - wget
+        downstream_packages:
+            - python-rosdep
         ros2_repo_packages:
             - python3-catkin-pkg-modules
             - python3-vcstool
@@ -37,6 +39,13 @@ images:
             - --cmake-args
                 -DSECURITY=ON --no-warn-unused-cli
             - --symlink-install
+        rosdep:
+            rosdistro_index_url: https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
+            install:
+                - --from-paths src
+                - --ignore-src
+                - --rosdistro bouncy
+                - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
         vcs:
             ros2:
                 repos: https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos

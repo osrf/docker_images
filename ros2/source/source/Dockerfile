@@ -27,7 +27,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN . /etc/os-release \
     && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
-# install rosdep
+# install packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python-rosdep \
     && rm -rf /var/lib/apt/lists/*
@@ -40,6 +40,7 @@ ENV LC_ALL C.UTF-8
 ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
 RUN rosdep init \
     && rosdep update
+
 # install packages from the ROS repositories
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-catkin-pkg-modules \
@@ -66,12 +67,14 @@ RUN pip3 install -U \
 ENV ROS2_WS /root/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
-RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
     && vcs import src < ros2.repos
 
 # install dependencies
-RUN apt-get update && rosdep install \
-    --from-paths src --ignore-src --rosdistro bouncy -y \
+RUN apt-get update && rosdep install -y \
+    --from-paths src \
+    --ignore-src \
+    --rosdistro bouncy \
     --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
