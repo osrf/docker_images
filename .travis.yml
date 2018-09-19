@@ -25,8 +25,5 @@ env:
   - HUB_REPO=gazebo HUB_RELEASE=9       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   - HUB_REPO=gazebo HUB_RELEASE=8       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
   - HUB_REPO=gazebo HUB_RELEASE=7       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
-  - HUB_REPO=gazebo HUB_RELEASE=6       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
-  - HUB_REPO=gazebo HUB_RELEASE=5       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
-  - HUB_REPO=gazebo HUB_RELEASE=4       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
 
 script: .travis/travis.py
