@@ -14,60 +14,61 @@ defaults:
             platform: .config/platform.yaml.em
 
 release_names:
-    '4':
-        eol: 2016-01-25
-        os_names:
-            ubuntu:
-                os_code_names:
-                    trusty:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver4:
-                                aliases:
-                                    - "gzserver4"
-                                    - "gzserver4-$os_code_name"
-                            libgazebo4:
-                                aliases:
-                                    - "libgazebo4"
-                                    - "libgazebo4-$os_code_name"
-    '5':
-        eol: 2017-01-25
-        os_names:
-            ubuntu:
-                os_code_names:
-                    trusty:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver5:
-                                aliases:
-                                    - "gzserver5"
-                                    - "gzserver5-$os_code_name"
-                            libgazebo5:
-                                aliases:
-                                    - "libgazebo5"
-                                    - "libgazebo5-$os_code_name"
-    '6':
-        eol: 2017-01-25
-        os_names:
-            ubuntu:
-                os_code_names:
-                    trusty:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver6:
-                                aliases:
-                                    - "gzserver6"
-                                    - "gzserver6-$os_code_name"
-                            libgazebo6:
-                                aliases:
-                                    - "libgazebo6"
-                                    - "libgazebo6-$os_code_name"
+    # EOL
+    # '4':
+    #     eol: 2016-01-25
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 trusty:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver4:
+    #                             aliases:
+    #                                 - "gzserver4"
+    #                                 - "gzserver4-$os_code_name"
+    #                         libgazebo4:
+    #                             aliases:
+    #                                 - "libgazebo4"
+    #                                 - "libgazebo4-$os_code_name"
+    # '5':
+    #     eol: 2017-01-25
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 trusty:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver5:
+    #                             aliases:
+    #                                 - "gzserver5"
+    #                                 - "gzserver5-$os_code_name"
+    #                         libgazebo5:
+    #                             aliases:
+    #                                 - "libgazebo5"
+    #                                 - "libgazebo5-$os_code_name"
+    # '6':
+    #     eol: 2017-01-25
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 trusty:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver6:
+    #                             aliases:
+    #                                 - "gzserver6"
+    #                                 - "gzserver6-$os_code_name"
+    #                         libgazebo6:
+    #                             aliases:
+    #                                 - "libgazebo6"
+    #                                 - "libgazebo6-$os_code_name"
     '7':
         eol: 2021-01-25
         os_names:
