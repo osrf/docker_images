@@ -16,7 +16,7 @@ The official Docker Hub repo are required to be kept up to date. Security fix on
 
 > This can be done simply however by using the scripts described in accompanying docs to regenerate all Dockerfiles. For ROS, the scripts will use `ros_buildfarm.common` package to fetch the latest package index and append the proper version numbers.
 
-Also, we now pin the version used for each ROS package. Note that however, we are using reprepro (a tool to handle local repositories of debian packages), and as in FAQ 3.1 is limited to one version per architecture.
+Also, we now pin the version used for each ROS package, following [the Repeatability guidelines](https://github.com/docker-library/official-images#repeatability) of Docker documentation. Note that however, we are using reprepro (a tool to handle local repositories of debian packages), and as in FAQ 3.1 is limited to one version per architecture.
 
 ### Gazebo
 > Gazebo has no buildfarm libraries, and so the version used is manually specified within the platform.yaml configuration.
