@@ -15,7 +15,7 @@ def main(argv=sys.argv[1:]):
 
     # Create the top-level parser
     parser = DockerfolderArgParser(
-        description="Generate the 'Dockerfolders for the base docker images")
+        description="Generate the Dockerfolders for the base docker images")
     parser.set()
     args = parser.parse(argv)
 
