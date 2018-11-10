@@ -21,6 +21,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD8
 RUN . /etc/os-release \
     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
 
+# break build cache for sync
+RUN echo "Release: Mon, 05 Nov 2018 18:49:39 UTC" \
+    && echo "Digest: a9070691c4920f2b0c241a81cdf379fa3f289464653aec1572fe36d3c360eb60"
+
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
     gazebo9=9.4.1-1* \

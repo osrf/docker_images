@@ -18,6 +18,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN . /etc/os-release \
     && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
+# break build cache for sync
+RUN echo "Release: Wed, 07 Nov 2018 20:26:22 UTC" \
+    && echo "Digest: 20b8e180c067738666248434ec59ccd2acf358e57fef5367bfb3638779888b24"
+
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8

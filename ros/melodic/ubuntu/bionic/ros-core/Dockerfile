@@ -20,6 +20,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
 
+# break build cache for sync
+RUN echo "Release: Tue, 06 Nov 2018 23:37:34 UTC" \
+    && echo "Digest: eff7634f9172d9a18dfa99905fa22f9ada4892aa43ec20f6bba51f816cbe2430"
+
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python-rosdep \
