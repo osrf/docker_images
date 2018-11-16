@@ -70,6 +70,34 @@ release_names:
                                 aliases:
                                     - "$release_name-ros1-bridge"
                                     - "$release_name-ros1-bridge-$os_code_name"
+    crystal:
+        eol: 2020-XX
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        rosdistro_name: melodic
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm64v8
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                            desktop:
+                                aliases:
+                                    - "$release_name-desktop"
+                                    - "$release_name-desktop-$os_code_name"
+                            ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+                                    - "$release_name-ros1-bridge-$os_code_name"
 
 meta:
     maintainers:
@@ -93,6 +121,16 @@ hacks:
                             ros1-bridge:
                                 <<: *DEFAULT_HOOKS
     bouncy:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            ros1-bridge:
+                                <<: *DEFAULT_HOOKS
+    crystal:
         os_names:
             ubuntu:
                 os_code_names:
