@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=gazebo:gzserver4	gzserver4/.
-	@docker build --tag=gazebo:libgazebo4	libgazebo4/.
-	# @docker build --tag=gazebo:gzclient4	gzclient4/.
-	# @docker build --tag=gazebo:gzweb4			gzweb4/.
+	@docker build --tag=gazebo:gzserver4-trusty	gzserver4/.
+	@docker build --tag=gazebo:libgazebo4-trusty	libgazebo4/.
+	# @docker build --tag=gazebo:gzclient4-trusty	gzclient4/.
+	# @docker build --tag=gazebo:gzweb4-trusty			gzweb4/.
 
 pull:
-	@docker pull gazebo:libgazebo4
-	@docker pull gazebo:gzserver4
-	# @docker pull gazebo:gzclient4
-	# @docker pull gazebo:gzweb4
+	@docker pull gazebo:libgazebo4-trusty
+	@docker pull gazebo:gzserver4-trusty
+	# @docker pull gazebo:gzclient4-trusty
+	# @docker pull gazebo:gzweb4-trusty
 
 clean:
-	@docker rmi -f gazebo:libgazebo4
-	@docker rmi -f gazebo:gzserver4
-	# @docker rmi -f gazebo:gzclient4
-	# @docker rmi -f gazebo:gzweb4
+	@docker rmi -f gazebo:libgazebo4-trusty
+	@docker rmi -f gazebo:gzserver4-trusty
+	# @docker rmi -f gazebo:gzclient4-trusty
+	# @docker rmi -f gazebo:gzweb4-trusty
