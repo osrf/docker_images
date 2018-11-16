@@ -10,4 +10,4 @@ platform:
     maintainer_name:
     arch: amd64
     type: distribution
-    version: false
+    version:

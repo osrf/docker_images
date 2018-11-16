@@ -3,6 +3,6 @@
 FROM osrf/ros2:ardent-ros-core
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-ardent-ros-base \
+    ros-ardent-ros-base=0.4.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

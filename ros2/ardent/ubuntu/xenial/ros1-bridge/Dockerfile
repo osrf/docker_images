@@ -12,8 +12,8 @@ ENV ROS1_DISTRO kinetic
 ENV ROS2_DISTRO ardent
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-ardent-ros1-bridge \
-    ros-ardent-turtlebot2-demo \
+    ros-ardent-ros1-bridge=0.4.0-0* \
+    ros-ardent-turtlebot2-demo=0.4.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

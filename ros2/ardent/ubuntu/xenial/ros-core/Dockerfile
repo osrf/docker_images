@@ -30,7 +30,7 @@ RUN pip3 install -U \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-ardent-ros-core \
+    ros-ardent-ros-core=0.4.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

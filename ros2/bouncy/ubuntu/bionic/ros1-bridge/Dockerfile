@@ -12,8 +12,8 @@ ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO bouncy
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-bouncy-ros1-bridge \
-    ros-bouncy-turtlebot2-demo \
+    ros-bouncy-ros1-bridge=0.5.1-0* \
+    ros-bouncy-turtlebot2-demo=0.5.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

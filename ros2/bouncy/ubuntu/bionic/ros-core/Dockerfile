@@ -35,7 +35,7 @@ RUN pip3 install -U \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-bouncy-ros-core \
+    ros-bouncy-ros-core=0.5.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
