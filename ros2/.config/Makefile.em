@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:$release_name-ros-core			ros-core/.
-	@docker build --tag=osrf/ros2:$release_name-ros-base			ros-base/.
-	@docker build --tag=osrf/ros2:$release_name-desktop			desktop/.
-	@docker build --tag=osrf/ros2:$release_name-ros1-bridge			ros1-bridge/.
+	@docker build --tag=osrf/ros2:$release_name-ros-core-$os_code_name			ros-core/.
+	@docker build --tag=osrf/ros2:$release_name-ros-base-$os_code_name			ros-base/.
+	@docker build --tag=osrf/ros2:$release_name-desktop-$os_code_name			desktop/.
+	@docker build --tag=osrf/ros2:$release_name-ros1-bridge-$os_code_name			ros1-bridge/.
 
 pull:
-	@docker pull osrf/ros2:$release_name-ros-core
-	@docker pull osrf/ros2:$release_name-ros-base
-	@docker pull osrf/ros2:$release_name-desktop
-	@docker pull osrf/ros2:$release_name-ros1-bridge
+	@docker pull osrf/ros2:$release_name-ros-core-$os_code_name
+	@docker pull osrf/ros2:$release_name-ros-base-$os_code_name
+	@docker pull osrf/ros2:$release_name-desktop-$os_code_name
+	@docker pull osrf/ros2:$release_name-ros1-bridge-$os_code_name
 
 clean:
-	@docker rmi -f osrf/ros2:$release_name-ros-core
-	@docker rmi -f osrf/ros2:$release_name-ros-base
-	@docker rmi -f osrf/ros2:$release_name-desktop
-	@docker rmi -f osrf/ros2:$release_name-ros1-bridge
+	@docker rmi -f osrf/ros2:$release_name-ros-core-$os_code_name
+	@docker rmi -f osrf/ros2:$release_name-ros-base-$os_code_name
+	@docker rmi -f osrf/ros2:$release_name-desktop-$os_code_name
+	@docker rmi -f osrf/ros2:$release_name-ros1-bridge-$os_code_name

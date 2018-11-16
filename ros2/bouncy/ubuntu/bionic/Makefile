@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:bouncy-ros-core			ros-core/.
-	@docker build --tag=osrf/ros2:bouncy-ros-base			ros-base/.
-	@docker build --tag=osrf/ros2:bouncy-desktop			desktop/.
-	@docker build --tag=osrf/ros2:bouncy-ros1-bridge			ros1-bridge/.
+	@docker build --tag=osrf/ros2:bouncy-ros-core-bionic			ros-core/.
+	@docker build --tag=osrf/ros2:bouncy-ros-base-bionic			ros-base/.
+	@docker build --tag=osrf/ros2:bouncy-desktop-bionic			desktop/.
+	@docker build --tag=osrf/ros2:bouncy-ros1-bridge-bionic			ros1-bridge/.
 
 pull:
-	@docker pull osrf/ros2:bouncy-ros-core
-	@docker pull osrf/ros2:bouncy-ros-base
-	@docker pull osrf/ros2:bouncy-desktop
-	@docker pull osrf/ros2:bouncy-ros1-bridge
+	@docker pull osrf/ros2:bouncy-ros-core-bionic
+	@docker pull osrf/ros2:bouncy-ros-base-bionic
+	@docker pull osrf/ros2:bouncy-desktop-bionic
+	@docker pull osrf/ros2:bouncy-ros1-bridge-bionic
 
 clean:
-	@docker rmi -f osrf/ros2:bouncy-ros-core
-	@docker rmi -f osrf/ros2:bouncy-ros-base
-	@docker rmi -f osrf/ros2:bouncy-desktop
-	@docker rmi -f osrf/ros2:bouncy-ros1-bridge
+	@docker rmi -f osrf/ros2:bouncy-ros-core-bionic
+	@docker rmi -f osrf/ros2:bouncy-ros-base-bionic
+	@docker rmi -f osrf/ros2:bouncy-desktop-bionic
+	@docker rmi -f osrf/ros2:bouncy-ros1-bridge-bionic
