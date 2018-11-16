@@ -4,6 +4,14 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 ##### Dockerfile CI [![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images)
 
 ## Official Library
+### [ROS2 ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros2.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros2.svg)](https://registry.hub.docker.com/_/ros2/)
+[![Compare Images](https://images.microbadger.com/badges/image/library/ros2.svg)](https://microbadger.com/#/images/library/ros2)
+
+* amd64 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/amd64/ros2)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/ros2/)
+
+* arm64v8 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm64v8/ros2)](https://doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/ros2/)
+
+
 ### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg)](https://registry.hub.docker.com/_/ros/)
 [![Compare Images](https://images.microbadger.com/badges/image/library/ros.svg)](https://microbadger.com/#/images/library/ros)
 
