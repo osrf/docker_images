@@ -24,6 +24,7 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
@@ -51,6 +52,7 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
+                            - arm64v8
                         tag_names:
                             ros-core:
                                 aliases:
