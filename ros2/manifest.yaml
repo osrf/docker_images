@@ -78,3 +78,27 @@ meta:
     template_packages:
         - docker_templates
     repo_url: https://github.com/osrf/docker_images.git
+
+
+hacks:
+
+    ardent:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    xenial:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            ros1-bridge:
+                                <<: *DEFAULT_HOOKS
+    bouncy:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            ros1-bridge:
+                                <<: *DEFAULT_HOOKS
