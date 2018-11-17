@@ -21,8 +21,13 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9
 RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
 
 # break build cache for sync
-RUN echo "Release: Tue, 06 Nov 2018 23:37:34 UTC" \
-    && echo "Digest: eff7634f9172d9a18dfa99905fa22f9ada4892aa43ec20f6bba51f816cbe2430"
+RUN apt-get update \
+    && . /etc/os-release \
+    && echo "Release: Wed, 07 Nov 2018 20:28:21 UTC" \
+    && export SUM=2de21a79d3855575334e8ac2f4c77bcd6b7a627acce0a10762abaf42bb37fe4c \
+    && export FILE=/var/lib/apt/lists/packages.ros.org_ros_ubuntu_dists_$(lsb_release -sc)_InRelease \
+    && echo "$SUM *$FILE" | sha256sum --check \
+    && rm -rf /var/lib/apt/lists/*
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \

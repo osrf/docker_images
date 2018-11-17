@@ -19,8 +19,13 @@ RUN . /etc/os-release \
     && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
 # break build cache for sync
-RUN echo "Release: Wed, 07 Nov 2018 20:26:22 UTC" \
-    && echo "Digest: 20b8e180c067738666248434ec59ccd2acf358e57fef5367bfb3638779888b24"
+RUN apt-get update \
+    && . /etc/os-release \
+    && echo "Release: Thu, 15 Nov 2018 21:55:38 UTC" \
+    && export SUM=de61d8080249e357538955cde224fe4d6ace3542201c37b8b90d20af96cd16e1 \
+    && export FILE=/var/lib/apt/lists/repo.ros2.org_ubuntu_main_dists_$(lsb_release -sc)_InRelease \
+    && echo "$SUM *$FILE" | sha256sum --check \
+    && rm -rf /var/lib/apt/lists/*
 
 # setup environment
 ENV LANG C.UTF-8

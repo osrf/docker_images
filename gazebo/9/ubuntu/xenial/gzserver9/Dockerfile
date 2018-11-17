@@ -17,8 +17,13 @@ RUN . /etc/os-release \
     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
 
 # break build cache for sync
-RUN echo "Release: Fri, 09 Nov 2018 14:51:50 UTC" \
-    && echo "Digest: 1b1a9870d531fcfee20ae1ab3df60d499d6b206c11fe30e3c89dd111ae31c756"
+RUN apt-get update \
+    && . /etc/os-release \
+    && echo "Release: Fri, 16 Nov 2018 16:26:55 UTC" \
+    && export SUM=021bafbd47748fa31505efcf66f499f8f9d7601c18f6d8456ec76686b76711df \
+    && export FILE=/var/lib/apt/lists/packages.osrfoundation.org_gazebo_$ID-stable_dists_$(lsb_release -sc)_InRelease \
+    && echo "$SUM *$FILE" | sha256sum --check \
+    && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
