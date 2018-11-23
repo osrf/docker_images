@@ -71,7 +71,7 @@ release_names:
                                     - "$release_name-ros1-bridge"
                                     - "$release_name-ros1-bridge-$os_code_name"
     crystal:
-        eol: 2020-XX
+        eol: 2019-12
         os_names:
             ubuntu:
                 os_code_names:
