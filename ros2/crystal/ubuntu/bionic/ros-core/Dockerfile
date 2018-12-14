@@ -2,10 +2,10 @@
 # generated from docker_images/create_ros2_core_image.Dockerfile.em
 FROM ubuntu:bionic
 
+# setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
-
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -q -y \
     lsb-release \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
-
 
 # setup ros2 keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -46,7 +45,7 @@ RUN pip3 install -U \
 # install ros2 packages
 ENV ROS_DISTRO crystal
 RUN apt-get update && apt-get install -y \
-    ros-crystal-ros-core \
+    ros-crystal-ros-core=0.6.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

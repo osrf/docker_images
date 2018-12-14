@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-
 # setup ros2 keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
