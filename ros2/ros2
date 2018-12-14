@@ -9,22 +9,22 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: ardent-ros-core, ardent-ros-core-xenial
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/ardent/ubuntu/xenial/ros-core
 
 Tags: ardent-ros-base, ardent-ros-base-xenial
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/ardent/ubuntu/xenial/ros-base
 
 Tags: ardent-desktop, ardent-desktop-xenial
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/ardent/ubuntu/xenial/desktop
 
 Tags: ardent-ros1-bridge, ardent-ros1-bridge-xenial
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/ardent/ubuntu/xenial/ros1-bridge
 
 
@@ -36,21 +36,48 @@ Directory: ros2/ardent/ubuntu/xenial/ros1-bridge
 
 Tags: bouncy-ros-core, bouncy-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/bouncy/ubuntu/bionic/ros-core
 
 Tags: bouncy-ros-base, bouncy-ros-base-bionic
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/bouncy/ubuntu/bionic/ros-base
 
 Tags: bouncy-desktop, bouncy-desktop-bionic
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/bouncy/ubuntu/bionic/desktop
 
 Tags: bouncy-ros1-bridge, bouncy-ros1-bridge-bionic
 Architectures: amd64, arm64v8
-GitCommit: a78adf272d2609448c529599f11f681e8d27dd70
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
 Directory: ros2/bouncy/ubuntu/bionic/ros1-bridge
+
+
+################################################################################
+# Release: crystal
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: crystal-ros-core, crystal-ros-core-bionic
+Architectures: amd64, arm64v8
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
+Directory: ros2/crystal/ubuntu/bionic/ros-core
+
+Tags: crystal-ros-base, crystal-ros-base-bionic
+Architectures: amd64, arm64v8
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
+Directory: ros2/crystal/ubuntu/bionic/ros-base
+
+Tags: crystal-desktop, crystal-desktop-bionic
+Architectures: amd64, arm64v8
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
+Directory: ros2/crystal/ubuntu/bionic/desktop
+
+Tags: crystal-ros1-bridge, crystal-ros1-bridge-bionic
+Architectures: amd64, arm64v8
+GitCommit: 68f99cf1ed982354b08c713dcffe72e421f148be
+Directory: ros2/crystal/ubuntu/bionic/ros1-bridge
 
