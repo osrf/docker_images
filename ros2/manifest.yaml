@@ -34,14 +34,7 @@ release_names:
                                 aliases:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
-                            desktop:
-                                aliases:
-                                    - "$release_name-desktop"
-                                    - "$release_name-desktop-$os_code_name"
-                            ros1-bridge:
-                                aliases:
-                                    - "$release_name-ros1-bridge"
-                                    - "$release_name-ros1-bridge-$os_code_name"
+                                    - "$release_name"
     bouncy:
         eol: 2019-07
         os_names:
@@ -62,14 +55,7 @@ release_names:
                                 aliases:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
-                            desktop:
-                                aliases:
-                                    - "$release_name-desktop"
-                                    - "$release_name-desktop-$os_code_name"
-                            ros1-bridge:
-                                aliases:
-                                    - "$release_name-ros1-bridge"
-                                    - "$release_name-ros1-bridge-$os_code_name"
+                                    - "$release_name"
     crystal:
         eol: 2019-12
         os_names:
@@ -90,14 +76,7 @@ release_names:
                                 aliases:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
-                            desktop:
-                                aliases:
-                                    - "$release_name-desktop"
-                                    - "$release_name-desktop-$os_code_name"
-                            ros1-bridge:
-                                aliases:
-                                    - "$release_name-ros1-bridge"
-                                    - "$release_name-ros1-bridge-$os_code_name"
+                                    - "$release_name"
 
 meta:
     maintainers:
