@@ -9,12 +9,12 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: ardent-ros-core, ardent-ros-core-xenial
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/ardent/ubuntu/xenial/ros-core
 
 Tags: ardent-ros-base, ardent-ros-base-xenial, ardent
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/ardent/ubuntu/xenial/ros-base
 
 
@@ -26,12 +26,12 @@ Directory: ros2/ardent/ubuntu/xenial/ros-base
 
 Tags: bouncy-ros-core, bouncy-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/bouncy/ubuntu/bionic/ros-core
 
 Tags: bouncy-ros-base, bouncy-ros-base-bionic, bouncy
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/bouncy/ubuntu/bionic/ros-base
 
 
@@ -43,11 +43,11 @@ Directory: ros2/bouncy/ubuntu/bionic/ros-base
 
 Tags: crystal-ros-core, crystal-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/crystal/ubuntu/bionic/ros-core
 
 Tags: crystal-ros-base, crystal-ros-base-bionic, crystal
 Architectures: amd64, arm64v8
-GitCommit: fd8d22d044b4c09823b9fcbdcafbc03db2b021d0
+GitCommit: c5a4ec1ce6516a4000a77c181bbce77bda2d7f66
 Directory: ros2/crystal/ubuntu/bionic/ros-base
 
