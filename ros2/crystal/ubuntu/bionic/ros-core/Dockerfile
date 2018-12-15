@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros:ros-core
-# generated from docker_images/create_ros2_core_image.Dockerfile.em
+# generated from docker_images_ros2/create_ros_core_image.Dockerfile.em
 FROM ubuntu:bionic
 
 # setup timezone
@@ -48,7 +48,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
-COPY ./ros2_entrypoint.sh /
+COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros2_entrypoint.sh"]
+ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]

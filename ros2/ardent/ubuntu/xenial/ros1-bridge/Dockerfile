@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros:ros1-bridge
-# generated from docker_images/create_ros2_ros1_bridge_image.Dockerfile.em
+# generated from docker_images_ros2/create_ros_ros1_bridge_image.Dockerfile.em
 FROM osrf/ros:ardent-desktop
 
 # setup keys
