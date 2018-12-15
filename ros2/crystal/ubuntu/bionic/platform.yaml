@@ -6,7 +6,7 @@ platform:
     os_code_name: bionic
     rosdistro_name: melodic
     ros2distro_name: crystal
-    user_name: ros2
+    user_name: ros
     maintainer_name:
     arch: amd64
     type: distribution

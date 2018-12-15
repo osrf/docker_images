@@ -1,6 +1,6 @@
-# This is an auto generated Dockerfile for ros2:ros-base
+# This is an auto generated Dockerfile for ros:ros-base
 # generated from docker_images/create_ros2_image.Dockerfile.em
-FROM osrf/ros2:crystal-ros-core
+FROM ros:crystal-ros-core
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-crystal-ros-base=0.6.1-0* \

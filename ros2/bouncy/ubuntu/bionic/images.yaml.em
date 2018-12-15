@@ -14,7 +14,7 @@ images:
         ros2_packages:
             - ros-core
     ros-base:
-        base_image: osrf/@(user_name):@(ros2distro_name)-ros-core
+        base_image: @(user_name):@(ros2distro_name)-ros-core
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros2_image.Dockerfile.em
         template_packages:

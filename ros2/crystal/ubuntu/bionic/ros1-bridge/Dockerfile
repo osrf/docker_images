@@ -1,6 +1,6 @@
-# This is an auto generated Dockerfile for ros2:ros1-bridge
+# This is an auto generated Dockerfile for ros:ros1-bridge
 # generated from docker_images/create_ros2_ros1_bridge_image.Dockerfile.em
-FROM osrf/ros2:crystal-desktop
+FROM osrf/ros:crystal-desktop
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116

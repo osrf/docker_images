@@ -6,7 +6,7 @@ platform:
     os_code_name: xenial
     rosdistro_name: kinetic
     ros2distro_name: ardent
-    user_name: ros2
+    user_name: ros
     maintainer_name:
     arch: amd64
     type: distribution
