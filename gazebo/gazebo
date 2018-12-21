@@ -69,11 +69,11 @@ Directory: gazebo/9/ubuntu/bionic/libgazebo9
 
 Tags: gzserver9-stretch
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 9fbac2c659d6feb6fbb24f7b2662441cf1a6cf4b
+GitCommit: dbc80c8d10ef0e8259df1b9b23a5bfff26bdd5cc
 Directory: gazebo/9/debian/stretch/gzserver9
 
 Tags: libgazebo9-stretch
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 9fbac2c659d6feb6fbb24f7b2662441cf1a6cf4b
+GitCommit: dbc80c8d10ef0e8259df1b9b23a5bfff26bdd5cc
 Directory: gazebo/9/debian/stretch/libgazebo9
 
