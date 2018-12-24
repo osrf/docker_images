@@ -1,5 +1,5 @@
 # This is an auto generated Dockerfile for ros:ros1-bridge
-# generated from docker_images_ros2/create_ros_ros1_bridge_image.Dockerfile.em
+# generated from docker_images_ros2/ros1_bridge/create_ros_ros1_bridge_image.Dockerfile.em
 FROM ros:crystal-ros-base
 
 # setup keys
@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
-COPY ./ros1_bridge_entrypoint.sh /
+COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros1_bridge_entrypoint.sh"]
+ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
