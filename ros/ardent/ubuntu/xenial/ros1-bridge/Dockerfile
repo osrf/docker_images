@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:ros1-bridge
 # generated from docker_images_ros2/create_ros_ros1_bridge_image.Dockerfile.em
-FROM osrf/ros:ardent-desktop
+FROM ros:ardent-ros-base
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -13,7 +13,6 @@ ENV ROS2_DISTRO ardent
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-ardent-ros1-bridge=0.4.0-0* \
-    ros-ardent-turtlebot2-demo=0.4.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

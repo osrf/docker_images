@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:ros1-bridge
 # generated from docker_images_ros2/create_ros_ros1_bridge_image.Dockerfile.em
-FROM osrf/ros:bouncy-desktop
+FROM ros:bouncy-ros-base
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -13,7 +13,6 @@ ENV ROS2_DISTRO bouncy
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-bouncy-ros1-bridge=0.5.1-0* \
-    ros-bouncy-turtlebot2-demo=0.5.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
