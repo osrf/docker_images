@@ -5,8 +5,8 @@ images:
     source:
         base_image: @(os_name):@(os_code_name)
         maintainer_name: @(maintainer_name)
-        template_name: docker_images/create_ros2_source_image.Dockerfile.em
-        entrypoint_name: docker_images/ros2_source_entrypoint.sh
+        template_name: docker_images_ros2/source/create_ros_image.Dockerfile.em
+        entrypoint_name: docker_images_ros2/source/ros_entrypoint.sh
         template_packages:
             - docker_templates
         upstream_packages:
