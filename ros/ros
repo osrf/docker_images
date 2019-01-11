@@ -163,12 +163,12 @@ Directory: ros/melodic/debian/stretch/perception
 
 Tags: ardent-ros-core, ardent-ros-core-xenial
 Architectures: amd64, arm64v8
-GitCommit: 9619e8b2fedc763707c07bd5568f2401bfc5b117
+GitCommit: 4f09cf3ebe9300879f9a27eca2c60632ff980431
 Directory: ros/ardent/ubuntu/xenial/ros-core
 
 Tags: ardent-ros-base, ardent-ros-base-xenial, ardent
 Architectures: amd64, arm64v8
-GitCommit: 9619e8b2fedc763707c07bd5568f2401bfc5b117
+GitCommit: 4f09cf3ebe9300879f9a27eca2c60632ff980431
 Directory: ros/ardent/ubuntu/xenial/ros-base
 
 
