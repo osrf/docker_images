@@ -33,7 +33,6 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 # bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
 RUN rosdep init \
     && rosdep update
 
