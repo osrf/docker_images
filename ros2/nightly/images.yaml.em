@@ -11,4 +11,10 @@ images:
             - argcomplete
         template_packages:
             - docker_templates
+        skip_keys:
+            - console_bridge
+            - fastcdr fastrtps
+            - libopensplice69
+            - rti-connext-dds-5.3.1
+            - urdfdom_headers
         ros2_binary_url: https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
