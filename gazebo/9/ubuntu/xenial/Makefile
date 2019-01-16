@@ -10,19 +10,19 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=gazebo:gzserver9	gzserver9/.
-	@docker build --tag=gazebo:libgazebo9	libgazebo9/.
-	# @docker build --tag=gazebo:gzclient9	gzclient9/.
-	# @docker build --tag=gazebo:gzweb9			gzweb9/.
+	@docker build --tag=gazebo:gzserver9-xenial	gzserver9/.
+	@docker build --tag=gazebo:libgazebo9-xenial	libgazebo9/.
+	# @docker build --tag=gazebo:gzclient9-xenial	gzclient9/.
+	# @docker build --tag=gazebo:gzweb9-xenial			gzweb9/.
 
 pull:
-	@docker pull gazebo:libgazebo9
-	@docker pull gazebo:gzserver9
-	# @docker pull gazebo:gzclient9
-	# @docker pull gazebo:gzweb9
+	@docker pull gazebo:libgazebo9-xenial
+	@docker pull gazebo:gzserver9-xenial
+	# @docker pull gazebo:gzclient9-xenial
+	# @docker pull gazebo:gzweb9-xenial
 
 clean:
-	@docker rmi -f gazebo:libgazebo9
-	@docker rmi -f gazebo:gzserver9
-	# @docker rmi -f gazebo:gzclient9
-	# @docker rmi -f gazebo:gzweb9
+	@docker rmi -f gazebo:libgazebo9-xenial
+	@docker rmi -f gazebo:gzserver9-xenial
+	# @docker rmi -f gazebo:gzclient9-xenial
+	# @docker rmi -f gazebo:gzweb9-xenial

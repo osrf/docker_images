@@ -19,6 +19,9 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 
 * amd64 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/amd64/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/gazebo/)
 
+* arm64v8 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm64v8/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/gazebo/)
+
+* arm32v7 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm32v7/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/gazebo/)
 
 
 ## [OSRF Profile](https://hub.docker.com/u/osrf/)
@@ -38,12 +41,6 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/gazebo.svg)](https://microbadger.com/#/images/osrf/gazebo)
 
 * amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/gazebo.svg)](https://hub.docker.com/r/osrf/gazebo/builds/)
-
-
-### [SROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/sros.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/sros.svg)](https://registry.hub.docker.com/u/osrf/sros/)
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/sros.svg)](https://microbadger.com/#/images/osrf/sros)
-
-* amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/sros.svg)](https://hub.docker.com/r/osrf/sros/builds/)
 
 
 ### [ROS Legacy ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros_legacy.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros_legacy.svg)](https://registry.hub.docker.com/u/osrf/ros_legacy/)
