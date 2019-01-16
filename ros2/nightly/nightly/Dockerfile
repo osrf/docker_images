@@ -52,11 +52,21 @@ RUN wget -q $ROS2_BINARY_URL -O - | \
 RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
-    --skip-keys \
-      "console_bridge \
-      fastcdr fastrtps \
+    --skip-keys " \
+      console_bridge \
+      fastcdr \
+      fastrtps \
+      libopensplice67 \
       libopensplice69 \
+      osrf_testing_tools_cpp \
+      poco_vendor \
+      rmw_connext_cpp \
+      rosidl_typesupport_connext_c \
+      rosidl_typesupport_connext_cpp \
       rti-connext-dds-5.3.1 \
+      tinyxml_vendor \
+      tinyxml2_vendor \
+      urdfdom \
       urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
