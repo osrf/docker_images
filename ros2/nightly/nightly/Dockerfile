@@ -48,27 +48,20 @@ ENV ROS2_BINARY_URL https://ci.ros2.org/view/packaging/job/packaging_linux/lastS
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
 
+COPY core.yaml /etc/ros/rosdep/
+RUN echo "yaml file:///etc/ros/rosdep/core.yaml" | cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && mv temp /etc/ros/rosdep/sources.list.d/20-default.list
+
 # install dependencies
-RUN apt-get update && rosdep install -y \
+RUN apt-get update && rosdep update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
-    --skip-keys " \
-      console_bridge \
-      fastcdr \
-      fastrtps \
-      libopensplice67 \
-      libopensplice69 \
-      osrf_testing_tools_cpp \
-      poco_vendor \
-      rmw_connext_cpp \
-      rosidl_typesupport_connext_c \
-      rosidl_typesupport_connext_cpp \
-      rti-connext-dds-5.3.1 \
-      tinyxml_vendor \
-      tinyxml2_vendor \
-      urdfdom \
-      urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
+
+# ignore installed rosdep keys
+ENV COLCON_CURRENT_PREFIX /opt/ros/$ROS_DISTRO
+RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
+    ros2 pkg list | sed 's/$/:/' > /etc/ros/rosdep/base.yaml && \
+    echo "yaml file:///etc/ros/rosdep/base.yaml" > /etc/ros/rosdep/sources.list.d/10-default.list
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
