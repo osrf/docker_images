@@ -47,7 +47,12 @@ RUN mkdir -p /opt/ros/$ROS_DISTRO
 ENV ROS2_BINARY_URL https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
+RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
+      /opt/ros/$ROS_DISTRO/setup.sh && \
+    sed -i "s|^\(_colcon_prefix_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
+      /opt/ros/$ROS_DISTRO/local_setup.sh
 
+# ignore specified rosdep keys
 COPY core.yaml /etc/ros/rosdep/
 RUN echo "yaml file:///etc/ros/rosdep/core.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
@@ -56,14 +61,13 @@ RUN echo "yaml file:///etc/ros/rosdep/core.yaml" | \
 
 # install dependencies
 RUN apt-get update && rosdep install -y \
-    --from-paths /opt/ros/$ROS_DISTRO/share \
-    --ignore-src \
+      --from-paths /opt/ros/$ROS_DISTRO/share \
+      --ignore-src \
     && rm -rf /var/lib/apt/lists/*
 
 # ignore installed rosdep keys
-ENV COLCON_CURRENT_PREFIX /opt/ros/$ROS_DISTRO
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
-    ros2 pkg list | sed 's/$/:\n  ubuntu: [wget]/' > /etc/ros/rosdep/base.yaml && \
+    ros2 pkg list | sed 's/$/: {ubuntu: []}/' > /etc/ros/rosdep/base.yaml && \
     echo "yaml file:///etc/ros/rosdep/base.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list && \

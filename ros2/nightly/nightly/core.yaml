@@ -1,30 +1,15 @@
-console_bridge:
-  ubuntu: [wget]
-fastcdr:
-  ubuntu: [wget]
-fastrtps:
-  ubuntu: [wget]
-libopensplice67:
-  ubuntu: [wget]
-libopensplice69:
-  ubuntu: [wget]
-osrf_testing_tools_cpp:
-  ubuntu: [wget]
-poco_vendor:
-  ubuntu: [wget]
-rmw_connext_cpp:
-  ubuntu: [wget]
-rosidl_typesupport_connext_c:
-  ubuntu: [wget]
-rosidl_typesupport_connext_cpp:
-  ubuntu: [wget]
-rti-connext-dds-5.3.1:
-  ubuntu: [wget]
-tinyxml_vendor:
-  ubuntu: [wget]
-tinyxml2_vendor:
-  ubuntu: [wget]
-urdfdom:
-  ubuntu: [wget]
-urdfdom_headers:
-  ubuntu: [wget]
+console_bridge: {ubuntu: []}
+fastcdr: {ubuntu: []}
+fastrtps: {ubuntu: []}
+libopensplice67: {ubuntu: []}
+libopensplice69: {ubuntu: []}
+osrf_testing_tools_cpp: {ubuntu: []}
+poco_vendor: {ubuntu: []}
+rmw_connext_cpp: {ubuntu: []}
+rosidl_typesupport_connext_c: {ubuntu: []}
+rosidl_typesupport_connext_cpp: {ubuntu: []}
+rti-connext-dds-5.3.1: {ubuntu: []}
+tinyxml_vendor: {ubuntu: []}
+tinyxml2_vendor: {ubuntu: []}
+urdfdom: {ubuntu: []}
+urdfdom_headers: {ubuntu: []}
