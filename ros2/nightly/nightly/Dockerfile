@@ -44,7 +44,7 @@ RUN pip3 install -U \
 # install ros2 packages
 ENV ROS_DISTRO crystal
 RUN mkdir -p /opt/ros/$ROS_DISTRO
-ENV ROS2_BINARY_URL https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
+ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
 RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
@@ -52,9 +52,9 @@ RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/op
     sed -i "s|^\(_colcon_prefix_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
       /opt/ros/$ROS_DISTRO/local_setup.sh
 
-# ignore specified rosdep keys
-COPY core.yaml /etc/ros/rosdep/
-RUN echo "yaml file:///etc/ros/rosdep/core.yaml" | \
+# ignore prerequisite rosdep keys
+COPY prereqs.yaml /etc/ros/rosdep/
+RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list && \
     rosdep update
@@ -67,8 +67,8 @@ RUN apt-get update && rosdep install -y \
 
 # ignore installed rosdep keys
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
-    ros2 pkg list | sed 's/$/: {ubuntu: []}/' > /etc/ros/rosdep/base.yaml && \
-    echo "yaml file:///etc/ros/rosdep/base.yaml" | \
+    ros2 pkg list | sed 's/$/: {ubuntu: []}/' > /etc/ros/rosdep/ros2.yaml && \
+    echo "yaml file:///etc/ros/rosdep/ros2.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list && \
     rosdep update
