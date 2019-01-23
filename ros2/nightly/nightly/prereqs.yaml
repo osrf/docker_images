@@ -1,14 +1,8 @@
 console_bridge: {ubuntu: []}
 fastcdr: {ubuntu: []}
 fastrtps: {ubuntu: []}
-libopensplice67: {ubuntu: []}
-libopensplice69: {ubuntu: []}
 osrf_testing_tools_cpp: {ubuntu: []}
 poco_vendor: {ubuntu: []}
-rmw_connext_cpp: {ubuntu: []}
-rosidl_typesupport_connext_c: {ubuntu: []}
-rosidl_typesupport_connext_cpp: {ubuntu: []}
-rti-connext-dds-5.3.1: {ubuntu: []}
 tinyxml_vendor: {ubuntu: []}
 tinyxml2_vendor: {ubuntu: []}
 urdfdom: {ubuntu: []}

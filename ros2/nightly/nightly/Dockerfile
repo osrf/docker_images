@@ -63,6 +63,12 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
 RUN apt-get update && rosdep install -y \
       --from-paths /opt/ros/$ROS_DISTRO/share \
       --ignore-src \
+      --skip-keys "\
+        libopensplice69 \
+        rmw_connext_cpp \
+        rosidl_typesupport_connext_c \
+        rosidl_typesupport_connext_cpp \
+        rti-connext-dds-5.3.1 "\
     && rm -rf /var/lib/apt/lists/*
 
 # ignore installed rosdep keys
