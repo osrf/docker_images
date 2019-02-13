@@ -54,7 +54,7 @@ RUN pip3 install -U \
     pytest-rerunfailures
 
 # bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros/rosdistro/master/index.yaml
 RUN rosdep init \
     && rosdep update
 
