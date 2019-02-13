@@ -39,7 +39,7 @@ images:
                 -DSECURITY=ON --no-warn-unused-cli
             - --symlink-install
         rosdep:
-            rosdistro_index_url: https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
+            rosdistro_index_url: https://raw.githubusercontent.com/ros/rosdistro/master/index.yaml
             install:
                 - --from-paths src
                 - --ignore-src
