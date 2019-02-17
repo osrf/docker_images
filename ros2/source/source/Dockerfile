@@ -70,7 +70,7 @@ RUN apt-get update && rosdep install -y \
     --from-paths src \
     --ignore-src \
     --rosdistro bouncy \
-    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers" \
+    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
 # build source
