@@ -43,7 +43,7 @@ images:
                 - --from-paths src
                 - --ignore-src
                 - --rosdistro bouncy
-                - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
+                - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
         vcs:
             ros2:
                 repos: https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
