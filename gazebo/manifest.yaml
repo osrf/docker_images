@@ -136,7 +136,6 @@ release_names:
                                 aliases:
                                     - "libgazebo$release_name"
                                     - "libgazebo$release_name-$os_code_name"
-                                    - latest
             debian:
                 os_code_names:
                     stretch:
@@ -152,6 +151,27 @@ release_names:
                             libgazebo9:
                                 aliases:
                                     - "libgazebo$release_name-$os_code_name"
+    '10':
+        eol: 2021-01-24
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        <<: *DEFAULT
+                        archs:
+                            - amd64
+                            - arm32v7
+                            - arm64v8
+                        tag_names:
+                            gzserver10:
+                                aliases:
+                                    - "gzserver$release_name"
+                                    - "gzserver$release_name-$os_code_name"
+                            libgazebo10:
+                                aliases:
+                                    - "libgazebo$release_name"
+                                    - "libgazebo$release_name-$os_code_name"
+                                    - latest
 
 meta:
     maintainers:
