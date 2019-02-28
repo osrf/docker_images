@@ -1,11 +1,11 @@
 # This is an auto generated Dockerfile for ros2:source
-# generated from docker_images/create_ros2_source_image.Dockerfile.em
+# generated from docker_images_ros2/source/create_ros_image.Dockerfile.em
 FROM ubuntu:bionic
 
+# setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
-
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -24,8 +24,7 @@ RUN apt-get update && apt-get install -q -y \
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN . /etc/os-release \
-    && echo "deb http://repo.ros2.org/$ID/main `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
+RUN echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
 
 # setup environment
 ENV LANG C.UTF-8
@@ -55,7 +54,6 @@ RUN pip3 install -U \
     pytest-rerunfailures
 
 # bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/ros2/rosdistro/ros2/index.yaml
 RUN rosdep init \
     && rosdep update
 
@@ -71,7 +69,7 @@ RUN apt-get update && rosdep install -y \
     --from-paths src \
     --ignore-src \
     --rosdistro bouncy \
-    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers" \
+    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
 # build source
@@ -85,7 +83,7 @@ RUN colcon \
 RUN cp /etc/skel/.bashrc ~/
 
 # setup entrypoint
-COPY ./ros2_source_entrypoint.sh /
+COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros2_source_entrypoint.sh"]
+ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]

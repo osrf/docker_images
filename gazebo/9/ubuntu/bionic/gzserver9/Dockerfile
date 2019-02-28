@@ -2,10 +2,10 @@
 # generated from docker_images/create_gzserver_image.Dockerfile.em
 FROM ubuntu:bionic
 
+# setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
-
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -32,7 +32,7 @@ RUN apt-get update \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo9=9.4.1-1* \
+    gazebo9=9.6.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
