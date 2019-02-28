@@ -19,23 +19,6 @@ Directory: gazebo/7/ubuntu/xenial/libgazebo7
 
 
 ################################################################################
-# Release: 8
-
-########################################
-# Distro: ubuntu:xenial
-
-Tags: gzserver8, gzserver8-xenial
-Architectures: amd64
-GitCommit: ed75e08b51ca57c98fad49705091ceb89a96814c
-Directory: gazebo/8/ubuntu/xenial/gzserver8
-
-Tags: libgazebo8, libgazebo8-xenial
-Architectures: amd64
-GitCommit: ed75e08b51ca57c98fad49705091ceb89a96814c
-Directory: gazebo/8/ubuntu/xenial/libgazebo8
-
-
-################################################################################
 # Release: 9
 
 ########################################
