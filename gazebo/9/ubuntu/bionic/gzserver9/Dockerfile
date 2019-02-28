@@ -25,7 +25,7 @@ RUN . /etc/os-release \
 RUN apt-get update \
     && . /etc/os-release \
     && echo "Release: Mon, 05 Nov 2018 18:49:39 UTC" \
-    && export SUM=3c94e1c056520e06ba10d425c883463b3287c6eb506d410e6c939739ee301c92 \
+    && export SUM=ff31390e9da2b14d15f324620b11cde338224731c174612e84cc277d766d62a9 \
     && export FILE=/var/lib/apt/lists/packages.osrfoundation.org_gazebo_$ID-stable_dists_$(lsb_release -sc)_InRelease \
     && echo "$SUM *$FILE" | sha256sum --check \
     && rm -rf /var/lib/apt/lists/*

@@ -19,7 +19,7 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/
 RUN apt-get update \
     && . /etc/os-release \
     && echo "Release: Tue, 13 Nov 2018 04:34:23 UTC" \
-    && export SUM=21ac875851b7ca891e6e427f51df7b14f505b17c333e05785a031ef3dad6b9af \
+    && export SUM=a243a54b0cea230b6e84d30ad38d8374f986ce38c166d38e6dbd6aaa0b38730e \
     && export FILE=/var/lib/apt/lists/packages.ros.org_ros_ubuntu_dists_$(lsb_release -sc)_InRelease \
     && echo "$SUM *$FILE" | sha256sum --check \
     && rm -rf /var/lib/apt/lists/*

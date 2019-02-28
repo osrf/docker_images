@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN apt-get update \
     && . /etc/os-release \
     && echo "Release: Thu, 15 Nov 2018 21:55:19 UTC" \
-    && export SUM=d18772441d1abd08e247af6cba22207e4f207306e6b98be79c53d0c074bc2ec1 \
+    && export SUM=125999ff7a89681dc97846b7adb233b342c469543c4a4832a22a6f82d4eb130b \
     && export FILE=/var/lib/apt/lists/repo.ros2.org_ubuntu_main_dists_$(lsb_release -sc)_InRelease \
     && echo "$SUM *$FILE" | sha256sum --check \
     && rm -rf /var/lib/apt/lists/*
