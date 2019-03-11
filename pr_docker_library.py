@@ -16,7 +16,7 @@ DOCKER_LIBRARY_REPO_URL = 'git@github.com:docker-library/official-images.git'
 DOCKER_LIBRARY_REPO = 'docker-library/official-images'
 # Path to fork to update with docker images
 FORK_LIBRARY_REPO_URL = 'git@github.com:ros-infrastructure/official-images.git'
-FORK_LIBRARY_REPO = 'ros-infrastructure'
+FORK_LIBRARY_REPO_USER = 'ros-infrastructure'
 
 # Token to use to interact with github
 GIT_USER = os.environ.get('GITHUB_USER','')
