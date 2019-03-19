@@ -143,5 +143,4 @@ def update_upstream_library_definition(name):
 
 if __name__ == '__main__':
 
-    update_upstream_library_definition('ros')
-    update_upstream_library_definition('gazebo')
+    update_upstream_library_definition(os.environ['HUB_REPO'])
