@@ -15,6 +15,7 @@ images:
             - libasio-dev
             - libtinyxml2-dev
             - wget
+        ros2_distro: crystal
         ros2_repo_packages:
             - python3-catkin-pkg-modules
             - python3-rosdep
@@ -42,8 +43,7 @@ images:
             install:
                 - --from-paths src
                 - --ignore-src
-                - --rosdistro crystal
                 - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
         vcs:
             ros2:
-                repos: https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
+                repos:
