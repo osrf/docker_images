@@ -65,9 +65,6 @@ RUN apt-get update && rosdep install -y \
       --ignore-src \
       --skip-keys "\
         libopensplice69 \
-        rmw_connext_cpp \
-        rosidl_typesupport_connext_c \
-        rosidl_typesupport_connext_cpp \
         rti-connext-dds-5.3.1 "\
     && rm -rf /var/lib/apt/lists/*
 
