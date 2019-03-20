@@ -58,7 +58,7 @@ RUN rosdep init \
     && rosdep update
 
 # clone source
-ENV ROS2_WS /root/ros2_ws
+ENV ROS2_WS /opt/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
 RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
