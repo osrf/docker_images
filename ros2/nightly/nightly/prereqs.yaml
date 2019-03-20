@@ -2,4 +2,5 @@ console_bridge: {ubuntu: []}
 fastcdr: {ubuntu: []}
 fastrtps: {ubuntu: []}
 osrf_testing_tools_cpp: {ubuntu: []}
+tinydir_vendor: {ubuntu: []}
 urdfdom_headers: {ubuntu: []}
