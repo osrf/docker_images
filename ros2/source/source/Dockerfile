@@ -68,7 +68,7 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
 RUN apt-get update && rosdep install -y \
     --from-paths src \
     --ignore-src \
-    --rosdistro bouncy \
+    --rosdistro crystal \
     --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
