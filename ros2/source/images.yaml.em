@@ -42,7 +42,7 @@ images:
             install:
                 - --from-paths src
                 - --ignore-src
-                - --rosdistro bouncy
+                - --rosdistro crystal
                 - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
         vcs:
             ros2:
