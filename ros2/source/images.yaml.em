@@ -32,7 +32,7 @@ images:
             - flake8-quotes
             - pytest-repeat
             - pytest-rerunfailures
-        ws: /root/ros2_ws
+        ws: /opt/ros2_ws
         colcon_args:
             - build
             - --cmake-args
