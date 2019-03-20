@@ -23,9 +23,9 @@ RUN echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -sc` main" > /etc
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    python3-colcon-common-extensions \
     python3-rosdep \
-    python3-rosinstall \
-    python3-vcstools \
+    python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment

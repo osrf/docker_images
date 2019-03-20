@@ -16,10 +16,6 @@ images:
             - libtinyxml2-dev
             - wget
         ros2_distro: crystal
-        ros2_repo_packages:
-            - python3-catkin-pkg-modules
-            - python3-rosdep
-            - python3-vcstool
         pip3_install:
             - argcomplete
             - flake8
