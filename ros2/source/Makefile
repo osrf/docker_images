@@ -10,10 +10,13 @@ help:
 	@echo ""
 
 build:
+	@docker build --tag=ros2:devel			devel/.
 	@docker build --tag=ros2:source			source/.
 
 pull:
+	@docker pull ros2:devel
 	@docker pull ros2:source
 
 clean:
+	@docker rmi -f ros2:devel
 	@docker rmi -f ros2:source
