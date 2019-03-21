@@ -11,7 +11,6 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 RUN apt-get update && apt-get install -q -y \
     bash-completion \
     dirmngr \
-    git \
     gnupg2 \
     libasio-dev \
     libtinyxml2-dev \
@@ -32,6 +31,7 @@ ENV LC_ALL C.UTF-8
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    git \
     python3-colcon-common-extensions \
     python3-rosdep \
     python3-vcstool \

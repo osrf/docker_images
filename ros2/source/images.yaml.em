@@ -11,7 +11,6 @@ images:
             - docker_templates
         upstream_packages:
             - bash-completion
-            - git
             - libasio-dev
             - libtinyxml2-dev
             - wget
