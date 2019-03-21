@@ -9,5 +9,5 @@ platform:
     maintainer_name:
     arch: amd64
     type: distribution
-    version:
+    version: 1
     release: ros
