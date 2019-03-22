@@ -10,4 +10,5 @@ platform:
     maintainer_name:
     arch: amd64
     type: distribution
-    version: 2
+    version:
+    ros_version: 2
