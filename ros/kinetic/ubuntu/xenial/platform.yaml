@@ -11,3 +11,4 @@ platform:
     type: distribution
     version:
     release: ros
+    ros_version: 1

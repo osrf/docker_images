@@ -11,7 +11,6 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 RUN apt-get update && apt-get install -q -y \
     bash-completion \
     dirmngr \
-    git \
     gnupg2 \
     libasio-dev \
     libtinyxml2-dev \
@@ -30,9 +29,9 @@ RUN echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -sc` main" > /etc
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# install packages from the ROS repositories
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3-catkin-pkg-modules \
+# install bootstrap tools
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    git \
     python3-colcon-common-extensions \
     python3-rosdep \
     python3-vcstool \

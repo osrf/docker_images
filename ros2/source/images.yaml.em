@@ -11,15 +11,10 @@ images:
             - docker_templates
         upstream_packages:
             - bash-completion
-            - git
             - libasio-dev
             - libtinyxml2-dev
             - wget
         ros2_distro: crystal
-        ros2_repo_packages:
-            - python3-catkin-pkg-modules
-            - python3-rosdep
-            - python3-vcstool
         pip3_install:
             - argcomplete
             - flake8
