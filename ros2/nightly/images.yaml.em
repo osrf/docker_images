@@ -7,24 +7,28 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images_ros2/nightly/create_ros_image.Dockerfile.em
         entrypoint_name: docker_images_ros2/nightly/ros_entrypoint.sh
-        pip3_install:
-            - argcomplete
         template_packages:
             - docker_templates
-        skip_keys:
-            - console_bridge
-            - fastcdr
-            - fastrtps
-            - libopensplice67
-            - libopensplice69
-            - osrf_testing_tools_cpp
-            - poco_vendor
-            - rmw_connext_cpp
-            - rosidl_typesupport_connext_c
-            - rosidl_typesupport_connext_cpp
-            - rti-connext-dds-5.3.1
-            - tinyxml_vendor
-            - tinyxml2_vendor
-            - urdfdom
-            - urdfdom_headers
+        upstream_packages:
+            - bash-completion
+        pip3_install:
+            - argcomplete
+            - flake8
+            - flake8-blind-except
+            - flake8-builtins
+            - flake8-class-newline
+            - flake8-comprehensions
+            - flake8-deprecated
+            - flake8-docstrings
+            - flake8-import-order
+            - flake8-quotes
+            - pytest-repeat
+            - pytest-rerunfailures
+        rosdep_override:
+            - prereqs.yaml
+        rosdep:
+            install:
+                - --from-paths /opt/ros/$ROS_DISTRO/share
+                - --ignore-src
+                - --skip-keys "libopensplice69 rti-connext-dds-5.3.1"
         ros2_binary_url: https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
