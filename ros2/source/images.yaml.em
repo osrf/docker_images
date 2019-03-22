@@ -50,6 +50,7 @@ images:
         entrypoint_name: docker_images_ros2/source/ros_entrypoint.sh
         template_packages:
             - docker_templates
+        ros2_distro: crystal
         upstream_packages:
             - bash-completion
             - wget

@@ -52,8 +52,9 @@ RUN pip3 install -U \
     pytest-repeat \
     pytest-rerunfailures
 
-# bootstrap rosdep
 ENV ROS_DISTRO crystal
+
+# bootstrap rosdep
 RUN rosdep init \
     && rosdep update
 
@@ -61,6 +62,7 @@ RUN rosdep init \
 ENV ROS2_WS /opt/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
+
 RUN wget https://raw.githubusercontent.com/ros2/ros2/$ROS_DISTRO/ros2.repos \
     && vcs import src < ros2.repos
 
@@ -72,7 +74,6 @@ RUN apt-get update && rosdep install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # build source
-WORKDIR $ROS2_WS
 RUN colcon \
     build \
     --cmake-args -DSECURITY=ON --no-warn-unused-cli \

@@ -50,6 +50,8 @@ RUN pip3 install -U \
     pytest-repeat \
     pytest-rerunfailures
 
+ENV ROS_DISTRO crystal
+
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
