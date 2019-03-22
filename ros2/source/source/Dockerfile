@@ -54,6 +54,7 @@ RUN pip3 install -U \
     pytest-rerunfailures
 
 # bootstrap rosdep
+ENV ROS_DISTRO crystal
 RUN rosdep init \
     && rosdep update
 
@@ -61,14 +62,13 @@ RUN rosdep init \
 ENV ROS2_WS /opt/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
-RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/$ROS_DISTRO/ros2.repos \
     && vcs import src < ros2.repos
 
 # install dependencies
 RUN apt-get update && rosdep install -y \
     --from-paths src \
     --ignore-src \
-    --rosdistro bouncy \
     --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
