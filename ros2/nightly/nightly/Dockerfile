@@ -9,10 +9,12 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
+    bash-completion \
     dirmngr \
     gnupg2 \
     lsb-release \
     python3-pip \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
 # setup ros2 keys
@@ -23,10 +25,10 @@ RUN echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -sc` main" > /etc
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    git \
+    python3-colcon-common-extensions \
     python3-rosdep \
-    python3-rosinstall \
-    python3-vcstools \
-    wget \
+    python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
@@ -39,7 +41,18 @@ RUN rosdep init \
 
 # install python packages
 RUN pip3 install -U \
-    argcomplete
+    argcomplete \
+    flake8 \
+    flake8-blind-except \
+    flake8-builtins \
+    flake8-class-newline \
+    flake8-comprehensions \
+    flake8-deprecated \
+    flake8-docstrings \
+    flake8-import-order \
+    flake8-quotes \
+    pytest-repeat \
+    pytest-rerunfailures
 
 # install ros2 packages
 ENV ROS_DISTRO crystal
@@ -47,34 +60,29 @@ RUN mkdir -p /opt/ros/$ROS_DISTRO
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
-RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
-      /opt/ros/$ROS_DISTRO/setup.sh && \
-    sed -i "s|^\(_colcon_prefix_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
-      /opt/ros/$ROS_DISTRO/local_setup.sh
 
-# ignore prerequisite rosdep keys
+# add custom rosdep rule files
 COPY prereqs.yaml /etc/ros/rosdep/
 RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
-    mv temp /etc/ros/rosdep/sources.list.d/20-default.list && \
-    rosdep update
+    mv temp /etc/ros/rosdep/sources.list.d/20-default.list
+RUN rosdep update
 
 # install dependencies
 RUN apt-get update && rosdep install -y \
-      --from-paths /opt/ros/$ROS_DISTRO/share \
-      --ignore-src \
-      --skip-keys "\
-        libopensplice69 \
-        rti-connext-dds-5.3.1 "\
+    --from-paths /opt/ros/$ROS_DISTRO/share \
+    --ignore-src \
+    --skip-keys "libopensplice69 rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
 
+# install setup files
+RUN apt-get update && apt-get install -q -y \
+    ros-$ROS_DISTRO-ros-workspace \
+    && rm -rf /var/lib/apt/lists/*
+
+# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys
-RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
-    ros2 pkg list | sed 's/$/: {ubuntu: []}/' > /etc/ros/rosdep/ros2.yaml && \
-    echo "yaml file:///etc/ros/rosdep/ros2.yaml" | \
-    cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
-    mv temp /etc/ros/rosdep/sources.list.d/20-default.list && \
-    rosdep update
+ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
