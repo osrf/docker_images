@@ -42,5 +42,3 @@ RUN if [ ! -z "$RUN_TESTS" ]; then \
             colcon test-result || true; \
         fi \
     fi
-
-CMD ["bash"]
