@@ -1,6 +1,7 @@
 # This is an auto generated Dockerfile for ros2:devel
-# generated from docker_images_ros2/source/create_ros_image.Dockerfile.em
-FROM ubuntu:bionic
+# generated from docker_images_ros2/devel/create_ros_image.Dockerfile.em
+ARG FROM_IMAGE=ubuntu:bionic
+FROM $FROM_IMAGE
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -14,7 +15,6 @@ RUN apt-get update && apt-get install -q -y \
     gnupg2 \
     lsb-release \
     python3-pip \
-    wget \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
@@ -50,8 +50,6 @@ RUN pip3 install -U \
     pytest-repeat \
     pytest-rerunfailures
 
-ENV ROS_DISTRO crystal
-
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
@@ -64,7 +62,8 @@ WORKDIR $ROS2_WS
 # build source
 RUN colcon \
     build \
-    --cmake-args -DSECURITY=ON --no-warn-unused-cli \
+    --cmake-args \
+      -DSECURITY=ON --no-warn-unused-cli \
     --symlink-install
 
 # setup bashrc
