@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo10-dev=10.0.0-1* \
+    libgazebo10-dev=10.1.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
