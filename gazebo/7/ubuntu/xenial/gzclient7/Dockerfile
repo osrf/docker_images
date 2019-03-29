@@ -12,5 +12,5 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo7=7.14.0-1* \
+    gazebo7=7.15.0-1* \
     && rm -rf /var/lib/apt/lists/*
