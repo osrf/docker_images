@@ -61,6 +61,11 @@ ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastS
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
 
+# install setup files
+RUN apt-get update && apt-get install -q -y \
+    ros-$ROS_DISTRO-ros-workspace \
+    && rm -rf /var/lib/apt/lists/*
+
 # add custom rosdep rule files
 COPY prereqs.yaml /etc/ros/rosdep/
 RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
@@ -69,15 +74,14 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
 RUN rosdep update
 
 # install dependencies
-RUN apt-get update && rosdep install -y \
+RUN . /opt/ros/$ROS_DISTRO/setup.sh \
+    && apt-get update \
+    && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
-    --skip-keys "libopensplice69 rti-connext-dds-5.3.1" \
-    && rm -rf /var/lib/apt/lists/*
-
-# install setup files
-RUN apt-get update && apt-get install -q -y \
-    ros-$ROS_DISTRO-ros-workspace \
+    --skip-keys " \
+      libopensplice69 \
+      rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
 
 # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
