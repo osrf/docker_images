@@ -27,8 +27,8 @@ images:
         rosdep_override:
             - prereqs.yaml
         rosdep:
-            install:
-                - --from-paths /opt/ros/$ROS_DISTRO/share
-                - --ignore-src
-                - --skip-keys "libopensplice69 rti-connext-dds-5.3.1"
+            path: /opt/ros/$ROS_DISTRO/share
+            skip_keys:
+                - libopensplice69
+                - rti-connext-dds-5.3.1
         ros2_binary_url: https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
