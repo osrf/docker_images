@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -q -y \
 
 ARG ROS_DISTRO=crystal
 ENV ROS_DISTRO=$ROS_DISTRO
+ENV ROS_VERSION=2 \
+    ROS_PYTHON_VERSION=3
 
 WORKDIR $ROS2_WS
 
