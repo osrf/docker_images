@@ -55,7 +55,7 @@ RUN pip3 install -U \
     pytest-rerunfailures
 
 # install ros2 packages
-ENV ROS_DISTRO crystal
+ENV ROS_DISTRO dashing
 RUN mkdir -p /opt/ros/$ROS_DISTRO
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
