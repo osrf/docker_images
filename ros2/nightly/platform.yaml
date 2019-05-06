@@ -5,7 +5,6 @@ platform:
     os_name: ubuntu
     os_code_name: bionic
     rosdistro_name: melodic
-    ros2distro_name: crystal
     user_name: ros
     maintainer_name:
     arch: amd64

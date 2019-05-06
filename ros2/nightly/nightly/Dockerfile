@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y \
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-latest.list
+RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros2-testing.list
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -55,16 +55,10 @@ RUN pip3 install -U \
     pytest-rerunfailures
 
 # install ros2 packages
-ENV ROS_DISTRO crystal
-RUN mkdir -p /opt/ros/$ROS_DISTRO
+RUN mkdir -p /opt/ros/nightly
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
-    tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
-
-# install setup files
-RUN apt-get update && apt-get install -q -y \
-    ros-$ROS_DISTRO-ros-workspace \
-    && rm -rf /var/lib/apt/lists/*
+    tar -xj --strip-components=1 -C /opt/ros/nightly
 
 # add custom rosdep rule files
 COPY prereqs.yaml /etc/ros/rosdep/
@@ -73,11 +67,12 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
 RUN rosdep update
 
+ENV COLCON_CURRENT_PREFIX /opt/ros/nightly
 # install dependencies
-RUN . /opt/ros/$ROS_DISTRO/setup.sh \
+RUN . /opt/ros/nightly/setup.sh \
     && apt-get update \
     && rosdep install -y \
-    --from-paths /opt/ros/$ROS_DISTRO/share \
+    --from-paths /opt/ros/nightly/share \
     --ignore-src \
     --skip-keys " \
       libopensplice69 \
@@ -86,7 +81,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 
 # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys
-ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
+ENV ROS_PACKAGE_PATH /opt/ros/nightly/share
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /

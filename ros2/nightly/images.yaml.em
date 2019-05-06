@@ -27,7 +27,6 @@ images:
         rosdep_override:
             - prereqs.yaml
         rosdep:
-            path: /opt/ros/$ROS_DISTRO/share
             skip_keys:
                 - libopensplice69
                 - rti-connext-dds-5.3.1
