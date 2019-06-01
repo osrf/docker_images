@@ -388,6 +388,27 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
+    dashing:
+        eol: 2021-07
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        rosdistro_name: melodic
+                        <<: *DEFAULT_ROS2
+                        archs:
+                            - amd64
+                            - arm64v8
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
@@ -527,6 +548,16 @@ hacks:
                             ros1-bridge:
                                 <<: *DEFAULT_HOOKS
     crystal:
+        os_names:
+            ubuntu:
+                os_code_names:
+                    bionic:
+                        tag_names:
+                            desktop:
+                                <<: *DEFAULT_HOOKS
+                            ros1-bridge:
+                                <<: *DEFAULT_HOOKS
+    dashing:
         os_names:
             ubuntu:
                 os_code_names:
