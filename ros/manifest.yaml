@@ -389,7 +389,7 @@ release_names:
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
     dashing:
-        eol: 2020-07
+        eol: 2021-07
         os_names:
             ubuntu:
                 os_code_names:
