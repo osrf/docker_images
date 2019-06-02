@@ -2,33 +2,6 @@ Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
 GitRepo: https://github.com/osrf/docker_images.git
 
 ################################################################################
-# Release: indigo
-
-########################################
-# Distro: ubuntu:trusty
-
-Tags: indigo-ros-core, indigo-ros-core-trusty
-Architectures: amd64, arm32v7
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/indigo/ubuntu/trusty/ros-core
-
-Tags: indigo-ros-base, indigo-ros-base-trusty, indigo
-Architectures: amd64, arm32v7
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/indigo/ubuntu/trusty/ros-base
-
-Tags: indigo-robot, indigo-robot-trusty
-Architectures: amd64, arm32v7
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/indigo/ubuntu/trusty/robot
-
-Tags: indigo-perception, indigo-perception-trusty
-Architectures: amd64, arm32v7
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/indigo/ubuntu/trusty/perception
-
-
-################################################################################
 # Release: kinetic
 
 ########################################
@@ -53,56 +26,6 @@ Tags: kinetic-perception, kinetic-perception-xenial
 Architectures: amd64, arm32v7, arm64v8
 GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
 Directory: ros/kinetic/ubuntu/xenial/perception
-
-
-################################################################################
-# Release: lunar
-
-########################################
-# Distro: ubuntu:xenial
-
-Tags: lunar-ros-core, lunar-ros-core-xenial
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/ubuntu/xenial/ros-core
-
-Tags: lunar-ros-base, lunar-ros-base-xenial, lunar
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/ubuntu/xenial/ros-base
-
-Tags: lunar-robot, lunar-robot-xenial
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/ubuntu/xenial/robot
-
-Tags: lunar-perception, lunar-perception-xenial
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/ubuntu/xenial/perception
-
-########################################
-# Distro: debian:stretch
-
-Tags: lunar-ros-core-stretch
-Architectures: amd64, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/debian/stretch/ros-core
-
-Tags: lunar-ros-base-stretch
-Architectures: amd64, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/debian/stretch/ros-base
-
-Tags: lunar-robot-stretch
-Architectures: amd64, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/debian/stretch/robot
-
-Tags: lunar-perception-stretch
-Architectures: amd64, arm64v8
-GitCommit: a328e5aa68889ab5ae50ec87c1fd3a8b14e5d11f
-Directory: ros/lunar/debian/stretch/perception
 
 
 ################################################################################
