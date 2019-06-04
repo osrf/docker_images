@@ -33,7 +33,7 @@ images:
         upstream_packages:
             - libasio-dev
             - libtinyxml2-dev
-        ros2_distro: crystal
+        ros2_distro: dashing
         ws: /opt/ros2_ws
         colcon_args:
             - build
