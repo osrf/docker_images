@@ -11,14 +11,14 @@ RUN apt-get update && apt-get install -q -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ARG ROS_DISTRO=crystal
+ARG ROS_DISTRO=dashing
 ENV ROS_DISTRO=$ROS_DISTRO
 ENV ROS_VERSION=2 \
     ROS_PYTHON_VERSION=3
 
 WORKDIR $ROS2_WS
 
-RUN wget https://raw.githubusercontent.com/ros2/ros2/$ROS_DISTRO/ros2.repos \
+RUN wget https://raw.githubusercontent.com/ros2/ros2/$ROS_DISTRO-release/ros2.repos \
     && vcs import src < ros2.repos
 
 # install dependencies
