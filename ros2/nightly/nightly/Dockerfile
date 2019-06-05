@@ -92,6 +92,11 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 # ignore installed rosdep keys
 ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
 
+# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
+#Workaround hard coded paths in nightly tarball setup scripts
+ARG UPSTREAM_CI_WS=/home/jenkins-agent/workspace/packaging_linux/ws
+RUN mkdir -p $UPSTREAM_CI_WS && ln -s /opt/ros/$ROS_DISTRO $UPSTREAM_CI_WS/install
+
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
 
