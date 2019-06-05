@@ -6,10 +6,10 @@ FROM ubuntu:precise
 RUN sed -i -e 's/archive/old-releases/g' /etc/apt/sources.list
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys AD19BAB3CBF125EA
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list
+RUN echo "deb http://snapshots.ros.org/groovy/final/ubuntu precise main" > /etc/apt/sources.list.d/ros-snapshots.list
 
 # setup environment
 RUN locale-gen en_US.UTF-8
