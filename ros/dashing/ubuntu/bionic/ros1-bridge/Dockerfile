@@ -10,6 +10,11 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/
 
 ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO dashing
+# install ros packages
+RUN apt-get update && apt-get install -y \
+    ros-melodic-ros-comm=1.14.3-0* \
+    && rm -rf /var/lib/apt/lists/*
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-dashing-ros1-bridge=0.7.2-1* \
