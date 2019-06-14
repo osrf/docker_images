@@ -38,3 +38,5 @@ images:
             - docker_templates
         ros2_packages:
             - ros1-bridge
+        ros_packages:
+            - ros-comm
