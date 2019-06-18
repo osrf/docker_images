@@ -6,10 +6,10 @@ FROM ubuntu:lucid
 RUN sed -i -e 's/archive/old-releases/g' /etc/apt/sources.list
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys AD19BAB3CBF125EA
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros/ubuntu lucid main" > /etc/apt/sources.list.d/ros-latest.list
+RUN echo "deb http://snapshots.ros.org/electric/final/ubuntu lucid main" > /etc/apt/sources.list.d/ros-latest.list
 
 # setup environment
 RUN locale-gen en_US.UTF-8
