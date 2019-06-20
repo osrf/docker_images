@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-dashing-ros1-bridge=0.7.2-1* \
+    ros-dashing-ros1-bridge=0.7.2-4* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
