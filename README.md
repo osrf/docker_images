@@ -4,7 +4,7 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 ##### Dockerfile CI [![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images)
 
 ## Official Library
-### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg)](https://registry.hub.docker.com/_/ros/)
+### [ROS/ROS 2 ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg)](https://registry.hub.docker.com/_/ros/)
 [![Compare Images](https://images.microbadger.com/badges/image/library/ros.svg)](https://microbadger.com/#/images/library/ros)
 
 * amd64 [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/amd64/ros)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/ros/)
@@ -25,13 +25,13 @@ This repo hosts the Dockerfiles used to generate the official images for OSRF pr
 
 
 ## [OSRF Profile](https://hub.docker.com/u/osrf/)
-### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros.svg)](https://registry.hub.docker.com/u/osrf/ros/)
+### [ROS/ROS 2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros.svg)](https://registry.hub.docker.com/u/osrf/ros/)
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros.svg)](https://microbadger.com/#/images/osrf/ros)
 
 * amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros.svg)](https://hub.docker.com/r/osrf/ros/builds/)
 
 
-### [ROS2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg)](https://registry.hub.docker.com/u/osrf/ros2/)
+### [ROS 2 development images ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg)](https://registry.hub.docker.com/u/osrf/ros2/)
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
 * amd64 [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros2.svg)](https://hub.docker.com/r/osrf/ros2/builds/)
