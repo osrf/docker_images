@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-crystal-ros1-bridge=0.6.2-0* \
+    ros-crystal-ros1-bridge=0.6.2-2* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

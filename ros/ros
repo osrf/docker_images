@@ -180,12 +180,12 @@ Directory: ros/bouncy/ubuntu/bionic/ros-base
 
 Tags: crystal-ros-core, crystal-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: 32244a8fafcf7d3c69c48e3a3aa082e4acc1fbf7
+GitCommit: ed29a36e105bf35ddf560486f29f286965afe491
 Directory: ros/crystal/ubuntu/bionic/ros-core
 
 Tags: crystal-ros-base, crystal-ros-base-bionic, crystal
 Architectures: amd64, arm64v8
-GitCommit: 32244a8fafcf7d3c69c48e3a3aa082e4acc1fbf7
+GitCommit: ed29a36e105bf35ddf560486f29f286965afe491
 Directory: ros/crystal/ubuntu/bionic/ros-base
 
 
