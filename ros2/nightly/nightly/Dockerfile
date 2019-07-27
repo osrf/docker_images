@@ -78,14 +78,14 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
 RUN rosdep update
 
 # install dependencies
-ENV RTI_NC_LICENSE_ACCEPTED=yes
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
     && apt-get update \
     && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
-      " \
+      libopensplice69 \
+      rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
 
 # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
