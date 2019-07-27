@@ -11,9 +11,12 @@ help:
 
 build:
 	@docker build --tag=ros2:nightly			nightly/.
+	@docker build --tag=ros2:nightly-rmw		nightly-rmw/.
 
 pull:
 	@docker pull ros2:nightly
+	@docker pull ros2:nightly-rmw
 
 clean:
 	@docker rmi -f ros2:nightly
+	@docker rmi -f ros2:nightly-rmw
