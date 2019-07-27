@@ -26,7 +26,6 @@ RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
-    python3-colcon-common-extensions \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -42,6 +41,7 @@ RUN rosdep init \
 # install python packages
 RUN pip3 install -U \
     argcomplete \
+    colcon-common-extensions \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
