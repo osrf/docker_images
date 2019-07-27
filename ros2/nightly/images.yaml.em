@@ -29,8 +29,8 @@ images:
         rosdep:
             path: /opt/ros/$ROS_DISTRO/share
             skip_keys:
-              - libopensplice69
-              - rti-connext-dds-5.3.1
+                - libopensplice69
+                - rti-connext-dds-5.3.1
         ros2_binary_url: https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
     nightly-rmw:
         base_image: osrf/ros2:nightly
