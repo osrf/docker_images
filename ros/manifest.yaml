@@ -40,8 +40,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     cturtle:
         eol: a long time ago
         os_names:
@@ -52,8 +50,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     diamondback:
         eol: in a galaxy far, far away....
         os_names:
@@ -64,8 +60,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     electric:
         eol: came forth a ros distro
         os_names:
@@ -76,8 +70,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     fuerte:
         eol: to resore balance to the overlay
         os_names:
@@ -88,8 +80,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     groovy:
         eol: 2014-07
         os_names:
@@ -100,8 +90,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     hydro:
         eol: 2015-05
         os_names:
@@ -112,8 +100,6 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            ros:
-                                aliases:
     indigo:
         eol: 2019-04
         os_names:
