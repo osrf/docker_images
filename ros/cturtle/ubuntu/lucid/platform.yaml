@@ -11,3 +11,4 @@ platform:
     type: distribution
     version: False
     release: ros
+    ros_version: 1
