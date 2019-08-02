@@ -192,7 +192,7 @@ release_names:
                         <<: *DEFAULT_ROS1
                         archs:
                             - amd64
-                            - arm64v8
+                            # EOL - arm64v8
                         tag_names:
                             # EOL
                             ros-core:
