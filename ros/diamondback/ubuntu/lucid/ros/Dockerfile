@@ -5,7 +5,7 @@ FROM ubuntu:lucid
 RUN find /etc/apt/ -name *.list -exec sed -i -e 's/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' {} \;
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys AD19BAB3CBF125EA
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA
 
 # setup sources.list
 RUN echo "deb http://snapshots.ros.org/diamondback/final/ubuntu lucid main" > /etc/apt/sources.list.d/ros1-snapshots.list
