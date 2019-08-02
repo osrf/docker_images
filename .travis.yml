@@ -17,10 +17,7 @@ env:
   # ros
   - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
   - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
-  - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
-  - HUB_REPO=ros    HUB_RELEASE=lunar   HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
   - HUB_REPO=ros    HUB_RELEASE=kinetic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=xenial
-  - HUB_REPO=ros    HUB_RELEASE=indigo  HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=trusty
   # gazebo
   - HUB_REPO=gazebo HUB_RELEASE=10      HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
   - HUB_REPO=gazebo HUB_RELEASE=9       HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
