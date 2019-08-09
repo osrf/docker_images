@@ -55,7 +55,22 @@ The following repos are hosted under the OSRF Organization on Docker Hub. These 
 This repo builds `FROM` the Official Library by including additional meta-packages such for desktop installations. These images may be helpful using containers for development or when display forwarding when using GUIs.
 
 #### Repo Info
+
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros.svg)](https://microbadger.com/#/images/osrf/ros)
+
+#### Architectures
+
+| Type | Status |
+|---|---|
+| [amd64](https://hub.docker.com/r/osrf/ros/tags) | [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros.svg?label=build)](https://hub.docker.com/r/osrf/ros/builds/) |
+
+### [ROS2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg?label=stars)](https://hub.docker.com/r/osrf/ros2/)
+
+This repo contains images specific to ROS 2, and are particularly for development and continuous integration. These may contain experimental features or unstable interfaces for testing the latest ROS 2 branches.
+
+#### Repo Info
+
+[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
 - `nightly`
   - _Description:_
@@ -77,20 +92,6 @@ This repo builds `FROM` the Official Library by including additional meta-packag
   - **Notice:**
     - includes third party license agreements for specific RMW implementations
     - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
-
-#### Architectures
-
-| Type | Status |
-|---|---|
-| [amd64](https://hub.docker.com/r/osrf/ros/tags) | [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros.svg?label=build)](https://hub.docker.com/r/osrf/ros/builds/) |
-
-### [ROS2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg?label=stars)](https://hub.docker.com/r/osrf/ros2/)
-
-This repo contains images specific to ROS 2, and are particularly for development and continuous integration. These may contain experimental features or unstable interfaces for testing the latest ROS 2 branches.
-
-#### Repo Info
-
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
 #### Architectures
 
