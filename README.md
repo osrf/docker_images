@@ -14,7 +14,7 @@ The following repos are hosted under the Official Library on Docker Hub. These i
 
 ### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/_/ros.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/_/ros.svg?label=stars)](https://hub.docker.com/_/ros)
 
-This repo contains images available for ROS, both ROS 1 and ROS 2. For more documentation on using these images, view the Docker Hub repo link above. Images are tagged by releases version, meta package, as well as code name for supported OS base images. For complete listing of tag, view the Repo Info link below.
+This repo contains images available for ROS, both ROS 1 and ROS 2. For more documentation on using these images, view the Docker Hub repo link above. Images are tagged by distribution name, meta package, as well as code name for supported OS base images. For complete listing of tag, view the Repo Info link below.
 
 #### [Repo Info](https://github.com/docker-library/repo-info/tree/master/repos/ros)
 
