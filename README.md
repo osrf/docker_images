@@ -78,7 +78,6 @@ This repo builds `FROM` the Official Library by including additional meta-packag
     - includes third party license agreements for specific RMW implementations
     - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
 
-
 #### Architectures
 
 | Type | Status |
