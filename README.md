@@ -78,19 +78,21 @@ This repo contains images specific to ROS 2, and are particularly for developmen
     - closely mimics the Official Library images as be interchangeable
   - _Purpose:_
     - intended for CI and testing against the latest nightly builds
-    - early detection of regressions or deprications from upstream
+    - early detection of regressions or deprecation from upstream
 - `nightly-rmw`
   - _Description:_
-    - builds `FROM` `nightly` and installs open source rmw libraries
-    - including non default vendors (e.g. Opensplice, etc..)
+    - builds `FROM` `nightly` and installs open source libraries
+    - including non default vendors:
+      - Opensplice
   - _Purpose:_
     - intended for CI and testing against more rmw implementations
 - `nightly-rmw-nonfree`
   - _Description:_
-    - builds `FROM` `nightly-rmw` and installs closed source rmw libraries
-    - including non free vendor (e.g. Connext, etc..)
+    - builds `FROM` `nightly-rmw` and installs closed source libraries
+    - including non free vendors:
+      - Connext
   - **Notice:**
-    - includes third party license agreements for specific RMW implementations
+    - includes third party license agreements for non free software
     - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
 
 #### Architectures
