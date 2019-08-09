@@ -13,7 +13,6 @@ env:
   # ros2
   - HUB_REPO=ros   HUB_RELEASE=dashing  HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
   - HUB_REPO=ros   HUB_RELEASE=crystal  HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
-  - HUB_REPO=ros   HUB_RELEASE=bouncy   HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
   # ros
   - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=ubuntu HUB_OS_CODE_NAME=bionic
   - HUB_REPO=ros    HUB_RELEASE=melodic HUB_OS_NAME=debian HUB_OS_CODE_NAME=stretch
