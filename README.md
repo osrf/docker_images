@@ -57,6 +57,28 @@ This repo builds `FROM` the Official Library by including additional meta-packag
 #### Repo Info
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros.svg)](https://microbadger.com/#/images/osrf/ros)
 
+- `nightly`
+  - _Description:_
+    - includes pre-installed environment from nightly job on the build farm
+    - closely mimics the Official Library images as be interchangeable
+  - _Purpose:_
+    - intended for CI and testing against the latest nightly builds
+    - early detection of regressions or deprications from upstream
+- `nightly-rmw`
+  - _Description:_
+    - builds `FROM` `nightly` and installs open source rmw libraries
+    - including non default vendors (e.g. Opensplice, etc..)
+  - _Purpose:_
+    - intended for CI and testing against more rmw implementations
+- `nightly-rmw-nonfree`
+  - _Description:_
+    - builds `FROM` `nightly-rmw` and installs closed source rmw libraries
+    - including non free vendor (e.g. Connext, etc..)
+  - **Notice:**
+    - includes third party license agreements for specific RMW implementations
+    - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
+
+
 #### Architectures
 
 | Type | Status |
