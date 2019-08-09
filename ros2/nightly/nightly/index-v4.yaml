@@ -1,0 +1,7 @@
+%YAML 1.1
+# ROS index file
+# see REP 153: http://ros.org/reps/rep-0153.html
+---
+distributions:
+type: index
+version: 4
