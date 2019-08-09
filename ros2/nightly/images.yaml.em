@@ -32,13 +32,3 @@ images:
                 - libopensplice69
                 - rti-connext-dds-5.3.1
         ros2_binary_url: https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
-    nightly-rmw:
-        base_image: osrf/ros2:nightly
-        maintainer_name: @(maintainer_name)
-        template_name: docker_images_ros2/nightly/create_ros_rmw_image.Dockerfile.em
-        template_packages:
-            - docker_templates
-        rosdep:
-            path: /opt/ros/$ROS_DISTRO/share
-            skip_keys:
-              - ""
