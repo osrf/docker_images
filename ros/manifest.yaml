@@ -361,15 +361,16 @@ release_names:
                             - amd64
                             - arm64v8
                         tag_names:
-                            ros-core:
-                                aliases:
-                                    - "$release_name-ros-core"
-                                    - "$release_name-ros-core-$os_code_name"
-                            ros-base:
-                                aliases:
-                                    - "$release_name-ros-base"
-                                    - "$release_name-ros-base-$os_code_name"
-                                    - "$release_name"
+                            # EOL
+                            # ros-core:
+                            #     aliases:
+                            #         - "$release_name-ros-core"
+                            #         - "$release_name-ros-core-$os_code_name"
+                            # ros-base:
+                            #     aliases:
+                            #         - "$release_name-ros-base"
+                            #         - "$release_name-ros-base-$os_code_name"
+                            #         - "$release_name"
     crystal:
         eol: 2019-12
         os_names:
@@ -548,10 +549,11 @@ hacks:
                 os_code_names:
                     bionic:
                         tag_names:
-                            desktop:
-                                <<: *DEFAULT_HOOKS
-                            ros1-bridge:
-                                <<: *DEFAULT_HOOKS
+                            # EOL
+                            # desktop:
+                            #     <<: *DEFAULT_HOOKS
+                            # ros1-bridge:
+                            #     <<: *DEFAULT_HOOKS
     crystal:
         os_names:
             ubuntu:
