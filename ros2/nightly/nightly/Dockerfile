@@ -34,10 +34,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# bootstrap rosdep
-RUN rosdep init \
-    && rosdep update
-
 # install python packages
 RUN pip3 install -U \
     argcomplete \
@@ -69,6 +65,10 @@ RUN wget -q $ROS2_BINARY_URL -O - | \
 RUN apt-get update && apt-get install -q -y \
     ros-$ROS_DISTRO-ros-workspace \
     && rm -rf /var/lib/apt/lists/*
+
+# bootstrap rosdep
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
+RUN rosdep init
 
 # add custom rosdep rule files
 COPY prereqs.yaml /etc/ros/rosdep/
