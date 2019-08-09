@@ -1,6 +1,6 @@
 # OSRF Docker Images
 
-This repo hosts Dockerfiles and scaffolding for images in the Official Library and OSRF Ornignation on Docker Hub.
+This repo hosts Dockerfiles and scaffolding for images in the Official Library and OSRF Organization on Docker Hub.
 
 | CI | Status |
 |---|---|
