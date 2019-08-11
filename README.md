@@ -48,7 +48,7 @@ This repo contains images available for Gazebo. For more documentation on using 
 
 ## [OSRF Profile](https://hub.docker.com/u/osrf/)
 
-The following repos are hosted under the OSRF Organization on Docker Hub. These images are tagged for development and advanced use cases. If you require extra dependencies not available from the Official Library images above, then these using these images may help save you build time during continuous integration or local development.
+The following repos are hosted under the OSRF Organization on Docker Hub. These images are tagged for development and advanced use cases. If you require extra dependencies not available from the Official Library images above, then using these images may help save you build time during continuous integration or local development.
 
 ### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros.svg?label=stars)](https://hub.docker.com/r/osrf/ros/)
 
