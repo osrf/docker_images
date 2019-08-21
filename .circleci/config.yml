@@ -1,0 +1,63 @@
+version: 2.1
+
+references:
+  common_commands: &common_commands
+    trigger_docker_hub:
+      description: "Trigger Docker Hub"
+      parameters:
+        data:
+          type: string
+        url:
+          type: string
+      steps:
+        - run:
+            name: Trigger Docker Hub
+            command: |
+              curl --request POST \
+                --header "Content-Type:application/json" \
+                --data << parameters.data >> \
+                --url << parameters.url >>
+            when: always
+  trigger_osrf_ros2_devel: &trigger_osrf_ros2_devel
+    trigger_docker_hub:
+      url: $DOCKER_TRIGGER_URL_ROS2
+      data: |
+        `{"docker_tag": devel}`
+  trigger_osrf_ros2_nightly: &trigger_osrf_ros2_nightly
+    trigger_docker_hub:
+      url: $DOCKER_TRIGGER_URL_ROS2
+      data: |
+        `{"docker_tag": nightly}`
+
+commands:
+  <<: *common_commands
+  trigger_osrf_ros2:
+    description: "Trigger osrf/ros2"
+    steps:
+      - *trigger_osrf_ros2_devel
+      - *trigger_osrf_ros2_nightly
+
+executors:
+  docker_exec:
+    docker:
+      - image: ubuntu
+
+jobs:
+  osrf_ros2: &osrf_ros2
+    executor: docker_exec
+    steps:
+      - trigger_osrf_ros2
+
+workflows:
+  version: 2
+  nightly:
+    jobs:
+      - osrf_ros2:
+          context: dockerhub
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
