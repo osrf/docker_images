@@ -14,7 +14,7 @@ references:
             name: Trigger Docker Hub
             command: |
               curl --request POST \
-                --header "Content-Type:application/json" \
+                --header "Content-Type: application/json" \
                 --data << parameters.data >> \
                 --url << parameters.url >>
             when: always
