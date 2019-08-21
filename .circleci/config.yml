@@ -1,41 +1,34 @@
 version: 2.1
 
 references:
-  common_commands: &common_commands
-    trigger_docker_hub:
-      description: "Trigger Docker Hub"
-      parameters:
-        data:
-          type: string
-        url:
-          type: string
-      steps:
-        - run:
-            name: Trigger Docker Hub
-            command: |
-              curl --request POST \
-                --header "Content-Type: application/json" \
-                --data << parameters.data >> \
-                --url << parameters.url >>
-            when: always
-  trigger_osrf_ros2_devel: &trigger_osrf_ros2_devel
-    trigger_docker_hub:
-      url: $DOCKER_TRIGGER_URL_ROS2
-      data: >-
-        '{"docker_tag": devel}'
   trigger_osrf_ros2_nightly: &trigger_osrf_ros2_nightly
     trigger_docker_hub:
-      url: $DOCKER_TRIGGER_URL_ROS2
+      url: ${DOCKER_TRIGGER_URL_ROS2}
       data: >-
-        '{"docker_tag": nightly}'
+        '{"docker_tag": "nightly"}'
+  trigger_osrf_ros2_devel: &trigger_osrf_ros2_devel
+    trigger_docker_hub:
+      url: ${DOCKER_TRIGGER_URL_ROS2}
+      data: >-
+        '{"docker_tag": "devel"}'
 
 commands:
-  <<: *common_commands
-  trigger_osrf_ros2:
-    description: "Trigger osrf/ros2"
+  trigger_docker_hub:
+    description: "Trigger Docker Hub"
+    parameters:
+      data:
+        type: string
+      url:
+        type: string
     steps:
-      - *trigger_osrf_ros2_devel
-      - *trigger_osrf_ros2_nightly
+      - run:
+          name: Trigger Docker Hub
+          command: |
+            curl --request POST \
+              --header "Content-Type: application/json" \
+              --data << parameters.data >> \
+              --url << parameters.url >>
+          when: always
 
 executors:
   docker_exec:
@@ -43,10 +36,19 @@ executors:
       - image: circleci/python
 
 jobs:
-  osrf_ros2: &osrf_ros2
+  osrf_ros2:
     executor: docker_exec
     steps:
-      - trigger_osrf_ros2
+      - *trigger_osrf_ros2_nightly
+      - *trigger_osrf_ros2_devel
+  osrf_ros2_nightly:
+    executor: docker_exec
+    steps:
+      - *trigger_osrf_ros2_nightly
+  osrf_ros2_devel:
+    executor: docker_exec
+    steps:
+      - *trigger_osrf_ros2_devel
 
 workflows:
   version: 2
@@ -59,11 +61,22 @@ workflows:
               only: master
   nightly:
     jobs:
-      - osrf_ros2:
+      - osrf_ros2_nightly:
           context: dockerhub
     triggers:
       - schedule:
           cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+  daily:
+    jobs:
+      - osrf_ros2_devel:
+          context: dockerhub
+    triggers:
+      - schedule:
+          cron: "0 12 * * *"
           filters:
             branches:
               only:
