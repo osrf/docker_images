@@ -50,6 +50,13 @@ jobs:
 
 workflows:
   version: 2
+  deploy:
+    jobs:
+      - osrf_ros2:
+          context: dockerhub
+          filters:
+            branches:
+              only: master
   nightly:
     jobs:
       - osrf_ros2:
