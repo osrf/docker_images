@@ -40,7 +40,7 @@ commands:
 executors:
   docker_exec:
     docker:
-      - image: ubuntu
+      - image: circleci/python
 
 jobs:
   osrf_ros2: &osrf_ros2
