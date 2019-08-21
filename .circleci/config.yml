@@ -22,12 +22,12 @@ references:
     trigger_docker_hub:
       url: $DOCKER_TRIGGER_URL_ROS2
       data: >-
-        `{"docker_tag": devel}`
+        '{"docker_tag": devel}'
   trigger_osrf_ros2_nightly: &trigger_osrf_ros2_nightly
     trigger_docker_hub:
       url: $DOCKER_TRIGGER_URL_ROS2
       data: >-
-        `{"docker_tag": nightly}`
+        '{"docker_tag": nightly}'
 
 commands:
   <<: *common_commands
