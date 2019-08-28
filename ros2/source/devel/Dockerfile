@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN pip3 install -U \
     argcomplete \
     colcon-common-extensions \
+    colcon-mixin \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -58,6 +59,14 @@ RUN pip3 freeze | grep pytest \
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
+
+# setup colcon mixin and metadata
+RUN colcon mixin add upstream \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add upstream \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
 
 # clone source
 ENV ROS2_WS /opt/ros2_ws
