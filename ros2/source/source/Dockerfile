@@ -31,8 +31,9 @@ RUN apt-get update && rosdep install -y \
 # build source
 RUN colcon \
     build \
-    --cmake-args -DSECURITY=ON --no-warn-unused-cli \
-    --symlink-install
+    --symlink-install \
+    --mixin build-testing-on release \
+    --cmake-args --no-warn-unused-cli
 
 ARG RUN_TESTS
 ARG FAIL_ON_TEST_FAILURE
