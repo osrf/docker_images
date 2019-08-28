@@ -86,12 +86,12 @@ Directory: ros/melodic/debian/stretch/perception
 
 Tags: crystal-ros-core, crystal-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: 460ddc4707530c2179788e2100d5c624cf2af3d7
+GitCommit: 1d4c8289e419965ed35eda94e8f5a4d79cd58cf2
 Directory: ros/crystal/ubuntu/bionic/ros-core
 
 Tags: crystal-ros-base, crystal-ros-base-bionic, crystal
 Architectures: amd64, arm64v8
-GitCommit: 460ddc4707530c2179788e2100d5c624cf2af3d7
+GitCommit: 1d4c8289e419965ed35eda94e8f5a4d79cd58cf2
 Directory: ros/crystal/ubuntu/bionic/ros-base
 
 
@@ -103,11 +103,11 @@ Directory: ros/crystal/ubuntu/bionic/ros-base
 
 Tags: dashing-ros-core, dashing-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: 30a5aa5b57ff1df58515bebdb44ac2c8e553df28
+GitCommit: 1d4c8289e419965ed35eda94e8f5a4d79cd58cf2
 Directory: ros/dashing/ubuntu/bionic/ros-core
 
 Tags: dashing-ros-base, dashing-ros-base-bionic, dashing
 Architectures: amd64, arm64v8
-GitCommit: 30a5aa5b57ff1df58515bebdb44ac2c8e553df28
+GitCommit: 1d4c8289e419965ed35eda94e8f5a4d79cd58cf2
 Directory: ros/dashing/ubuntu/bionic/ros-base
 
