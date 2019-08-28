@@ -28,7 +28,7 @@ commands:
               --header "Content-Type: application/json" \
               --data << parameters.data >> \
               --url << parameters.url >> \
-            > /dev/null
+            > /dev/null && true
           when: always
 
 executors:
