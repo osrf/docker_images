@@ -19,6 +19,7 @@ RUN echo "deb http://snapshots.ros.org/ardent/final/ubuntu xenial main" > /etc/a
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
     python3-colcon-common-extensions \
+    python3-colcon-mixin \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -30,6 +31,14 @@ ENV LC_ALL C.UTF-8
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
+
+# setup colcon mixin and metadata
+RUN colcon mixin add upstream \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add upstream \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
 
 # install python packages
 RUN pip3 install -U \
