@@ -27,7 +27,8 @@ commands:
             curl --request POST \
               --header "Content-Type: application/json" \
               --data << parameters.data >> \
-              --url << parameters.url >>
+              --url << parameters.url >> \
+            > /dev/null
           when: always
 
 executors:
