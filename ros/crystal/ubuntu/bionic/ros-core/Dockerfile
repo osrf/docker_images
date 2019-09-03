@@ -24,6 +24,7 @@ RUN echo "deb http://packages.ros.org/ros2/ubuntu bionic main" > /etc/apt/source
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
     python3-colcon-common-extensions \
+    python3-colcon-mixin \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -35,6 +36,14 @@ ENV LC_ALL C.UTF-8
 # bootstrap rosdep
 RUN rosdep init \
     && rosdep update
+
+# setup colcon mixin and metadata
+RUN colcon mixin add default \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add default \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
 
 # install python packages
 RUN pip3 install -U \

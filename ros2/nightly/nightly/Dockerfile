@@ -38,6 +38,7 @@ ENV LC_ALL C.UTF-8
 RUN pip3 install -U \
     argcomplete \
     colcon-common-extensions \
+    colcon-mixin \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -76,6 +77,14 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
 RUN rosdep update
+
+# setup colcon mixin and metadata
+RUN colcon mixin add default \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add default \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
