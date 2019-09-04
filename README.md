@@ -94,6 +94,20 @@ This repo contains images specific to ROS 2, and are particularly for developmen
   - **Notice:**
     - includes third party license agreements for non free software
     - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
+- `devel`
+  - _Description:_
+    - includes pre-installed dependencies for building from source
+    - closely mimics the source install setup instructions 
+  - _Purpose:_
+    - intended for development and bootstrapping source builds
+    - small image size and kept freash by rebuilding every day
+- `source`
+  - _Description:_
+    - builds `FROM` `devel` and comiles ros2 from source
+    - closely mimics the Official Library images as be interchangeable
+  - _Purpose:_
+    - intended for development and bootstrapping source builds
+    - when an isolated workspace is needed for depenancy checking
 
 #### Architectures
 
