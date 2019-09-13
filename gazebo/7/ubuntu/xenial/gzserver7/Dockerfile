@@ -18,7 +18,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo7=7.15.0-1* \
+    gazebo7=7.16.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
