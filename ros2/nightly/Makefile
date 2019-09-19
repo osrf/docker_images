@@ -19,6 +19,11 @@ pull:
 	@docker pull osrf/ros2:nightly-rmw
 	@docker pull osrf/ros2:nightly-rmw-nonfree
 
+push:
+	@docker push osrf/ros2:nightly
+	@docker push osrf/ros2:nightly-rmw
+	@docker push osrf/ros2:nightly-rmw-nonfree
+
 clean:
 	@docker rmi -f osrf/ros2:nightly
 	@docker rmi -f osrf/ros2:nightly-rmw

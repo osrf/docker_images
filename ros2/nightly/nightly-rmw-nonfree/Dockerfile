@@ -2,13 +2,12 @@ FROM osrf/ros2:nightly-rmw
 
 # install dependencies
 ENV RTI_NC_LICENSE_ACCEPTED=yes
-RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-    && apt-get update \
-    && rosdep install -y \
-    --from-paths /opt/ros/$ROS_DISTRO/share \
-    --ignore-src \
-    --skip-keys " \
-      " \
+RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
+    apt-get update && rosdep install -y \
+      --from-paths /opt/ros/$ROS_DISTRO/share \
+      --ignore-src \
+      --skip-keys " \
+        " \
     && rm -rf /var/lib/apt/lists/*
 
 # setup RTI Connext DDS
