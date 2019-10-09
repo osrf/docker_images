@@ -403,6 +403,7 @@ release_names:
                         archs:
                             - amd64
                             - arm64v8
+                            - arm32v7
                         tag_names:
                             ros-core:
                                 aliases:
