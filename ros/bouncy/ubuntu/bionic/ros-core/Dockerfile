@@ -35,7 +35,7 @@ ENV LC_ALL C.UTF-8
 
 # bootstrap rosdep
 RUN rosdep init \
-    && rosdep update
+    && rosdep update --include-eol-distros
 
 # setup colcon mixin and metadata
 RUN colcon mixin add default \
