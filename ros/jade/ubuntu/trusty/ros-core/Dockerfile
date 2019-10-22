@@ -27,7 +27,7 @@ ENV LC_ALL C.UTF-8
 
 # bootstrap rosdep
 RUN rosdep init \
-    && rosdep update
+    && rosdep update --include-eol-distros
 
 # install ros packages
 ENV ROS_DISTRO jade
