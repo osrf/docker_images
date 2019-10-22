@@ -27,7 +27,7 @@ ENV LC_ALL C.UTF-8
 
 # bootstrap rosdep
 RUN rosdep init \
-    && rosdep update --include-eol-distros
+    && rosdep update
 
 # install ros packages
 ENV ROS_DISTRO kinetic
