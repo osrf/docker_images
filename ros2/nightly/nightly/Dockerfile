@@ -100,6 +100,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
+      cyclonedds \
       libopensplice69 \
       rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
