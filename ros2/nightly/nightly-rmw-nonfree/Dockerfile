@@ -8,7 +8,6 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
-      cyclonedds \
       " \
     && rm -rf /var/lib/apt/lists/*
 

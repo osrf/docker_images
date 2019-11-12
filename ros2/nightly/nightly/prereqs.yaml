@@ -1,4 +1,5 @@
 console_bridge: {ubuntu: []}
+cyclonedds: {ubuntu: []}
 fastcdr: {ubuntu: []}
 fastrtps: {ubuntu: []}
 urdfdom_headers: {ubuntu: []}
