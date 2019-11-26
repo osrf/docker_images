@@ -52,7 +52,7 @@ RUN pip3 install -U \
 # install ros2 packages
 ENV ROS_DISTRO eloquent
 RUN apt-get update && apt-get install -y \
-    ros-eloquent-ros-core=0.8.1-1* \
+    ros-eloquent-ros-core=0.8.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-eloquent-ros1-bridge=0.8.0-2* \
+    ros-eloquent-ros1-bridge=0.8.1-3* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
