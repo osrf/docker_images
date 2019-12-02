@@ -38,5 +38,9 @@ images:
             - docker_templates
         ros2_packages:
             - ros1-bridge
+            - demo-nodes-cpp
+            - demo-nodes-py
         ros_packages:
             - ros-comm
+            - roscpp-tutorials
+            - rospy-tutorials
