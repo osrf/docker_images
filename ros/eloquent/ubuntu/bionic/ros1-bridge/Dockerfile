@@ -13,11 +13,15 @@ ENV ROS2_DISTRO eloquent
 # install ros packages
 RUN apt-get update && apt-get install -y \
     ros-melodic-ros-comm=1.14.3-0* \
+    ros-melodic-roscpp-tutorials=0.9.1-0* \
+    ros-melodic-rospy-tutorials=0.9.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-eloquent-ros1-bridge=0.8.1-3* \
+    ros-eloquent-demo-nodes-cpp=0.8.4-1* \
+    ros-eloquent-demo-nodes-py=0.8.4-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

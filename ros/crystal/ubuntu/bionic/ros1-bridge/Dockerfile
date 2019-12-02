@@ -13,11 +13,15 @@ ENV ROS2_DISTRO crystal
 # install ros packages
 RUN apt-get update && apt-get install -y \
     ros-melodic-ros-comm=1.14.3-0* \
+    ros-melodic-roscpp-tutorials=0.9.1-0* \
+    ros-melodic-rospy-tutorials=0.9.1-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
     ros-crystal-ros1-bridge=0.6.2-2* \
+    ros-crystal-demo-nodes-cpp=0.6.2-0* \
+    ros-crystal-demo-nodes-py=0.6.2-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
