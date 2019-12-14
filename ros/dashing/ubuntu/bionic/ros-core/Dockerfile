@@ -52,7 +52,7 @@ RUN pip3 install -U \
 # install ros2 packages
 ENV ROS_DISTRO dashing
 RUN apt-get update && apt-get install -y \
-    ros-dashing-ros-core=0.7.2-1* \
+    ros-dashing-ros-core=0.7.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
