@@ -3,6 +3,6 @@
 FROM ros:dashing-ros-base-bionic
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-dashing-desktop=0.7.2-1* \
+    ros-dashing-desktop=0.7.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
