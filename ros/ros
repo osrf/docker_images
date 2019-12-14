@@ -86,12 +86,12 @@ Directory: ros/melodic/debian/stretch/perception
 
 Tags: crystal-ros-core, crystal-ros-core-bionic
 Architectures: amd64, arm64v8
-GitCommit: 0fee1e693074e55b383d71a294323cb8b3145904
+GitCommit: 557e1a220d460b83402b7ed44b5cfcfb7e39524e
 Directory: ros/crystal/ubuntu/bionic/ros-core
 
 Tags: crystal-ros-base, crystal-ros-base-bionic, crystal
 Architectures: amd64, arm64v8
-GitCommit: 0fee1e693074e55b383d71a294323cb8b3145904
+GitCommit: 557e1a220d460b83402b7ed44b5cfcfb7e39524e
 Directory: ros/crystal/ubuntu/bionic/ros-base
 
 
