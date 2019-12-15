@@ -120,11 +120,11 @@ Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: eloquent-ros-core, eloquent-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 0fee1e693074e55b383d71a294323cb8b3145904
+GitCommit: 9b63c2f2a11ef18c93f7c8f35770625fc48181d8
 Directory: ros/eloquent/ubuntu/bionic/ros-core
 
 Tags: eloquent-ros-base, eloquent-ros-base-bionic, eloquent
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 0fee1e693074e55b383d71a294323cb8b3145904
+GitCommit: 9b63c2f2a11ef18c93f7c8f35770625fc48181d8
 Directory: ros/eloquent/ubuntu/bionic/ros-base
 

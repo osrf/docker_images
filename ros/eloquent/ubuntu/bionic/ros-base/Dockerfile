@@ -3,6 +3,6 @@
 FROM ros:eloquent-ros-core-bionic
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
-    ros-eloquent-ros-base=0.8.3-1* \
+    ros-eloquent-ros-base=0.8.4-1* \
     && rm -rf /var/lib/apt/lists/*
 
