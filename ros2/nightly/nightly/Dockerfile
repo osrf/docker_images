@@ -62,7 +62,8 @@ ENV ROS_DISTRO foxy
 RUN mkdir -p /opt/ros/$ROS_DISTRO
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
-    tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
+    tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO \
+    && rm -f /opt/ros/$ROS_DISTRO/COLCON_IGNORE
 
 # Overwrite setup scripts with ones that point to /opt/ros/$ROS_DISTRO
 RUN mkdir -p /tmp/dir/build \
