@@ -106,9 +106,22 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
       rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
 
+RUN PACKAGE_INDEX_PATH=/opt/ros/foxy/share/ament_index/resource_index/packages/ \
+  && touch $PACKAGE_INDEX_PATH/foonathan_memory \
+  && touch $PACKAGE_INDEX_PATH/gmock_vendor \
+  && touch $PACKAGE_INDEX_PATH/gtest_vendor \
+  && touch $PACKAGE_INDEX_PATH/orocos_kdl \
+  && touch $PACKAGE_INDEX_PATH/osrf_testing_tools_cpp \
+  && touch $PACKAGE_INDEX_PATH/poco_vendor \
+  && touch $PACKAGE_INDEX_PATH/sqlite3_vendor \
+  && touch $PACKAGE_INDEX_PATH/tinydir_vendor \
+  && touch $PACKAGE_INDEX_PATH/tinyxml2_vendor \
+  && touch $PACKAGE_INDEX_PATH/tinyxml_vendor \
+  && touch $PACKAGE_INDEX_PATH/urdfdom
+
 # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys
-ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
+# ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
 
 # FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
 #Workaround hard coded paths in nightly tarball setup scripts
