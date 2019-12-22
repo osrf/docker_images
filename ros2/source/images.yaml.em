@@ -37,9 +37,12 @@ images:
         ws: /opt/ros2_ws
         colcon_args:
             - build
-            - --cmake-args
-                -DSECURITY=ON --no-warn-unused-cli
             - --symlink-install
+            - --mixin
+                build-testing-on
+                release
+            - --cmake-args
+                --no-warn-unused-cli
         rosdep:
             install:
                 - --from-paths src
