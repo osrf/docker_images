@@ -1,4 +1,9 @@
+# This is an auto generated Dockerfile for ros:nightly-rmw
+# generated from docker_images_ros2/nightly/create_ros_nightly_overlay.Dockerfile.em
 FROM osrf/ros2:nightly
+
+# bootstrap rosdep
+RUN rosdep update
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
@@ -9,3 +14,4 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
     --skip-keys " \
       rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
+

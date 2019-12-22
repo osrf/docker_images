@@ -35,6 +35,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 
 # install python packages
 RUN pip3 install -U \
@@ -74,8 +75,15 @@ RUN mkdir -p /tmp/dir/build \
  && make install \
  && rm -r /tmp/dir
 
+# setup colcon mixin and metadata
+RUN colcon mixin add default \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add default \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
+
 # bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 RUN rosdep init
 
 # add custom rosdep rule files
@@ -84,14 +92,6 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
 RUN rosdep update
-
-# setup colcon mixin and metadata
-RUN colcon mixin add default \
-      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
-    colcon mixin update && \
-    colcon metadata add default \
-      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
-    colcon metadata update
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
