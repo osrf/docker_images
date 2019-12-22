@@ -33,13 +33,16 @@ images:
         upstream_packages:
             - libasio-dev
             - libtinyxml2-dev
-        ros2_distro: dashing
+        ros2_distro: eloquent
         ws: /opt/ros2_ws
         colcon_args:
             - build
-            - --cmake-args
-                -DSECURITY=ON --no-warn-unused-cli
             - --symlink-install
+            - --mixin
+                build-testing-on
+                release
+            - --cmake-args
+                --no-warn-unused-cli
         rosdep:
             install:
                 - --from-paths src

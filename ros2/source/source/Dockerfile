@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -q -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ARG ROS_DISTRO=dashing
+ARG ROS_DISTRO=eloquent
 ENV ROS_DISTRO=$ROS_DISTRO
 ENV ROS_VERSION=2 \
     ROS_PYTHON_VERSION=3
