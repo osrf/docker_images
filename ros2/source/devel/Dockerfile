@@ -30,6 +30,8 @@ ENV LC_ALL C.UTF-8
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
+    python3-colcon-common-extensions \
+    python3-colcon-mixin \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -37,8 +39,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # install python packages
 RUN pip3 install -U \
     argcomplete \
-    colcon-common-extensions \
-    colcon-mixin \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -50,8 +50,7 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest-repeat \
     pytest-rerunfailures
-
-# FIXME This is a workaround for pytest not found causing builds to fail
+# This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 RUN pip3 freeze | grep pytest \
     && python3 -m pytest --version

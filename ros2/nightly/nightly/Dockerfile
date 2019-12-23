@@ -28,6 +28,8 @@ RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
+    python3-colcon-common-extensions \
+    python3-colcon-mixin \
     python3-rosdep \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
@@ -35,12 +37,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
+ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 
 # install python packages
 RUN pip3 install -U \
     argcomplete \
-    colcon-common-extensions \
-    colcon-mixin \
     flake8 \
     flake8-blind-except \
     flake8-builtins \
@@ -52,11 +53,11 @@ RUN pip3 install -U \
     flake8-quotes \
     pytest-repeat \
     pytest-rerunfailures
-
-# FIXME This is a workaround for pytest not found causing builds to fail
+# This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 RUN pip3 freeze | grep pytest \
     && python3 -m pytest --version
+
 # install ros2 packages
 ENV ROS_DISTRO foxy
 RUN mkdir -p /opt/ros/$ROS_DISTRO
@@ -74,8 +75,15 @@ RUN mkdir -p /tmp/dir/build \
  && make install \
  && rm -r /tmp/dir
 
+# setup colcon mixin and metadata
+RUN colcon mixin add default \
+      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
+    colcon mixin update && \
+    colcon metadata add default \
+      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
+    colcon metadata update
+
 # bootstrap rosdep
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 RUN rosdep init
 
 # add custom rosdep rule files
@@ -84,14 +92,6 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
 RUN rosdep update
-
-# setup colcon mixin and metadata
-RUN colcon mixin add default \
-      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
-    colcon mixin update && \
-    colcon metadata add default \
-      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
-    colcon metadata update
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
