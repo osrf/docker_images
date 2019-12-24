@@ -15,6 +15,7 @@ images:
           LANG:   "C.UTF-8"
           LC_ALL: "C.UTF-8"
           ROSDISTRO_INDEX_URL: "https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml"
+          COLCON_CURRENT_PREFIX: "/opt/ros/$ROS_DISTRO"
         env_after:
           ROS_PACKAGE_PATH: "/opt/ros/$ROS_DISTRO/share"
         pip3_install:
