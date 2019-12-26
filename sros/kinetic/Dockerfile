@@ -53,8 +53,11 @@ RUN rosinstall_generator \
     git clone -b sros https://github.com/ros/ros_comm && \
     git clone -b sros https://github.com/ros-infrastructure/rospkg ../rospkg
 
+# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
+# manifest.xml and package.xml are present
 # install dependencies
-RUN apt-get update && \
+RUN mv roslisp/manifest.xml roslisp/oldmanifest.xml && \
+    apt-get update && \
     rosdep init && \
     rosdep update && \
     rosdep install -y \
@@ -63,6 +66,7 @@ RUN apt-get update && \
       --rosdistro ${ROS_DISTRO} \
       --as-root=apt:false && \
     pip install --upgrade ../rospkg/ && \
+    mv roslisp/oldmanifest.xml roslisp/manifest.xml && \
     rm -rf /var/lib/apt/lists/*
 
 # build repo
