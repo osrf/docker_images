@@ -584,10 +584,11 @@ hacks:
                 os_code_names:
                     bionic:
                         tag_names:
-                            desktop:
-                                <<: *DEFAULT_HOOKS
-                            ros1-bridge:
-                                <<: *DEFAULT_HOOKS
+                            # EOL
+                            # desktop:
+                            #     <<: *DEFAULT_HOOKS
+                            # ros1-bridge:
+                            #     <<: *DEFAULT_HOOKS
     dashing:
         os_names:
             ubuntu:
