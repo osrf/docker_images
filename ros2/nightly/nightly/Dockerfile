@@ -39,7 +39,6 @@ ENV ROS_DISTRO foxy
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
-ENV COLCON_CURRENT_PREFIX /opt/ros/$ROS_DISTRO
 
 # install python packages
 RUN pip3 install -U \
@@ -65,6 +64,8 @@ RUN mkdir -p /opt/ros/$ROS_DISTRO
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
+RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
+      /opt/ros/$ROS_DISTRO/setup.sh
 
 # setup colcon mixin and metadata
 RUN colcon mixin add default \
