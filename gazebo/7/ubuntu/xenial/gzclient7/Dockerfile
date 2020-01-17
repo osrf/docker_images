@@ -5,8 +5,8 @@ FROM gazebo:gzserver7-xenial
 # install packages
 RUN apt-get update && apt-get install -q -y \
     binutils \
+    kmod \
     mesa-utils \
-    module-init-tools \
     x-window-system \
     && rm -rf /var/lib/apt/lists/*
 

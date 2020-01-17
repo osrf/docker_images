@@ -12,7 +12,7 @@ help:
 build:
 	@docker build --tag=gazebo:gzserver9-stretch	gzserver9/.
 	@docker build --tag=gazebo:libgazebo9-stretch	libgazebo9/.
-	# @docker build --tag=gazebo:gzclient9-stretch	gzclient9/.
+	@docker build --tag=gazebo:gzclient9-stretch	gzclient9/.
 	# @docker build --tag=gazebo:gzweb9-stretch			gzweb9/.
 
 pull:

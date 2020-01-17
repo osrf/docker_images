@@ -50,8 +50,8 @@ images:
             - docker_templates
         upstream_packages:
             - binutils
+            - kmod
             - mesa-utils
-            - module-init-tools
             - x-window-system
         gazebo_packages:
             - gazebo@(gazebo_version)
