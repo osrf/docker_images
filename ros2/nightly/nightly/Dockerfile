@@ -64,6 +64,9 @@ RUN mkdir -p /opt/ros/$ROS_DISTRO
 ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
+
+# Overwriting _colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX to point to the new install location
+# Necessary because the default value is an absolute path valid only on the build machine
 RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
       /opt/ros/$ROS_DISTRO/setup.sh
 
