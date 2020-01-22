@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Call devel webhook
       run: |
-        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_POST_PUSH_TRIGGER }}
+        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
   nightly_build:
     name: Trigger nightly image
     env:
@@ -25,4 +25,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Call nightly webhook
       run: |
-        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_POST_PUSH_TRIGGER }}
+        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
