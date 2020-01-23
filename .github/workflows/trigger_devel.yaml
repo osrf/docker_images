@@ -3,7 +3,12 @@ name: CRON Trigger devel images
 
 on:
   schedule:
-    - cron:  '0 3 * * *'
+  - cron:  '0 3 * * *'
+  push:
+    branches:
+    - master
+    paths:
+      'ros2/source/**'
 jobs:
   source_build:
     name: Trigger devel image

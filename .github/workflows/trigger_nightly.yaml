@@ -3,8 +3,13 @@ name: CRON Trigger nightly images
 
 on:
   schedule:
-    # nightly packaging job usually finish around 14 UTC
-    - cron:  '0 15 * * *'
+  # nightly packaging job usually finish around 14 UTC
+  - cron:  '0 15 * * *'
+  push:
+    branches:
+    - master
+    paths:
+      'ros2/nightly/**'
 jobs:
   nightly_build:
     name: Trigger nightly image
