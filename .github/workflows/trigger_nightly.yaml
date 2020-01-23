@@ -1,0 +1,23 @@
+---
+name: CRON Trigger nightly images
+
+on:
+  schedule:
+  # nightly packaging job usually finish around 14 UTC
+  - cron:  '0 15 * * *'
+  push:
+    branches:
+    - master
+    paths:
+      'ros2/nightly/**'
+jobs:
+  nightly_build:
+    name: Trigger nightly image
+    env:
+      dockerTag: ${{ 'nightly' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Call nightly webhook
+      run: |
+        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
