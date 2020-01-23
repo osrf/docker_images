@@ -3,7 +3,7 @@
 FROM ubuntu:xenial
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
     lsb-release \

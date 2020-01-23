@@ -3,7 +3,7 @@
 FROM gazebo:libgazebo10-bionic
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     build-essential \
     cmake \
     imagemagick \

@@ -3,7 +3,7 @@
 FROM gazebo:gzserver9-stretch
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     binutils \
     mesa-utils \
     module-init-tools \
