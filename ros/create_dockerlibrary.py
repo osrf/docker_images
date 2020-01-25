@@ -17,7 +17,7 @@ PWD = os.path.dirname(os.path.abspath(__file__))
 
 
 def main(argv=sys.argv[1:]):
-    """Create Dockerlibrary for images from manafest yaml data"""
+    """Create Dockerlibrary for images from manifest yaml data"""
 
     # Create the top-level parser
     parser = DockerlibraryArgParser(

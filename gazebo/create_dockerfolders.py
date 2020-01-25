@@ -11,7 +11,7 @@ from docker_templates.folders import populate_paths
 
 
 def main(argv=sys.argv[1:]):
-    """Create Dockerfolders for images from manafest yaml data"""
+    """Create Dockerfolders for images from manifest yaml data"""
 
     # Create the top-level parser
     parser = DockerfolderArgParser(
