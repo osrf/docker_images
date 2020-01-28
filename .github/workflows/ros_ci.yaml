@@ -1,0 +1,44 @@
+---
+name: CI ROS images
+
+on:
+  pull_request:
+    paths:
+    - 'ros/eloquent/**'
+    - 'ros/dashing/**'
+    - 'ros/melodic/**'
+    - 'ros/kinetic/**'
+  push:
+    paths:
+    - 'ros/eloquent/**'
+    - 'ros/dashing/**'
+    - 'ros/melodic/**'
+    - 'ros/kinetic/**'
+  schedule:
+    # Trigger daily to check for upstream changes
+    - cron: '0 0 * * *'
+jobs:
+  check_images:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {HUB_REPO: ros, HUB_RELEASE: eloquent, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+          - {HUB_REPO: ros, HUB_RELEASE: dashing, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+          - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+          - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
+          - {HUB_REPO: ros, HUB_RELEASE: kinetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.x
+      - name: Install requirements
+        run: |
+             python -m pip install --upgrade pip
+             pip install -r docker/requirements.txt
+             pip install -r .ci/requirements.txt
+      - name: Check and build ROS image
+        env: ${{matrix.env}}
+        run: .ci/gh_actions.py

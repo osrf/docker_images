@@ -13,13 +13,13 @@ libnames = ['bot_jokes']
 for libname in libnames:
     try:
         lib = __import__(libname)
-    except:
+    except Exception:
         print(sys.exc_info())
     else:
         globals()[libname] = lib
 
 PWD = os.path.dirname(os.path.abspath(__file__))
-GIT_DEFAULT_BRANCH = 'master'
+GIT_DEFAULT_BRANCH = 'ci_github_actions'
 PR_MESSAGE_BODY = os.path.join(PWD, 'pr_body.md')
 
 
@@ -75,10 +75,11 @@ def main(argv=sys.argv[1:]):
     HUB_RELEASE = os.environ['HUB_RELEASE']
     HUB_OS_NAME = os.environ['HUB_OS_NAME']
     HUB_OS_CODE_NAME = os.environ['HUB_OS_CODE_NAME']
-    GIT_BRANCH = os.environ['TRAVIS_BRANCH']
-    GIT_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
-    GIT_UPSTREAM_REPO_SLUG = os.environ['TRAVIS_REPO_SLUG']
-    GIT_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
+    GIT_BRANCH = os.environ['GITHUB_BASE_REF']
+    GIT_PULL_REQUEST_BRANCH = os.environ['GITHUB_HEAD_REF']
+    GIT_UPSTREAM_REPO_SLUG = os.environ['GITHUB_REPOSITORY']
+    GIT_BUILD_DIR = os.environ['GITHUB_WORKSPACE']
+    GITHUB_EVENT_NAME = os.environ['GITHUB_EVENT_NAME']
 
     print("HUB_REPO: ", HUB_REPO)
     print("HUB_RELEASE: ", HUB_RELEASE)
@@ -86,12 +87,13 @@ def main(argv=sys.argv[1:]):
     print("HUB_OS_CODE_NAME: ", HUB_OS_CODE_NAME)
     print("GIT_UPSTREAM_REPO_SLUG: ", GIT_UPSTREAM_REPO_SLUG)
     print("GIT_BRANCH: ", GIT_BRANCH)
+    print("GITHUB_EVENT_NAME: ", GITHUB_EVENT_NAME)
     print("GIT_PULL_REQUEST_BRANCH: ", GIT_PULL_REQUEST_BRANCH)
 
     # Private environment variables, not available for pull requests from forks
-    GIT_USER = os.environ.get('GITHUB_USER','')
-    GIT_EMAIL = os.environ.get('GITHUB_EMAIL','')
-    GIT_TOKEN = os.environ.get('GITHUB_TOKEN','')
+    GIT_USER = os.environ.get('GITHUB_USER', '')
+    GIT_EMAIL = os.environ.get('GITHUB_EMAIL', '')
+    GIT_TOKEN = os.environ.get('GITHUBTOKEN', '')
     GIT_AUTHOR = "{user} <{email}>".format(user=GIT_USER, email=GIT_EMAIL)
     GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + \
         GIT_UPSTREAM_REPO_SLUG.split('/')[1]
@@ -117,7 +119,7 @@ def main(argv=sys.argv[1:]):
     diffs = repo.index.diff(None, create_patch=True)
 
     # Check if this is PR or Cron job test
-    if GIT_PULL_REQUEST_BRANCH:
+    if GITHUB_EVENT_NAME == 'pull_request':
         # If this is a PR test
         print("Testing Pull Request for Branch: ", GIT_PULL_REQUEST_BRANCH)
 
@@ -134,16 +136,17 @@ def main(argv=sys.argv[1:]):
             test_builds(hub_tag_dir)
 
     else:
-        # If this is a test from CronJob
-        print("Testing CronJob for Branch: ", GIT_BRANCH)
+        # If this is a test from CronJob or push
+        print("Testing Branch: ", GIT_BRANCH)
 
         try:
             # Test that dockerfile generation has changed nothing
             # and that all dockerfiles are up to date
             test_diffs(diffs)
-        except ValueError as err:
+        except ValueError:
             # If there are changes, only proceed for the default branch
             if GIT_BRANCH == GIT_DEFAULT_BRANCH:
+                print("GIT_BRANCH is default branch, proceeding...")
                 # Initialize github interfaces
                 g = github.Github(login_or_token=GIT_TOKEN)
                 g_origin_repo = g.get_repo(
@@ -204,7 +207,7 @@ def main(argv=sys.argv[1:]):
                         inst.stderr = None
                         raise ValueError(
                             ("Force push to branch:{branch} failed! "
-                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
+                             "Stderr omitted to protect secrets.").format(branch=pr_branch_name))
                 else:
                     # Otherwise try setting up the remote upsteam branch
                     try:
@@ -214,7 +217,7 @@ def main(argv=sys.argv[1:]):
                         inst.stderr = None
                         raise ValueError(
                             ("Set-upstream push to branch:{branch} failed! "
-                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
+                             "Stderr omitted to protect secrets.").format(branch=pr_branch_name))
 
                 # Add some commentary for new PR
                 title = "Updating {}".format(pr_branch_name)
@@ -222,7 +225,7 @@ def main(argv=sys.argv[1:]):
                     body = f.read()
                 try:
                     body += bot_jokes.get_bot_joke()
-                except:
+                except Exception:
                     pass
 
                 # Get github pull for upstream
