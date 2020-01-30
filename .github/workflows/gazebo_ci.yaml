@@ -26,6 +26,10 @@ jobs:
           - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
           - {HUB_REPO: gazebo, HUB_RELEASE: 7, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
     runs-on: ubuntu-latest
+    env:
+      TESTINGTOKEN: ${{ secrets.TESTINGTOKEN }}
+      GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
+      GITHUBUSER: ${{ secrets.GITHUBUSER }}
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
@@ -38,4 +42,4 @@ jobs:
              pip install -r .ci/requirements.txt
       - name: Check and build Gazebo image
         env: ${{matrix.env}}
-        run: .ci/gh_actions.py
+        run: .ci/ci_script.py
