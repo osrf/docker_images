@@ -1,0 +1,30 @@
+---
+name: CI ROS 2 images
+
+on:
+  pull_request:
+    paths:
+    - 'ros2/nightly/**'
+    - 'ros2/source/**'
+  push:
+    branches-ignore:
+    - 'ci_github_actions'
+    paths:
+    - 'ros2/nightly/**'
+    - 'ros2/source/**'
+jobs:
+  build_images:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {HUB_REPO: ros2, HUB_RELEASE: source}
+          - {HUB_REPO: ros2, HUB_RELEASE: nightly}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Check and build ROS 2 image
+        env: ${{matrix.env}}
+        run: |
+          cd $HUB_REPO/$HUB_RELEASE
+          make build

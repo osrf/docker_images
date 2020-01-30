@@ -1,0 +1,45 @@
+name: CI Gazebo images
+
+on:
+  pull_request:
+    paths:
+    - 'gazebo/10/**'
+    - 'gazebo/9/**'
+    - 'gazebo/7/**'
+  push:
+    paths:
+    - 'gazebo/10/**'
+    - 'gazebo/9/**'
+    - 'gazebo/7/**'
+  schedule:
+    # Trigger daily to check for upstream changes
+    - cron: '0 0 * * *'
+jobs:
+  check_images:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {HUB_REPO: gazebo, HUB_RELEASE: 10, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+          - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
+          - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+          - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
+          - {HUB_REPO: gazebo, HUB_RELEASE: 7, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
+    runs-on: ubuntu-latest
+    env:
+      GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
+      GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
+      GITHUBUSER: ${{ secrets.GITHUBUSER }}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.x
+      - name: Install requirements
+        run: |
+             python -m pip install --upgrade pip
+             pip install -r docker/requirements.txt
+             pip install -r .ci/requirements.txt
+      - name: Check and build Gazebo image
+        env: ${{matrix.env}}
+        run: .ci/ci_script.py

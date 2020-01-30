@@ -15,6 +15,7 @@ from docker_templates.create import create_files
 from docker_templates.collections import OrderedLoad
 from docker_templates.packages import expandPackages
 
+
 def main(argv=sys.argv[1:]):
     """Create Dockerfiles for images from platform and image yaml data"""
 
@@ -35,7 +36,7 @@ def main(argv=sys.argv[1:]):
         interpreter = Interpreter(output=images_yaml)
         interpreter.file(open(args.images, 'r'), locals=platform)
         images_yaml = images_yaml.getvalue()
-    except Exception as e:
+    except Exception:
         print("Error processing %s" % args.images)
         raise
     finally:
@@ -65,6 +66,7 @@ def main(argv=sys.argv[1:]):
 
         # generate Dockerfile
         create_files(data)
+
 
 if __name__ == '__main__':
     main()
