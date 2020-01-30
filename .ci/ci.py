@@ -13,7 +13,7 @@ libnames = ['bot_jokes']
 for libname in libnames:
     try:
         lib = __import__(libname)
-    except:
+    except Exception:
         print(sys.exc_info())
     else:
         globals()[libname] = lib
@@ -68,17 +68,31 @@ def test_builds(hub_tag_dir):
 
 
 def main(argv=sys.argv[1:]):
-    """Check travis context and trigger docker builds"""
+    """Check CI context and trigger docker builds"""
 
     # Public environment variables, available for pull requests from forks
     HUB_REPO = os.environ['HUB_REPO']
     HUB_RELEASE = os.environ['HUB_RELEASE']
     HUB_OS_NAME = os.environ['HUB_OS_NAME']
     HUB_OS_CODE_NAME = os.environ['HUB_OS_CODE_NAME']
-    GIT_BRANCH = os.environ['TRAVIS_BRANCH']
-    GIT_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
-    GIT_UPSTREAM_REPO_SLUG = os.environ['TRAVIS_REPO_SLUG']
-    GIT_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
+
+    if 'GITHUB_ACTIONS' in os.environ:
+        CI_EVENT_TYPE = os.environ['GITHUB_EVENT_NAME']
+        GIT_BRANCH = os.environ['GITHUB_REF']  # ?
+        github_ref_prefix = 'refs/heads/'
+        if GIT_BRANCH.startswith(github_ref_prefix):
+            GIT_BRANCH = GIT_BRANCH[len(github_ref_prefix):]
+        GIT_UPSTREAM_REPO_SLUG = os.environ['GITHUB_REPOSITORY']
+        GIT_BUILD_DIR = os.environ['GITHUB_WORKSPACE']
+        GIT_PULL_REQUEST_BRANCH = os.environ['GITHUB_HEAD_REF']  # ?
+        GIT_PULL_REQUEST_BASE_BRANCH = os.environ['GITHUB_BASE_REF']  # ?
+    elif 'TRAVIS' in os.environ:
+        CI_EVENT_TYPE = os.environ['TRAVIS_EVENT_TYPE']
+        GIT_BRANCH = os.environ['TRAVIS_BRANCH']
+        GIT_UPSTREAM_REPO_SLUG = os.environ['TRAVIS_REPO_SLUG']
+        GIT_BUILD_DIR = os.environ['TRAVIS_BUILD_DIR']
+        GIT_PULL_REQUEST_BRANCH = os.environ['TRAVIS_PULL_REQUEST_BRANCH']
+        GIT_PULL_REQUEST_BASE_BRANCH = GIT_BRANCH
 
     print("HUB_REPO: ", HUB_REPO)
     print("HUB_RELEASE: ", HUB_RELEASE)
@@ -89,12 +103,10 @@ def main(argv=sys.argv[1:]):
     print("GIT_PULL_REQUEST_BRANCH: ", GIT_PULL_REQUEST_BRANCH)
 
     # Private environment variables, not available for pull requests from forks
-    GIT_USER = os.environ.get('GITHUB_USER','')
-    GIT_EMAIL = os.environ.get('GITHUB_EMAIL','')
-    GIT_TOKEN = os.environ.get('GITHUB_TOKEN','')
-    GIT_AUTHOR = "{user} <{email}>".format(user=GIT_USER, email=GIT_EMAIL)
-    GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + \
-        GIT_UPSTREAM_REPO_SLUG.split('/')[1]
+    GIT_USER = os.environ.get('GITHUBUSER', '')
+    GIT_EMAIL = os.environ.get('GITHUBEMAIL', '')
+    GIT_TOKEN = os.environ.get('GITHUBTOKEN', '')
+    GIT_ORIGIN_REPO_SLUG = GIT_USER + '/' + GIT_UPSTREAM_REPO_SLUG.split('/')[1]
     GIT_REMOTE_ORIGIN_TOKEN_URL = "https://{user}:{token}@github.com/{repo_slug}.git".format(
         user=GIT_USER,
         token=GIT_TOKEN,
@@ -108,7 +120,8 @@ def main(argv=sys.argv[1:]):
     hub_repo_dir = os.path.join(GIT_BUILD_DIR, HUB_REPO)
     hub_tag_dir = os.path.join(
         hub_repo_dir, HUB_RELEASE, HUB_OS_NAME, HUB_OS_CODE_NAME)
-
+    hub_relative_path = os.path.join(
+        HUB_REPO, HUB_RELEASE, HUB_OS_NAME, HUB_OS_CODE_NAME)
     # Try updating the Dockerfiles
     create_dockerfiles = import_create_dockerfiles(hub_repo_dir)
     create_dockerfiles.main(('dir', '-d' + hub_tag_dir))
@@ -117,137 +130,143 @@ def main(argv=sys.argv[1:]):
     diffs = repo.index.diff(None, create_patch=True)
 
     # Check if this is PR or Cron job test
-    if GIT_PULL_REQUEST_BRANCH:
-        # If this is a PR test
+    if CI_EVENT_TYPE == 'pull_request':
         print("Testing Pull Request for Branch: ", GIT_PULL_REQUEST_BRANCH)
-
         # Test that dockerfile generation has changed nothing
         # and that all dockerfiles are up to date
         test_diffs(diffs)
 
-        target = repo.branches[GIT_BRANCH].commit
-        pull_request = repo.head.commit
-        pr_diffs = target.diff(pull_request, paths=[hub_tag_dir])
-
-        if pr_diffs:
-            # Test that the dockerfiles build
-            test_builds(hub_tag_dir)
+        # have to invoke git diff on the command line
+        # because Github Actions gives detached clone for forked repos
+        pr_diff_cmd = f'git diff remotes/origin/{GIT_PULL_REQUEST_BASE_BRANCH} --name-only'
+        pr_diff_return = subprocess.Popen(
+            pr_diff_cmd,
+            shell=True,
+            stdout=subprocess.PIPE)
+        file_list = pr_diff_return.stdout.read().decode().strip().split('\n')
+        # If files corresponding to this distro/platform have changed, test building the images
+        for file_path in file_list:
+            if file_path.startswith(hub_relative_path):
+                test_builds(hub_tag_dir)
 
     else:
-        # If this is a test from CronJob
-        print("Testing CronJob for Branch: ", GIT_BRANCH)
-
+        # If this is a test from CronJob or push
+        print("Testing Branch: ", GIT_BRANCH)
         try:
             # Test that dockerfile generation has changed nothing
             # and that all dockerfiles are up to date
             test_diffs(diffs)
-        except ValueError as err:
+        except ValueError:
             # If there are changes, only proceed for the default branch
-            if GIT_BRANCH == GIT_DEFAULT_BRANCH:
-                # Initialize github interfaces
-                g = github.Github(login_or_token=GIT_TOKEN)
-                g_origin_repo = g.get_repo(
-                    full_name_or_id=GIT_ORIGIN_REPO_SLUG)
-                g_upstream_repo = g.get_repo(
-                    full_name_or_id=GIT_UPSTREAM_REPO_SLUG)
+            if GIT_BRANCH != GIT_DEFAULT_BRANCH:
+                raise
+            print("GIT_BRANCH is default branch, proceeding...")
+            # Initialize github interfaces
+            g = github.Github(login_or_token=GIT_TOKEN)
+            g_origin_repo = g.get_repo(
+                full_name_or_id=GIT_ORIGIN_REPO_SLUG)
+            g_upstream_repo = g.get_repo(
+                full_name_or_id=GIT_UPSTREAM_REPO_SLUG)
 
-                # Define common attributes for new PR
-                pr_branch_name = (
-                    '/').join([HUB_REPO, HUB_RELEASE, HUB_OS_NAME, HUB_OS_CODE_NAME])
-                pr_head_name = GIT_USER + ':' + pr_branch_name
+            # Define common attributes for new PR
+            pr_branch_name = hub_relative_path
+            pr_head_name = GIT_USER + ':' + pr_branch_name
 
-                pr_remote = git.remote.Remote(repo=repo, name='origin')
-                pr_remote.add(repo=repo, name='upstream_pr',
-                              url=GIT_REMOTE_ORIGIN_TOKEN_URL)
+            pr_remote = git.remote.Remote(repo=repo, name='origin')
+            pr_remote.add(repo=repo, name='upstream_pr',
+                          url=GIT_REMOTE_ORIGIN_TOKEN_URL)
 
-                # Commit changes to Dockerfiles
-                repo.git.add(all=True)
-                message = "Updating Dockerfiles\n" + \
-                    "This is an automated CI commit"
-                repo.git.commit(m=message, author=GIT_AUTHOR)
+            # Commit changes to Dockerfiles
+            repo.git.add(all=True)
+            message = "Updating Dockerfiles\n" + \
+                "This is an automated CI commit"
+            repo.config_writer().set_value(
+                "user", "name", GIT_USER).release()
+            repo.config_writer().set_value(
+                "user", "email", GIT_EMAIL).release()
+            repo.git.commit(m=message)
 
-                # Update the Docker Library
-                manifest = os.path.join(hub_repo_dir, 'manifest.yaml')
-                output = os.path.join(hub_repo_dir, HUB_REPO)
-                create_dockerlibrary = import_create_dockerlibrary(
-                    hub_repo_dir)
-                create_dockerlibrary.main((
-                    '--manifest', manifest,
-                    '--output', output))
+            # Update the Docker Library
+            manifest = os.path.join(hub_repo_dir, 'manifest.yaml')
+            output = os.path.join(hub_repo_dir, HUB_REPO)
+            create_dockerlibrary = import_create_dockerlibrary(
+                hub_repo_dir)
+            create_dockerlibrary.main((
+                '--manifest', manifest,
+                '--output', output))
 
-                # Commit changes to Docker Library
-                repo.git.add(all=True)
-                message = "Updating Docker Library\n" + \
-                    "This is an automated CI commit"
-                repo.git.commit(m=message, author=GIT_AUTHOR)
+            # Commit changes to Docker Library
+            repo.git.add(all=True)
+            message = "Updating Docker Library\n" + \
+                "This is an automated CI commit"
+            repo.git.commit(m=message)
 
-                # Create new branch from current head
-                pr_branch_head = repo.create_head(pr_branch_name)  # noqa
+            # Create new branch from current head
+            pr_branch_head = repo.create_head(pr_branch_name)  # noqa
 
-                # Check if branch exists remotely
-                try:
-                    g_branch = g_origin_repo.get_branch(branch=pr_branch_name)  # noqa
-                except github.GithubException as exception:
-                    if exception.data['message'] == "Branch not found":
-                        pr_branch_exists = False
-                    else:
-                        raise
+            # Check if branch exists remotely
+            try:
+                g_branch = g_origin_repo.get_branch(branch=pr_branch_name)  # noqa
+            except github.GithubException as exception:
+                if exception.data['message'] == "Branch not found":
+                    pr_branch_exists = False
                 else:
-                    pr_branch_exists = True
+                    raise
+            else:
+                pr_branch_exists = True
 
-                if pr_branch_exists:
-                    # Try fource pushing if remote branch already exists
-                    try:
-                        repo.git.push(
-                            'upstream_pr', pr_branch_name + ':' + pr_branch_name, force=True)
-                    except Exception as inst:
-                        inst.stderr = None
-                        raise ValueError(
-                            ("Force push to branch:{branch} failed! "
-                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
-                else:
-                    # Otherwise try setting up the remote upsteam branch
-                    try:
-                        repo.git.push(
-                            'upstream_pr', pr_branch_name + ':' + pr_branch_name, u=True)
-                    except Exception as inst:
-                        inst.stderr = None
-                        raise ValueError(
-                            ("Set-upstream push to branch:{branch} failed! "
-                             "Stderr omitted to protect secrits.").format(branch=pr_branch_name))
-
-                # Add some commentary for new PR
-                title = "Updating {}".format(pr_branch_name)
-                with open(PR_MESSAGE_BODY, 'r') as f:
-                    body = f.read()
+            if pr_branch_exists:
+                # Try force pushing if remote branch already exists
                 try:
-                    body += bot_jokes.get_bot_joke()
-                except:
-                    pass
+                    repo.git.push(
+                        'upstream_pr', pr_branch_name + ':' + pr_branch_name, force=True)
+                except Exception as inst:
+                    inst.stderr = None
+                    raise ValueError(
+                        ("Force push to branch:{branch} failed! "
+                         "Stderr omitted to protect secrets.").format(branch=pr_branch_name))
+            else:
+                # Otherwise try setting up the remote upsteam branch
+                try:
+                    repo.git.push(
+                        'upstream_pr', pr_branch_name + ':' + pr_branch_name, u=True)
+                except Exception as inst:
+                    inst.stderr = None
+                    raise ValueError(
+                        ("Set-upstream push to branch:'{branch}' failed! "
+                         "Stderr omitted to protect secrets.").format(branch=pr_branch_name))
 
-                # Get github pull for upstream
-                g_pulls = g_upstream_repo.get_pulls(
-                    state='open',
-                    sort='created',
+            # Add some commentary for new PR
+            title = "Updating {}".format(pr_branch_name)
+            with open(PR_MESSAGE_BODY, 'r') as f:
+                body = f.read()
+            try:
+                body += bot_jokes.get_bot_joke()
+            except Exception:
+                pass
+
+            # Get github pull for upstream
+            g_pulls = g_upstream_repo.get_pulls(
+                state='open',
+                sort='created',
+                base=GIT_BRANCH,
+                head=pr_head_name)
+
+            # Check if PR already exists
+            if g_pulls.get_page(0):
+                raise ValueError(
+                    ("Relevant PR from {pr_head_name} "
+                     "is already open.").format(pr_head_name=pr_head_name))
+            else:
+                # Create new PR for remote banch
+                g_upstream_repo.create_pull(
+                    title=title,
+                    body=body,
                     base=GIT_BRANCH,
                     head=pr_head_name)
-
-                # Check if PR already exists
-                if g_pulls.get_page(0):
-                    raise ValueError(
-                        ("Relevant PR from {pr_head_name} "
-                         "is already open.").format(pr_head_name=pr_head_name))
-                else:
-                    # Create new PR for remote banch
-                    g_upstream_repo.create_pull(
-                        title=title,
-                        body=body,
-                        base=GIT_BRANCH,
-                        head=pr_head_name)
-                    raise ValueError(
-                        ("Relevant PR from {pr_head_name} "
-                         "has been created.").format(pr_head_name=pr_head_name))
-            raise
+                raise ValueError(
+                    ("Relevant PR from {pr_head_name} "
+                     "has been created.").format(pr_head_name=pr_head_name))
 
         # Test that the dockerfiles build
         test_builds(hub_tag_dir)

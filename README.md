@@ -4,7 +4,9 @@ This repo hosts Dockerfiles and scaffolding for images in the Official Library a
 
 | CI | Status |
 |---|---|
-| Travis | [![Build Status](https://travis-ci.org/osrf/docker_images.svg?branch=master)](https://travis-ci.org/osrf/docker_images) |
+| ROS | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
+| ROS 2 | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%202%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
+| Gazebo | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20Gazebo%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
 
 ---
 
