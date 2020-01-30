@@ -8,7 +8,7 @@ on:
     - 'ros2/source/**'
   push:
     branches-ignore:
-    - 'ci_github_actions'
+    - 'master'
     paths:
     - 'ros2/nightly/**'
     - 'ros2/source/**'
