@@ -29,6 +29,10 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
           - {HUB_REPO: ros, HUB_RELEASE: kinetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
     runs-on: ubuntu-latest
+    env:
+      TESTINGTOKEN: ${{ secrets.TESTINGTOKEN }}
+      GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
+      GITHUBUSER: ${{ secrets.GITHUBUSER }}
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
@@ -41,4 +45,4 @@ jobs:
              pip install -r .ci/requirements.txt
       - name: Check and build ROS image
         env: ${{matrix.env}}
-        run: .ci/gh_actions.py
+        run: .ci/ci_script.py
