@@ -2,6 +2,15 @@
 
 This repo hosts Dockerfiles and scaffolding for images in the Official Library and OSRF Organization on Docker Hub.
 
+## Table of Contents
+[Official docker library](#official-library)<br/>
+[Official ROS (1 and 2) images](#ros--)<br/>
+[Official Gazebo images](#gazebo--)<br/>
+[OSRF ROS (1 and 2) overlay images](#ros---1)<br/>
+[OSRF ROS 2 development images](#ros2--)<br/>
+[OSRF Gazebo overlay images](#gazebo---1)<br/>
+[OSRF ROS Legacy images](#ros-legacy--)<br/>
+
 | CI | Status |
 |---|---|
 | ROS | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
