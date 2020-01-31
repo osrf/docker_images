@@ -25,12 +25,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+ENV ROS_DISTRO kinetic
 # bootstrap rosdep
-RUN rosdep init \
-    && rosdep update
+RUN rosdep init && \
+  rosdep update --rosdistro $ROS_DISTRO
 
 # install ros packages
-ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
     ros-kinetic-ros-core=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*

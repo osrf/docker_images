@@ -3,7 +3,7 @@
 FROM osrf/ros2:nightly
 
 # bootstrap rosdep
-RUN rosdep update
+RUN rosdep update --rosdistro $ROS_DISTRO
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
