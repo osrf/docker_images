@@ -33,9 +33,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+ENV ROS_DISTRO dashing
 # bootstrap rosdep
-RUN rosdep init \
-    && rosdep update
+RUN rosdep init && \
+  rosdep update --rosdistro $ROS_DISTRO
 
 # setup colcon mixin and metadata
 RUN colcon mixin add default \
@@ -50,7 +51,6 @@ RUN pip3 install -U \
     argcomplete
 
 # install ros2 packages
-ENV ROS_DISTRO dashing
 RUN apt-get update && apt-get install -y \
     ros-dashing-ros-core=0.7.3-1* \
     && rm -rf /var/lib/apt/lists/*

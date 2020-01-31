@@ -9,7 +9,7 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: kinetic-ros-core, kinetic-ros-core-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 460ddc4707530c2179788e2100d5c624cf2af3d7
+GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
 Directory: ros/kinetic/ubuntu/xenial/ros-core
 
 Tags: kinetic-ros-base, kinetic-ros-base-xenial, kinetic
@@ -36,7 +36,7 @@ Directory: ros/kinetic/ubuntu/xenial/perception
 
 Tags: melodic-ros-core, melodic-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 460ddc4707530c2179788e2100d5c624cf2af3d7
+GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
 Directory: ros/melodic/ubuntu/bionic/ros-core
 
 Tags: melodic-ros-base, melodic-ros-base-bionic, melodic, latest
@@ -59,7 +59,7 @@ Directory: ros/melodic/ubuntu/bionic/perception
 
 Tags: melodic-ros-core-stretch
 Architectures: amd64, arm64v8
-GitCommit: 460ddc4707530c2179788e2100d5c624cf2af3d7
+GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
 Directory: ros/melodic/debian/stretch/ros-core
 
 Tags: melodic-ros-base-stretch
@@ -86,7 +86,7 @@ Directory: ros/melodic/debian/stretch/perception
 
 Tags: dashing-ros-core, dashing-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: d188a5a15dba3d3fa266e4578c1ed2e1b4421c72
+GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
 Directory: ros/dashing/ubuntu/bionic/ros-core
 
 Tags: dashing-ros-base, dashing-ros-base-bionic, dashing
@@ -103,7 +103,7 @@ Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: eloquent-ros-core, eloquent-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 9b63c2f2a11ef18c93f7c8f35770625fc48181d8
+GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
 Directory: ros/eloquent/ubuntu/bionic/ros-core
 
 Tags: eloquent-ros-base, eloquent-ros-base-bionic, eloquent

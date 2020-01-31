@@ -86,7 +86,7 @@ COPY prereqs.yaml /etc/ros/rosdep/
 RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
-RUN rosdep update
+RUN rosdep update --rosdistro $ROS_DISTRO
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
