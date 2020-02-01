@@ -4,9 +4,9 @@ This repo hosts Dockerfiles and scaffolding for images in the Official Library a
 
 | CI | Status |
 |---|---|
-| ROS | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
+| ROS | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images/actions?query=workflow%3A%22CI+ROS+images%22+event%3Aschedule)
 | ROS 2 | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20ROS%202%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
-| Gazebo | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20Gazebo%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images)
+| Gazebo | [![Build Status](https://github.com/osrf/docker_images/workflows/CI%20Gazebo%20images/badge.svg?branch=master)](https://github.com/osrf/docker_images/actions?query=workflow%3A%22CI+Gazebo+images%22+event%3Aschedule)
 
 ---
 
