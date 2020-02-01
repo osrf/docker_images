@@ -33,7 +33,7 @@ images:
         upstream_packages:
             - libasio-dev
             - libtinyxml2-dev
-        ros2_distro: eloquent
+        ros2_distro: foxy
         ws: /opt/ros2_ws
         colcon_args:
             - build
@@ -47,7 +47,7 @@ images:
             install:
                 - --from-paths src
                 - --ignore-src
-                - --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
+                - --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-5.3.1 urdfdom_headers"
         vcs:
             imports:
-                repos:
+                ros2: https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos
