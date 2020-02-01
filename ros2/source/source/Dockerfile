@@ -11,21 +11,21 @@ RUN apt-get update && apt-get install -q -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ARG ROS_DISTRO=eloquent
+ARG ROS_DISTRO=foxy
 ENV ROS_DISTRO=$ROS_DISTRO
 ENV ROS_VERSION=2 \
     ROS_PYTHON_VERSION=3
 
 WORKDIR $ROS2_WS
 
-RUN wget https://raw.githubusercontent.com/ros2/ros2/$ROS_DISTRO-release/ros2.repos \
-    && vcs import src < ros2.repos
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos -O ros2 \
+    && vcs import src < ros2
 
 # install dependencies
 RUN apt-get update && rosdep install -y \
     --from-paths src \
     --ignore-src \
-    --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers" \
+    --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-5.3.1 urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 
 # build source
@@ -34,6 +34,7 @@ RUN colcon \
     --symlink-install \
     --mixin build-testing-on release \
     --cmake-args --no-warn-unused-cli
+RUN echo "colcon build --symlink-install --mixin build-testing-on release --cmake-args --no-warn-unused-cli" > colcon_build_command.sh
 
 ARG RUN_TESTS
 ARG FAIL_ON_TEST_FAILURE
