@@ -12,6 +12,9 @@ on:
     paths:
     - 'ros2/nightly/**'
     - 'ros2/source/**'
+  schedule:
+    # Trigger daily to check for upstream changes
+    - cron: '0 0 * * *'
 jobs:
   build_images:
     strategy:
