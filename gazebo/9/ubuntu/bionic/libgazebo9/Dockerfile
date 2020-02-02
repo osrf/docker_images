@@ -3,5 +3,5 @@
 FROM gazebo:gzserver9-bionic
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo9-dev=9.11.0-1* \
+    libgazebo9-dev=9.12.0-1* \
     && rm -rf /var/lib/apt/lists/*
