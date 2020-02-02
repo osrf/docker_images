@@ -69,11 +69,11 @@ Directory: gazebo/9/debian/stretch/libgazebo9
 
 Tags: gzserver10, gzserver10-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 00d02282c2393ccde655fa0c333b4410a10b3985
+GitCommit: 652b4a38b864cced42536ca7d9c20f58c8d8ed95
 Directory: gazebo/10/ubuntu/bionic/gzserver10
 
 Tags: libgazebo10, libgazebo10-bionic, latest
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 00d02282c2393ccde655fa0c333b4410a10b3985
+GitCommit: 652b4a38b864cced42536ca7d9c20f58c8d8ed95
 Directory: gazebo/10/ubuntu/bionic/libgazebo10
 
