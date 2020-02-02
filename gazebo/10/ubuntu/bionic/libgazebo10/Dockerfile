@@ -3,5 +3,5 @@
 FROM gazebo:gzserver10-bionic
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo10-dev=10.1.0-1* \
+    libgazebo10-dev=10.2.0-1* \
     && rm -rf /var/lib/apt/lists/*
