@@ -73,11 +73,11 @@ If you require extra dependencies not available from the Official Library images
 
 This repo builds `FROM` the Official Library by including additional meta-packages such for desktop installations.
 These images may be helpful using containers for development or when display forwarding when using GUIs.<br/>
-This repo does not contain any `latest` tag, so the **pull command does not work as-is**.
 Images must be pulled using an explicit tag e.g:
 ```
-docker pull osrf/ros:melodic-desktop-full
+docker pull osrf/ros:<tag_name>
 ```
+List of tags available at https://hub.docker.com/r/osrf/ros/tags
 
 #### Repo Info
 
@@ -93,11 +93,11 @@ docker pull osrf/ros:melodic-desktop-full
 
 This repo contains images specific to ROS 2, and are particularly for development and continuous integration.
 These may contain experimental features or unstable interfaces for testing the latest ROS 2 branches.<br/>
-This repo does not contain any `latest` tag, so the **pull command does not work as-is**.
 Images must be pulled using an explicit tag e.g:
 ```
-docker pull osrf/ros2:nightly
+docker pull osrf/ros2:<tag_name>
 ```
+List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 
 #### Repo Info
 
@@ -136,11 +136,11 @@ docker pull osrf/ros2:nightly
 
 This repo builds `FROM` the Official Library by including additional meta-packages such for desktop installations.
 These images may be helpful using containers for development or when display forwarding when using GUIs.<br/>
-This repo does not contain any `latest` tag, so the **pull command does not work as-is**.
 Images must be pulled using an explicit tag e.g:
 ```
-docker pull osrf/gazebo:gzweb7
+docker pull osrf/gazebo:<tag_name>
 ```
+List of tags available at https://hub.docker.com/r/osrf/gazebo/tags
 
 #### Repo Info
 
@@ -156,11 +156,11 @@ docker pull osrf/gazebo:gzweb7
 
 This repo contains legacy images for ROS 1, specifically for releases predating the Official Library.
 This is intended as a complementary repo only for older releases of ROS that were not archived in the Official Library.
-This repo does not contain any `latest` tag, so the **pull command does not work as-is**.
 Images must be pulled using an explicit tag e.g:
 ```
-docker pull osrf/ros_legacy:cturtle
+docker pull osrf/ros_legacy:<tag_name>
 ```
+List of tags available at https://hub.docker.com/r/osrf/ros_legacy/tags
 
 #### Repo Info
 
