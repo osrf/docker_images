@@ -3,13 +3,13 @@
 This repo hosts Dockerfiles and scaffolding for images in the Official Library and OSRF Organization on Docker Hub.
 
 ## Table of Contents
-[Official docker library](#official-library)<br/>
-[Official ROS (1 and 2) images](#ros--)<br/>
-[Official Gazebo images](#gazebo--)<br/>
-[OSRF ROS (1 and 2) overlay images](#ros---1)<br/>
-[OSRF ROS 2 development images](#ros2--)<br/>
-[OSRF Gazebo overlay images](#gazebo---1)<br/>
-[OSRF ROS Legacy images](#ros-legacy--)<br/>
+[Official docker library](https://github.com/osrf/docker_images/blob/master/README.md#official-library)<br/>
+[Official ROS (1 and 2) images](https://github.com/osrf/docker_images/blob/master/README.md#ros--)<br/>
+[Official Gazebo images](https://github.com/osrf/docker_images/blob/master/README.md#gazebo--)<br/>
+[OSRF ROS (1 and 2) overlay images](https://github.com/osrf/docker_images/blob/master/README.md#ros---1)<br/>
+[OSRF ROS 2 development images](https://github.com/osrf/docker_images/blob/master/README.md#ros2--)<br/>
+[OSRF Gazebo overlay images](https://github.com/osrf/docker_images/blob/master/README.md#gazebo---1)<br/>
+[OSRF ROS Legacy images](https://github.com/osrf/docker_images/blob/master/README.md#ros-legacy--)<br/>
 
 | CI | Status |
 |---|---|
