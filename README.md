@@ -71,7 +71,7 @@ If you require extra dependencies not available from the Official Library images
 
 ### [ROS ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros.svg?label=stars)](https://hub.docker.com/r/osrf/ros/)
 
-This repo builds `FROM` the Official Library by including additional meta-packages such for desktop installations.
+This repo builds ROS (both ROS 1 and ROS 2) images `FROM` the Official Library by including additional meta-packages such for desktop installations.
 These images may be helpful using containers for development or when display forwarding when using GUIs.<br/>
 Images must be pulled using an explicit tag e.g:
 ```
