@@ -22,11 +22,6 @@ Architectures: amd64, arm32v7, arm64v8
 GitCommit: f2b13092747c0f60cf7608369b57ea89bc01e22d
 Directory: ros/kinetic/ubuntu/xenial/robot
 
-Tags: kinetic-perception, kinetic-perception-xenial
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: f2b13092747c0f60cf7608369b57ea89bc01e22d
-Directory: ros/kinetic/ubuntu/xenial/perception
-
 
 ################################################################################
 # Release: melodic
