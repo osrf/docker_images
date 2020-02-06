@@ -3,11 +3,13 @@ name: CI Gazebo images
 on:
   pull_request:
     paths:
+    - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
     - 'gazebo/7/**'
   push:
     paths:
+    - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
     - 'gazebo/7/**'
@@ -20,6 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         env:
+          - {HUB_REPO: gazebo, HUB_RELEASE: 11, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: gazebo, HUB_RELEASE: 10, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
           - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}

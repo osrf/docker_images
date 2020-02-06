@@ -72,8 +72,25 @@ Architectures: amd64
 GitCommit: f1b7ad09fa3bc6b88621c5f4ff2da9669c9ccb3e
 Directory: gazebo/10/ubuntu/bionic/gzserver10
 
-Tags: libgazebo10, libgazebo10-bionic, latest
+Tags: libgazebo10, libgazebo10-bionic
 Architectures: amd64
 GitCommit: f1b7ad09fa3bc6b88621c5f4ff2da9669c9ccb3e
 Directory: gazebo/10/ubuntu/bionic/libgazebo10
+
+
+################################################################################
+# Release: 11
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: gzserver11, gzserver11-bionic
+Architectures: amd64
+GitCommit: bd0ef992496452d93ea929ea5921b123acdab58c
+Directory: gazebo/11/ubuntu/bionic/gzserver11
+
+Tags: libgazebo11, libgazebo11-bionic, latest
+Architectures: amd64
+GitCommit: bd0ef992496452d93ea929ea5921b123acdab58c
+Directory: gazebo/11/ubuntu/bionic/libgazebo11
 
