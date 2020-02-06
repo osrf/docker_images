@@ -125,8 +125,6 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm32v7
-                            - arm64v8
                         tag_names:
                             gzserver9:
                                 aliases:
@@ -142,8 +140,6 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm32v7
-                            - arm64v8
                         tag_names:
                             gzserver9:
                                 aliases:
@@ -160,8 +156,6 @@ release_names:
                         <<: *DEFAULT
                         archs:
                             - amd64
-                            - arm32v7
-                            - arm64v8
                         tag_names:
                             gzserver10:
                                 aliases:

@@ -58,8 +58,10 @@ For complete listing of tag, view the Repo Info link below.
 | Type | Status |
 |---|---|
 | [amd64](https://hub.docker.com/r/amd64/gazebo/tags) | [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/amd64/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/gazebo/) |
+<!--
 | [arm32v7](https://hub.docker.com/r/arm32v7/gazebo/tags) | [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm32v7/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/gazebo/) |
 | [arm64v8](https://hub.docker.com/r/arm64v8/gazebo/tags) | [![Build Status](https://doi-janky.infosiftr.net/buildStatus/icon?job=multiarch/arm64v8/gazebo)](https://doi-janky.infosiftr.net/job/multiarch/job/arm64v8/job/gazebo/) |
+-->
 
 ---
 
