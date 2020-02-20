@@ -11,7 +11,6 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 RUN apt-get update && apt-get install -q -y \
     dirmngr \
     gnupg2 \
-    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
@@ -45,10 +44,6 @@ RUN colcon mixin add default \
     colcon metadata add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
-
-# install python packages
-RUN pip3 install -U \
-    argcomplete
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y \
