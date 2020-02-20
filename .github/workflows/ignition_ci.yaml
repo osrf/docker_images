@@ -1,0 +1,41 @@
+name: CI Gazebo images
+
+on:
+  pull_request:
+    paths:
+    - 'ignition/blueprint/**'
+    - 'ignition/citadel/**'
+    - 'ignition/ignition'
+  push:
+    paths:
+    - 'ignition/blueprint/**'
+    - 'ignition/citadel/**'
+    - 'ignition/ignition'
+  schedule:
+    # Trigger daily to check for upstream changes
+    - cron: '0 0 * * *'
+jobs:
+  check_images:
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {HUB_REPO: ignition, HUB_RELEASE: citadel, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
+    runs-on: ubuntu-latest
+    env:
+      GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
+      GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
+      GITHUBUSER: ${{ secrets.GITHUBUSER }}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.x
+      - name: Install requirements
+        run: |
+             python -m pip install --upgrade pip
+             pip install -r docker/requirements.txt
+             pip install -r .ci/requirements.txt
+      - name: Check and build Gazebo image
+        env: ${{matrix.env}}
+        run: .ci/ci_script.py
