@@ -2,6 +2,18 @@ Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
 GitRepo: https://github.com/osrf/docker_images.git
 
 ################################################################################
+# Release: blueprint
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: blueprint-bionic
+Architectures: amd64
+GitCommit: 258016edbb73ee817a57e8fd5efa84d429fe8151
+Directory: ignition/blueprint/ubuntu/bionic/ignition
+
+
+################################################################################
 # Release: citadel
 
 ########################################
