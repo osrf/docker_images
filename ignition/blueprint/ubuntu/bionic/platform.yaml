@@ -1,0 +1,13 @@
+%YAML 1.1
+# Ignition Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: bionic
+    ignition_version: blueprint
+    user_name: ignition
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version:
+    release: stable
