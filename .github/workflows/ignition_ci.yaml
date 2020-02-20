@@ -20,6 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         env:
+          - {HUB_REPO: ignition, HUB_RELEASE: blueprint, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: ignition, HUB_RELEASE: citadel, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
     runs-on: ubuntu-latest
     env:
