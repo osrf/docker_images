@@ -1,0 +1,14 @@
+Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
+GitRepo: https://github.com/osrf/docker_images.git
+
+################################################################################
+# Release: citadel
+
+########################################
+# Distro: ubuntu:bionic
+
+Tags: citadel-bionic
+Architectures: amd64
+GitCommit: 6b0f5c0ec8df509c23a939ac09701c59ac98f5b8
+Directory: ignition/citadel/ubuntu/bionic/ignition
+
