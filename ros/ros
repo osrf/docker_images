@@ -86,7 +86,7 @@ Directory: ros/melodic/debian/stretch/perception
 
 Tags: dashing-ros-core, dashing-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
+GitCommit: 92054cbbf05c4d00028cb089ce8c6dcb60f42d01
 Directory: ros/dashing/ubuntu/bionic/ros-core
 
 Tags: dashing-ros-base, dashing-ros-base-bionic, dashing
@@ -103,7 +103,7 @@ Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: eloquent-ros-core, eloquent-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: b075c7dbe56055d862f331f19e1e74ba653e181a
+GitCommit: 92054cbbf05c4d00028cb089ce8c6dcb60f42d01
 Directory: ros/eloquent/ubuntu/bionic/ros-core
 
 Tags: eloquent-ros-base, eloquent-ros-base-bionic, eloquent
