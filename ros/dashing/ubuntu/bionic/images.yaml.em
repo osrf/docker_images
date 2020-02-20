@@ -7,8 +7,6 @@ images:
         maintainer_name: @(maintainer_name)
         template_name: docker_images_ros2/create_ros_core_image.Dockerfile.em
         entrypoint_name: docker_images_ros2/ros_entrypoint.sh
-        pip3_install:
-            - argcomplete
         template_packages:
             - docker_templates
         ros2_packages:
