@@ -161,6 +161,9 @@ def main(argv=sys.argv[1:]):
             if GIT_BRANCH != GIT_DEFAULT_BRANCH:
                 raise
             print("GIT_BRANCH is default branch, proceeding...")
+            # Test that the dockerfiles build
+            test_builds(hub_tag_dir)
+
             # Initialize github interfaces
             g = github.Github(login_or_token=GIT_TOKEN)
             g_origin_repo = g.get_repo(
@@ -268,8 +271,9 @@ def main(argv=sys.argv[1:]):
                     ("Relevant PR from {pr_head_name} "
                      "has been created.").format(pr_head_name=pr_head_name))
 
-        # Test that the dockerfiles build
-        test_builds(hub_tag_dir)
+        else:
+            # Test that the dockerfiles build
+            test_builds(hub_tag_dir)
 
 
 if __name__ == '__main__':
