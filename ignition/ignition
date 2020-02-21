@@ -9,7 +9,7 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: blueprint-bionic
 Architectures: amd64
-GitCommit: 258016edbb73ee817a57e8fd5efa84d429fe8151
+GitCommit: 7a913976978a1a98ba560acad74a8737d47ae36c
 Directory: ignition/blueprint/ubuntu/bionic/ignition
 
 
@@ -21,6 +21,6 @@ Directory: ignition/blueprint/ubuntu/bionic/ignition
 
 Tags: citadel-bionic
 Architectures: amd64
-GitCommit: 6b0f5c0ec8df509c23a939ac09701c59ac98f5b8
+GitCommit: 7a913976978a1a98ba560acad74a8737d47ae36c
 Directory: ignition/citadel/ubuntu/bionic/ignition
 
