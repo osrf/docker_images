@@ -26,7 +26,4 @@ RUN apt-get update && apt-get install -q -y \
     ignition-citadel=1.0.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
-# setup environment
-EXPOSE 11345
-
 CMD ["ign", "gazebo", "-s"]
