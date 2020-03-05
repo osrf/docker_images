@@ -3,8 +3,8 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: bionic
-    rosdistro_name: melodic
+    os_code_name: focal
+    rosdistro_name: noetic
     user_name: ros2
     maintainer_name:
     arch: amd64
