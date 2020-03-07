@@ -107,7 +107,9 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 
 - `nightly`
   - _Description:_
-    - includes pre-installed environment from nightly job on the build farm
+    - includes pre-installed environment from nightly job on the ci.ros2.org and pre-installed DDS implementations:
+      - Fast-RTPS (default)
+      - CycloneDDS
     - closely mimics the Official Library images as be interchangeable
   - _Purpose:_
     - intended for CI and testing against the latest nightly builds
@@ -115,8 +117,7 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 - `nightly-rmw`
   - _Description:_
     - builds `FROM` `nightly` and installs open source libraries
-    - including non default vendors:
-      - Opensplice
+    - currently identical to `nightly`
   - _Purpose:_
     - intended for CI and testing against more rmw implementations
 - `nightly-rmw-nonfree`
