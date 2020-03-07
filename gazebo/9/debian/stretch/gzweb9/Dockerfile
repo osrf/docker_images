@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libgazebo9-dev=9.12.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
