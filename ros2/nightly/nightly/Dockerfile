@@ -29,6 +29,7 @@ RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
     git \
     python3-colcon-common-extensions \
     python3-colcon-mixin \

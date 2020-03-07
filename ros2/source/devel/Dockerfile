@@ -31,6 +31,7 @@ ENV LC_ALL C.UTF-8
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
     git \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
