@@ -4,7 +4,6 @@
 platform:
     os_name: ubuntu
     os_code_name: focal
-    rosdistro_name: noetic
     ros2distro_name: foxy
     user_name: ros
     maintainer_name:
