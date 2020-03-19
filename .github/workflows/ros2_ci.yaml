@@ -4,12 +4,16 @@ name: CI ROS 2 images
 on:
   pull_request:
     paths:
+    - '.ci/**'
+    - '.github/workflows/ros2_ci.yaml'
     - 'ros2/nightly/**'
     - 'ros2/source/**'
   push:
     branches-ignore:
     - 'master'
     paths:
+    - '.ci/**'
+    - '.github/workflows/ros2_ci.yaml'
     - 'ros2/nightly/**'
     - 'ros2/source/**'
 jobs:
