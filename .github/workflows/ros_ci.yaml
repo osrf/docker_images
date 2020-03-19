@@ -4,12 +4,14 @@ name: CI ROS images
 on:
   pull_request:
     paths:
+    - '.ci/**'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
     - 'ros/melodic/**'
     - 'ros/kinetic/**'
   push:
     paths:
+    - '.ci/**'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
     - 'ros/melodic/**'

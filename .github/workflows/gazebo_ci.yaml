@@ -3,12 +3,14 @@ name: CI Gazebo images
 on:
   pull_request:
     paths:
+    - '.ci/**'
     - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
     - 'gazebo/7/**'
   push:
     paths:
+    - '.ci/**'
     - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
