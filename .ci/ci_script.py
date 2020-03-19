@@ -195,11 +195,14 @@ def main(argv=sys.argv[1:]):
                 '--manifest', manifest,
                 '--output', output))
 
-            # Commit changes to Docker Library
-            repo.git.add(all=True)
-            message = "Updating Docker Library\n" + \
-                "This is an automated CI commit"
-            repo.git.commit(m=message)
+            # Check for changes to the Docker Library
+            library_diff = repo.index.diff(None, create_patch=True)
+            if library_diff != []:
+                # Commit changes to Docker Library
+                repo.git.add(all=True)
+                message = "Updating Docker Library\n" + \
+                    "This is an automated CI commit"
+                repo.git.commit(m=message)
 
             # Create new branch from current head
             pr_branch_head = repo.create_head(pr_branch_name)  # noqa
