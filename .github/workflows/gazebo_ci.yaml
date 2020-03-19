@@ -7,12 +7,14 @@ on:
     - 'gazebo/10/**'
     - 'gazebo/9/**'
     - 'gazebo/7/**'
+    - 'gazebo/gazebo'
   push:
     paths:
     - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
     - 'gazebo/7/**'
+    - 'gazebo/gazebo'
   schedule:
     # Trigger daily to check for upstream changes
     - cron: '0 0 * * *'

@@ -8,12 +8,14 @@ on:
     - 'ros/dashing/**'
     - 'ros/melodic/**'
     - 'ros/kinetic/**'
+    - 'ros/ros'
   push:
     paths:
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
     - 'ros/melodic/**'
     - 'ros/kinetic/**'
+    - 'ros/ros'
   schedule:
     # Trigger daily to check for upstream changes
     - cron: '0 0 * * *'
