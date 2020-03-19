@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
     - '.ci/**'
+    - '.github/workflows/ros_ci.yaml'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
     - 'ros/melodic/**'
@@ -12,6 +13,7 @@ on:
   push:
     paths:
     - '.ci/**'
+    - '.github/workflows/ros_ci.yaml'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
     - 'ros/melodic/**'

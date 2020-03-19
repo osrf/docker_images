@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
     - '.ci/**'
+    - '.github/workflows/gazebo_ci.yaml'
     - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
@@ -11,6 +12,7 @@ on:
   push:
     paths:
     - '.ci/**'
+    - '.github/workflows/gazebo_ci.yaml'
     - 'gazebo/11/**'
     - 'gazebo/10/**'
     - 'gazebo/9/**'
