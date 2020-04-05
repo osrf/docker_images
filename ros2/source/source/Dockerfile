@@ -5,7 +5,7 @@ ARG FROM_IMAGE=osrf/ros2:devel
 FROM $FROM_IMAGE
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libasio-dev \
     libtinyxml2-dev \
     wget \

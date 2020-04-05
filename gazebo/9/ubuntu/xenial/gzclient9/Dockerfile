@@ -3,7 +3,7 @@
 FROM gazebo:gzserver9-xenial
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     binutils \
     mesa-utils \
     module-init-tools \
@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -q -y \
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     gazebo9=9.13.0-1* \
     && rm -rf /var/lib/apt/lists/*

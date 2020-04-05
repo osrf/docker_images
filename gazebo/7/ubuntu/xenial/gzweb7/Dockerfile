@@ -3,7 +3,7 @@
 FROM gazebo:libgazebo7-xenial
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     build-essential \
     cmake \
     imagemagick \
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y \
     && rm -rf /var/lib/apt/lists/*
 
 # install gazebo packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libgazebo7-dev=7.16.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

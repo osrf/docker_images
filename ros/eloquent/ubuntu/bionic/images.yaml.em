@@ -19,6 +19,7 @@ images:
             - docker_templates
         ros2_packages:
             - ros-base
+        bootstrap_ros_tools:
     desktop:
         base_image: @(user_name):@(ros2distro_name)-ros-base-@(os_code_name)
         maintainer_name: @(maintainer_name)
