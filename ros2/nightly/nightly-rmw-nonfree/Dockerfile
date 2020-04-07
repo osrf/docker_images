@@ -5,7 +5,7 @@ FROM osrf/ros2:nightly-rmw
 ENV RTI_NC_LICENSE_ACCEPTED yes
 
 # bootstrap rosdep
-RUN rosdep update --rosdistro $ROS_DISTRO
+RUN rosdep update
 
 # install dependencies
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
