@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -q -y \
     dirmngr \
     git \
     gnupg2 \
+    libssl-dev \
     lsb-release \
     python3-pip \
     wget \

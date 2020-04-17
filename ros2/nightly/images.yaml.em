@@ -11,6 +11,7 @@ images:
             - docker_templates
         upstream_packages:
             - bash-completion
+            - libssl-dev
         env_before:
           LANG:   "C.UTF-8"
           LC_ALL: "C.UTF-8"
