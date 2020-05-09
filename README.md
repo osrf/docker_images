@@ -103,7 +103,7 @@ This repo contains images specific to ROS 2, and are particularly for developmen
     - small image size and kept fresh by rebuilding every day
 - `source`
   - _Description:_
-    - builds `FROM` `devel` and comiles ros2 from source
+    - builds `FROM` `devel` and compiles ros2 from source
     - closely mimics the Official Library images as be interchangeable
   - _Purpose:_
     - intended for development and bootstrapping source builds
