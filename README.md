@@ -107,7 +107,7 @@ This repo contains images specific to ROS 2, and are particularly for developmen
     - closely mimics the Official Library images as be interchangeable
   - _Purpose:_
     - intended for development and bootstrapping source builds
-    - when an isolated workspace is needed for depenancy checking
+    - when an isolated workspace is needed for dependency checking
 
 #### Architectures
 
