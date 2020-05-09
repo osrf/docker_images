@@ -108,6 +108,9 @@ This repo contains images specific to ROS 2, and are particularly for developmen
   - _Purpose:_
     - intended for development and bootstrapping source builds
     - when an isolated workspace is needed for dependency checking
+  - **Notice:**
+    - no pre-built image hosted on Docker Hub
+    - provides many `ARG` options, like running tests
 
 #### Architectures
 
