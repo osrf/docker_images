@@ -100,7 +100,7 @@ This repo contains images specific to ROS 2, and are particularly for developmen
     - closely mimics the source install setup instructions 
   - _Purpose:_
     - intended for development and bootstrapping source builds
-    - small image size and kept freash by rebuilding every day
+    - small image size and kept fresh by rebuilding every day
 - `source`
   - _Description:_
     - builds `FROM` `devel` and comiles ros2 from source
