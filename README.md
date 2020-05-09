@@ -105,7 +105,7 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
-- `nightly`
+- [`nightly`](ros2/nightly/nightly)
   - _Description:_
     - includes pre-installed environment from nightly job on the ci.ros2.org and pre-installed DDS implementations:
       - Fast-RTPS (default)
@@ -114,13 +114,13 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
   - _Purpose:_
     - intended for CI and testing against the latest nightly builds
     - early detection of regressions or deprecation from upstream
-- `nightly-rmw`
+- [`nightly-rmw`](ros2/nightly/nightly-rmw)
   - _Description:_
     - builds `FROM` `nightly` and installs open source libraries
     - currently identical to `nightly`
   - _Purpose:_
     - intended for CI and testing against more rmw implementations
-- `nightly-rmw-nonfree`
+- [`nightly-rmw-nonfree`](ros2/nightly/nightly-rmw-nonfree)
   - _Description:_
     - builds `FROM` `nightly-rmw` and installs closed source libraries
     - including non free vendors:
@@ -128,6 +128,23 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
   - **Notice:**
     - includes third party license agreements for non free software
     - including the [`Open Community Source`](https://www.rti.com/products/pricing/compare) license from RTI
+- [`devel`](ros2/source/devel)
+  - _Description:_
+    - includes pre-installed dependencies for building from source
+    - closely mimics the source install setup instructions 
+  - _Purpose:_
+    - intended for development and bootstrapping source builds
+    - small image size and kept fresh by rebuilding every day
+- [`source`](ros2/source/source)
+  - _Description:_
+    - builds `FROM` `devel` and compiles ros2 from source
+    - closely mimics the Official Library images as be interchangeable
+  - _Purpose:_
+    - intended for development and bootstrapping source builds
+    - when an isolated workspace is needed for dependency checking
+  - **Notice:**
+    - no pre-built image hosted on Docker Hub
+    - provides many `ARG` options, like running tests
 
 #### Architectures
 
