@@ -26,6 +26,7 @@ jobs:
       fail-fast: false
       matrix:
         env:
+          - {HUB_REPO: gazebo, HUB_RELEASE: 11, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: gazebo, HUB_RELEASE: 11, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: gazebo, HUB_RELEASE: 10, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: gazebo, HUB_RELEASE: 9, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
