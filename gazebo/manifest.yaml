@@ -177,11 +177,9 @@ release_names:
                         tag_names:
                             gzserver11:
                                 aliases:
-                                    - "gzserver$release_name"
                                     - "gzserver$release_name-$os_code_name"
                             libgazebo11:
                                 aliases:
-                                    - "libgazebo$release_name"
                                     - "libgazebo$release_name-$os_code_name"
                     focal:
                         <<: *DEFAULT
