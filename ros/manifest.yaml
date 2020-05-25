@@ -495,7 +495,6 @@ release_names:
                         <<: *DEFAULT_ROS2
                         archs:
                             - amd64
-                            - arm32v7
                             - arm64v8
                         tag_names:
                             ros-core:
