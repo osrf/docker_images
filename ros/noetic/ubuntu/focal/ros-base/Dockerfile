@@ -5,9 +5,9 @@ FROM ros:noetic-ros-core-focal
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     build-essential \
-    python-rosdep \
-    python-rosinstall \
-    python-vcstools \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-vcstools \
     && rm -rf /var/lib/apt/lists/*
 
 # bootstrap rosdep
