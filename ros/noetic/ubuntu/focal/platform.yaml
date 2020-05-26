@@ -1,0 +1,14 @@
+%YAML 1.1
+# ROS Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: focal
+    rosdistro_name: noetic
+    user_name: ros
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version:
+    release: ros
+    ros_version: 1
