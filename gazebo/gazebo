@@ -39,12 +39,12 @@ Directory: gazebo/9/ubuntu/xenial/libgazebo9
 
 Tags: gzserver9, gzserver9-bionic
 Architectures: amd64
-GitCommit: 6f18102d57b424ce454f61e4ac432e3d6d71f670
+GitCommit: 45f6fc038675b9a1d000e8ac64cdc76d9bb956f5
 Directory: gazebo/9/ubuntu/bionic/gzserver9
 
 Tags: libgazebo9, libgazebo9-bionic
 Architectures: amd64
-GitCommit: 6f18102d57b424ce454f61e4ac432e3d6d71f670
+GitCommit: 45f6fc038675b9a1d000e8ac64cdc76d9bb956f5
 Directory: gazebo/9/ubuntu/bionic/libgazebo9
 
 ########################################
