@@ -24,6 +24,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-dashing-demo-nodes-py=0.7.9-1* \
     && rm -rf /var/lib/apt/lists/*
 
+# install downstream packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python-rosdep \
+    && rm -rf /var/lib/apt/lists/*
+
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
 
