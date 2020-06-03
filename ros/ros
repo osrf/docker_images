@@ -144,6 +144,11 @@ Architectures: amd64, arm32v7, arm64v8
 GitCommit: 0b33e61b5bbed5b93b9fba2d5bae5db604ff9b58
 Directory: ros/dashing/ubuntu/bionic/ros-base
 
+Tags: dashing-ros1-bridge, dashing-ros1-bridge-bionic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 6371b7884c046c3f46393647c54062972f0cfbc2
+Directory: ros/dashing/ubuntu/bionic/ros1-bridge
+
 
 ################################################################################
 # Release: eloquent
@@ -160,4 +165,9 @@ Tags: eloquent-ros-base, eloquent-ros-base-bionic, eloquent
 Architectures: amd64, arm32v7, arm64v8
 GitCommit: 0b33e61b5bbed5b93b9fba2d5bae5db604ff9b58
 Directory: ros/eloquent/ubuntu/bionic/ros-base
+
+Tags: eloquent-ros1-bridge, eloquent-ros1-bridge-bionic
+Architectures: amd64, arm32v7, arm64v8
+GitCommit: 6371b7884c046c3f46393647c54062972f0cfbc2
+Directory: ros/eloquent/ubuntu/bionic/ros1-bridge
 
