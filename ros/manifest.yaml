@@ -464,6 +464,10 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
+                            ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+                                    - "$release_name-ros1-bridge-$os_code_name"
     eloquent:
         eol: 2020-11
         os_names:
@@ -486,6 +490,10 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
+                            ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+                                    - "$release_name-ros1-bridge-$os_code_name"
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
@@ -656,8 +664,6 @@ hacks:
                         tag_names:
                             desktop:
                                 <<: *DEFAULT_HOOKS
-                            ros1-bridge:
-                                <<: *DEFAULT_HOOKS
     eloquent:
         os_names:
             ubuntu:
@@ -665,6 +671,4 @@ hacks:
                     bionic:
                         tag_names:
                             desktop:
-                                <<: *DEFAULT_HOOKS
-                            ros1-bridge:
                                 <<: *DEFAULT_HOOKS
