@@ -146,7 +146,7 @@ Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: dashing-ros1-bridge, dashing-ros1-bridge-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: b95e76659d7f629749adb81c55a9a646d73cbcf5
+GitCommit: c71d7177eaad534e42307b4e7ab7e30078c884de
 Directory: ros/dashing/ubuntu/bionic/ros1-bridge
 
 
@@ -168,7 +168,7 @@ Directory: ros/eloquent/ubuntu/bionic/ros-base
 
 Tags: eloquent-ros1-bridge, eloquent-ros1-bridge-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: b95e76659d7f629749adb81c55a9a646d73cbcf5
+GitCommit: c71d7177eaad534e42307b4e7ab7e30078c884de
 Directory: ros/eloquent/ubuntu/bionic/ros1-bridge
 
 
@@ -190,6 +190,6 @@ Directory: ros/foxy/ubuntu/focal/ros-base
 
 Tags: foxy-ros1-bridge, foxy-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: cf053ac2f062a803a6511588d620e451485845ea
+GitCommit: c71d7177eaad534e42307b4e7ab7e30078c884de
 Directory: ros/foxy/ubuntu/focal/ros1-bridge
 
