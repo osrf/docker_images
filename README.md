@@ -30,6 +30,9 @@ For more documentation on using these images, view the Docker Hub repo link abov
 Images are tagged by distribution name, meta package, as well as code name for supported OS base images.
 For complete listing of tag, view the Repo Info link below.
 
+This repo also contain images for the [ROS 2 Rolling Ridley distribution](https://www.ros.org/reps/rep-2002.html), this distribution is a rolling release providing the latest bleeding edge packages available via apt. Note that these will be updated regularly and may jump base image without notice.
+It sits nicely between the official ROS distributions and the [nightly images](https://github.com/osrf/docker_images#repo-info-3).
+
 #### [Repo Info](https://github.com/docker-library/repo-info/tree/master/repos/ros)
 
 [![Compare Images](https://images.microbadger.com/badges/image/library/ros.svg)](https://microbadger.com/#/images/library/ros)
@@ -145,6 +148,7 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
   - **Notice:**
     - no pre-built image hosted on Docker Hub
     - provides many `ARG` options, like running tests
+- Note: only core packages are available via these images. An alternative for development is to use the [rolling distribution images](https://github.com/osrf/docker_images#ros--), while less recent than the nightly they allow you to install many ROS packages from deb.
 
 #### Architectures
 
