@@ -141,12 +141,13 @@ release_names:
                         archs:
                             - amd64
                         tag_names:
-                            gzserver9:
-                                aliases:
-                                    - "gzserver$release_name-$os_code_name"
-                            libgazebo9:
-                                aliases:
-                                    - "libgazebo$release_name-$os_code_name"
+                            # EOL
+                            # gzserver9:
+                            #     aliases:
+                            #         - "gzserver$release_name-$os_code_name"
+                            # libgazebo9:
+                            #     aliases:
+                            #         - "libgazebo$release_name-$os_code_name"
     '10':
         eol: 2021-01-24
         os_names:

@@ -54,29 +54,6 @@ Architectures: amd64, arm32v7, arm64v8
 GitCommit: 7ff09c2a75e902bc2bb25a1f1ae748ec4e9c7a4b
 Directory: ros/melodic/ubuntu/bionic/perception
 
-########################################
-# Distro: debian:stretch
-
-Tags: melodic-ros-core-stretch
-Architectures: amd64, arm64v8
-GitCommit: 0b33e61b5bbed5b93b9fba2d5bae5db604ff9b58
-Directory: ros/melodic/debian/stretch/ros-core
-
-Tags: melodic-ros-base-stretch
-Architectures: amd64, arm64v8
-GitCommit: 0b33e61b5bbed5b93b9fba2d5bae5db604ff9b58
-Directory: ros/melodic/debian/stretch/ros-base
-
-Tags: melodic-robot-stretch
-Architectures: amd64, arm64v8
-GitCommit: 7ff09c2a75e902bc2bb25a1f1ae748ec4e9c7a4b
-Directory: ros/melodic/debian/stretch/robot
-
-Tags: melodic-perception-stretch
-Architectures: amd64, arm64v8
-GitCommit: 7ff09c2a75e902bc2bb25a1f1ae748ec4e9c7a4b
-Directory: ros/melodic/debian/stretch/perception
-
 
 ################################################################################
 # Release: noetic

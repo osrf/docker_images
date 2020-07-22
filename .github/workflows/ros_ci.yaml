@@ -37,7 +37,6 @@ jobs:
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: buster}
           - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
-          - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
           - {HUB_REPO: ros, HUB_RELEASE: kinetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
     runs-on: ubuntu-latest
     env:
