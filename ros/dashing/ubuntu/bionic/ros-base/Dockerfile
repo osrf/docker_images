@@ -26,6 +26,6 @@ RUN colcon mixin add default \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-dashing-ros-base=0.7.3-1* \
+    ros-dashing-ros-base=0.7.4-1* \
     && rm -rf /var/lib/apt/lists/*
 
