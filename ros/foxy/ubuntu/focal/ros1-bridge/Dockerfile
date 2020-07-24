@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-foxy-ros1-bridge=0.9.2-1* \
+    ros-foxy-ros1-bridge=0.9.3-1* \
     ros-foxy-demo-nodes-cpp=0.9.3-1* \
     ros-foxy-demo-nodes-py=0.9.3-1* \
     && rm -rf /var/lib/apt/lists/*
