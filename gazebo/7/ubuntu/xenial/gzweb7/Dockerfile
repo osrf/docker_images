@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
-    libgazebo7-dev=7.16.0-1* \
+    libgazebo7-dev=7.16.1-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
