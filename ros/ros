@@ -212,6 +212,6 @@ Directory: ros/rolling/ubuntu/focal/ros-base
 
 Tags: rolling-ros1-bridge, rolling-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: f8cfc3fa7ee88d6b59ae18deedd179b8de4c3eb2
+GitCommit: 25c1e1ff073beace2e244febd973bc3941176776
 Directory: ros/rolling/ubuntu/focal/ros1-bridge
 
