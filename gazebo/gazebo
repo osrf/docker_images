@@ -26,12 +26,12 @@ Directory: gazebo/7/ubuntu/xenial/libgazebo7
 
 Tags: gzserver9-xenial
 Architectures: amd64
-GitCommit: 5a2b8655c2b3d3da2890a707e19e26f827ceef44
+GitCommit: 0c9b8a78a8d7080df8dc9af9d14565405c319b7c
 Directory: gazebo/9/ubuntu/xenial/gzserver9
 
 Tags: libgazebo9-xenial
 Architectures: amd64
-GitCommit: 5a2b8655c2b3d3da2890a707e19e26f827ceef44
+GitCommit: 0c9b8a78a8d7080df8dc9af9d14565405c319b7c
 Directory: gazebo/9/ubuntu/xenial/libgazebo9
 
 ########################################
