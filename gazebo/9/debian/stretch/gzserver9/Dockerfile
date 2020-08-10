@@ -18,7 +18,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
-    gazebo9=9.13.2-1* \
+    gazebo9=9.14.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
