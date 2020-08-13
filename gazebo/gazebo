@@ -99,11 +99,11 @@ Directory: gazebo/11/ubuntu/bionic/libgazebo11
 
 Tags: gzserver11, gzserver11-focal
 Architectures: amd64
-GitCommit: 43e969496f5cabe19dd658c18c85f742bdaf6923
+GitCommit: 1b12a062b6d747f26c5ff75bbca3e5a31e84d855
 Directory: gazebo/11/ubuntu/focal/gzserver11
 
 Tags: libgazebo11, libgazebo11-focal, latest
 Architectures: amd64
-GitCommit: 43e969496f5cabe19dd658c18c85f742bdaf6923
+GitCommit: 1b12a062b6d747f26c5ff75bbca3e5a31e84d855
 Directory: gazebo/11/ubuntu/focal/libgazebo11
 
