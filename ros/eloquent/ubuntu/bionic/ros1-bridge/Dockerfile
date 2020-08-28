@@ -12,9 +12,9 @@ ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO eloquent
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-melodic-ros-comm=1.14.7-1* \
-    ros-melodic-roscpp-tutorials=0.9.2-1* \
-    ros-melodic-rospy-tutorials=0.9.2-1* \
+    ros-melodic-ros-comm=1.14.9-1* \
+    ros-melodic-roscpp-tutorials=0.9.3-1* \
+    ros-melodic-rospy-tutorials=0.9.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
