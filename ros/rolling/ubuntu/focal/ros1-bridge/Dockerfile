@@ -13,8 +13,8 @@ ENV ROS2_DISTRO rolling
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ros-comm=1.15.8-1* \
-    ros-noetic-roscpp-tutorials=0.10.1-1* \
-    ros-noetic-rospy-tutorials=0.10.1-1* \
+    ros-noetic-roscpp-tutorials=0.10.2-1* \
+    ros-noetic-rospy-tutorials=0.10.2-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
