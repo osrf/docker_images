@@ -3,7 +3,7 @@
 FROM debian:jessie
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
     && rm -rf /var/lib/apt/lists/*
@@ -14,24 +14,14 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE
 # setup sources.list
 RUN echo "deb http://snapshots.ros.org/kinetic/final/debian jessie main" > /etc/apt/sources.list.d/ros1-snapshots.list
 
-# install bootstrap tools
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    python-rosdep \
-    python-rosinstall \
-    python-vcstools \
-    && rm -rf /var/lib/apt/lists/*
-
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# bootstrap rosdep
-RUN rosdep init \
-    && rosdep update
+ENV ROS_DISTRO kinetic
 
 # install ros packages
-ENV ROS_DISTRO kinetic
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-kinetic-ros-core=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*
 

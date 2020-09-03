@@ -3,7 +3,7 @@
 FROM ubuntu:xenial
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
     python3-pip \
@@ -15,38 +15,17 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE
 # setup sources.list
 RUN echo "deb http://snapshots.ros.org/ardent/final/ubuntu xenial main" > /etc/apt/sources.list.d/ros2-snapshots.list
 
-# install bootstrap tools
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    git \
-    python3-colcon-common-extensions \
-    python3-colcon-mixin \
-    python3-rosdep \
-    python3-vcstool \
-    && rm -rf /var/lib/apt/lists/*
-
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# bootstrap rosdep
-RUN rosdep init \
-    && rosdep update --include-eol-distros
-
-# setup colcon mixin and metadata
-RUN colcon mixin add default \
-      https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
-    colcon mixin update && \
-    colcon metadata add default \
-      https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
-    colcon metadata update
+ENV ROS_DISTRO ardent
 
 # install python packages
 RUN pip3 install -U \
     argcomplete
-
 # install ros2 packages
-ENV ROS_DISTRO ardent
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-ardent-ros-core=0.4.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

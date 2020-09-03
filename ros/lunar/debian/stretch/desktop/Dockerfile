@@ -3,7 +3,7 @@
 FROM ros:lunar-robot-stretch
 
 # install ros packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-lunar-desktop=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*
 

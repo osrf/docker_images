@@ -11,14 +11,14 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources
 ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO crystal
 # install ros packages
-RUN apt-get update && apt-get install -y \
-    ros-melodic-ros-comm=1.14.3-0* \
-    ros-melodic-roscpp-tutorials=0.9.1-0* \
-    ros-melodic-rospy-tutorials=0.9.1-0* \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-melodic-ros-comm=1.14.9-1* \
+    ros-melodic-roscpp-tutorials=0.9.3-1* \
+    ros-melodic-rospy-tutorials=0.9.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-crystal-ros1-bridge=0.6.2-2* \
     ros-crystal-demo-nodes-cpp=0.6.2-0* \
     ros-crystal-demo-nodes-py=0.6.2-0* \
@@ -27,5 +27,3 @@ RUN apt-get update && apt-get install -y \
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["bash"]

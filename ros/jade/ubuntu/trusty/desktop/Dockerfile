@@ -3,7 +3,7 @@
 FROM ros:jade-robot-trusty
 
 # install ros packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-jade-desktop=1.2.1-0* \
     && rm -rf /var/lib/apt/lists/*
 

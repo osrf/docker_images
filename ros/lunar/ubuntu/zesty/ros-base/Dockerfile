@@ -3,7 +3,7 @@
 FROM ros:lunar-ros-core-zesty
 
 # install ros packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-lunar-ros-base=1.3.1-0* \
     && rm -rf /var/lib/apt/lists/*
 

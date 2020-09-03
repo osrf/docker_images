@@ -3,7 +3,7 @@
 FROM ros:jade-ros-base-trusty
 
 # install ros packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-jade-perception=1.2.1-0* \
     && rm -rf /var/lib/apt/lists/*
 

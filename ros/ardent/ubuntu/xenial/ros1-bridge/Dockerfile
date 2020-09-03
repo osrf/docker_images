@@ -11,17 +11,15 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources
 ENV ROS1_DISTRO kinetic
 ENV ROS2_DISTRO ardent
 # install ros packages
-RUN apt-get update && apt-get install -y \
-    ros-kinetic-ros-comm=1.12.14-0* \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-kinetic-ros-comm=1.12.16-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-ardent-ros1-bridge=0.4.0-0* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["bash"]

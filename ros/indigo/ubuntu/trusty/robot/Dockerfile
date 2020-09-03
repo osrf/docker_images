@@ -3,7 +3,7 @@
 FROM ros:indigo-ros-base-trusty
 
 # install ros packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-indigo-robot=1.1.6-0* \
     && rm -rf /var/lib/apt/lists/*
 

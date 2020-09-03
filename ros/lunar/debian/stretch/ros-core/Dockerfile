@@ -3,7 +3,7 @@
 FROM debian:stretch
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
     && rm -rf /var/lib/apt/lists/*
@@ -14,24 +14,14 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE
 # setup sources.list
 RUN echo "deb http://snapshots.ros.org/lunar/final/debian stretch main" > /etc/apt/sources.list.d/ros1-snapshots.list
 
-# install bootstrap tools
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    python-rosdep \
-    python-rosinstall \
-    python-vcstools \
-    && rm -rf /var/lib/apt/lists/*
-
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-# bootstrap rosdep
-RUN rosdep init \
-    && rosdep update --include-eol-distros
+ENV ROS_DISTRO lunar
 
 # install ros packages
-ENV ROS_DISTRO lunar
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-lunar-ros-core=1.3.2-0* \
     && rm -rf /var/lib/apt/lists/*
 

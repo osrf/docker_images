@@ -11,7 +11,4 @@ unset ROS_DISTRO
 # setup ros2 environment
 source "/opt/ros/$ROS2_DISTRO/setup.bash"
 
-unset ROS1_DISTRO
-unset ROS2_DISTRO
-
 exec "$@"
