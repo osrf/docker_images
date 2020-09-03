@@ -31,6 +31,9 @@ ENV ROS_DISTRO bouncy
 # install python packages
 RUN pip3 install -U \
     argcomplete
+# label ros2 packages
+LABEL sha256.ros-bouncy-ros-core=dd7c52a32de23a104f0a65000354a30a03319c4b95cfe8341d06d18304c32d12
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-bouncy-ros-core=0.5.1-0* \

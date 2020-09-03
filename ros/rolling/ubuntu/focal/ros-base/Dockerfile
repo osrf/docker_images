@@ -24,6 +24,9 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
+# label ros2 packages
+LABEL sha256.ros-rolling-ros-base=e7bbf2b5dc0a2379f25a48e4e92ae2a1eb0af261ca61a79e09662150c26b3428
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-rolling-ros-base=0.9.1-2* \

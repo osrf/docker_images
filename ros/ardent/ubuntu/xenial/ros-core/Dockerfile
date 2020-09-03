@@ -24,6 +24,9 @@ ENV ROS_DISTRO ardent
 # install python packages
 RUN pip3 install -U \
     argcomplete
+# label ros2 packages
+LABEL sha256.ros-ardent-ros-core=bf486477e3504bc925f323cbcca47f33bfbfd3a663fb536e5b4c7472488365c2
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-ardent-ros-core=0.4.0-1* \

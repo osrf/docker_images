@@ -2,6 +2,9 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM ros:melodic-ros-base-stretch
 
+# label ros packages
+LABEL sha256.ros-melodic-robot=8bb0a95996c30ade8df4ed41bc527cf2e5f4e1b74ae62565be44853a849a619d
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-robot=1.4.1-0* \

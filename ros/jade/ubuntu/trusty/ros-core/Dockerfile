@@ -20,6 +20,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO jade
 
+# label ros packages
+LABEL sha256.ros-jade-ros-core=a8f8fe1dd59ec62b949a29aa35ae9a846d7c4ee9925d17fa45af3a4fbf4b8cbe
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-jade-ros-core=1.2.1-0* \

@@ -20,6 +20,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO lunar
 
+# label ros packages
+LABEL sha256.ros-lunar-ros-core=cdf4fa8a555d13e8d69b7bf2fd69d8169d36949d40ee7700a642b9a125f77204
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-lunar-ros-core=1.3.2-0* \

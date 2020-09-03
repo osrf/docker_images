@@ -2,6 +2,9 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM ros:jade-ros-base-trusty
 
+# label ros packages
+LABEL sha256.ros-jade-robot=ddfa067fd8b8cab229db05d241ab9166bdfe0947d33dca9f896cd6ba226524eb
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-jade-robot=1.2.1-0* \

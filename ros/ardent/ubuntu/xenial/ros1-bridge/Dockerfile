@@ -10,10 +10,16 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources
 
 ENV ROS1_DISTRO kinetic
 ENV ROS2_DISTRO ardent
+# label ros packages
+LABEL sha256.ros-kinetic-ros-comm=3d06f66090056c4245242280c3c49dbae169b5a6d4f4fc994a8077ec1aeb7add
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-kinetic-ros-comm=1.12.16-1* \
     && rm -rf /var/lib/apt/lists/*
+
+# label ros2 packages
+LABEL sha256.ros-ardent-ros1-bridge=c8f4efea1ceff13f4e53163e667a75a65c2cfed7f33a172961a4d58d4bc43858
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

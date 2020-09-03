@@ -31,6 +31,9 @@ ENV ROS_DISTRO crystal
 # install python packages
 RUN pip3 install -U \
     argcomplete
+# label ros2 packages
+LABEL sha256.ros-crystal-ros-core=73e7cd715f450de4acf7d43aadef8167965a59db56b74e65d927d74f504f63d6
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-crystal-ros-core=0.6.1-0* \

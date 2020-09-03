@@ -20,6 +20,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO indigo
 
+# label ros packages
+LABEL sha256.ros-indigo-ros-core=904db4a0a890f715e18d5320f5cc1402b9a08882be471fa2e8f2bb28265c3c76
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-indigo-ros-core=1.1.6-0* \

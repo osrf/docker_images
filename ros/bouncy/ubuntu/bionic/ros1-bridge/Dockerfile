@@ -10,10 +10,16 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources
 
 ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO bouncy
+# label ros packages
+LABEL sha256.ros-melodic-ros-comm=a0fca5a04686610280d507c61b76c956a7acada71255910b7b9b47bf44a375dc
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-ros-comm=1.14.9-1* \
     && rm -rf /var/lib/apt/lists/*
+
+# label ros2 packages
+LABEL sha256.ros-bouncy-ros1-bridge=013afb2862eb12001edb41d47b47f1688b138ba72652cf643124afc0a98eaf6f
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

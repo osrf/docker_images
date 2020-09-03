@@ -27,6 +27,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO foxy
 
+# label ros2 packages
+LABEL sha256.ros-foxy-ros-core=d5be9ef976036e621c7bcd8dd626af39da465c906a30585247537d3c987d557b
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-foxy-ros-core=0.9.2-1* \
