@@ -23,8 +23,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2486D2DD8
 RUN . /etc/os-release \
     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
 
+# label gazebo packages
+LABEL sha256.gazebo11=63cfdf1692924539ed84a573aa47d98ab699f9a710f8f6144bdeb5dee76fe691
+
 # install gazebo packages
-RUN apt-get update && apt-get install -q -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gazebo11=11.1.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

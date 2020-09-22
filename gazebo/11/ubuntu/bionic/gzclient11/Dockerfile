@@ -10,7 +10,11 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     x-window-system \
     && rm -rf /var/lib/apt/lists/*
 
+# label gazebo packages
+LABEL sha256.gazebo11=a6663fdb1cbbb1ef38cb07ca486e6dbf5e0ef29af013794b995d6157f5230a5f
+
 # install gazebo packages
-RUN apt-get update && apt-get install -q -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gazebo11=11.1.0-1* \
     && rm -rf /var/lib/apt/lists/*
+
