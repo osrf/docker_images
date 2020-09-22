@@ -14,6 +14,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
+# label ros packages
+LABEL sha256.ros-kinetic-ros-base=76cd90ab6f750ba44562496e98518dd915cefc8ddfac2649ba76e6da578a70d2
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-kinetic-ros-base=1.3.2-0* \

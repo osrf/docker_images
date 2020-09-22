@@ -27,6 +27,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO melodic
 
+# label ros packages
+LABEL sha256.ros-melodic-ros-core=ca489b24786862a0b7231f6181e2fb27d3794832b0086e84fa2885369e3f40b8
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-ros-core=1.4.1-0* \

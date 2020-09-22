@@ -24,6 +24,9 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
+# label ros2 packages
+LABEL sha256.ros-eloquent-ros-base=3ba498156ca86b1f528ee57cdaf26908ec5bfc883047dd3661dcebef48fba399
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-eloquent-ros-base=0.8.4-1* \

@@ -20,6 +20,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO noetic
 
+# label ros packages
+LABEL sha256.ros-noetic-ros-core=8874b0941863de09255f0ba13c2f8899952a9aace8c90fb7be520a1c2923df4a
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ros-core=1.5.0-1* \

@@ -27,6 +27,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO eloquent
 
+# label ros2 packages
+LABEL sha256.ros-eloquent-ros-core=7b375ff186ab1f16ab82986720e3e47471d25d7d62b15e35b5bab96ba4dc9638
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-eloquent-ros-core=0.8.4-1* \
