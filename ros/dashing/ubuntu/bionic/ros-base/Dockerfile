@@ -24,6 +24,9 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
+# label ros2 packages
+LABEL sha256.ros-dashing-ros-base=b68279eb8936043bbc2e8e04f833f7915be0d9b637f9cbe5b71cdb2ff08a3251
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-dashing-ros-base=0.7.4-1* \

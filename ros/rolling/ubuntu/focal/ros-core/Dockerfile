@@ -27,6 +27,9 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO rolling
 
+# label ros2 packages
+LABEL sha256.ros-rolling-ros-core=7a5cd2cfa2697126c157c2d585f8f8f158c7ee4f4b32c8ea03f410a2128d21c1
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-rolling-ros-core=0.9.1-2* \
