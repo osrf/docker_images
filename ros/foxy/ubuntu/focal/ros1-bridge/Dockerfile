@@ -24,9 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL sha256.ros-foxy-ros1-bridge=b0058d42ef7bccde6df35714d2db86b3020d5d15b589b9dedfd3a94567d4767d \
-      sha256.ros-foxy-demo-nodes-cpp=1825308b556599aa1c6936a00f0bf2991494620acc4b89e43681bf0eaaa199bf \
-      sha256.ros-foxy-demo-nodes-py=9d6ded456c9399202faaf2a0b73552c0583804a25880ea045b121d19d409c0da
+LABEL sha256.ros-foxy-ros1-bridge=d15b1536bd08682b3f9b86266c3c4427becdc8abe76c9d1ebb6743466a33b6b9 \
+      sha256.ros-foxy-demo-nodes-cpp=6766f0d78c381223ed1d91e6b85e4aedb652a75864610b6e9335f8df7ac6d097 \
+      sha256.ros-foxy-demo-nodes-py=2791532930d41505045ed89c2acb02104a7d16b0656c60f0d9702b0482e65d0d
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
