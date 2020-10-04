@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label gazebo packages
-LABEL sha256.gazebo9=0f34a73d7ba023e45aa86474adf0249b4b8f69146192d4c4594cc68d338b3193
+LABEL sha256.gazebo9=4a97e172e4d8749474576bf42e13491eeb050a8c5f96faf9d90a73eed4c61388
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gazebo9=9.14.0-1* \
+    gazebo9=9.15.0-2* \
     && rm -rf /var/lib/apt/lists/*
 
