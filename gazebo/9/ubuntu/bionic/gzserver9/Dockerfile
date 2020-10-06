@@ -24,11 +24,11 @@ RUN . /etc/os-release \
     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
 
 # label gazebo packages
-LABEL sha256.gazebo9=39ba4019637689b6b95dde813826ddc8d1bb252f137ab86489054c41cf4decf1
+LABEL sha256.gazebo9=08f7d1e62f59177e3529d95283701f2d78d4adbec1b3c3b99c0d955ffcc807c4
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gazebo9=9.15.0-1* \
+    gazebo9=9.15.0-2* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
