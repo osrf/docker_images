@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label gazebo packages
-LABEL sha256.libgazebo7-dev=b1aee9ca46363b8b8ae56503af3876466ced9d86b166b69af633204e74317024
+LABEL sha256.libgazebo7-dev=7e85e62415348ecc49f4ec6b65cc9393ffebcf1953cdd9f92fc388ffa5977e38
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

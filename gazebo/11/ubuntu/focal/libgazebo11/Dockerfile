@@ -2,7 +2,7 @@
 # generated from docker_images/create_gzclient_image.Dockerfile.em
 FROM gazebo:gzserver11-focal
 # label gazebo packages
-LABEL sha256.libgazebo11-dev=c5d0823f4dd80b7c54a91dda74c1ab34a5dccaacc25401156bc1ba7d37531f09
+LABEL sha256.libgazebo11-dev=f5b5657c6b5e6172a9081d022821a51cf391bb0b40b018eb033f2af8a4d6ff56
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

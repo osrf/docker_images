@@ -2,7 +2,7 @@
 # generated from docker_images/create_gzclient_image.Dockerfile.em
 FROM gazebo:gzserver9-xenial
 # label gazebo packages
-LABEL sha256.libgazebo9-dev=0b063ce0ce0fc2e6edc5a7faa6c988a6eb1d418840572cf3d3f75b6f21f5c078
+LABEL sha256.libgazebo9-dev=d741cb46a5682a9500c12798fac2b3405d67bd09d99bc56b75b7b852c616c707
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

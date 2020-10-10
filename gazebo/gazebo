@@ -14,7 +14,7 @@ Directory: gazebo/7/ubuntu/xenial/gzserver7
 
 Tags: libgazebo7, libgazebo7-xenial
 Architectures: amd64
-GitCommit: bff2dca0ab7a2809aa7c03f21fd59ee31bec8f65
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/7/ubuntu/xenial/libgazebo7
 
 
@@ -31,7 +31,7 @@ Directory: gazebo/9/ubuntu/xenial/gzserver9
 
 Tags: libgazebo9-xenial
 Architectures: amd64
-GitCommit: 6e43a2ec76e241c39914b28ab29e0ab25b8047c3
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/9/ubuntu/xenial/libgazebo9
 
 ########################################
@@ -44,7 +44,7 @@ Directory: gazebo/9/ubuntu/bionic/gzserver9
 
 Tags: libgazebo9, libgazebo9-bionic
 Architectures: amd64
-GitCommit: dc21a067622acb1c57a870e3ab770c47df7ac905
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/9/ubuntu/bionic/libgazebo9
 
 ########################################
@@ -57,7 +57,7 @@ Directory: gazebo/9/debian/stretch/gzserver9
 
 Tags: libgazebo9-stretch
 Architectures: amd64
-GitCommit: 146c28d7c4f4fdcf8e8fe6ebcb6e7c34eb896873
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/9/debian/stretch/libgazebo9
 
 
@@ -74,7 +74,7 @@ Directory: gazebo/10/ubuntu/bionic/gzserver10
 
 Tags: libgazebo10, libgazebo10-bionic
 Architectures: amd64
-GitCommit: bff2dca0ab7a2809aa7c03f21fd59ee31bec8f65
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/10/ubuntu/bionic/libgazebo10
 
 
@@ -91,7 +91,7 @@ Directory: gazebo/11/ubuntu/bionic/gzserver11
 
 Tags: libgazebo11-bionic
 Architectures: amd64
-GitCommit: 18bcca32733df8748ec25690473f1d763c5971ca
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/11/ubuntu/bionic/libgazebo11
 
 ########################################
@@ -104,6 +104,6 @@ Directory: gazebo/11/ubuntu/focal/gzserver11
 
 Tags: libgazebo11, libgazebo11-focal, latest
 Architectures: amd64
-GitCommit: c679232f747319495bb9b4b15d5d06ca42aa0f86
+GitCommit: 265eeee6f9cca0454a067cad8cab9fea48d88621
 Directory: gazebo/11/ubuntu/focal/libgazebo11
 

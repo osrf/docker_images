@@ -2,7 +2,7 @@
 # generated from docker_images/create_gzclient_image.Dockerfile.em
 FROM gazebo:gzserver11-bionic
 # label gazebo packages
-LABEL sha256.libgazebo11-dev=873aa8aaf39fbb6347c36cd0962227f96f066cfeef6c98b9f638c7f9a381a8c1
+LABEL sha256.libgazebo11-dev=41f50bd73f610ddaca333daa89ed3db2decd65ded2e79d92c2caee90eb59e7ec
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
