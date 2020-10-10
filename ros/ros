@@ -180,17 +180,17 @@ Directory: ros/eloquent/ubuntu/bionic/ros1-bridge
 
 Tags: foxy-ros-core, foxy-ros-core-focal
 Architectures: amd64, arm64v8
-GitCommit: 9c0e9b350d26a3f0a1b867eedf9cacf133dc2104
+GitCommit: cfcfb3a27a01eed859394508c82c7c7d784050bc
 Directory: ros/foxy/ubuntu/focal/ros-core
 
 Tags: foxy-ros-base, foxy-ros-base-focal, foxy, latest
 Architectures: amd64, arm64v8
-GitCommit: 9c0e9b350d26a3f0a1b867eedf9cacf133dc2104
+GitCommit: cfcfb3a27a01eed859394508c82c7c7d784050bc
 Directory: ros/foxy/ubuntu/focal/ros-base
 
 Tags: foxy-ros1-bridge, foxy-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: 9c0e9b350d26a3f0a1b867eedf9cacf133dc2104
+GitCommit: cfcfb3a27a01eed859394508c82c7c7d784050bc
 Directory: ros/foxy/ubuntu/focal/ros1-bridge
 
 
