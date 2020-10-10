@@ -12,9 +12,9 @@ ENV ROS1_DISTRO noetic
 ENV ROS2_DISTRO foxy
 
 # label ros packages
-LABEL sha256.ros-noetic-ros-comm=265f35291ff4339377e247fd094d6f122958db85e4db656d8bb4aa275978929a \
-      sha256.ros-noetic-roscpp-tutorials=a4bafc15b204f8cd7457a4500be4e9e53edc6721e0a64bae03c6fe65ed1eb3e6 \
-      sha256.ros-noetic-rospy-tutorials=46cf19b27678c1d70a73c33e30ce4fd4a23e651dc0a0da39234c5a673ce550be
+LABEL sha256.ros-noetic-ros-comm=b8d39823702d406fe69711e480c9fc66fedd9d0e7c93a31346ed3b6988f65125 \
+      sha256.ros-noetic-roscpp-tutorials=a293deba1a35d59ff6af41946780af26d4e55ff201bb1809b72f16eb70be5880 \
+      sha256.ros-noetic-rospy-tutorials=2423a9c2740190282bcda1d4cf2b99480df0dc05a15c17e82b5662ba1d79e553
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -24,9 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL sha256.ros-foxy-ros1-bridge=d15b1536bd08682b3f9b86266c3c4427becdc8abe76c9d1ebb6743466a33b6b9 \
-      sha256.ros-foxy-demo-nodes-cpp=6766f0d78c381223ed1d91e6b85e4aedb652a75864610b6e9335f8df7ac6d097 \
-      sha256.ros-foxy-demo-nodes-py=2791532930d41505045ed89c2acb02104a7d16b0656c60f0d9702b0482e65d0d
+LABEL sha256.ros-foxy-ros1-bridge=bd80205affaefb1657bc9ce19dce2df44924591fac24ad4ba4dbf70e011fcdfb \
+      sha256.ros-foxy-demo-nodes-cpp=88f255ee84107d3d1bdb3ca178d6c903bbf9581e8454cafa6b0ef89ce90f5b27 \
+      sha256.ros-foxy-demo-nodes-py=87d931eb7054528bc5cfb522ac1193c5fbee32434c1122cfcd371cd0a96260d5
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
