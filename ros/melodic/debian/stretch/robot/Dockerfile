@@ -3,7 +3,7 @@
 FROM ros:melodic-ros-base-stretch
 
 # label ros packages
-LABEL sha256.ros-melodic-robot=2687b386e56c07ad5c3429454103347135bc7903ee86ae00fc990cf4dcac763a
+LABEL org.osrfoundation.ros-melodic-robot.sha256=3d3a96132658b17f2be73a5d39714366cad70a4399a0abb8a7afd5c697cd6d01
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -15,7 +15,7 @@ RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
 # label ros packages
-LABEL sha256.ros-noetic-ros-base=e7e5895d7b99ed7c3d2607fbdf8bba0134a03fa240e94ee1dbfa5ac1a9e3ac16
+LABEL org.osrfoundation.ros-noetic-ros-base.sha256=76719a758c1f82472ae43c7cf89e690f88b06a725849471e33c7073ffc115405
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

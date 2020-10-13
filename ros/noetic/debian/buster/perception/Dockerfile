@@ -3,7 +3,7 @@
 FROM ros:noetic-ros-base-buster
 
 # label ros packages
-LABEL sha256.ros-noetic-perception=b3262e58b2c2c007e0077b5951d95f2e959e41b120b6bcd805857649241e56b7
+LABEL org.osrfoundation.ros-noetic-perception.sha256=30c8f7e89173f07882dfd22d230440fcc644d9ca5b13e8484832d1ca07075c56
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -3,7 +3,7 @@
 FROM ros:noetic-ros-base-focal
 
 # label ros packages
-LABEL sha256.ros-noetic-perception=9d410adf22169130b240d0f9710bd37fd7f59b1f29695f8f3ef4493ed213039b
+LABEL org.osrfoundation.ros-noetic-perception.sha256=824900e7dbc57dcd120356bd02e15b999d7fecadd8c5029ccf214e8be58a4503
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

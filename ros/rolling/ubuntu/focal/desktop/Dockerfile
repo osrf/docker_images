@@ -3,10 +3,10 @@
 FROM ros:rolling-ros-base-focal
 
 # label ros2 packages
-LABEL sha256.ros-rolling-desktop=326adef4b12ec616d4bfbf1f222f8e80a7aee775bc993a6645f542e9a851520b
+LABEL org.osrfoundation.ros-rolling-desktop.sha256=b2b3195bf76e330c60b8ea99b81fc081b44490c8cf9ee9b58302fc2bcaf6a260
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-desktop=0.9.1-2* \
+    ros-rolling-desktop=0.9.2-1* \
     && rm -rf /var/lib/apt/lists/*
 

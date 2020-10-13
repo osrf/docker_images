@@ -25,10 +25,10 @@ RUN colcon mixin add default \
     colcon metadata update
 
 # label ros2 packages
-LABEL sha256.ros-rolling-ros-base=e7bbf2b5dc0a2379f25a48e4e92ae2a1eb0af261ca61a79e09662150c26b3428
+LABEL org.osrfoundation.ros-rolling-ros-base.sha256=6e98799a3af850d0ca15a50b73c7ed1c6f370c19b49c5d8f4bff0fcf5b52ab9d
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-base=0.9.1-2* \
+    ros-rolling-ros-base=0.9.2-1* \
     && rm -rf /var/lib/apt/lists/*
 

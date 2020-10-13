@@ -3,7 +3,7 @@
 FROM ros:dashing-ros-base-bionic
 
 # label ros2 packages
-LABEL sha256.ros-dashing-desktop=38001f9e52a1f152b201759ada19bd653abf492dff3f3c5f47640bfcaa64838b
+LABEL org.osrfoundation.ros-dashing-desktop.sha256=38001f9e52a1f152b201759ada19bd653abf492dff3f3c5f47640bfcaa64838b
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
