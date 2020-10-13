@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label gazebo packages
-LABEL sha256.libgazebo9-dev=63c6d297c3a56d514af2db0fe2a64624e1db4cda92d6e93f6009ac933df635e9
+LABEL org.osrfoundation.libgazebo9-dev.sha256=63c6d297c3a56d514af2db0fe2a64624e1db4cda92d6e93f6009ac933df635e9
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

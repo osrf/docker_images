@@ -17,7 +17,7 @@ RUN . /etc/os-release \
     && echo "deb http://packages.osrfoundation.org/gazebo/$ID-stable `lsb_release -sc` main" > /etc/apt/sources.list.d/gazebo-latest.list
 
 # label gazebo packages
-LABEL sha256.gazebo7=b1aee9ca46363b8b8ae56503af3876466ced9d86b166b69af633204e74317024
+LABEL org.osrfoundation.gazebo7.sha256=b1aee9ca46363b8b8ae56503af3876466ced9d86b166b69af633204e74317024
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
