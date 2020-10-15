@@ -24,15 +24,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL sha256.ros-rolling-ros1-bridge=57b580f25e8f1e416cf22322f393f5e184b487a41e4471a65effc8a126e9add2 \
-      sha256.ros-rolling-demo-nodes-cpp=5e21bb58eff49573d5d83e3a6dfdd0edff59418990a86d8751ea83deaa136934 \
-      sha256.ros-rolling-demo-nodes-py=5ba20c171117c0198b15c5e20101eb3eeac17bf8bd3715056c05a4ffd0178981
+LABEL sha256.ros-rolling-ros1-bridge=6c4742a3f7b8d3f171cfa3801d972d737100a81d8ef6bef0d155d7ecb6ba43c7 \
+      sha256.ros-rolling-demo-nodes-cpp=85aefe28c8c8357b44d6fa3c1d2d56a0c8d164a2b3b35e61c66098bbbe92f1f0 \
+      sha256.ros-rolling-demo-nodes-py=ca7fe4e5b0faae51a01519d8c54a8bf8a22d3460f5f4a315c08c190fcd23b6d2
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros1-bridge=0.9.2-2* \
-    ros-rolling-demo-nodes-cpp=0.10.0-1* \
-    ros-rolling-demo-nodes-py=0.10.0-1* \
+    ros-rolling-ros1-bridge=0.9.4-2* \
+    ros-rolling-demo-nodes-cpp=0.10.1-1* \
+    ros-rolling-demo-nodes-py=0.10.1-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
