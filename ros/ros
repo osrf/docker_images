@@ -146,7 +146,7 @@ Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: dashing-ros1-bridge, dashing-ros1-bridge-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 515ebf1870f60a444ef0892a0d2d0bfc883bcdd5
+GitCommit: 6f3f35d14754a109dbf45781bd0d32b424158db1
 Directory: ros/dashing/ubuntu/bionic/ros1-bridge
 
 
