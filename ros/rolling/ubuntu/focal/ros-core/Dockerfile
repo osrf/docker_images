@@ -28,11 +28,11 @@ ENV LC_ALL C.UTF-8
 ENV ROS_DISTRO rolling
 
 # label ros2 packages
-LABEL sha256.ros-rolling-ros-core=7a5cd2cfa2697126c157c2d585f8f8f158c7ee4f4b32c8ea03f410a2128d21c1
+LABEL org.osrfoundation.ros-rolling-ros-core.sha256=deabba86abbdd5b110e96ed9d6d80a4733f87f7454baf0011bd8b033b9447b64
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-core=0.9.1-2* \
+    ros-rolling-ros-core=0.9.2-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

@@ -12,9 +12,9 @@ ENV ROS1_DISTRO melodic
 ENV ROS2_DISTRO dashing
 
 # label ros packages
-LABEL sha256.ros-melodic-ros-comm=a0fca5a04686610280d507c61b76c956a7acada71255910b7b9b47bf44a375dc \
-      sha256.ros-melodic-roscpp-tutorials=d676c108b642f0243992795ee3fb5c75e2ef0b28ccd1e843a9d8603bda3a6555 \
-      sha256.ros-melodic-rospy-tutorials=46ee4d1e9f93cca81e75ef0fdbc6701e90ffab2514f049e96700c9f1114cdcea
+LABEL org.osrfoundation.ros-melodic-ros-comm.sha256=41f220c83c352d5a3cecaad37614920c8a7c338480e4083699d7f1d1eae06fc4 \
+      org.osrfoundation.ros-melodic-roscpp-tutorials.sha256=f49fca05c2692ea5c58107c155fb708a7c40b76ff6e90c3fc223c4c0e47fd083 \
+      org.osrfoundation.ros-melodic-rospy-tutorials.sha256=b990f747b59195d9bd749581737f1fb0bd289e8e1389e32d26024bc6101d7922
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -24,9 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL sha256.ros-dashing-ros1-bridge=a7ee934891873f72455a068407351a1350ac4589a9369b330dc6e77e7e9524ab \
-      sha256.ros-dashing-demo-nodes-cpp=7b2e093429cecb20bc73172dba95bd53c861dcb912e97047003f928a33329cb1 \
-      sha256.ros-dashing-demo-nodes-py=dc4ca847d6876bccbb9a9e4c36d499766296da79d53f5f89218b39301c6ae65e
+LABEL org.osrfoundation.ros-dashing-ros1-bridge.sha256=a7ee934891873f72455a068407351a1350ac4589a9369b330dc6e77e7e9524ab \
+      org.osrfoundation.ros-dashing-demo-nodes-cpp.sha256=7b2e093429cecb20bc73172dba95bd53c861dcb912e97047003f928a33329cb1 \
+      org.osrfoundation.ros-dashing-demo-nodes-py.sha256=dc4ca847d6876bccbb9a9e4c36d499766296da79d53f5f89218b39301c6ae65e
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

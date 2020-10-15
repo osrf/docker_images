@@ -3,7 +3,7 @@
 FROM ros:melodic-robot-stretch
 
 # label ros packages
-LABEL sha256.ros-melodic-desktop=0a5380b3d8db4ed4299a680cbdee84d5200f921b88f6ee325cb84dc5e3f369af
+LABEL org.osrfoundation.ros-melodic-desktop.sha256=b1b0623db94b783d33f0e8ac11fc9af020ef030d4b7521866383994881166455
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

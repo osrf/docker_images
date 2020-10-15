@@ -3,7 +3,7 @@
 FROM ros:melodic-ros-base-bionic
 
 # label ros packages
-LABEL sha256.ros-melodic-perception=85d89645dde03c38ed55f80f22d3f9c9ad32e79497d5eb314e091bd1f35d260e
+LABEL org.osrfoundation.ros-melodic-perception.sha256=5e42a6ee934d610e7ea6f0a75165915f6875ff8e6fef5acce55f77fdffc12594
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
