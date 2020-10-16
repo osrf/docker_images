@@ -43,3 +43,10 @@ images:
             - ros-comm
             - roscpp-tutorials
             - rospy-tutorials
+        downstream_packages:
+            # The Python 3 version of rosdep get uninstalled when installign ROS 1
+            # We install the Python 2 version manually to not conflict and allow consumers to use the CLI tool
+            - python-rosdep
+            # Currently not side-by-side installable with python2 version
+            # https://github.com/ros-infrastructure/rosdep/issues/759
+            # - python3-rosdep-modules
