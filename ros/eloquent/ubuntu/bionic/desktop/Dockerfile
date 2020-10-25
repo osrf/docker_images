@@ -3,7 +3,7 @@
 FROM ros:eloquent-ros-base-bionic
 
 # label ros2 packages
-LABEL org.osrfoundation.ros-eloquent-desktop.sha256=423ee592ad7d969a17c0f0164daa90dec57359138ac6fe6309178a15876b2c20
+LABEL org.osrfoundation.ros-eloquent-desktop.sha256=58cecfcc1c773d28ea3d9642f7904e099cd9fe65280b935d433a9d57d575eef1
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
