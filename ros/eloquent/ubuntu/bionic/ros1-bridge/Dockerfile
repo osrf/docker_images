@@ -24,13 +24,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL org.osrfoundation.ros-eloquent-ros1-bridge.sha256=969cd222afd076ae3989f73a1dbea0f877f29983e062415697e721e52a6f7f4f \
+LABEL org.osrfoundation.ros-eloquent-ros1-bridge.sha256=678988e1c257e8433f426db2c28e65c189f85eac82fdb4084101d3d0124c4e0e \
       org.osrfoundation.ros-eloquent-demo-nodes-cpp.sha256=e07fd5f0b1afbd1695b5afb0a8e6d8bcba213ff1690fe5c8768a364578d0fcfc \
       org.osrfoundation.ros-eloquent-demo-nodes-py.sha256=36cc41b867918c9a2206ec8d1a1643529523fce4d876736e85c285e6fd9f2d5f
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-eloquent-ros1-bridge=0.8.2-1* \
+    ros-eloquent-ros1-bridge=0.8.2-3* \
     ros-eloquent-demo-nodes-cpp=0.8.4-1* \
     ros-eloquent-demo-nodes-py=0.8.4-1* \
     && rm -rf /var/lib/apt/lists/*
