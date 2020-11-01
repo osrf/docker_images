@@ -15,7 +15,7 @@ RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
 # label ros packages
-LABEL org.osrfoundation.ros-kinetic-ros-base.sha256=76cd90ab6f750ba44562496e98518dd915cefc8ddfac2649ba76e6da578a70d2
+LABEL org.osrfoundation.ros-kinetic-ros-base.sha256=5ffd747754776b096bb1e2b96f7a3c86d8573ae88206e1e0e5102867a14379a5
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
