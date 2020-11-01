@@ -3,7 +3,7 @@
 FROM osrf/ros:kinetic-desktop-xenial
 
 # label ros packages
-LABEL org.osrfoundation.ros-kinetic-desktop-full.sha256=5eb2b54af9275604e3025a57c7a8fedec0790a3a30d849da4a24f7c5212833f0
+LABEL org.osrfoundation.ros-kinetic-desktop-full.sha256=6211a6b6cdc9e437d8cd147c621e87a44e0897f30bbe5bf70a13d435bb845aa9
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

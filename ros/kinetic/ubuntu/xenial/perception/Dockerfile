@@ -3,7 +3,7 @@
 FROM ros:kinetic-ros-base-xenial
 
 # label ros packages
-LABEL org.osrfoundation.ros-kinetic-perception.sha256=7c8a2df83dbaf9bce97adcaa8ad1bf91781c27e5938417e47bf404411aca36f5
+LABEL org.osrfoundation.ros-kinetic-perception.sha256=d17bc4e9469df635191f613427c10f4435bc31940abe259d4bde1af26e34154b
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
