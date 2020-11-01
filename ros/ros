@@ -9,22 +9,22 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: kinetic-ros-core, kinetic-ros-core-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1c7a5895537e7909774bb8e634d549acd2d71cc9
 Directory: ros/kinetic/ubuntu/xenial/ros-core
 
 Tags: kinetic-ros-base, kinetic-ros-base-xenial, kinetic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1c7a5895537e7909774bb8e634d549acd2d71cc9
 Directory: ros/kinetic/ubuntu/xenial/ros-base
 
 Tags: kinetic-robot, kinetic-robot-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1c7a5895537e7909774bb8e634d549acd2d71cc9
 Directory: ros/kinetic/ubuntu/xenial/robot
 
 Tags: kinetic-perception, kinetic-perception-xenial
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1c7a5895537e7909774bb8e634d549acd2d71cc9
 Directory: ros/kinetic/ubuntu/xenial/perception
 
 
