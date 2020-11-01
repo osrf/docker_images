@@ -136,17 +136,17 @@ Directory: ros/noetic/debian/buster/perception
 
 Tags: dashing-ros-core, dashing-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 04ec552de26d6cc17823ff6e1de0191c136d94f8
 Directory: ros/dashing/ubuntu/bionic/ros-core
 
 Tags: dashing-ros-base, dashing-ros-base-bionic, dashing
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 04ec552de26d6cc17823ff6e1de0191c136d94f8
 Directory: ros/dashing/ubuntu/bionic/ros-base
 
 Tags: dashing-ros1-bridge, dashing-ros1-bridge-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: e9683113422b4b00ef31c9332c5d1079281644c1
+GitCommit: 04ec552de26d6cc17823ff6e1de0191c136d94f8
 Directory: ros/dashing/ubuntu/bionic/ros1-bridge
 
 

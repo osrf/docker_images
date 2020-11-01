@@ -24,13 +24,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # label ros2 packages
-LABEL org.osrfoundation.ros-dashing-ros1-bridge.sha256=a7ee934891873f72455a068407351a1350ac4589a9369b330dc6e77e7e9524ab \
-      org.osrfoundation.ros-dashing-demo-nodes-cpp.sha256=7b2e093429cecb20bc73172dba95bd53c861dcb912e97047003f928a33329cb1 \
-      org.osrfoundation.ros-dashing-demo-nodes-py.sha256=dc4ca847d6876bccbb9a9e4c36d499766296da79d53f5f89218b39301c6ae65e
+LABEL org.osrfoundation.ros-dashing-ros1-bridge.sha256=89dc5e37c76978bb5a6595fcf6a8679fe4e8e1db5739faf02878c1dab3db6149 \
+      org.osrfoundation.ros-dashing-demo-nodes-cpp.sha256=600f8292528e8f1847ebf62a3bce4bc8449f968e15b663c399d63f6bc290853d \
+      org.osrfoundation.ros-dashing-demo-nodes-py.sha256=282bbc6427108155fd331f9265271d1fea131535f4a7f523699eccb6c66678a2
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-dashing-ros1-bridge=0.7.6-1* \
+    ros-dashing-ros1-bridge=0.7.6-3* \
     ros-dashing-demo-nodes-cpp=0.7.9-1* \
     ros-dashing-demo-nodes-py=0.7.9-1* \
     && rm -rf /var/lib/apt/lists/*
