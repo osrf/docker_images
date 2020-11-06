@@ -3,7 +3,7 @@
 FROM ros:foxy-ros-base-focal
 
 # label ros2 packages
-LABEL org.osrfoundation.ros-foxy-desktop.sha256=ea087f425f8c087d943b6ad98fe52368127ec919bddb7410ab11842bfdf0c1be
+LABEL org.osrfoundation.ros-foxy-desktop.sha256=5a5249f7767b0483cf188307570a152c7ac06179e35671a2a8ce108f08f20d9d
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
