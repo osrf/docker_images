@@ -20,9 +20,6 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO kinetic
 
-# label ros packages
-LABEL org.osrfoundation.ros-kinetic-ros-core.sha256=18ab38edb0253676dd289364b9702589b13d9fc6f1d446f7a043efd87b2062d0
-
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-kinetic-ros-core=1.3.2-0* \

@@ -2,9 +2,6 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM osrf/ros:melodic-desktop-stretch
 
-# label ros packages
-LABEL org.osrfoundation.ros-melodic-desktop-full.sha256=28a0740ce228d0243764f7a4c6c8eec79701568f678f7d2261751becd0d81816
-
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-desktop-full=1.4.1-0* \

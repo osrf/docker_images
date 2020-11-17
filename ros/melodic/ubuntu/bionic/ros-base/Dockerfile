@@ -14,9 +14,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
-# label ros packages
-LABEL org.osrfoundation.ros-melodic-ros-base.sha256=15944a8de891508bba8308373058fd06ee7bf58d58f4927b543bc31d9e96c3e0
-
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-ros-base=1.4.1-0* \
