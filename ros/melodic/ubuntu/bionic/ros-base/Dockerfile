@@ -15,7 +15,7 @@ RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
 # label ros packages
-LABEL org.osrfoundation.ros-melodic-ros-base.sha256=cc0a80a5f43d9f1719eb45aee74953cce0a421908f27130fc1b31b81b7a4a1b9
+LABEL org.osrfoundation.ros-melodic-ros-base.sha256=15944a8de891508bba8308373058fd06ee7bf58d58f4927b543bc31d9e96c3e0
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
