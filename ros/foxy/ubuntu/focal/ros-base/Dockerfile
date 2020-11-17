@@ -24,9 +24,6 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
-# label ros2 packages
-LABEL org.osrfoundation.ros-foxy-ros-base.sha256=131d5bebf612327472a71cb2bb167a3db6c661eb9e3ea0e200288a3a0af4f558
-
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-foxy-ros-base=0.9.2-1* \

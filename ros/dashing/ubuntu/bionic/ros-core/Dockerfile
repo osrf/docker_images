@@ -27,9 +27,6 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO dashing
 
-# label ros2 packages
-LABEL org.osrfoundation.ros-dashing-ros-core.sha256=a22eb2c489fac515521b12d7dcddb11bee38add6e289b3d0037cd2bd17d457e3
-
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-dashing-ros-core=0.7.4-1* \
