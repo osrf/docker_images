@@ -20,9 +20,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     xvfb \
     && rm -rf /var/lib/apt/lists/*
 
-# label gazebo packages
-LABEL org.osrfoundation.libgazebo11-dev.sha256=41f50bd73f610ddaca333daa89ed3db2decd65ded2e79d92c2caee90eb59e7ec
-
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgazebo11-dev=11.2.0-1* \

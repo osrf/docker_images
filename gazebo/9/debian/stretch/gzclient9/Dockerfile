@@ -10,9 +10,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     x-window-system \
     && rm -rf /var/lib/apt/lists/*
 
-# label gazebo packages
-LABEL org.osrfoundation.gazebo9.sha256=4a97e172e4d8749474576bf42e13491eeb050a8c5f96faf9d90a73eed4c61388
-
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gazebo9=9.15.0-2* \
