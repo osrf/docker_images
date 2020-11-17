@@ -168,7 +168,7 @@ Directory: ros/eloquent/ubuntu/bionic/ros-base
 
 Tags: eloquent-ros1-bridge, eloquent-ros1-bridge-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 0885dd6fd1a8c465828a76c99b348826a62205be
+GitCommit: 35bb811a745ed90810d59f85a4e6e5803fcc67dc
 Directory: ros/eloquent/ubuntu/bionic/ros1-bridge
 
 
