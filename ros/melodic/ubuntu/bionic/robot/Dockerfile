@@ -3,7 +3,7 @@
 FROM ros:melodic-ros-base-bionic
 
 # label ros packages
-LABEL org.osrfoundation.ros-melodic-robot.sha256=8efabb4a68a7cad4ebe2a2270985870a0ecd0fd24428ce3addff67f6a9ef7b74
+LABEL org.osrfoundation.ros-melodic-robot.sha256=a5b1ff99b8e7dc007e2f597a6f144def8af293b54acc349b09aee981707eeeb0
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

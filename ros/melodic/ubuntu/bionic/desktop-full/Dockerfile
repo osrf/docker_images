@@ -3,7 +3,7 @@
 FROM osrf/ros:melodic-desktop-bionic
 
 # label ros packages
-LABEL org.osrfoundation.ros-melodic-desktop-full.sha256=5ec4f15c054361731225dc201e4579e1beb8c63d0a4b47e15aeb797e6ec38925
+LABEL org.osrfoundation.ros-melodic-desktop-full.sha256=edf2ce97fcb62aeb5d301020dd8ae77b72541236922ebb0fd54797218791de12
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
