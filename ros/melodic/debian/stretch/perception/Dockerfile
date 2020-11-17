@@ -3,7 +3,7 @@
 FROM ros:melodic-ros-base-stretch
 
 # label ros packages
-LABEL org.osrfoundation.ros-melodic-perception.sha256=18457516040a14efd8aeb71df3940e3e71348fb7e48844b1a854527cf44e1166
+LABEL org.osrfoundation.ros-melodic-perception.sha256=f8d7c8188e3e9079d07e803b085c0f788738a0aad8ba0b853ea59d6db4566127
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
