@@ -36,22 +36,22 @@ Directory: ros/kinetic/ubuntu/xenial/perception
 
 Tags: melodic-ros-core, melodic-ros-core-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: caecd875e17da70ed9c3ffa1cda2df579e701caf
 Directory: ros/melodic/ubuntu/bionic/ros-core
 
 Tags: melodic-ros-base, melodic-ros-base-bionic, melodic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: caecd875e17da70ed9c3ffa1cda2df579e701caf
 Directory: ros/melodic/ubuntu/bionic/ros-base
 
 Tags: melodic-robot, melodic-robot-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: caecd875e17da70ed9c3ffa1cda2df579e701caf
 Directory: ros/melodic/ubuntu/bionic/robot
 
 Tags: melodic-perception, melodic-perception-bionic
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: caecd875e17da70ed9c3ffa1cda2df579e701caf
 Directory: ros/melodic/ubuntu/bionic/perception
 
 ########################################
