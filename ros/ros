@@ -59,22 +59,22 @@ Directory: ros/melodic/ubuntu/bionic/perception
 
 Tags: melodic-ros-core-stretch
 Architectures: amd64, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1f5097d177cd7e1d5030f50fb3b175cc5861da94
 Directory: ros/melodic/debian/stretch/ros-core
 
 Tags: melodic-ros-base-stretch
 Architectures: amd64, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1f5097d177cd7e1d5030f50fb3b175cc5861da94
 Directory: ros/melodic/debian/stretch/ros-base
 
 Tags: melodic-robot-stretch
 Architectures: amd64, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1f5097d177cd7e1d5030f50fb3b175cc5861da94
 Directory: ros/melodic/debian/stretch/robot
 
 Tags: melodic-perception-stretch
 Architectures: amd64, arm64v8
-GitCommit: 421722cdc4b6b3fa5ec3697f851130435454a059
+GitCommit: 1f5097d177cd7e1d5030f50fb3b175cc5861da94
 Directory: ros/melodic/debian/stretch/perception
 
 

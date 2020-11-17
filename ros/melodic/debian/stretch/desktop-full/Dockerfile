@@ -3,7 +3,7 @@
 FROM osrf/ros:melodic-desktop-stretch
 
 # label ros packages
-LABEL org.osrfoundation.ros-melodic-desktop-full.sha256=a2a4ed6e9833947e56718a0612b88c3b950b27b131e824aef1446eb116cacc5d
+LABEL org.osrfoundation.ros-melodic-desktop-full.sha256=28a0740ce228d0243764f7a4c6c8eec79701568f678f7d2261751becd0d81816
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
