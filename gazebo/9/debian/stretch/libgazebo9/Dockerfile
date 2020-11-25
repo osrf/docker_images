@@ -4,6 +4,6 @@ FROM gazebo:gzserver9-stretch
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgazebo9-dev=9.15.0-2* \
+    libgazebo9-dev=9.16.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
