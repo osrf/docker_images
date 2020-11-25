@@ -6,17 +6,18 @@ FROM $FROM_IMAGE
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-    apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+    apt-get update && \
+    apt-get install -q -y --no-install-recommends tzdata && \
+    rm -rf /var/lib/apt/lists/*
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
     dirmngr \
     gnupg2 \
     lsb-release \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
-
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
@@ -29,6 +30,7 @@ ENV LC_ALL C.UTF-8
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
     git \
     python3-colcon-common-extensions \
     python3-colcon-mixin \

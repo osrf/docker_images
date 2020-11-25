@@ -5,13 +5,13 @@ ARG FROM_IMAGE=osrf/ros2:devel
 FROM $FROM_IMAGE
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libasio-dev \
+    libssl-dev \
     libtinyxml2-dev \
     wget \
     && rm -rf /var/lib/apt/lists/*
-
-ARG ROS_DISTRO=eloquent
+ARG ROS_DISTRO=foxy
 ENV ROS_DISTRO=$ROS_DISTRO
 ENV ROS_VERSION=2 \
     ROS_PYTHON_VERSION=3

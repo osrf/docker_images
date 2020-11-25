@@ -32,8 +32,9 @@ images:
             - docker_templates
         upstream_packages:
             - libasio-dev
+            - libssl-dev
             - libtinyxml2-dev
-        ros2_distro: eloquent
+        ros2_distro: foxy
         ws: /opt/ros2_ws
         colcon_args:
             - build

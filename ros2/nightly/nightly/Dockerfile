@@ -5,10 +5,12 @@ FROM ubuntu:focal
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-    apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
+    apt-get update && \
+    apt-get install -q -y --no-install-recommends tzdata && \
+    rm -rf /var/lib/apt/lists/*
 
 # install packages
-RUN apt-get update && apt-get install -q -y \
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
     cmake \
     dirmngr \
@@ -19,7 +21,6 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     wget \
     && rm -rf /var/lib/apt/lists/*
-
 # setup ros2 keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
@@ -28,6 +29,7 @@ RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
     git \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
