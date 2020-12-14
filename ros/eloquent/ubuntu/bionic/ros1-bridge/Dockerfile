@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-eloquent-ros1-bridge=0.8.2-3* \
+    ros-eloquent-ros1-bridge=0.8.3-1* \
     ros-eloquent-demo-nodes-cpp=0.8.4-1* \
     ros-eloquent-demo-nodes-py=0.8.4-1* \
     && rm -rf /var/lib/apt/lists/*
