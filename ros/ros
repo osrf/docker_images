@@ -190,7 +190,7 @@ Directory: ros/foxy/ubuntu/focal/ros-base
 
 Tags: foxy-ros1-bridge, foxy-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: 27915fc89645354f07b84d32daa6ce7b0e834b65
+GitCommit: f7d378b9d6ed10c72a2f686554f7b712e921c1aa
 Directory: ros/foxy/ubuntu/focal/ros1-bridge
 
 
