@@ -29,7 +29,7 @@ ENV ROS_DISTRO eloquent
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-eloquent-ros-core=0.8.4-1* \
+    ros-eloquent-ros-core=0.8.5-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
