@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-ENV ROS_DISTRO foxy
+ENV ROS_DISTRO rolling
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
