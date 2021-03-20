@@ -4,7 +4,7 @@
 platform:
     os_name: ubuntu
     os_code_name: focal
-    ros2distro_name: foxy
+    ros2distro_name: rolling
     user_name: ros
     maintainer_name:
     arch: amd64
