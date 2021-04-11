@@ -21,8 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-rolling-ros1-bridge=0.10.1-1* \
-    ros-rolling-demo-nodes-cpp=0.12.0-3* \
-    ros-rolling-demo-nodes-py=0.12.0-3* \
+    ros-rolling-demo-nodes-cpp=0.14.0-1* \
+    ros-rolling-demo-nodes-py=0.14.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

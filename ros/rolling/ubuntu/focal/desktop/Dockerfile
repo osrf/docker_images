@@ -4,6 +4,6 @@ FROM ros:rolling-ros-base-focal
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-desktop=0.9.2-1* \
+    ros-rolling-desktop=0.9.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
