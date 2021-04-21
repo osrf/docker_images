@@ -86,12 +86,12 @@ Directory: gazebo/10/ubuntu/bionic/libgazebo10
 
 Tags: gzserver11-bionic
 Architectures: amd64
-GitCommit: 815a7d0b0c480d9f2703980f62a61bb9d6ff1b30
+GitCommit: 48051c3f57c5c632407920a4beec2c2953f1b6f5
 Directory: gazebo/11/ubuntu/bionic/gzserver11
 
 Tags: libgazebo11-bionic
 Architectures: amd64
-GitCommit: 815a7d0b0c480d9f2703980f62a61bb9d6ff1b30
+GitCommit: 48051c3f57c5c632407920a4beec2c2953f1b6f5
 Directory: gazebo/11/ubuntu/bionic/libgazebo11
 
 ########################################
