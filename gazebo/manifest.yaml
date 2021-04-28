@@ -69,24 +69,24 @@ release_names:
     #                             aliases:
     #                                 - "libgazebo$release_name"
     #                                 - "libgazebo$release_name-$os_code_name"
-    '7':
-        eol: 2021-01-25
-        os_names:
-            ubuntu:
-                os_code_names:
-                    xenial:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver7:
-                                aliases:
-                                    - "gzserver$release_name"
-                                    - "gzserver$release_name-$os_code_name"
-                            libgazebo7:
-                                aliases:
-                                    - "libgazebo$release_name"
-                                    - "libgazebo$release_name-$os_code_name"
+    # '7':
+    #     eol: 2021-01-25
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 xenial:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver7:
+    #                             aliases:
+    #                                 - "gzserver$release_name"
+    #                                 - "gzserver$release_name-$os_code_name"
+    #                         libgazebo7:
+    #                             aliases:
+    #                                 - "libgazebo$release_name"
+    #                                 - "libgazebo$release_name-$os_code_name"
     # '8':
     #     eol: 2019-01-25
     #     os_names:
@@ -148,24 +148,25 @@ release_names:
             #                 libgazebo9:
             #                     aliases:
             #                         - "libgazebo$release_name-$os_code_name"
-    '10':
-        eol: 2021-01-24
-        os_names:
-            ubuntu:
-                os_code_names:
-                    bionic:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver10:
-                                aliases:
-                                    - "gzserver$release_name"
-                                    - "gzserver$release_name-$os_code_name"
-                            libgazebo10:
-                                aliases:
-                                    - "libgazebo$release_name"
-                                    - "libgazebo$release_name-$os_code_name"
+    # EOL
+    # '10':
+    #     eol: 2021-01-24
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 bionic:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver10:
+    #                             aliases:
+    #                                 - "gzserver$release_name"
+    #                                 - "gzserver$release_name-$os_code_name"
+    #                         libgazebo10:
+    #                             aliases:
+    #                                 - "libgazebo$release_name"
+    #                                 - "libgazebo$release_name-$os_code_name"
     '11':
         eol: 2025-01-30
         os_names:
