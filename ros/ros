@@ -151,28 +151,6 @@ Directory: ros/dashing/ubuntu/bionic/ros1-bridge
 
 
 ################################################################################
-# Release: eloquent
-
-########################################
-# Distro: ubuntu:bionic
-
-Tags: eloquent-ros-core, eloquent-ros-core-bionic
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: b3e79c3aef3687b56b3c1052ae38aa7010234834
-Directory: ros/eloquent/ubuntu/bionic/ros-core
-
-Tags: eloquent-ros-base, eloquent-ros-base-bionic, eloquent
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: b3e79c3aef3687b56b3c1052ae38aa7010234834
-Directory: ros/eloquent/ubuntu/bionic/ros-base
-
-Tags: eloquent-ros1-bridge, eloquent-ros1-bridge-bionic
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: b3e79c3aef3687b56b3c1052ae38aa7010234834
-Directory: ros/eloquent/ubuntu/bionic/ros1-bridge
-
-
-################################################################################
 # Release: foxy
 
 ########################################
