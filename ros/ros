@@ -190,7 +190,7 @@ Directory: ros/foxy/ubuntu/focal/ros-base
 
 Tags: foxy-ros1-bridge, foxy-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: f7d378b9d6ed10c72a2f686554f7b712e921c1aa
+GitCommit: bf35442257b504eac671418bcb70481807a7fa69
 Directory: ros/foxy/ubuntu/focal/ros1-bridge
 
 
@@ -212,6 +212,6 @@ Directory: ros/rolling/ubuntu/focal/ros-base
 
 Tags: rolling-ros1-bridge, rolling-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: a5644adacdca4a49faf10221620048175cdd7262
+GitCommit: bf35442257b504eac671418bcb70481807a7fa69
 Directory: ros/rolling/ubuntu/focal/ros1-bridge
 
