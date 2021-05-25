@@ -202,17 +202,17 @@ Directory: ros/foxy/ubuntu/focal/ros1-bridge
 
 Tags: galactic-ros-core, galactic-ros-core-focal
 Architectures: amd64, arm64v8
-GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
+GitCommit: ffa55d00247689c5ac410e45c38636e95ee77731
 Directory: ros/galactic/ubuntu/focal/ros-core
 
 Tags: galactic-ros-base, galactic-ros-base-focal, galactic, latest
 Architectures: amd64, arm64v8
-GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
+GitCommit: ffa55d00247689c5ac410e45c38636e95ee77731
 Directory: ros/galactic/ubuntu/focal/ros-base
 
 Tags: galactic-ros1-bridge, galactic-ros1-bridge-focal
 Architectures: amd64, arm64v8
-GitCommit: bf35442257b504eac671418bcb70481807a7fa69
+GitCommit: ffa55d00247689c5ac410e45c38636e95ee77731
 Directory: ros/galactic/ubuntu/focal/ros1-bridge
 
 
