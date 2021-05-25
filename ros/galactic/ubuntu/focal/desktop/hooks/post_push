@@ -1,0 +1,14 @@
+#!/bin/bash
+# http://windsock.io/automated-docker-image-builds-with-multiple-tags/
+
+set -e
+
+# Parse image name for repo name
+tagStart=$(expr index "$IMAGE_NAME" :)
+repoName=${IMAGE_NAME:0:tagStart-1}
+
+# Tag and push image for each additional tag
+for tag in galactic-desktop; do
+    docker tag $IMAGE_NAME ${repoName}:${tag}
+    docker push ${repoName}:${tag}
+done

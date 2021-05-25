@@ -7,6 +7,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/galactic/**'
     - 'ros/foxy/**'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
@@ -18,6 +19,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/galactic/**'
     - 'ros/foxy/**'
     - 'ros/eloquent/**'
     - 'ros/dashing/**'
@@ -34,6 +36,7 @@ jobs:
       matrix:
         env:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
+          - {HUB_REPO: ros, HUB_RELEASE: galactic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: foxy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: eloquent, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: ros, HUB_RELEASE: dashing, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
