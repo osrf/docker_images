@@ -29,7 +29,7 @@ ENV ROS_DISTRO galactic
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-galactic-ros-core=0.9.2-1* \
+    ros-galactic-ros-core=0.9.3-2* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

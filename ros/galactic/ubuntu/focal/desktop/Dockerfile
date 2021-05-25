@@ -4,6 +4,6 @@ FROM ros:galactic-ros-base-focal
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-galactic-desktop=0.9.2-1* \
+    ros-galactic-desktop=0.9.3-2* \
     && rm -rf /var/lib/apt/lists/*
 

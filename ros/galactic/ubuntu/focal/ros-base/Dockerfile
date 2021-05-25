@@ -26,6 +26,6 @@ RUN colcon mixin add default \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-galactic-ros-base=0.9.2-1* \
+    ros-galactic-ros-base=0.9.3-2* \
     && rm -rf /var/lib/apt/lists/*
 
