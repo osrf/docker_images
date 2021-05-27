@@ -1,5 +1,3 @@
-# This is an auto generated Dockerfile for ros:ros-core
-# generated from docker_images_ros2/create_ros_core_image.Dockerfile.em
 FROM ubuntu:focal
 
 # setup timezone
@@ -24,23 +22,7 @@ RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu focal main" > /etc/apt
 # setup environment
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-
 ENV ROS_DISTRO rolling
-
-# install ros2 packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-core=0.9.3-1* \
-    && rm -rf /var/lib/apt/lists/*
-
-# setup entrypoint
-COPY ./ros_entrypoint.sh /
-
-ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["bash"]
-
-# This is an auto generated Dockerfile for ros:ros-base
-# generated from docker_images_ros2/create_ros_image.Dockerfile.em
-FROM ros:rolling-ros-core-focal
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -64,8 +46,7 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
-# install ros2 packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-base=0.9.3-1* \
-    && rm -rf /var/lib/apt/lists/*
-
+# setup entrypoint
+COPY ./ros_entrypoint.sh /
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]
