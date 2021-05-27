@@ -1,0 +1,47 @@
+---
+name: CRON Trigger testing images
+
+on:
+  schedule:
+  # 7am UTC, 12am PDT
+  - cron:  '0 7 * * *'
+  push:
+    branches:
+    - main
+    paths:
+    - 'ros2/testing/**'
+
+jobs:
+  testing_build:
+    name: Trigger testing image
+    runs-on: ubuntu-latest
+    container:
+      image: osrf/ros2:testing
+    steps:
+      - name: "Check apt updates"
+        if: ${{ github.event_name == 'schedule' }}
+        env:
+          SOURCELIST: sources.list.d/ros2-testing.list
+        run: |
+          apt-get update \
+            -o Dir::Etc::sourcelist="${SOURCELIST}"
+          apt-get --simulate upgrade \
+            -o Dir::Etc::sourcelist="${SOURCELIST}" \
+            | grep "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded." \
+            && echo "No apt updates" || echo "TRIGGER=true" >> $GITHUB_ENV
+      - name: "Check file updates"
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          echo "TRIGGER=true" >> $GITHUB_ENV
+      - name: "Trigger Dockerhub URL"
+        if: ${{ fromJSON(env.TRIGGER) }}
+        env:
+          DATA: |
+            {
+              "docker_tag": "testing"
+            }
+        run: |
+          echo ${DATA} \
+            | curl -H "Content-Type: application/json" \
+              --data @- \
+              -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
