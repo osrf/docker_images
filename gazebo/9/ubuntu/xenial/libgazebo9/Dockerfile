@@ -4,6 +4,6 @@ FROM gazebo:gzserver9-xenial
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgazebo9-dev=9.17.0-1* \
+    libgazebo9-dev=9.18.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
