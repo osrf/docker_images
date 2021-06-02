@@ -9,7 +9,6 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    - 'ros/eloquent/**'
     - 'ros/dashing/**'
     # - 'ros/noetic/**'
     - 'ros/melodic/**'
@@ -21,7 +20,6 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    - 'ros/eloquent/**'
     - 'ros/dashing/**'
     # - 'ros/noetic/**'
     - 'ros/melodic/**'
@@ -38,12 +36,10 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: galactic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: foxy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
-          - {HUB_REPO: ros, HUB_RELEASE: eloquent, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           - {HUB_REPO: ros, HUB_RELEASE: dashing, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: buster}
           - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
-          - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: stretch}
           - {HUB_REPO: ros, HUB_RELEASE: kinetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: xenial}
     runs-on: ubuntu-latest
     env:
