@@ -1,4 +1,7 @@
-FROM ubuntu:focal
+# This is an auto generated Dockerfile for ros:testing
+# generated from docker_images_ros2/testing/create_ros_image.Dockerfile.em
+ARG FROM_IMAGE=ubuntu:focal
+FROM $FROM_IMAGE
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -11,18 +14,14 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
+    lsb-release \
     && rm -rf /var/lib/apt/lists/*
-
-# setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros2-testing/ubuntu focal main" > /etc/apt/sources.list.d/ros2-testing.list
 
-# setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO rolling
+# setup keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -34,9 +33,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
+# setup environment
+ENV ROS_DISTRO rolling
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 # bootstrap rosdep
-RUN rosdep init && \
-  rosdep update --rosdistro $ROS_DISTRO
+RUN rosdep init \
+    && rosdep update --rosdistro $ROS_DISTRO
 
 # setup colcon mixin and metadata
 RUN colcon mixin add default \
