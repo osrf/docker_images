@@ -18,6 +18,9 @@ jobs:
     container:
       image: osrf/ros2:testing
     steps:
+      - name: "Initialize environment"
+        run: |
+          echo "TRIGGER=false" >> $GITHUB_ENV
       - name: "Check apt updates"
         if: ${{ github.event_name == 'schedule' }}
         env:
