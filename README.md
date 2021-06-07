@@ -108,6 +108,13 @@ List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 
 [![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
+- [`testing`](ros2/testing/testing)
+  - _Description:_
+    - closely mimics the Official Library images but sources testing apt repo
+    - minimal size with no `ros-rolling-*` packages pre-installed
+  - _Purpose:_
+    - intended for Continuous Integration and testing package syncs
+    - small image size and kept fresh by rebuilding upon package updates
 - [`nightly`](ros2/nightly/nightly)
   - _Description:_
     - includes pre-installed environment from nightly job on the ci.ros2.org and pre-installed DDS implementations:
