@@ -7,7 +7,7 @@ This repo hosts Dockerfiles and scaffolding for images in the Official Library a
 [Official ROS (1 and 2) images](https://github.com/osrf/docker_images/blob/master/README.md#ros--)<br/>
 [Official Gazebo images](https://github.com/osrf/docker_images/blob/master/README.md#gazebo--)<br/>
 [OSRF ROS (1 and 2) overlay images](https://github.com/osrf/docker_images/blob/master/README.md#ros---1)<br/>
-[OSRF ROS 2 development images](https://github.com/osrf/docker_images/blob/master/README.md#ros2--)<br/>
+[OSRF ROS 2 development images](https://github.com/osrf/docker_images/blob/master/README.md#ros-2--)<br/>
 [OSRF Gazebo overlay images](https://github.com/osrf/docker_images/blob/master/README.md#gazebo---1)<br/>
 [OSRF ROS Legacy images](https://github.com/osrf/docker_images/blob/master/README.md#ros-legacy--)<br/>
 
@@ -94,7 +94,7 @@ List of tags available at https://hub.docker.com/r/osrf/ros/tags
 |---|---|
 | [amd64](https://hub.docker.com/r/osrf/ros/tags) | [![Docker Build Status](https://img.shields.io/docker/build/osrf/ros.svg?label=build)](https://hub.docker.com/r/osrf/ros/builds/) |
 
-### [ROS2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg?label=stars)](https://hub.docker.com/r/osrf/ros2/)
+### [ROS 2 ![Docker Pulls](https://img.shields.io/docker/pulls/osrf/ros2.svg?label=pulls) ![Docker Stars](https://img.shields.io/docker/stars/osrf/ros2.svg?label=stars)](https://hub.docker.com/r/osrf/ros2/)
 
 This repo contains images specific to ROS 2, and are particularly for development and continuous integration.
 These may contain experimental features or unstable interfaces for testing the latest ROS 2 branches.<br/>
