@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-dashing-ros1-bridge=0.7.8-1* \
+    ros-dashing-ros1-bridge=0.7.9-1* \
     ros-dashing-demo-nodes-cpp=0.7.9-1* \
     ros-dashing-demo-nodes-py=0.7.9-1* \
     && rm -rf /var/lib/apt/lists/*
