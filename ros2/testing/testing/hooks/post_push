@@ -6,7 +6,7 @@ set -e
 # Parse image name for repo name
 tagStart=$(expr index "$IMAGE_NAME" :)
 repoName=${IMAGE_NAME:0:tagStart-1}
-timestamp=$(date +%Y%m%d%H%M%S)
+timestamp=$(date --utc +%Y%m%d%H%M%S)
 
 # Tag and push image for each additional tag
 for tag in testing-${timestamp}; do
