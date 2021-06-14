@@ -9,7 +9,6 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    - 'ros/dashing/**'
     # - 'ros/noetic/**'
     - 'ros/melodic/**'
     - 'ros/kinetic/**'
@@ -20,7 +19,6 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    - 'ros/dashing/**'
     # - 'ros/noetic/**'
     - 'ros/melodic/**'
     - 'ros/kinetic/**'
@@ -36,7 +34,6 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: galactic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: foxy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
-          - {HUB_REPO: ros, HUB_RELEASE: dashing, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: buster}
           - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
