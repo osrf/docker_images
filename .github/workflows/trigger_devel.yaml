@@ -17,7 +17,7 @@ jobs:
       dockerTag: ${{ 'devel' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.3.4
     - name: Call devel webhook
       run: |
         curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
