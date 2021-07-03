@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gazebo11=11.6.0-1* \
+    gazebo11=11.7.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
