@@ -1,7 +1,7 @@
 # This is an auto generated Dockerfile for ros:testing
 # generated from docker_images_ros2/testing/create_ros_image.Dockerfile.em
 # ARG FROM_IMAGE=ubuntu:focal
-FROM ubuntu:focal-20210713
+FROM ubuntu:focal-20210723
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
