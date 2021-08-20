@@ -25,7 +25,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gazebo11=11.7.0-1* \
+    gazebo11=11.8.0-2* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
