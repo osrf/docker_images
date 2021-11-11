@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros1-bridge=0.10.1-1* \
+    ros-rolling-ros1-bridge=0.10.2-1* \
     ros-rolling-demo-nodes-cpp=0.17.0-1* \
     ros-rolling-demo-nodes-py=0.17.0-1* \
     && rm -rf /var/lib/apt/lists/*
