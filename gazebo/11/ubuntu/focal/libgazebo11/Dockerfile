@@ -4,6 +4,6 @@ FROM gazebo:gzserver11-focal
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgazebo11-dev=11.10.0-1* \
+    libgazebo11-dev=11.10.1-1* \
     && rm -rf /var/lib/apt/lists/*
 
