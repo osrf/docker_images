@@ -13,7 +13,7 @@ ENV ROS2_DISTRO galactic
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-noetic-ros-comm=1.15.13-1* \
+    ros-noetic-ros-comm=1.15.14-1* \
     ros-noetic-roscpp-tutorials=0.10.2-1* \
     ros-noetic-rospy-tutorials=0.10.2-1* \
     && rm -rf /var/lib/apt/lists/*
