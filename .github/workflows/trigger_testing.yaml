@@ -32,6 +32,7 @@ jobs:
             -o Dir::Etc::sourcelist="${SOURCELIST}" \
             | grep "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded." \
             && echo "No apt updates" || echo "TRIGGER=true" >> $GITHUB_ENV
+          apt-get install -q -y curl
       - name: "Check file updates"
         if: ${{ github.event_name == 'push' }}
         run: |
