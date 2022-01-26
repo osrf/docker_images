@@ -74,15 +74,15 @@ jobs:
           timestamp=$(date --utc +%Y%m%d%H%M%S)
           echo "::set-output name=timestamp::${timestamp}"
           no_cache=false
-          if  [ "${{needs.check_ci_files.outputs.no_cache}}" == 'true' ] || \
-              [ "${{needs.check_ci_image.outputs.no_cache}}" == 'true' ]
+          if  [ "${{needs.check_files.outputs.no_cache}}" == 'true' ] || \
+              [ "${{needs.check_image.outputs.no_cache}}" == 'true' ]
           then
             no_cache=true
           fi
           echo "::set-output name=no_cache::${no_cache}"
           trigger=false
-          if  [ "${{needs.check_ci_files.outputs.trigger}}" == 'true' ] || \
-              [ "${{needs.check_ci_image.outputs.trigger}}" == 'true' ]
+          if  [ "${{needs.check_files.outputs.trigger}}" == 'true' ] || \
+              [ "${{needs.check_image.outputs.trigger}}" == 'true' ]
           then
             trigger=true
           fi
@@ -97,7 +97,6 @@ jobs:
           no-cache: ${{ steps.config.outputs.no_cache }}
           cache-from: type=registry,ref=osrf/ros2:devel
           cache-to: type=inline
-          target: builder
           tags: |
             osrf/ros2:devel
           #  osrf/ros2:devel-${{ steps.config.outputs.timestamp }}
