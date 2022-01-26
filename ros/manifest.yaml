@@ -3,14 +3,6 @@
 ---
 defaults:
 
-    default_hooks: &DEFAULT_HOOKS
-        hook_names:
-            post_push: .hooks/post_push.em
-
-    default_hooks: &DEFAULT_HOOKS_LEGACY
-        hook_names:
-            post_push: .hooks/legacy/post_push.em
-
     default: &DEFAULT_ROS1
         templates: &DEFAULT_TEMPLATES_ROS1
             images: .config/ros1/images.yaml.em

@@ -3,10 +3,6 @@
 ---
 defaults:
 
-    default_hooks: &DEFAULT_HOOKS
-        hook_names:
-            post_push: .hooks/post_push.em
-
     default: &DEFAULT
         templates: &DEFAULT_TEMPLATES
             images: .config/images.yaml.em
