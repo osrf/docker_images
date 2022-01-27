@@ -97,9 +97,9 @@ RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/op
 
 # copy manifests for caching
 WORKDIR /opt/ros
-RUN mkdir -p /tmp/opt/$ROS_DISTRO && \
+RUN mkdir -p /tmp/opt/ros/$ROS_DISTRO && \
     find . -name "package.xml" \
-      | xargs cp --parents -t /tmp/opt
+      | xargs cp --parents -t /tmp/opt/ros
 
 
 # multi-stage for nightly
@@ -107,7 +107,7 @@ FROM setup AS nightly
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
-COPY --from=cacher /tmp/opt/$ROS_DISTRO /opt/$ROS_DISTRO
+COPY --from=cacher /tmp/opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
 RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
@@ -116,7 +116,7 @@ RUN apt-get update && rosdep install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # install nightly
-COPY --from=cacher /opt/$ROS_DISTRO /opt/$ROS_DISTRO
+COPY --from=cacher /opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
@@ -142,7 +142,7 @@ FROM nightly-rmw AS nightly-rmw-nonfree
 
 # install dependencies
 ARG RTI_NC_LICENSE_ACCEPTED yes
-RUN && apt-get update && rosdep install -y \
+RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
