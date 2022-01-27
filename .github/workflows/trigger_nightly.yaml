@@ -117,7 +117,7 @@ jobs:
           context: ros2/nightly/nightly
           pull: false
           push: true
-          no-cache: true
+          no-cache: false
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
@@ -136,7 +136,7 @@ jobs:
           context: ros2/nightly/nightly
           pull: false
           push: true
-          no-cache: true
+          no-cache: false
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
