@@ -118,10 +118,6 @@ RUN apt-get update && rosdep install -y \
 # install nightly
 COPY --from=cacher /opt/$ROS_DISTRO /opt/$ROS_DISTRO
 
-# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
-# ignore installed rosdep keys
-ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
-
 # FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
 #Workaround hard coded paths in nightly tarball setup scripts
 ARG UPSTREAM_CI_WS=/home/jenkins-agent/workspace/packaging_linux/ws
