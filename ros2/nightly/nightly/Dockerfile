@@ -1,5 +1,6 @@
 # multi-stage for setup
 FROM ubuntu:focal-20220105 as setup
+ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -128,6 +129,7 @@ CMD ["bash"]
 
 # multi-stage for nightly-rmw
 FROM nightly AS nightly-rmw
+ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
 RUN apt-get update && rosdep install -y \
@@ -140,6 +142,7 @@ RUN apt-get update && rosdep install -y \
 
 # multi-stage for nightly-rmw-nonfree
 FROM nightly-rmw AS nightly-rmw-nonfree
+ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
 ARG RTI_NC_LICENSE_ACCEPTED=yes
