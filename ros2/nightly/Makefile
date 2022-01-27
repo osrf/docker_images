@@ -10,9 +10,9 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=osrf/ros2:nightly             nightly/.
-	@docker build --tag=osrf/ros2:nightly-rmw         nightly-rmw/.
-	@docker build --tag=osrf/ros2:nightly-rmw-nonfree nightly-rmw-nonfree/.
+	@docker build --tag=osrf/ros2:nightly --target nightly nightly/.
+	@docker build --tag=osrf/ros2:nightly-rmw --target nightly-rmw nightly/.
+	@docker build --tag=osrf/ros2:nightly-rmw-nonfree --target nightly-rmw-nonfree nightly/.
 
 pull:
 	@docker pull osrf/ros2:nightly
