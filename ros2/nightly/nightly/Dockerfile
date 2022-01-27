@@ -62,17 +62,6 @@ RUN pip3 install -U \
 RUN pip3 freeze | grep pytest \
     && python3 -m pytest --version
 
-# install ros2 packages
-RUN mkdir -p /opt/ros/$ROS_DISTRO
-ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
-RUN wget -q $ROS2_BINARY_URL -O - | \
-    tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
-
-# Overwriting _colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX to point to the new install location
-# Necessary because the default value is an absolute path valid only on the build machine
-RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
-      /opt/ros/$ROS_DISTRO/setup.sh
-
 # setup colcon mixin and metadata
 RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
@@ -91,15 +80,43 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
 RUN rosdep update
 
+# multi-stage for caching
+FROM setup AS cacher
+ARG TIMESTAMP
+
+# install ros2 packages
+RUN mkdir -p /opt/ros/$ROS_DISTRO
+ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
+RUN wget -q $ROS2_BINARY_URL -O - | \
+    tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
+
+# Overwriting _colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX to point to the new install location
+# Necessary because the default value is an absolute path valid only on the build machine
+RUN sed -i "s|^\(_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX\s*=\s*\).*$|\1/opt/ros/$ROS_DISTRO|" \
+      /opt/ros/$ROS_DISTRO/setup.sh
+
+# copy manifests for caching
+WORKDIR /opt/ros
+RUN mkdir -p /tmp/opt/$ROS_DISTRO && \
+    find . -name "package.xml" \
+      | xargs cp --parents -t /tmp/opt
+
+
+# multi-stage for installing
+FROM setup AS nightly
+ARG DEBIAN_FRONTEND=noninteractive
+
 # install dependencies
-RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-    && apt-get update \
-    && rosdep install -y \
+COPY --from=cacher /tmp/opt/$ROS_DISTRO /opt/$ROS_DISTRO
+RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
       rti-connext-dds-5.3.1" \
     && rm -rf /var/lib/apt/lists/*
+
+# install nightly
+COPY --from=cacher /opt/$ROS_DISTRO /opt/$ROS_DISTRO
 
 # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys
