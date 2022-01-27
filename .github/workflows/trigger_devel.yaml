@@ -1,23 +1,106 @@
 ---
-name: CRON Trigger devel images
+name: Update osrf/ros2:devel
 
 on:
   schedule:
-  - cron:  '0 3 * * *'
+    # 7am UTC, 12am PDT
+    - cron:  '0 7 * * *'
   push:
     branches:
-    - master
+      - master
     paths:
     - '.github/workflows/trigger_devel.yaml'
-    - 'ros2/source/**'
+    - "ros2/source/devel/**"
+
 jobs:
-  source_build:
-    name: Trigger devel image
-    env:
-      dockerTag: ${{ 'devel' }}
+  check_files:
+    name: Check Files
+    runs-on: ubuntu-latest
+    outputs:
+      trigger: ${{ steps.check.outputs.trigger }}
+      no_cache: ${{ steps.check.outputs.no_cache }}
+    steps:
+      - name: "Check push event"
+        id: check
+        if: github.event_name == 'push'
+        run: |
+          echo "::set-output name=trigger::true"
+          echo "::set-output name=no_cache::false"
+  check_image:
+    name: Check Image
+    if: github.event_name == 'schedule'
+    needs: check_files
+    runs-on: ubuntu-latest
+    outputs:
+      trigger: ${{ steps.check.outputs.trigger }}
+      no_cache: ${{ steps.check.outputs.no_cache }}
+    container:
+      image: osrf/ros2:devel
+    steps:
+      - name: "Check apt updates"
+        id: check
+        env:
+          SOURCELIST: sources.list.d/ros2-latest.list
+        run: |
+          apt-get update \
+            -o Dir::Etc::sourcelist="${SOURCELIST}"
+          apt-get --simulate upgrade \
+            -o Dir::Etc::sourcelist="${SOURCELIST}" \
+            > upgrade.log
+          cat upgrade.log
+          cat upgrade.log \
+            | grep "^0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.$" \
+            && echo "::set-output name=trigger::false" \
+            || echo "::set-output name=trigger::true"
+          echo "::set-output name=no_cache::true"
+  rebuild_image:
+    name: Rebuild Image
+    if: always()
+    needs:
+      - check_files
+      - check_image
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.4.0
-    - name: Call devel webhook
-      run: |
-        curl -H "Content-Type: application/json" --data '{"docker_tag": "${{env.dockerTag}}"}'  -X POST ${{ secrets.DOCKER_ROS2_POST_PUSH_TRIGGER }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set build config
+        id: config
+        run: |
+          timestamp=$(date --utc +%Y%m%d%H%M%S)
+          echo "::set-output name=timestamp::${timestamp}"
+          no_cache=false
+          if  [ "${{needs.check_files.outputs.no_cache}}" == 'true' ] || \
+              [ "${{needs.check_image.outputs.no_cache}}" == 'true' ]
+          then
+            no_cache=true
+          fi
+          echo "::set-output name=no_cache::${no_cache}"
+          trigger=false
+          if  [ "${{needs.check_files.outputs.trigger}}" == 'true' ] || \
+              [ "${{needs.check_image.outputs.trigger}}" == 'true' ]
+          then
+            trigger=true
+          fi
+          echo "::set-output name=trigger::${trigger}"
+      - name: Build and push
+        if: steps.config.outputs.trigger == 'true'
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ros2/source/devel
+          pull: true
+          push: true
+          no-cache: ${{ steps.config.outputs.no_cache }}
+          cache-from: type=registry,ref=osrf/ros2:devel
+          cache-to: type=inline
+          tags: |
+            osrf/ros2:devel
+          #  osrf/ros2:devel-${{ steps.config.outputs.timestamp }}
+      - name: Image digest
+        if: steps.config.outputs.trigger == 'true'
+        run: echo ${{ steps.docker_build.outputs.digest }}
