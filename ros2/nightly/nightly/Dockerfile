@@ -141,7 +141,7 @@ RUN apt-get update && rosdep install -y \
 FROM nightly-rmw AS nightly-rmw-nonfree
 
 # install dependencies
-ARG RTI_NC_LICENSE_ACCEPTED yes
+ARG RTI_NC_LICENSE_ACCEPTED=yes
 RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
