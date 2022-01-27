@@ -114,10 +114,11 @@ jobs:
         id: docker_build_nightly-rmw
         uses: docker/build-push-action@v2
         with:
-          context: ros2/nightly/nightly
-          pull: false
+          context: ros2/nightly/nightly-rmw
+          pull: true
           push: true
           no-cache: false
+          cache-from: type=registry,ref=osrf/ros2:nightly-rmw
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
@@ -133,10 +134,11 @@ jobs:
         id: docker_build_nightly-rmw-nonfree
         uses: docker/build-push-action@v2
         with:
-          context: ros2/nightly/nightly
-          pull: false
+          context: ros2/nightly/nightly-rmw-nonfree
+          pull: true
           push: true
           no-cache: false
+          cache-from: type=registry,ref=osrf/ros2:nightly-rmw-nonfree
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}

@@ -125,35 +125,3 @@ COPY ./ros_entrypoint.sh /
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
-
-
-# multi-stage for nightly-rmw
-FROM nightly AS nightly-rmw
-ARG DEBIAN_FRONTEND=noninteractive
-
-# install dependencies
-RUN apt-get update && rosdep install -y \
-    --from-paths /opt/ros/$ROS_DISTRO/share \
-    --ignore-src \
-    --skip-keys " \
-      rti-connext-dds-5.3.1" \
-    && rm -rf /var/lib/apt/lists/*
-
-
-# multi-stage for nightly-rmw-nonfree
-FROM nightly-rmw AS nightly-rmw-nonfree
-ARG DEBIAN_FRONTEND=noninteractive
-
-# install dependencies
-ARG RTI_NC_LICENSE_ACCEPTED=yes
-RUN apt-get update && rosdep install -y \
-    --from-paths /opt/ros/$ROS_DISTRO/share \
-    --ignore-src \
-    --skip-keys " \
-      " \
-    && rm -rf /var/lib/apt/lists/*
-
-# set up environment
-ENV NDDSHOME /opt/rti.com/rti_connext_dds-5.3.1
-ENV PATH "$NDDSHOME/bin":$PATH
-ENV LD_LIBRARY_PATH "$NDDSHOME/lib/x64Linux3gcc5.4.0":$LD_LIBRARY_PATH
