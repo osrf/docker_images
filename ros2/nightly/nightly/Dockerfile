@@ -1,6 +1,5 @@
-# This is an auto generated Dockerfile for ros:nightly
-# generated from docker_images_ros2/nightly/create_ros_image.Dockerfile.em
-FROM ubuntu:focal
+# multi-stage for setup
+FROM ubuntu:focal-20220105 as setup
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
