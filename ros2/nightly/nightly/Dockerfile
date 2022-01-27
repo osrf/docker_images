@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:focal-20220105 as setup
+FROM ubuntu:focal-20220105 as setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
@@ -82,7 +82,7 @@ RUN echo "yaml file:///etc/ros/rosdep/prereqs.yaml" | \
 RUN rosdep update
 
 # multi-stage for caching
-FROM setup AS cacher
+FROM setuper AS cacher
 ARG TIMESTAMP
 
 # install ros2 packages
@@ -104,7 +104,7 @@ RUN mkdir -p /tmp/opt/ros/$ROS_DISTRO && \
 
 
 # multi-stage for nightly
-FROM setup AS nightly
+FROM setuper AS nightly
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
