@@ -102,7 +102,6 @@ jobs:
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
-          target: nightly
           tags: |
             osrf/ros2:nightly
           #  osrf/ros2:nightly-${{ steps.config.outputs.timestamp }}
@@ -122,7 +121,6 @@ jobs:
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
-          target: nightly-rmw
           tags: |
             osrf/ros2:nightly-rmw
           #  osrf/ros2:nightly-rmw-${{ steps.config.outputs.timestamp }}
@@ -142,7 +140,6 @@ jobs:
           cache-to: type=inline
           build-args: |
             TIMESTAMP=${{ steps.config.outputs.timestamp }}
-          target: nightly-rmw-nonfree
           tags: |
             osrf/ros2:nightly-rmw-nonfree
           #  osrf/ros2:nightly-rmw-nonfree-${{ steps.config.outputs.timestamp }}
