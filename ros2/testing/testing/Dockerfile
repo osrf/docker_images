@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220105
+FROM ubuntu:focal-20220113
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
