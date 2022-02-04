@@ -9,7 +9,7 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    # - 'ros/noetic/**'
+    - 'ros/noetic/**'
     - 'ros/melodic/**'
   push:
     paths:
@@ -18,7 +18,7 @@ on:
     - 'ros/rolling/**'
     - 'ros/galactic/**'
     - 'ros/foxy/**'
-    # - 'ros/noetic/**'
+    - 'ros/noetic/**'
     - 'ros/melodic/**'
   schedule:
     # Trigger daily to check for upstream changes
@@ -32,8 +32,8 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: galactic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: foxy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
-          # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
-          # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: buster}
+          - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
+          - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: debian, HUB_OS_CODE_NAME: buster}
           - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
     runs-on: ubuntu-latest
     env:
