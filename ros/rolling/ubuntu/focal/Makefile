@@ -26,3 +26,16 @@ clean:
 	@docker rmi -f ros:rolling-ros-base-focal
 	@docker rmi -f ros:rolling-ros1-bridge-focal
 	# @docker rmi -f osrf/ros:rolling-desktop-focal
+
+ci_buildx:
+	@docker buildx build --pull --push \
+		--cache-from=osrf/ros:rolling-desktop-focal \
+		--tag=osrf/ros:rolling-desktop-focal \
+		desktop/.
+	@if [ "ubuntu" = "ubuntu" ]; then \
+    	@docker tag \
+			osrf/ros:rolling-desktop-focal \
+			osrf/ros:rolling-desktop; \
+		@docker push \
+			osrf/ros:rolling-desktop; \
+	fi
