@@ -33,6 +33,8 @@ ci_buildx:
 		--tag=osrf/ros:$release_name-desktop-$os_code_name \
 		desktop/.
 	@if [ "$os_name" = "ubuntu" ]; then \
+		docker pull \
+			osrf/ros:$release_name-desktop-$os_code_name; \
     	docker tag \
 			osrf/ros:$release_name-desktop-$os_code_name \
 			osrf/ros:$release_name-desktop; \

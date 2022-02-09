@@ -39,6 +39,8 @@ ci_buildx:
 		--tag=osrf/ros:melodic-desktop-bionic \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
+		docker pull \
+			osrf/ros:melodic-desktop-bionic; \
     	docker tag \
 			osrf/ros:melodic-desktop-bionic \
 			osrf/ros:melodic-desktop; \
@@ -50,6 +52,8 @@ ci_buildx:
 		--tag=osrf/ros:melodic-desktop-full-bionic \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
+		docker pull \
+			osrf/ros:melodic-desktop-full-bionic; \
     	docker tag \
 			osrf/ros:melodic-desktop-full-bionic \
 			osrf/ros:melodic-desktop-full; \
