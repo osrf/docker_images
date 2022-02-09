@@ -32,3 +32,13 @@ clean:
 	@docker rmi -f ros:$release_name-perception-$os_code_name
 	# @docker rmi -f osrf/ros:$release_name-desktop-$os_code_name
 	# @docker rmi -f osrf/ros:$release_name-desktop-full-$os_code_name
+
+ci_buildx:
+	@docker buildx build --pull --push \
+		--cache-from=osrf/ros:$release_name-desktop-$os_code_name \
+		--tag=osrf/ros:$release_name-desktop-$os_code_name \
+		desktop/.
+	@docker buildx build --pull --push \
+		--cache-from=osrf/ros:$release_name-desktop-full-$os_code_name \
+		--tag=osrf/ros:$release_name-desktop-full-$os_code_name \
+		desktop/.
