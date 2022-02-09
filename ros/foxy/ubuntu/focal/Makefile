@@ -32,10 +32,10 @@ ci_buildx:
 		--cache-from=osrf/ros:foxy-desktop-focal \
 		--tag=osrf/ros:foxy-desktop-focal \
 		desktop/.
-	@if [ "ubuntu" = "ubuntu" ]; then\
+	@if [ "ubuntu" = "ubuntu" ]; then \
         @docker tag \
 			osrf/ros:foxy-desktop-focal \
-			osrf/ros:foxy-desktop
+			osrf/ros:foxy-desktop; \
 		@docker push \
-			osrf/ros:foxy-desktop
+			osrf/ros:foxy-desktop; \
     fi

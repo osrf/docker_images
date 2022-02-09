@@ -32,10 +32,10 @@ ci_buildx:
 		--cache-from=osrf/ros:rolling-desktop-focal \
 		--tag=osrf/ros:rolling-desktop-focal \
 		desktop/.
-	@if [ "ubuntu" = "ubuntu" ]; then\
+	@if [ "ubuntu" = "ubuntu" ]; then \
         @docker tag \
 			osrf/ros:rolling-desktop-focal \
-			osrf/ros:rolling-desktop
+			osrf/ros:rolling-desktop; \
 		@docker push \
-			osrf/ros:rolling-desktop
+			osrf/ros:rolling-desktop; \
     fi

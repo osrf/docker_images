@@ -38,21 +38,21 @@ ci_buildx:
 		--cache-from=osrf/ros:melodic-desktop-bionic \
 		--tag=osrf/ros:melodic-desktop-bionic \
 		desktop/.
-	@if [ "ubuntu" = "ubuntu" ]; then\
+	@if [ "ubuntu" = "ubuntu" ]; then \
         @docker tag \
 			osrf/ros:melodic-desktop-bionic \
-			osrf/ros:melodic-desktop
+			osrf/ros:melodic-desktop; \
 		@docker push \
-			osrf/ros:melodic-desktop
+			osrf/ros:melodic-desktop; \
     fi
 	@docker buildx build --pull --push \
 		--cache-from=osrf/ros:melodic-desktop-full-bionic \
 		--tag=osrf/ros:melodic-desktop-full-bionic \
 		desktop/.
-	@if [ "ubuntu" = "ubuntu" ]; then\
+	@if [ "ubuntu" = "ubuntu" ]; then \
         @docker tag \
 			osrf/ros:melodic-desktop-full-bionic \
-			osrf/ros:melodic-desktop-full
+			osrf/ros:melodic-desktop-full; \
 		@docker push \
-			osrf/ros:melodic-desktop-full
+			osrf/ros:melodic-desktop-full; \
     fi

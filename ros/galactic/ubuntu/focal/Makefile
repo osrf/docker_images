@@ -32,10 +32,10 @@ ci_buildx:
 		--cache-from=osrf/ros:galactic-desktop-focal \
 		--tag=osrf/ros:galactic-desktop-focal \
 		desktop/.
-	@if [ "ubuntu" = "ubuntu" ]; then\
+	@if [ "ubuntu" = "ubuntu" ]; then \
         @docker tag \
 			osrf/ros:galactic-desktop-focal \
-			osrf/ros:galactic-desktop
+			osrf/ros:galactic-desktop; \
 		@docker push \
-			osrf/ros:galactic-desktop
+			osrf/ros:galactic-desktop; \
     fi
