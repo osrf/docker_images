@@ -26,3 +26,16 @@ clean:
 	@docker rmi -f ros:foxy-ros-base-focal
 	@docker rmi -f ros:foxy-ros1-bridge-focal
 	# @docker rmi -f osrf/ros:foxy-desktop-focal
+
+ci_buildx:
+	@docker buildx build --pull --push \
+		--cache-from=osrf/ros:foxy-desktop-focal \
+		--tag=osrf/ros:foxy-desktop-focal \
+		desktop/.
+	@if [ "ubuntu" = "ubuntu" ]; then\
+        @docker tag \
+			osrf/ros:foxy-desktop-focal \
+			osrf/ros:foxy-desktop
+		@docker push \
+			osrf/ros:foxy-desktop
+    fi
