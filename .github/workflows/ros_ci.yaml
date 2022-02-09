@@ -67,5 +67,5 @@ jobs:
         if: github.ref == 'refs/heads/master'
         env: ${{matrix.env}}
         run: |
-          cd $HUB_REPO/$HUB_RELEASE/$HUB_OS_NAME
+          cd $HUB_REPO/$HUB_RELEASE/$HUB_OS_NAME/$HUB_OS_CODE_NAME
           make ci_buildx
