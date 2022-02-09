@@ -33,9 +33,9 @@ ci_buildx:
 		--tag=osrf/ros:galactic-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
-    	@docker tag \
+    	docker tag \
 			osrf/ros:galactic-desktop-focal \
 			osrf/ros:galactic-desktop; \
-		@docker push \
+		docker push \
 			osrf/ros:galactic-desktop; \
 	fi

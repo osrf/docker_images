@@ -39,10 +39,10 @@ ci_buildx:
 		--tag=osrf/ros:noetic-desktop-buster \
 		desktop/.
 	@if [ "debian" = "ubuntu" ]; then \
-    	@docker tag \
+    	docker tag \
 			osrf/ros:noetic-desktop-buster \
 			osrf/ros:noetic-desktop; \
-		@docker push \
+		docker push \
 			osrf/ros:noetic-desktop; \
 	fi
 	@docker buildx build --pull --push \
@@ -50,9 +50,9 @@ ci_buildx:
 		--tag=osrf/ros:noetic-desktop-full-buster \
 		desktop/.
 	@if [ "debian" = "ubuntu" ]; then \
-    	@docker tag \
+    	docker tag \
 			osrf/ros:noetic-desktop-full-buster \
 			osrf/ros:noetic-desktop-full; \
-		@docker push \
+		docker push \
 			osrf/ros:noetic-desktop-full; \
 	fi
