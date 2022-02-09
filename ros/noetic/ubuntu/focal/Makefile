@@ -39,20 +39,20 @@ ci_buildx:
 		--tag=osrf/ros:noetic-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
-        @docker tag \
+    	@docker tag \
 			osrf/ros:noetic-desktop-focal \
 			osrf/ros:noetic-desktop; \
 		@docker push \
 			osrf/ros:noetic-desktop; \
-    fi
+	fi
 	@docker buildx build --pull --push \
 		--cache-from=osrf/ros:noetic-desktop-full-focal \
 		--tag=osrf/ros:noetic-desktop-full-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
-        @docker tag \
+    	@docker tag \
 			osrf/ros:noetic-desktop-full-focal \
 			osrf/ros:noetic-desktop-full; \
 		@docker push \
 			osrf/ros:noetic-desktop-full; \
-    fi
+	fi

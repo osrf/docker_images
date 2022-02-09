@@ -33,9 +33,9 @@ ci_buildx:
 		--tag=osrf/ros:rolling-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
-        @docker tag \
+    	@docker tag \
 			osrf/ros:rolling-desktop-focal \
 			osrf/ros:rolling-desktop; \
 		@docker push \
 			osrf/ros:rolling-desktop; \
-    fi
+	fi

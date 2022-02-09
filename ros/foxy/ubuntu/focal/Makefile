@@ -33,9 +33,9 @@ ci_buildx:
 		--tag=osrf/ros:foxy-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
-        @docker tag \
+    	@docker tag \
 			osrf/ros:foxy-desktop-focal \
 			osrf/ros:foxy-desktop; \
 		@docker push \
 			osrf/ros:foxy-desktop; \
-    fi
+	fi
