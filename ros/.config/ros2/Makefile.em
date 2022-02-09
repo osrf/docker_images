@@ -32,3 +32,10 @@ ci_buildx:
 		--cache-from=osrf/ros:$release_name-desktop-$os_code_name \
 		--tag=osrf/ros:$release_name-desktop-$os_code_name \
 		desktop/.
+	@if [ "$os_name" = "ubuntu" ]; then\
+        @docker tag \
+			osrf/ros:$release_name-desktop-$os_code_name \
+			osrf/ros:$release_name-desktop
+		@docker push \
+			osrf/ros:$release_name-desktop
+    fi
