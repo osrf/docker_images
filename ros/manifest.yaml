@@ -4,19 +4,19 @@
 defaults:
 
     default: &DEFAULT_ROS1
-        templates: &DEFAULT_TEMPLATES_ROS1
+        templates:
             images: .config/ros1/images.yaml.em
             makefile: .config/ros1/Makefile.em
             platform: .config/ros1/platform.yaml.em
 
     default: &DEFAULT_ROS2
-        templates: &DEFAULT_TEMPLATES_ROS2
+        templates:
             images: .config/ros2/images.yaml.em
             makefile: .config/ros2/Makefile.em
             platform: .config/ros2/platform.yaml.em
 
     default: &DEFAULT_LEGACY
-        templates: &DEFAULT_TEMPLATES_LEGACY
+        templates:
             images: .config/legacy/images.yaml.em
             makefile: .config/legacy/Makefile.em
             platform: .config/legacy/platform.yaml.em
