@@ -29,7 +29,8 @@ clean:
 
 ci_buildx:
 	@docker buildx build --pull --push \
-		--cache-from=osrf/ros:rolling-desktop-focal \
+		--cache-from=type=registry,ref=osrf/ros:rolling-desktop-focal \
+		--cache-to=type=inline \
 		--tag=osrf/ros:rolling-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \

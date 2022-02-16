@@ -29,7 +29,8 @@ clean:
 
 ci_buildx:
 	@docker buildx build --pull --push \
-		--cache-from=osrf/ros:$release_name-desktop-$os_code_name \
+		--cache-from=type=registry,ref=osrf/ros:$release_name-desktop-$os_code_name \
+		--cache-to=type=inline \
 		--tag=osrf/ros:$release_name-desktop-$os_code_name \
 		desktop/.
 	@if [ "$os_name" = "ubuntu" ]; then \

@@ -35,7 +35,8 @@ clean:
 
 ci_buildx:
 	@docker buildx build --pull --push \
-		--cache-from=osrf/ros:noetic-desktop-focal \
+		--cache-from=type=registry,ref=osrf/ros:noetic-desktop-focal \
+		--cache-to=type=inline \
 		--tag=osrf/ros:noetic-desktop-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
@@ -48,7 +49,8 @@ ci_buildx:
 			osrf/ros:noetic-desktop; \
 	fi
 	@docker buildx build --pull --push \
-		--cache-from=osrf/ros:noetic-desktop-full-focal \
+		--cache-from=type=registry,ref=osrf/ros:noetic-desktop-full-focal \
+		--cache-to=type=inline \
 		--tag=osrf/ros:noetic-desktop-full-focal \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
