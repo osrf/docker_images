@@ -553,7 +553,7 @@ release_names:
                 os_code_names:
                     jammy:
                         rosdistro_name: noetic
-                        <<: *DEFAULT_ROS2_LEGACY
+                        <<: *DEFAULT_ROS2
                         archs:
                             - amd64
                             - arm64v8
@@ -567,10 +567,6 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
-                            ros1-bridge:
-                                aliases:
-                                    - "$release_name-ros1-bridge"
-                                    - "$release_name-ros1-bridge-$os_code_name"
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
