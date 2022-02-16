@@ -545,7 +545,7 @@ release_names:
         os_names:
             ubuntu:
                 os_code_names:
-                    focal:
+                    jammy:
                         rosdistro_name: noetic
                         <<: *DEFAULT_ROS2
                         archs:

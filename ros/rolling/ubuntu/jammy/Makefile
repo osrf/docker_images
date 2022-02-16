@@ -10,34 +10,34 @@ help:
 	@echo ""
 
 build:
-	@docker build --tag=ros:rolling-ros-core-focal			ros-core/.
-	@docker build --tag=ros:rolling-ros-base-focal			ros-base/.
-	@docker build --tag=ros:rolling-ros1-bridge-focal		ros1-bridge/.
-	# @docker build --tag=osrf/ros:rolling-desktop-focal			desktop/.
+	@docker build --tag=ros:rolling-ros-core-jammy			ros-core/.
+	@docker build --tag=ros:rolling-ros-base-jammy			ros-base/.
+	@docker build --tag=ros:rolling-ros1-bridge-jammy		ros1-bridge/.
+	# @docker build --tag=osrf/ros:rolling-desktop-jammy			desktop/.
 
 pull:
-	@docker pull ros:rolling-ros-core-focal
-	@docker pull ros:rolling-ros-base-focal
-	@docker pull ros:rolling-ros1-bridge-focal
-	# @docker pull osrf/ros:rolling-desktop-focal
+	@docker pull ros:rolling-ros-core-jammy
+	@docker pull ros:rolling-ros-base-jammy
+	@docker pull ros:rolling-ros1-bridge-jammy
+	# @docker pull osrf/ros:rolling-desktop-jammy
 
 clean:
-	@docker rmi -f ros:rolling-ros-core-focal
-	@docker rmi -f ros:rolling-ros-base-focal
-	@docker rmi -f ros:rolling-ros1-bridge-focal
-	# @docker rmi -f osrf/ros:rolling-desktop-focal
+	@docker rmi -f ros:rolling-ros-core-jammy
+	@docker rmi -f ros:rolling-ros-base-jammy
+	@docker rmi -f ros:rolling-ros1-bridge-jammy
+	# @docker rmi -f osrf/ros:rolling-desktop-jammy
 
 ci_buildx:
 	@docker buildx build --pull --push \
-		--cache-from=type=registry,ref=osrf/ros:rolling-desktop-focal \
+		--cache-from=type=registry,ref=osrf/ros:rolling-desktop-jammy \
 		--cache-to=type=inline \
-		--tag=osrf/ros:rolling-desktop-focal \
+		--tag=osrf/ros:rolling-desktop-jammy \
 		desktop/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
 		docker pull \
-			osrf/ros:rolling-desktop-focal; \
+			osrf/ros:rolling-desktop-jammy; \
     	docker tag \
-			osrf/ros:rolling-desktop-focal \
+			osrf/ros:rolling-desktop-jammy \
 			osrf/ros:rolling-desktop; \
 		docker push \
 			osrf/ros:rolling-desktop; \

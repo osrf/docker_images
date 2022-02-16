@@ -3,7 +3,7 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: focal
+    os_code_name: jammy
     rosdistro_name: noetic
     ros2distro_name: rolling
     user_name: ros
