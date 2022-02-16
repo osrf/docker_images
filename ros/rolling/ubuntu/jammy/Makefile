@@ -12,19 +12,16 @@ help:
 build:
 	@docker build --tag=ros:rolling-ros-core-jammy			ros-core/.
 	@docker build --tag=ros:rolling-ros-base-jammy			ros-base/.
-	@docker build --tag=ros:rolling-ros1-bridge-jammy		ros1-bridge/.
 	# @docker build --tag=osrf/ros:rolling-desktop-jammy			desktop/.
 
 pull:
 	@docker pull ros:rolling-ros-core-jammy
 	@docker pull ros:rolling-ros-base-jammy
-	@docker pull ros:rolling-ros1-bridge-jammy
 	# @docker pull osrf/ros:rolling-desktop-jammy
 
 clean:
 	@docker rmi -f ros:rolling-ros-core-jammy
 	@docker rmi -f ros:rolling-ros-base-jammy
-	@docker rmi -f ros:rolling-ros1-bridge-jammy
 	# @docker rmi -f osrf/ros:rolling-desktop-jammy
 
 ci_buildx:
