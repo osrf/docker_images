@@ -42,7 +42,7 @@ ci_buildx:
 	@if [ "$os_name" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:$release_name-desktop-$os_code_name; \
-    	docker tag \
+		docker tag \
 			osrf/ros:$release_name-desktop-$os_code_name \
 			osrf/ros:$release_name-desktop; \
 		docker push \
@@ -52,11 +52,11 @@ ci_buildx:
 		--cache-from=type=registry,ref=osrf/ros:$release_name-desktop-full-$os_code_name \
 		--cache-to=type=inline \
 		--tag=osrf/ros:$release_name-desktop-full-$os_code_name \
-		desktop/.
+		desktop-full/.
 	@if [ "$os_name" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:$release_name-desktop-full-$os_code_name; \
-    	docker tag \
+		docker tag \
 			osrf/ros:$release_name-desktop-full-$os_code_name \
 			osrf/ros:$release_name-desktop-full; \
 		docker push \
