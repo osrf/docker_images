@@ -42,7 +42,7 @@ ci_buildx:
 	@if [ "debian" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:noetic-desktop-buster; \
-    	docker tag \
+		docker tag \
 			osrf/ros:noetic-desktop-buster \
 			osrf/ros:noetic-desktop; \
 		docker push \
@@ -52,11 +52,11 @@ ci_buildx:
 		--cache-from=type=registry,ref=osrf/ros:noetic-desktop-full-buster \
 		--cache-to=type=inline \
 		--tag=osrf/ros:noetic-desktop-full-buster \
-		desktop/.
+		desktop-full/.
 	@if [ "debian" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:noetic-desktop-full-buster; \
-    	docker tag \
+		docker tag \
 			osrf/ros:noetic-desktop-full-buster \
 			osrf/ros:noetic-desktop-full; \
 		docker push \

@@ -42,7 +42,7 @@ ci_buildx:
 	@if [ "ubuntu" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:noetic-desktop-focal; \
-    	docker tag \
+		docker tag \
 			osrf/ros:noetic-desktop-focal \
 			osrf/ros:noetic-desktop; \
 		docker push \
@@ -52,11 +52,11 @@ ci_buildx:
 		--cache-from=type=registry,ref=osrf/ros:noetic-desktop-full-focal \
 		--cache-to=type=inline \
 		--tag=osrf/ros:noetic-desktop-full-focal \
-		desktop/.
+		desktop-full/.
 	@if [ "ubuntu" = "ubuntu" ]; then \
 		docker pull \
 			osrf/ros:noetic-desktop-full-focal; \
-    	docker tag \
+		docker tag \
 			osrf/ros:noetic-desktop-full-focal \
 			osrf/ros:noetic-desktop-full; \
 		docker push \
