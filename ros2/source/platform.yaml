@@ -3,7 +3,7 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: focal
+    os_code_name: jammy
     user_name: ros2
     maintainer_name:
     arch: amd64
