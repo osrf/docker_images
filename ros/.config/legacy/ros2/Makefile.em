@@ -12,16 +12,19 @@ help:
 build:
 	@docker build --tag=ros:$release_name-ros-core-$os_code_name			ros-core/.
 	@docker build --tag=ros:$release_name-ros-base-$os_code_name			ros-base/.
+	@docker build --tag=ros:$release_name-ros1-bridge-$os_code_name		ros1-bridge/.
 	# @docker build --tag=osrf/ros:$release_name-desktop-$os_code_name			desktop/.
 
 pull:
 	@docker pull ros:$release_name-ros-core-$os_code_name
 	@docker pull ros:$release_name-ros-base-$os_code_name
+	@docker pull ros:$release_name-ros1-bridge-$os_code_name
 	# @docker pull osrf/ros:$release_name-desktop-$os_code_name
 
 clean:
 	@docker rmi -f ros:$release_name-ros-core-$os_code_name
 	@docker rmi -f ros:$release_name-ros-base-$os_code_name
+	@docker rmi -f ros:$release_name-ros1-bridge-$os_code_name
 	# @docker rmi -f osrf/ros:$release_name-desktop-$os_code_name
 
 ci_buildx:

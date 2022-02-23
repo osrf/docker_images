@@ -4,22 +4,28 @@
 defaults:
 
     default: &DEFAULT_ROS1
-        templates: &DEFAULT_TEMPLATES_ROS1
+        templates:
             images: .config/ros1/images.yaml.em
             makefile: .config/ros1/Makefile.em
             platform: .config/ros1/platform.yaml.em
 
     default: &DEFAULT_ROS2
-        templates: &DEFAULT_TEMPLATES_ROS2
+        templates:
             images: .config/ros2/images.yaml.em
             makefile: .config/ros2/Makefile.em
             platform: .config/ros2/platform.yaml.em
 
-    default: &DEFAULT_LEGACY
-        templates: &DEFAULT_TEMPLATES_LEGACY
-            images: .config/legacy/images.yaml.em
-            makefile: .config/legacy/Makefile.em
-            platform: .config/legacy/platform.yaml.em
+    default: &DEFAULT_ROS1_LEGACY
+        templates:
+            images: .config/legacy/ros1/images.yaml.em
+            makefile: .config/legacy/ros1/Makefile.em
+            platform: .config/legacy/ros1/platform.yaml.em
+
+    default: &DEFAULT_ROS2_LEGACY
+        templates:
+            images: .config/legacy/ros2/images.yaml.em
+            makefile: .config/legacy/ros2/Makefile.em
+            platform: .config/legacy/ros2/platform.yaml.em
 
 release_names:
     boxturtle:
@@ -28,7 +34,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -38,7 +44,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -48,7 +54,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -58,7 +64,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     lucid:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -68,7 +74,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -78,7 +84,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -88,7 +94,7 @@ release_names:
             ubuntu:
                 os_code_names:
                     precise:
-                        <<: *DEFAULT_LEGACY
+                        <<: *DEFAULT_ROS1_LEGACY
                         archs:
                             - amd64
                         tag_names:
@@ -376,7 +382,7 @@ release_names:
                 os_code_names:
                     xenial:
                         rosdistro_name: kinetic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm64v8
@@ -398,7 +404,7 @@ release_names:
                 os_code_names:
                     bionic:
                         rosdistro_name: melodic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm64v8
@@ -420,7 +426,7 @@ release_names:
                 os_code_names:
                     bionic:
                         rosdistro_name: melodic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm64v8
@@ -442,7 +448,7 @@ release_names:
                 os_code_names:
                     bionic:
                         rosdistro_name: melodic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm32v7
@@ -469,7 +475,7 @@ release_names:
                 os_code_names:
                     bionic:
                         rosdistro_name: melodic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm32v7
@@ -496,7 +502,7 @@ release_names:
                 os_code_names:
                     focal:
                         rosdistro_name: noetic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm64v8
@@ -522,7 +528,7 @@ release_names:
                 os_code_names:
                     focal:
                         rosdistro_name: noetic
-                        <<: *DEFAULT_ROS2
+                        <<: *DEFAULT_ROS2_LEGACY
                         archs:
                             - amd64
                             - arm64v8
@@ -545,7 +551,7 @@ release_names:
         os_names:
             ubuntu:
                 os_code_names:
-                    focal:
+                    jammy:
                         rosdistro_name: noetic
                         <<: *DEFAULT_ROS2
                         archs:
@@ -561,10 +567,6 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
-                            ros1-bridge:
-                                aliases:
-                                    - "$release_name-ros1-bridge"
-                                    - "$release_name-ros1-bridge-$os_code_name"
 meta:
     maintainers:
         - Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
