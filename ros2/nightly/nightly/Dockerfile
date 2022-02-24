@@ -114,7 +114,8 @@ RUN apt-get update && rosdep install -y \
     --ignore-src \
     --skip-keys " \
       cyclonedds \
-      rti-connext-dds-5.3.1" \
+      iceoryx_binding_c \
+      rti-connext-dds-6.0.1" \
     && rm -rf /var/lib/apt/lists/*
 
 # install nightly

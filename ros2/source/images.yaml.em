@@ -48,7 +48,7 @@ images:
             install:
                 - --from-paths src
                 - --ignore-src
-                - --skip-keys "console_bridge fastcdr fastrtps libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
+                - --skip-keys "console_bridge fastcdr fastrtps libopensplice69 rti-connext-dds-6.0.1 urdfdom_headers"
         vcs:
             imports:
                 repos:
