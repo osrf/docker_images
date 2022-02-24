@@ -11,6 +11,6 @@ RUN apt-get update && rosdep install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # set up environment
-ENV NDDSHOME /opt/rti.com/rti_connext_dds-5.3.1
+ENV NDDSHOME /opt/rti.com/rti_connext_dds-6.0.1
 ENV PATH "$NDDSHOME/bin":$PATH
-ENV LD_LIBRARY_PATH "$NDDSHOME/lib/x64Linux3gcc5.4.0":$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH "$NDDSHOME/lib/x64Linux4gcc7.3.0":$LD_LIBRARY_PATH
