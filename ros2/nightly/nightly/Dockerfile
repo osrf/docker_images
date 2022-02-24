@@ -115,6 +115,8 @@ RUN apt-get update && rosdep install -y \
     --skip-keys " \
       cyclonedds \
       iceoryx_binding_c \
+      ignition-math6 \
+      ignition-cmake2 \
       rti-connext-dds-6.0.1" \
     && rm -rf /var/lib/apt/lists/*
 

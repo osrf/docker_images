@@ -7,6 +7,9 @@ RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
+      iceoryx_binding_c \
+      ignition-math6 \
+      ignition-cmake2 \
       " \
     && rm -rf /var/lib/apt/lists/*
 
