@@ -2,4 +2,5 @@ console_bridge: {ubuntu: []}
 cyclonedds: {ubuntu: []}
 fastcdr: {ubuntu: []}
 fastrtps: {ubuntu: []}
+iceoryx_binding_c: {ubuntu: []}
 urdfdom_headers: {ubuntu: []}
