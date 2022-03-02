@@ -26,7 +26,7 @@ jobs:
           - {HUB_REPO: ros2, HUB_RELEASE: nightly}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Check and build ROS 2 image
         env: ${{matrix.env}}
         run: |
