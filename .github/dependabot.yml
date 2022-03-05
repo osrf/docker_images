@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/ros2/testing/testing"
+    directory: "/ros2"
     schedule:
       interval: "daily"
     commit-message:
