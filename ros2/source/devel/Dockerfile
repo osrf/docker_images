@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20220130
+FROM ubuntu:jammy-20220301
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
