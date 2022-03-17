@@ -6,8 +6,8 @@ PyGithub
 
 ###### Requirements with Repo Specifiers ######
 #   See https://pip.readthedocs.io/en/stable/reference/pip_install/#git
-# git+git://github.com/PyGithub/PyGithub.git@master#egg=PyGithub
-git+git://github.com/ruffsl/chuck-norris-python.git@10eb8b847b8b73dfca16095fc79bdf36fcec8aa5#egg=chuck-norris-python
+# git+https://github.com/PyGithub/PyGithub.git@master#egg=PyGithub
+git+https://github.com/ruffsl/chuck-norris-python.git@10eb8b847b8b73dfca16095fc79bdf36fcec8aa5#egg=chuck-norris-python
 
 ###### Requirements with Version Specifiers ######
 #   See https://www.python.org/dev/peps/pep-0440/#version-specifiers
