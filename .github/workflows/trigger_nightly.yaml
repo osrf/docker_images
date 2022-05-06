@@ -92,7 +92,7 @@ jobs:
       - name: Build and push nightly
         if: steps.config.outputs.trigger == 'true'
         id: docker_build_nightly
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ros2/nightly/nightly
           pull: true
@@ -111,7 +111,7 @@ jobs:
       - name: Build and push nightly-rmw
         if: steps.config.outputs.trigger == 'true'
         id: docker_build_nightly-rmw
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ros2/nightly/nightly-rmw
           pull: true
@@ -130,7 +130,7 @@ jobs:
       - name: Build and push nightly-rmw-nonfree
         if: steps.config.outputs.trigger == 'true'
         id: docker_build_nightly-rmw-nonfree
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: ros2/nightly/nightly-rmw-nonfree
           pull: true
