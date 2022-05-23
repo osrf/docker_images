@@ -89,7 +89,7 @@ Architectures: amd64, arm64v8
 GitCommit: 11c613986e35a1f36fd0fa18b49173e0c564cf1d
 Directory: ros/foxy/ubuntu/focal/ros-core
 
-Tags: foxy-ros-base, foxy-ros-base-focal, foxy, latest
+Tags: foxy-ros-base, foxy-ros-base-focal, foxy
 Architectures: amd64, arm64v8
 GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
 Directory: ros/foxy/ubuntu/focal/ros-base
@@ -133,7 +133,7 @@ Architectures: amd64, arm64v8
 GitCommit: 20e3ba685bb353a3c00be9ba01c1b7a6823c9472
 Directory: ros/humble/ubuntu/jammy/ros-core
 
-Tags: humble-ros-base, humble-ros-base-jammy, humble
+Tags: humble-ros-base, humble-ros-base-jammy, humble, latest
 Architectures: amd64, arm64v8
 GitCommit: 20e3ba685bb353a3c00be9ba01c1b7a6823c9472
 Directory: ros/humble/ubuntu/jammy/ros-base
