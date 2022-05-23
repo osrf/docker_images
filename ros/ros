@@ -123,6 +123,23 @@ Directory: ros/galactic/ubuntu/focal/ros1-bridge
 
 
 ################################################################################
+# Release: humble
+
+########################################
+# Distro: ubuntu:jammy
+
+Tags: humble-ros-core, humble-ros-core-jammy
+Architectures: amd64, arm64v8
+GitCommit: 20e3ba685bb353a3c00be9ba01c1b7a6823c9472
+Directory: ros/humble/ubuntu/jammy/ros-core
+
+Tags: humble-ros-base, humble-ros-base-jammy, humble
+Architectures: amd64, arm64v8
+GitCommit: 20e3ba685bb353a3c00be9ba01c1b7a6823c9472
+Directory: ros/humble/ubuntu/jammy/ros-base
+
+
+################################################################################
 # Release: rolling
 
 ########################################
