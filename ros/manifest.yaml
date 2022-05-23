@@ -516,7 +516,6 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
-                                    - latest
                             ros1-bridge:
                                 aliases:
                                     - "$release_name-ros1-bridge"
@@ -566,6 +565,7 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
+                                    - latest
     rolling:
         eol: 2022-05
         os_names:
