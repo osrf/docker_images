@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20220301
+FROM ubuntu:jammy-20220801
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
+    python3-setuptools \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
@@ -48,6 +49,7 @@ RUN pip3 install -U \
     flake8-docstrings \
     flake8-import-order \
     flake8-quotes \
+    pytest-cov \
     pytest-repeat \
     pytest-rerunfailures
 # This is a workaround for pytest not found causing builds to fail
