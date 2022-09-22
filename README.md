@@ -35,8 +35,6 @@ It sits nicely between the official ROS distributions and the [nightly images](h
 
 #### [Repo Info](https://github.com/docker-library/repo-info/tree/master/repos/ros)
 
-[![Compare Images](https://images.microbadger.com/badges/image/library/ros.svg)](https://microbadger.com/#/images/library/ros)
-
 #### Architectures
 
 | Type | Status |
@@ -53,8 +51,6 @@ Images are tagged by releases version, meta package, as well as code name for su
 For complete listing of tag, view the Repo Info link below.
 
 #### [Repo Info](https://github.com/docker-library/repo-info/tree/master/repos/gazebo)
-
-[![Compare Images](https://images.microbadger.com/badges/image/library/gazebo.svg)](https://microbadger.com/#/images/library/gazebo)
 
 #### Architectures
 
@@ -86,8 +82,6 @@ List of tags available at https://hub.docker.com/r/osrf/ros/tags
 
 #### Repo Info
 
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros.svg)](https://microbadger.com/#/images/osrf/ros)
-
 #### Architectures
 
 | Type | Status |
@@ -105,8 +99,6 @@ docker pull osrf/ros2:<tag_name>
 List of tags available at https://hub.docker.com/r/osrf/ros2/tags
 
 #### Repo Info
-
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros2.svg)](https://microbadger.com/#/images/osrf/ros2)
 
 - [`testing`](ros2/testing/testing)
   - _Description:_
@@ -175,8 +167,6 @@ List of tags available at https://hub.docker.com/r/osrf/gazebo/tags
 
 #### Repo Info
 
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/gazebo.svg)](https://microbadger.com/#/images/osrf/gazebo)
-
 #### Architectures
 
 | Type | Status |
@@ -194,8 +184,6 @@ docker pull osrf/ros_legacy:<tag_name>
 List of tags available at https://hub.docker.com/r/osrf/ros_legacy/tags
 
 #### Repo Info
-
-[![Compare Images](https://images.microbadger.com/badges/image/osrf/ros_legacy.svg)](https://microbadger.com/#/images/osrf/ros_legacy)
 
 #### Architectures
 
