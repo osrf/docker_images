@@ -18,7 +18,18 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     gnupg2 \
     libssl-dev \
     lsb-release \
+    python3-flake8 \
+    python3-flake8-blind-except \
+    python3-flake8-builtins \
+    python3-flake8-class-newline \
+    python3-flake8-comprehensions \
+    python3-flake8-deprecated \
+    python3-flake8-docstrings \
+    python3-flake8-import-order \
+    python3-flake8-quotes \
     python3-pip \
+    python3-pytest-repeat \
+    python3-pytest-rerunfailures \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -46,18 +57,7 @@ ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/mas
 
 # install python packages
 RUN pip3 install -U \
-    argcomplete \
-    flake8 \
-    flake8-blind-except \
-    flake8-builtins \
-    flake8-class-newline \
-    flake8-comprehensions \
-    flake8-deprecated \
-    flake8-docstrings \
-    flake8-import-order \
-    flake8-quotes \
-    pytest-repeat \
-    pytest-rerunfailures
+    argcomplete
 # This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 RUN pip3 freeze | grep pytest \
