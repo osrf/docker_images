@@ -109,7 +109,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
 COPY --from=cacher /tmp/opt/ros/$ROS_DISTRO /opt/ros/$ROS_DISTRO
-RUN apt-get update && rosdep install -y \
+RUN apt-get update && rosdep update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
