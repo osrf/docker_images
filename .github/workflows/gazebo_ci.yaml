@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
-      GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
+      GITHUBTOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUBUSER: ${{ secrets.GITHUBUSER }}
     steps:
       - uses: actions/checkout@v3
