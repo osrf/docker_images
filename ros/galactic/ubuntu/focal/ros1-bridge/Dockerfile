@@ -21,8 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-galactic-ros1-bridge=0.10.1-2* \
-    ros-galactic-demo-nodes-cpp=0.14.3-1* \
-    ros-galactic-demo-nodes-py=0.14.3-1* \
+    ros-galactic-demo-nodes-cpp=0.14.4-1* \
+    ros-galactic-demo-nodes-py=0.14.4-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
