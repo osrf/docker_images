@@ -34,7 +34,7 @@ images:
             - libasio-dev
             - libssl-dev
             - libtinyxml2-dev
-        ros2_distro: galactic
+        ros2_distro: humble
         ws: /opt/ros2_ws
         colcon_args:
             - build
