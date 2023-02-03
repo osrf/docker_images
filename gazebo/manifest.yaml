@@ -105,49 +105,49 @@ release_names:
     #                             aliases:
     #                                 - "libgazebo$release_name"
     #                                 - "libgazebo$release_name-$os_code_name"
-    '9':
-        eol: 2023-01-25
-        os_names:
-            ubuntu:
-                os_code_names:
-                    xenial:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver9:
-                                aliases:
-                                    - "gzserver$release_name-$os_code_name"
-                            libgazebo9:
-                                aliases:
-                                    - "libgazebo$release_name-$os_code_name"
-                    bionic:
-                        <<: *DEFAULT
-                        archs:
-                            - amd64
-                        tag_names:
-                            gzserver9:
-                                aliases:
-                                    - "gzserver$release_name"
-                                    - "gzserver$release_name-$os_code_name"
-                            libgazebo9:
-                                aliases:
-                                    - "libgazebo$release_name"
-                                    - "libgazebo$release_name-$os_code_name"
-            # EOL
-            # debian:
-            #     os_code_names:
-            #         stretch:
-            #             <<: *DEFAULT
-            #             archs:
-            #                 - amd64
-            #             tag_names:
-            #                 gzserver9:
-            #                     aliases:
-            #                         - "gzserver$release_name-$os_code_name"
-            #                 libgazebo9:
-            #                     aliases:
-            #                         - "libgazebo$release_name-$os_code_name"
+    # EOL
+    # '9':
+    #     eol: 2023-01-25
+    #     os_names:
+    #         ubuntu:
+    #             os_code_names:
+    #                 xenial:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver9:
+    #                             aliases:
+    #                                 - "gzserver$release_name-$os_code_name"
+    #                         libgazebo9:
+    #                             aliases:
+    #                                 - "libgazebo$release_name-$os_code_name"
+    #                 bionic:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver9:
+    #                             aliases:
+    #                                 - "gzserver$release_name"
+    #                                 - "gzserver$release_name-$os_code_name"
+    #                         libgazebo9:
+    #                             aliases:
+    #                                 - "libgazebo$release_name"
+    #                                 - "libgazebo$release_name-$os_code_name"
+    #         debian:
+    #             os_code_names:
+    #                 stretch:
+    #                     <<: *DEFAULT
+    #                     archs:
+    #                         - amd64
+    #                     tag_names:
+    #                         gzserver9:
+    #                             aliases:
+    #                                 - "gzserver$release_name-$os_code_name"
+    #                         libgazebo9:
+    #                             aliases:
+    #                                 - "libgazebo$release_name-$os_code_name"
     # EOL
     # '10':
     #     eol: 2021-01-24
