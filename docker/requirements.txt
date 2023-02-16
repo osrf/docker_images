@@ -5,10 +5,10 @@
 empy
 GitPython
 pyyaml
+ros_buildfarm
 
 ###### Requirements with Repo Specifiers ######
 #   See https://pip.readthedocs.io/en/stable/reference/pip_install/#git
-git+https://github.com/ros-infrastructure/ros_buildfarm.git@master#egg=ros_buildfarm
 git+https://github.com/osrf/docker_templates.git@master#egg=docker_templates
 
 ###### Requirements with Version Specifiers ######

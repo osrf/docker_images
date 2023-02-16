@@ -10,5 +10,3 @@ platform:
     arch: amd64
     type: distribution
     version:
-    release: ros
-    ros_version: 1
