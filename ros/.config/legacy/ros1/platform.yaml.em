@@ -7,7 +7,9 @@ platform:
     rosdistro_name: @release_name
     user_name: ros
     maintainer_name:
-    arch: amd64
+    archs:
+        - @('\n        - '.join(archs))@
+
     type: distribution
     version: False
     release: ros
