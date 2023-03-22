@@ -1,0 +1,3 @@
+ros-foxy-ros1-bridge=0.9.6-1focal.20221013.030646
+ros-foxy-demo-nodes-cpp=0.9.4-1focal.20221013.003659
+ros-foxy-demo-nodes-py=0.9.4-1focal.20221013.004653
