@@ -1,0 +1,3 @@
+ros-noetic-ros-comm=1.16.0-1focal.20230216.030212
+ros-noetic-roscpp-tutorials=0.10.2-1focal.20230215.211750
+ros-noetic-rospy-tutorials=0.10.2-1focal.20230215.222154

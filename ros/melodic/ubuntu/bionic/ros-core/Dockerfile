@@ -27,9 +27,14 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO melodic
 
+# copy ros packages
+ARG TARGETARCH
+COPY ros_packages/$TARGETARCH.txt /etc/apt/ros/ros_packages.txt
+
 # install ros packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-melodic-ros-core=1.4.1-0* \
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
