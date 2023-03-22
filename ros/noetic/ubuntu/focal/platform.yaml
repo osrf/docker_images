@@ -7,6 +7,9 @@ platform:
     rosdistro_name: noetic
     user_name: ros
     maintainer_name:
-    arch: amd64
+    archs:
+        - amd64
+        - arm32v7
+        - arm64v8
     type: distribution
     version:
