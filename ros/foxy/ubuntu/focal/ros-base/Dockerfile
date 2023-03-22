@@ -24,8 +24,13 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
-# install ros2 packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-foxy-ros-base=0.9.2-1* \
+# copy ros packages
+ARG TARGETARCH
+COPY ros2_packages/$TARGETARCH.txt /etc/apt/ros/ros2_packages.txt
+
+# install ros packages
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros2_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 

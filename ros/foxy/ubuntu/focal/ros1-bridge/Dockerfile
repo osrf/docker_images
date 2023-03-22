@@ -11,18 +11,24 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6
 ENV ROS1_DISTRO noetic
 ENV ROS2_DISTRO foxy
 
+# copy ros packages
+ARG TARGETARCH
+COPY ros_packages/$TARGETARCH.txt /etc/apt/ros/ros_packages.txt
+
 # install ros packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-noetic-ros-comm=1.16.0-1* \
-    ros-noetic-roscpp-tutorials=0.10.2-1* \
-    ros-noetic-rospy-tutorials=0.10.2-1* \
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-# install ros2 packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-foxy-ros1-bridge=0.9.6-1* \
-    ros-foxy-demo-nodes-cpp=0.9.4-1* \
-    ros-foxy-demo-nodes-py=0.9.4-1* \
+# copy ros packages
+ARG TARGETARCH
+COPY ros2_packages/$TARGETARCH.txt /etc/apt/ros/ros2_packages.txt
+
+# install ros packages
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros2_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint

@@ -14,8 +14,13 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
+# copy ros packages
+ARG TARGETARCH
+COPY ros_packages/$TARGETARCH.txt /etc/apt/ros/ros_packages.txt
+
 # install ros packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-melodic-ros-base=1.4.1-0* \
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 

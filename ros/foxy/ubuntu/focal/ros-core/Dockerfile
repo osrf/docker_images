@@ -27,9 +27,14 @@ ENV LC_ALL C.UTF-8
 
 ENV ROS_DISTRO foxy
 
-# install ros2 packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-foxy-ros-core=0.9.2-1* \
+# copy ros packages
+ARG TARGETARCH
+COPY ros2_packages/$TARGETARCH.txt /etc/apt/ros/ros2_packages.txt
+
+# install ros packages
+RUN apt-get update \
+    && xargs -a /etc/apt/ros/ros2_packages.txt \
+        apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
