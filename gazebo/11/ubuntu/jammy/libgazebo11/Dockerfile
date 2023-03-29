@@ -4,6 +4,6 @@ FROM gazebo:gzserver11-jammy
 
 # install gazebo packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgazebo11-dev=11.12.0-1* \
+    libgazebo11-dev \
     && rm -rf /var/lib/apt/lists/*
 
