@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libgts-dev \
     libjansson-dev \
     libtinyxml-dev \
-    mercurial \
     nodejs \
     nodejs-legacy \
     npm \
@@ -27,12 +26,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # clone gzweb
 ENV GZWEB_WS /root/gzweb
-RUN hg clone https://bitbucket.org/osrf/gzweb $GZWEB_WS
+RUN git clone https://github.com/osrf/gzweb.git $GZWEB_WS
 WORKDIR $GZWEB_WS
 
 # build gzweb
-RUN hg up default \
-    && xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m -t
+RUN xvfb-run -s "-screen 0 1280x1024x24" ./deploy.sh -m -t
 
 # setup environment
 EXPOSE 8080
