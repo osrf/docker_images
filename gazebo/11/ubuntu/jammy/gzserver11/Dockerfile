@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzserver11
 # generated from docker_images/create_gzserver_image.Dockerfile.em
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \

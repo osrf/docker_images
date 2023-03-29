@@ -3,7 +3,7 @@
 ---
 platform:
     os_name: ubuntu
-    os_code_name: focal
+    os_code_name: jammy
     gazebo_version: 11
     user_name: gazebo
     maintainer_name:

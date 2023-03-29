@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb11
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo11-focal
+FROM gazebo:libgazebo11-jammy
 
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
