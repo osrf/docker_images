@@ -6,13 +6,13 @@ FROM gazebo:libgazebo11-jammy
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     build-essential \
     cmake \
+    git \
     imagemagick \
     libboost-all-dev \
     libgts-dev \
     libjansson-dev \
     libtinyxml-dev \
     nodejs \
-    nodejs-legacy \
     npm \
     pkg-config \
     psmisc \
