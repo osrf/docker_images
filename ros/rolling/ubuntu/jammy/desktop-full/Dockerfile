@@ -4,6 +4,6 @@ FROM osrf/ros:rolling-desktop-jammy
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-desktop-full=0.10.0-1* \
+    ros-rolling-desktop-full=0.10.0-2* \
     && rm -rf /var/lib/apt/lists/*
 
