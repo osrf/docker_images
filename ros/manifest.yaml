@@ -591,7 +591,6 @@ release_names:
                                     - "$release_name-ros-base"
                                     - "$release_name-ros-base-$os_code_name"
                                     - "$release_name"
-                                    - latest
                             perception:
                                 aliases:
                                     - "$release_name-perception"
