@@ -133,7 +133,7 @@ Architectures: amd64, arm64v8
 GitCommit: bca53bf4c09d771be3ff735da4157203b53ebc2b
 Directory: ros/iron/ubuntu/jammy/ros-core
 
-Tags: iron-ros-base, iron-ros-base-jammy, iron, latest
+Tags: iron-ros-base, iron-ros-base-jammy, iron
 Architectures: amd64, arm64v8
 GitCommit: bca53bf4c09d771be3ff735da4157203b53ebc2b
 Directory: ros/iron/ubuntu/jammy/ros-base
