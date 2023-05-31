@@ -7,6 +7,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/foxy/**'
     - 'ros/noetic/**'
@@ -16,6 +17,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/foxy/**'
     - 'ros/noetic/**'
@@ -30,6 +32,7 @@ jobs:
       matrix:
         env:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
+          - {HUB_REPO: ros, HUB_RELEASE: iron, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: foxy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
           - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
