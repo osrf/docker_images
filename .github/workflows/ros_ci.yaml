@@ -10,7 +10,6 @@ on:
     - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/noetic/**'
-    - 'ros/melodic/**'
   push:
     paths:
     - '.ci/**'
@@ -19,7 +18,6 @@ on:
     - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/noetic/**'
-    - 'ros/melodic/**'
   schedule:
     # Trigger daily to check for upstream changes
     - cron: '0 0 * * *'
@@ -33,7 +31,6 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: iron, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
-          - {HUB_REPO: ros, HUB_RELEASE: melodic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: bionic}
     runs-on: ubuntu-latest
     env:
       GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
