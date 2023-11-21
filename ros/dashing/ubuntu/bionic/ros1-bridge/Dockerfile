@@ -13,7 +13,7 @@ ENV ROS2_DISTRO dashing
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-melodic-ros-comm=1.14.11-1* \
+    ros-melodic-ros-comm=1.14.13-1* \
     ros-melodic-roscpp-tutorials=0.9.3-1* \
     ros-melodic-rospy-tutorials=0.9.3-1* \
     && rm -rf /var/lib/apt/lists/*
