@@ -2,7 +2,7 @@
 ####### requirements.txt #######
 #
 ###### Requirements without Version Specifiers ######
-empy
+empy==3.3.4
 GitPython
 pyyaml
 ros_buildfarm

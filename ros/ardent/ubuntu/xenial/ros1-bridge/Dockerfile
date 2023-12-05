@@ -3,16 +3,17 @@
 FROM ros:ardent-ros-base-xenial
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA
 
 # setup sources.list
-RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros1-latest.list
+RUN echo "deb http://snapshots.ros.org/kinetic/final/ubuntu xenial main" > /etc/apt/sources.list.d/ros1-snapshots.list
 
 ENV ROS1_DISTRO kinetic
 ENV ROS2_DISTRO ardent
+
 # install ros packages
-RUN apt-get update && apt-get install -y \
-    ros-kinetic-ros-comm=1.12.14-0* \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-kinetic-ros-comm=1.12.17-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages

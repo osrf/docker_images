@@ -14,11 +14,11 @@ RUN apt-get update && apt-get install -q -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA
-
 # setup sources.list
 RUN echo "deb http://snapshots.ros.org/crystal/final/ubuntu bionic main" > /etc/apt/sources.list.d/ros2-snapshots.list
+
+# setup keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
