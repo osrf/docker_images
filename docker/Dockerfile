@@ -12,3 +12,4 @@ RUN git clone \
 ENV PYTHONPATH=/tmp/ros_buildfarm:/tmp/docker_images:/tmp/docker_templates:
 
 WORKDIR /tmp/docker_images
+RUN git config --global --add safe.directory /tmp/docker_images
