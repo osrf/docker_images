@@ -21,7 +21,7 @@ RUN set -eux; \
 	key='D2486D2DD83DB69272AFE98867170598AF249743'; \
 	export GNUPGHOME="$(mktemp -d)"; \
 	gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
-	mkdir -p /etc/apt/keyrings; \
+	mkdir -p /usr/share/keyrings; \
 	gpg --batch --export "$key" > /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg; \
 	gpgconf --kill all; \
 	rm -rf "$GNUPGHOME"

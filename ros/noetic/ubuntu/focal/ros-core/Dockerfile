@@ -20,7 +20,7 @@ RUN set -eux; \
        key='C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654'; \
        export GNUPGHOME="$(mktemp -d)"; \
        gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
-       mkdir -p /etc/apt/keyrings; \
+       mkdir -p /usr/share/keyrings; \
        gpg --batch --export "$key" > /usr/share/keyrings/ros1-latest-archive-keyring.gpg; \
        gpgconf --kill all; \
        rm -rf "$GNUPGHOME"
