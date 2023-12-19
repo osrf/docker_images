@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
     dirmngr \
     gnupg2 \
-    lsb-release \
     python3-flake8 \
     python3-flake8-blind-except \
     python3-flake8-builtins \

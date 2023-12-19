@@ -17,7 +17,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     git \
     gnupg2 \
     libssl-dev \
-    lsb-release \
     python3-flake8 \
     python3-flake8-blind-except \
     python3-flake8-builtins \

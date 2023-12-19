@@ -11,7 +11,6 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     dirmngr \
     gnupg2 \
-    lsb-release \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
