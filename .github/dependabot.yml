@@ -1,7 +1,19 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/ros2"
+    directory: "/ros2/source/devel"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "🐳"
+  - package-ecosystem: "docker"
+    directory: "/ros2/testing/testing"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "🐳"
+  - package-ecosystem: "docker"
+    directory: "/ros2/nightly/nightly"
     schedule:
       interval: "daily"
     commit-message:
