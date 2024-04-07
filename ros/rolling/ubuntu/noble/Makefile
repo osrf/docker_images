@@ -48,31 +48,31 @@ ci_buildx:
 		docker push \
 			osrf/ros:rolling-desktop; \
 	fi
-	@docker buildx build --pull --push \
-		--cache-from=type=registry,ref=osrf/ros:rolling-simulation-noble \
-		--cache-to=type=inline \
-		--tag=osrf/ros:rolling-simulation-noble \
-		simulation/.
-	@if [ "ubuntu" = "ubuntu" ]; then \
-		docker pull \
-			osrf/ros:rolling-simulation-noble; \
-		docker tag \
-			osrf/ros:rolling-simulation-noble \
-			osrf/ros:rolling-simulation; \
-		docker push \
-			osrf/ros:rolling-simulation; \
-	fi
-	@docker buildx build --pull --push \
-		--cache-from=type=registry,ref=osrf/ros:rolling-desktop-full-noble \
-		--cache-to=type=inline \
-		--tag=osrf/ros:rolling-desktop-full-noble \
-		desktop-full/.
-	@if [ "ubuntu" = "ubuntu" ]; then \
-		docker pull \
-			osrf/ros:rolling-desktop-full-noble; \
-		docker tag \
-			osrf/ros:rolling-desktop-full-noble \
-			osrf/ros:rolling-desktop-full; \
-		docker push \
-			osrf/ros:rolling-desktop-full; \
-	fi
+	# @docker buildx build --pull --push \
+	# 	--cache-from=type=registry,ref=osrf/ros:rolling-simulation-noble \
+	# 	--cache-to=type=inline \
+	# 	--tag=osrf/ros:rolling-simulation-noble \
+	# 	simulation/.
+	# @if [ "ubuntu" = "ubuntu" ]; then \
+	# 	docker pull \
+	# 		osrf/ros:rolling-simulation-noble; \
+	# 	docker tag \
+	# 		osrf/ros:rolling-simulation-noble \
+	# 		osrf/ros:rolling-simulation; \
+	# 	docker push \
+	# 		osrf/ros:rolling-simulation; \
+	# fi
+	# @docker buildx build --pull --push \
+	# 	--cache-from=type=registry,ref=osrf/ros:rolling-desktop-full-noble \
+	# 	--cache-to=type=inline \
+	# 	--tag=osrf/ros:rolling-desktop-full-noble \
+	# 	desktop-full/.
+	# @if [ "ubuntu" = "ubuntu" ]; then \
+	# 	docker pull \
+	# 		osrf/ros:rolling-desktop-full-noble; \
+	# 	docker tag \
+	# 		osrf/ros:rolling-desktop-full-noble \
+	# 		osrf/ros:rolling-desktop-full; \
+	# 	docker push \
+	# 		osrf/ros:rolling-desktop-full; \
+	# fi
