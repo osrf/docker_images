@@ -603,8 +603,7 @@ release_names:
         os_names:
             ubuntu:
                 os_code_names:
-                    jammy:
-                        rosdistro_name: noetic
+                    noble:
                         <<: *DEFAULT_ROS2
                         archs:
                             - amd64

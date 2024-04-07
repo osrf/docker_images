@@ -1,0 +1,12 @@
+%YAML 1.1
+# ROS2 Dockerfile database
+---
+platform:
+    os_name: ubuntu
+    os_code_name: noble
+    ros2distro_name: rolling
+    user_name: ros
+    maintainer_name:
+    arch: amd64
+    type: distribution
+    version:
