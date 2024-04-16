@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:jammy-20240227 as setuper
+FROM ubuntu:jammy-20240405 as setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
