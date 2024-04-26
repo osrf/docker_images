@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20240416
+FROM ubuntu:noble-20240423
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
     dirmngr \
     gnupg2 \
+    python3-argcomplete \
     python3-flake8 \
     python3-flake8-blind-except \
     python3-flake8-builtins \
@@ -37,7 +38,7 @@ RUN set -eux; \
        rm -rf "$GNUPGHOME"
 
 # setup sources.list
-RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] http://packages.ros.org/ros2/ubuntu jammy main" > /etc/apt/sources.list.d/ros2-latest.list
+RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] http://packages.ros.org/ros2/ubuntu noble main" > /etc/apt/sources.list.d/ros2-latest.list
 
 # setup environment
 ENV LANG C.UTF-8
@@ -54,9 +55,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
-# install python packages
-RUN pip3 install -U \
-    argcomplete
 # This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 RUN pip3 freeze | grep pytest \

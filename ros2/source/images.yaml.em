@@ -11,6 +11,7 @@ images:
             - docker_templates
         upstream_packages:
             - bash-completion
+            - python3-argcomplete
             - python3-flake8
             - python3-flake8-blind-except
             - python3-flake8-builtins
@@ -23,7 +24,6 @@ images:
             - python3-pytest-repeat
             - python3-pytest-rerunfailures
         pip3_install:
-            - argcomplete
         ws: /opt/ros2_ws
     source:
         maintainer_name: @(maintainer_name)
