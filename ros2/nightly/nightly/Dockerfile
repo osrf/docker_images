@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:jammy-20240416 as setuper
+FROM ubuntu:noble-20240423 as setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     git \
     gnupg2 \
     libssl-dev \
+    python3-argcomplete \
     python3-flake8 \
     python3-flake8-blind-except \
     python3-flake8-builtins \
@@ -43,7 +44,7 @@ RUN set -eux; \
        rm -rf "$GNUPGHOME"
 
 # setup sources.list
-RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-testing-archive-keyring.gpg ] http://packages.ros.org/ros2-testing/ubuntu jammy main" > /etc/apt/sources.list.d/ros2-testing.list
+RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-testing-archive-keyring.gpg ] http://packages.ros.org/ros2-testing/ubuntu noble main" > /etc/apt/sources.list.d/ros2-testing.list
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -61,9 +62,6 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 
-# install python packages
-RUN pip3 install -U \
-    argcomplete
 # This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 RUN pip3 freeze | grep pytest \
