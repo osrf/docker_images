@@ -26,6 +26,6 @@ RUN colcon mixin add default \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-jazzy-ros-base=0.10.0-4* \
+    ros-jazzy-ros-base=0.11.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

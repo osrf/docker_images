@@ -4,6 +4,6 @@ FROM osrf/ros:jazzy-desktop-noble
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-jazzy-desktop-full=0.10.0-4* \
+    ros-jazzy-desktop-full=0.11.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
