@@ -598,6 +598,30 @@ release_names:
                                 aliases:
                                     - "$release_name-perception"
                                     - "$release_name-perception-$os_code_name"
+    jazzy:
+        eol: 2029-05
+        os_names:
+            ubuntu:
+                os_code_names:
+                    noble:
+                        <<: *DEFAULT_ROS2
+                        archs:
+                            - amd64
+                            - arm64v8
+                        tag_names:
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
+                            perception:
+                                aliases:
+                                    - "$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
     rolling:
         eol: 2022-05
         os_names:
