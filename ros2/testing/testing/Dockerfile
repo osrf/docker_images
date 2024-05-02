@@ -53,6 +53,10 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
+# install environment file for sourcing environment in entrypoint
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    ros-rolling-ros-environment \
+    && rm -rf /var/lib/apt/lists/*
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
 
