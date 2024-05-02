@@ -8,6 +8,7 @@ on:
     - '.github/workflows/ros2_ci.yaml'
     - 'ros2/nightly/**'
     - 'ros2/source/**'
+    - 'ros2/testing/**'
   push:
     branches-ignore:
     - 'master'
@@ -16,12 +17,14 @@ on:
     - '.github/workflows/ros2_ci.yaml'
     - 'ros2/nightly/**'
     - 'ros2/source/**'
+    - 'ros2/testing/**'
 jobs:
   build_images:
     strategy:
       fail-fast: false
       matrix:
         env:
+          - {HUB_REPO: ros2, HUB_RELEASE: testing}
           - {HUB_REPO: ros2, HUB_RELEASE: source}
           - {HUB_REPO: ros2, HUB_RELEASE: nightly}
     runs-on: ubuntu-latest
