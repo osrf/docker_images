@@ -21,8 +21,12 @@ images:
             - python3-flake8-docstrings
             - python3-flake8-import-order
             - python3-flake8-quotes
+            - python3-pytest-cov
+            - python3-pytest-mock
             - python3-pytest-repeat
             - python3-pytest-rerunfailures
+            - python3-pytest-runner
+            - python3-pytest-timeout
         pip3_install:
         ws: /opt/ros2_ws
     source:

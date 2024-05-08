@@ -23,8 +23,12 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     python3-flake8-import-order \
     python3-flake8-quotes \
     python3-pip \
+    python3-pytest-cov \
+    python3-pytest-mock \
     python3-pytest-repeat \
     python3-pytest-rerunfailures \
+    python3-pytest-runner \
+    python3-pytest-timeout \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
