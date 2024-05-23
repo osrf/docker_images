@@ -13,9 +13,9 @@ build:
 	@docker build --tag=ros:jazzy-ros-core-noble			ros-core/.
 	@docker build --tag=ros:jazzy-ros-base-noble			ros-base/.
 	@docker build --tag=ros:jazzy-perception-noble			perception/.
-	@docker build --tag=osrf/ros:jazzy-simulation-noble			simulation/.
-	@docker build --tag=osrf/ros:jazzy-desktop-noble			desktop/.
-	@docker build --tag=osrf/ros:jazzy-desktop-full-noble			desktop-full/.
+	# @docker build --tag=osrf/ros:jazzy-simulation-noble			simulation/.
+	# @docker build --tag=osrf/ros:jazzy-desktop-noble			desktop/.
+	# @docker build --tag=osrf/ros:jazzy-desktop-full-noble			desktop-full/.
 
 pull:
 	@docker pull ros:jazzy-ros-core-noble
