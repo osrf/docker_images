@@ -4,6 +4,6 @@ FROM ros:rolling-ros-base-noble
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-perception=0.10.0-3* \
+    ros-rolling-perception=0.11.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
