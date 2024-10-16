@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:noble-20241009 as setuper
+FROM ubuntu:noble-20241011 as setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
