@@ -29,10 +29,10 @@ RUN set -eux; \
 RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] http://packages.ros.org/ros2/ubuntu noble main" > /etc/apt/sources.list.d/ros2-latest.list
 
 # setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
-ENV ROS_DISTRO rolling
+ENV ROS_DISTRO=rolling
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
