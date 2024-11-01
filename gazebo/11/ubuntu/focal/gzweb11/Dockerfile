@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
-ENV GZWEB_WS /root/gzweb
+ENV GZWEB_WS=/root/gzweb
 RUN hg clone https://bitbucket.org/osrf/gzweb $GZWEB_WS
 WORKDIR $GZWEB_WS
 
