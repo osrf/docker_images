@@ -1,0 +1,17 @@
+repositories:
+  ros2/ros1_bridge:
+    type: git
+    url: https://github.com/ros2/ros1_bridge.git
+    version: master
+
+  # MAVROS depends on geographic_msgs, but it's not available on focal. 
+  # Therefore, we add it here.
+  # mavros_msgs: No definition of [geographic_msgs] for OS version [focal]
+  ros-geographic-info/geographic_info:
+    type: git
+    url: https://github.com/ros-geographic-info/geographic_info.git
+    version: ros2
+  mavlink/mavros:
+    type: git
+    url: https://github.com/mavlink/mavros.git
+    version: ros2
