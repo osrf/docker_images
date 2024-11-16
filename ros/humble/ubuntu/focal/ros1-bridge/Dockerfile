@@ -18,8 +18,11 @@ RUN set -eux; \
 # setup sources.list
 RUN echo "deb [ signed-by=/usr/share/keyrings/ros1-latest-archive-keyring.gpg ] http://packages.ros.org/ros/ubuntu focal main" > /etc/apt/sources.list.d/ros1-latest.list
 
+# Install ROS 1 binaries, plus the message dependencies.
+# If they don't have ROS 1 message binaries, you will need to set up a catkin workspace to build.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-ros-core=1.5.0-1* \
+    ros-noetic-mavros-msgs \
     && rm -rf /var/lib/apt/lists/*
 
 ENV ROS1_INSTALL_PATH=/opt/ros/noetic
@@ -51,6 +54,8 @@ RUN . /opt/ros/humble/setup.sh && colcon build --packages-up-to ${CUSTOM_MSG_PKG
 # This links to all the other message packages at build time.
 # Order of sourcing is VERY picky and NOT clear in the rosbridge README.
 # https://github.com/ros2/ros1_bridge?tab=readme-ov-file#building-the-bridge-from-source
+# This shows the source order with custom workspaces
+# https://github.com/jayprajapati009/ros1_bridge_tutorial?tab=readme-ov-file#ros1_bridge-setup
 RUN . /opt/ros/noetic/setup.sh && . /opt/ros/humble/setup.sh && . install/setup.sh && colcon build --packages-select ros1_bridge
 
 # setup entrypoint
