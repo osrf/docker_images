@@ -50,9 +50,9 @@ RUN apt-get update && \
 # Build all custom messge packages here in the right order.
 RUN . /opt/ros/humble/setup.sh && colcon build --packages-up-to ${CUSTOM_MSG_PKGS} 
 
-# Source the local workspace then build just the rosbridge.
+# Source the local workspace then build just the ros1_bridge.
 # This links to all the other message packages at build time.
-# Order of sourcing is VERY picky and NOT clear in the rosbridge README.
+# Order of sourcing is VERY picky and NOT clear in the ros1_bridge README.
 # https://github.com/ros2/ros1_bridge?tab=readme-ov-file#building-the-bridge-from-source
 # This shows the source order with custom workspaces
 # https://github.com/jayprajapati009/ros1_bridge_tutorial?tab=readme-ov-file#ros1_bridge-setup

@@ -2,7 +2,7 @@
 # Usage:
 #   docker build . -t ros:humble-ros-core-focal
 # 
-# Documentation for rosbridge setup: https://github.com/ros2/ros1_bridge?tab=readme-ov-file#building-the-bridge-from-source
+# Documentation for ros1_bridge setup: https://github.com/ros2/ros1_bridge?tab=readme-ov-file#building-the-bridge-from-source
 
 # We use focal becaue ROS 1 can be installed with binaries,
 # and ROS 2 humble supports compilation as a Tier 3  platform per REP-2000.

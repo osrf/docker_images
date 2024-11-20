@@ -5,7 +5,7 @@
 cd ros-core
 docker build . -t ros:humble-ros-core-focal
 
-# Install ROS 1 binaries and then build the rosbridge with colcon.
+# Install ROS 1 binaries and then build the ros1_bridge with colcon.
 cd ../ros1-bridge
 docker build . -t ros:humble-ros1-bridge-focal
 dit ros:humble-ros1-bridge-focal
