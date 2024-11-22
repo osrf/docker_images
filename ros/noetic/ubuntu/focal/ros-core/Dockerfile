@@ -32,6 +32,7 @@ RUN echo "deb [ signed-by=/usr/share/keyrings/ros1-latest-archive-keyring.gpg ] 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
+ENV ROSDISTRO_PKGS_SYNC_DATE=2024-11-15
 ENV ROS_DISTRO=noetic
 
 # install ros packages

@@ -32,6 +32,7 @@ RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
+ENV ROSDISTRO_PKGS_SYNC_DATE=2024-11-01
 ENV ROS_DISTRO=iron
 
 # install ros2 packages
