@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 REPO_PATH="$(dirname "$(pwd)")"
 
