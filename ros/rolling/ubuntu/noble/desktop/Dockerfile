@@ -4,6 +4,6 @@ FROM ros:rolling-ros-base-noble
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-desktop=0.11.0-1* \
+    ros-rolling-desktop=0.12.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
