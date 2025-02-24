@@ -65,7 +65,7 @@ RUN mv roslisp/manifest.xml roslisp/oldmanifest.xml && \
       --ignore-src \
       --rosdistro ${ROS_DISTRO} \
       --as-root=apt:false && \
-    pip install --upgrade ../rospkg/ && \
+    pip install --no-cache-dir --upgrade ../rospkg/ && \
     mv roslisp/oldmanifest.xml roslisp/manifest.xml && \
     rm -rf /var/lib/apt/lists/*
 
