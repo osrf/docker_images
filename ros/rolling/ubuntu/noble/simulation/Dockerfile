@@ -1,9 +1,9 @@
-# This is an auto generated Dockerfile for ros:perception
+# This is an auto generated Dockerfile for ros:simulation
 # generated from docker_images_ros2/create_ros_image.Dockerfile.em
 FROM ros:rolling-ros-base-noble
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-perception=0.12.0-1* \
+    ros-rolling-simulation=0.12.0-1* \
     && rm -rf /var/lib/apt/lists/*
 

@@ -32,12 +32,11 @@ RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
-ENV ROSDISTRO_PKGS_SYNC_DATE=2024-09-26
 ENV ROS_DISTRO=rolling
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-core=0.11.0-1* \
+    ros-rolling-ros-core=0.12.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
