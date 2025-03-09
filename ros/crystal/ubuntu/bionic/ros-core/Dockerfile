@@ -46,7 +46,7 @@ RUN colcon mixin add default \
     colcon metadata update
 
 # install python packages
-RUN pip3 install --no-cache-dir -U \
+RUN pip3 install -U \
     argcomplete
 
 # install ros2 packages
