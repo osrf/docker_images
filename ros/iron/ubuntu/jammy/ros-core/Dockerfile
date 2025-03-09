@@ -17,16 +17,16 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
 
 # setup keys
 RUN set -eux; \
-       key='C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654'; \
+       key='4B63CF8FDE49746E98FA01DDAD19BAB3CBF125EA'; \
        export GNUPGHOME="$(mktemp -d)"; \
        gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
        mkdir -p /usr/share/keyrings; \
-       gpg --batch --export "$key" > /usr/share/keyrings/ros2-latest-archive-keyring.gpg; \
+       gpg --batch --export "$key" > /usr/share/keyrings/ros2-snapshots-archive-keyring.gpg; \
        gpgconf --kill all; \
        rm -rf "$GNUPGHOME"
 
 # setup sources.list
-RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] http://packages.ros.org/ros2/ubuntu jammy main" > /etc/apt/sources.list.d/ros2-latest.list
+RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-snapshots-archive-keyring.gpg ] http://snapshots.ros.org/iron/final/ubuntu jammy main" > /etc/apt/sources.list.d/ros2-snapshots.list
 
 # setup environment
 ENV LANG=C.UTF-8
