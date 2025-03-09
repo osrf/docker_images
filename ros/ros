@@ -58,7 +58,7 @@ Directory: ros/humble/ubuntu/jammy/perception
 
 Tags: iron-ros-core, iron-ros-core-jammy
 Architectures: amd64, arm64v8
-GitCommit: b525e9ef659ce448db6150fd5407ef62b2c5b265
+GitCommit: 2ad854492209b8dbab303578a5baedab4d5ab41d
 Directory: ros/iron/ubuntu/jammy/ros-core
 
 Tags: iron-ros-base, iron-ros-base-jammy, iron
