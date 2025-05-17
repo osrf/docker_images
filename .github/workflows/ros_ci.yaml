@@ -8,7 +8,6 @@ on:
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
     - 'ros/jazzy/**'
-    - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/noetic/**'
   push:
@@ -17,7 +16,6 @@ on:
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
     - 'ros/jazzy/**'
-    - 'ros/iron/**'
     - 'ros/humble/**'
     - 'ros/noetic/**'
   schedule:
@@ -31,7 +29,6 @@ jobs:
         env:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
-          - {HUB_REPO: ros, HUB_RELEASE: iron, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
     runs-on: ubuntu-latest
