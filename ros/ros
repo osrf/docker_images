@@ -61,7 +61,7 @@ Architectures: amd64, arm64v8
 GitCommit: b525e9ef659ce448db6150fd5407ef62b2c5b265
 Directory: ros/jazzy/ubuntu/noble/ros-core
 
-Tags: jazzy-ros-base, jazzy-ros-base-noble, jazzy, latest
+Tags: jazzy-ros-base, jazzy-ros-base-noble, jazzy
 Architectures: amd64, arm64v8
 GitCommit: 0038f1c3a11aa0fc573d698b39ab5c204aad5a40
 Directory: ros/jazzy/ubuntu/noble/ros-base
