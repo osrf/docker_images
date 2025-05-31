@@ -1,4 +1,7 @@
-FROM ubuntu:noble-20250404
+# This is an auto generated Dockerfile for ros:testing
+# generated from docker_images_ros2/testing/create_ros_image.Dockerfile.em
+ARG FROM_IMAGE=ubuntu:noble
+FROM $FROM_IMAGE
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -48,12 +51,7 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
-# install environment file for sourcing environment in entrypoint
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    ros-rolling-ros-environment \
-    && rm -rf /var/lib/apt/lists/*
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
-
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
