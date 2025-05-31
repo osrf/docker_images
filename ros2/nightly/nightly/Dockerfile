@@ -12,7 +12,9 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
+    ca-certificates \
     cmake \
+    curl \
     dirmngr \
     git \
     gnupg2 \
@@ -37,18 +39,10 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-# setup keys
-RUN set -eux; \
-       key='C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654'; \
-       export GNUPGHOME="$(mktemp -d)"; \
-       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
-       mkdir -p /usr/share/keyrings; \
-       gpg --batch --export "$key" > /usr/share/keyrings/ros2-testing-archive-keyring.gpg; \
-       gpgconf --kill all; \
-       rm -rf "$GNUPGHOME"
-
-# setup sources.list
-RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-testing-archive-keyring.gpg ] http://packages.ros.org/ros2-testing/ubuntu noble main" > /etc/apt/sources.list.d/ros2-testing.list
+RUN curl -L -s -o /tmp/ros2-testing-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.1.0/ros2-testing-apt-source_1.1.0.$(. /etc/os-release && echo $VERSION_CODENAME)_all.deb" \
+    && apt-get update \
+    && apt-get install /tmp/ros2-testing-apt-source.deb \
+    && rm -f /tmp/ros2-testing-apt-source.deb
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -61,10 +55,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-ENV ROS_DISTRO rolling
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
+ENV ROS_DISTRO=rolling
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV ROSDISTRO_INDEX_URL=https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 
 # This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
