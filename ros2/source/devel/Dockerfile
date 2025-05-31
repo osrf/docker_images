@@ -1,4 +1,7 @@
-FROM ubuntu:noble-20250404
+# This is an auto generated Dockerfile for ros2:devel
+# generated from docker_images_ros2/devel/create_ros_image.Dockerfile.em
+ARG FROM_IMAGE=ubuntu:noble
+FROM $FROM_IMAGE
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -24,7 +27,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     python3-flake8-docstrings \
     python3-flake8-import-order \
     python3-flake8-quotes \
-    python3-pip \
     python3-pytest-cov \
     python3-pytest-mock \
     python3-pytest-repeat \
@@ -50,7 +52,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
-    python3-setuptools \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
