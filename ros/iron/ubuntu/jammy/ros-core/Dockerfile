@@ -11,9 +11,12 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
+    ca-certificates \
+    curl \
     dirmngr \
     gnupg2 \
     && rm -rf /var/lib/apt/lists/*
+
 
 # setup keys
 RUN set -eux; \

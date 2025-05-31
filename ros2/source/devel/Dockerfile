@@ -1,4 +1,7 @@
-FROM ubuntu:noble-20250404
+# This is an auto generated Dockerfile for ros2:devel
+# generated from docker_images_ros2/devel/create_ros_image.Dockerfile.em
+ARG FROM_IMAGE=ubuntu:noble
+FROM $FROM_IMAGE
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -10,6 +13,8 @@ RUN echo 'Etc/UTC' > /etc/timezone && \
 # install packages
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     bash-completion \
+    ca-certificates \
+    curl \
     dirmngr \
     gnupg2 \
     python3-argcomplete \
@@ -22,7 +27,6 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     python3-flake8-docstrings \
     python3-flake8-import-order \
     python3-flake8-quotes \
-    python3-pip \
     python3-pytest-cov \
     python3-pytest-mock \
     python3-pytest-repeat \
@@ -31,22 +35,15 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     python3-pytest-timeout \
     && rm -rf /var/lib/apt/lists/*
 
-# setup keys
-RUN set -eux; \
-       key='C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654'; \
-       export GNUPGHOME="$(mktemp -d)"; \
-       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key"; \
-       mkdir -p /usr/share/keyrings; \
-       gpg --batch --export "$key" > /usr/share/keyrings/ros2-latest-archive-keyring.gpg; \
-       gpgconf --kill all; \
-       rm -rf "$GNUPGHOME"
 
-# setup sources.list
-RUN echo "deb [ signed-by=/usr/share/keyrings/ros2-latest-archive-keyring.gpg ] http://packages.ros.org/ros2/ubuntu noble main" > /etc/apt/sources.list.d/ros2-latest.list
+RUN curl -L -s -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.1.0/ros2-apt-source_1.1.0.$(. /etc/os-release && echo $VERSION_CODENAME)_all.deb" \
+    && apt-get update \
+    && apt-get install /tmp/ros2-apt-source.deb \
+    && rm -f /tmp/ros2-apt-source.deb
 
 # setup environment
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -55,7 +52,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
     python3-rosdep \
-    python3-setuptools \
     python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
@@ -77,7 +73,7 @@ RUN colcon mixin add default \
     colcon metadata update
 
 # clone source
-ENV ROS2_WS /opt/ros2_ws
+ENV ROS2_WS=/opt/ros2_ws
 RUN mkdir -p $ROS2_WS/src
 WORKDIR $ROS2_WS
 
