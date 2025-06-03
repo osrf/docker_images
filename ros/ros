@@ -9,7 +9,7 @@ GitRepo: https://github.com/osrf/docker_images.git
 
 Tags: noetic-ros-core, noetic-ros-core-focal
 Architectures: amd64, arm32v7, arm64v8
-GitCommit: 6610eeddd6026e93db33578f6967bac23fa21ac0
+GitCommit: b525e9ef659ce448db6150fd5407ef62b2c5b265
 Directory: ros/noetic/ubuntu/focal/ros-core
 
 Tags: noetic-ros-base, noetic-ros-base-focal, noetic
