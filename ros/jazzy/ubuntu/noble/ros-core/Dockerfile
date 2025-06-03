@@ -18,13 +18,13 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 
-# NOTE: this doesnt deal with snapshots repo as not clear what to install for those..
-# NOTE: How do we break cache and ensure rebuild if that version changes ?
-RUN export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}') ;\
-    curl -L -s -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo $VERSION_CODENAME)_all.deb" \
+# Setup ROS Apt sources
+RUN curl -L -s -o /tmp/ros2-apt-source.deb https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.1.0/ros2-apt-source_1.1.0.noble_all.deb \
+    && echo "35441f3092fd05773a3c397fab38661bec466584c7a1f1c05366579997cb5fe7 /tmp/ros2-apt-source.deb" | sha256sum --strict --check \
     && apt-get update \
     && apt-get install /tmp/ros2-apt-source.deb \
-    && rm -f /tmp/ros2-apt-source.deb
+    && rm -f /tmp/ros2-apt-source.deb \
+    && rm -rf /var/lib/apt/lists/*
 
 # setup environment
 ENV LANG=C.UTF-8
