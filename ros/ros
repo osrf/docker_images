@@ -2,33 +2,6 @@ Maintainers: Tully Foote <tfoote+buildfarm@osrfoundation.org> (@tfoote)
 GitRepo: https://github.com/osrf/docker_images.git
 
 ################################################################################
-# Release: noetic
-
-########################################
-# Distro: ubuntu:focal
-
-Tags: noetic-ros-core, noetic-ros-core-focal
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: b525e9ef659ce448db6150fd5407ef62b2c5b265
-Directory: ros/noetic/ubuntu/focal/ros-core
-
-Tags: noetic-ros-base, noetic-ros-base-focal, noetic
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
-Directory: ros/noetic/ubuntu/focal/ros-base
-
-Tags: noetic-robot, noetic-robot-focal
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
-Directory: ros/noetic/ubuntu/focal/robot
-
-Tags: noetic-perception, noetic-perception-focal
-Architectures: amd64, arm32v7, arm64v8
-GitCommit: df19ab7d5993d3b78a908362cdcd1479a8e78b35
-Directory: ros/noetic/ubuntu/focal/perception
-
-
-################################################################################
 # Release: humble
 
 ########################################
