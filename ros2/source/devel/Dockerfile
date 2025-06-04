@@ -1,4 +1,4 @@
-FROM ubuntu:noble-20250404
+FROM ubuntu:noble-20250529
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
