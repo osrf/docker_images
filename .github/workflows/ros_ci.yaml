@@ -10,7 +10,7 @@ on:
     - 'ros/jazzy/**'
     - 'ros/kilted/**'
     - 'ros/humble/**'
-    # - 'ros/noetic/**'
+    - 'ros/noetic/**'
   push:
     paths:
     - '.ci/**'
@@ -19,7 +19,7 @@ on:
     - 'ros/jazzy/**'
     - 'ros/kilted/**'
     - 'ros/humble/**'
-    # - 'ros/noetic/**'
+    - 'ros/noetic/**'
   schedule:
     # Trigger daily to check for upstream changes
     - cron: '0 0 * * *'
@@ -33,7 +33,7 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: kilted, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
-          # - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
+          - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
     runs-on: ubuntu-latest
     env:
       GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
