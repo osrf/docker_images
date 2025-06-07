@@ -27,9 +27,9 @@ ENV ROS2_DISTRO=foxy
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-noetic-ros-comm=1.16.0-1* \
-    ros-noetic-roscpp-tutorials=0.10.2-1* \
-    ros-noetic-rospy-tutorials=0.10.2-1* \
+    ros-noetic-ros-comm=1.17.4-1* \
+    ros-noetic-roscpp-tutorials=0.10.3-1* \
+    ros-noetic-rospy-tutorials=0.10.3-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # install ros2 packages
