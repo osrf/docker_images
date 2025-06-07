@@ -340,23 +340,23 @@ release_names:
                             - arm64v8
                         tag_names:
                             # TEMPORARY until snapshots.ros.org issues are resolved
-                            # ros-core:
-                            #       aliases:
-                            #           - "$release_name-ros-core"
-                            #           - "$release_name-ros-core-$os_code_name"
-                            #   ros-base:
-                            #       aliases:
-                            #           - "$release_name-ros-base"
-                            #           - "$release_name-ros-base-$os_code_name"
-                            #           - "$release_name"
-                            #   robot:
-                            #       aliases:
-                            #           - "$release_name-robot"
-                            #           - "$release_name-robot-$os_code_name"
-                            #   perception:
-                            #       aliases:
-                            #           - "$release_name-perception"
-                            #           - "$release_name-perception-$os_code_name"
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
+                            robot:
+                                aliases:
+                                    - "$release_name-robot"
+                                    - "$release_name-robot-$os_code_name"
+                            perception:
+                                aliases:
+                                    - "$release_name-perception"
+                                    - "$release_name-perception-$os_code_name"
             debian:
                 os_code_names:
                     buster:
@@ -511,19 +511,19 @@ release_names:
                             - arm64v8
                         tag_names:
                             # EOL
-                            # ros-core:
-                            #     aliases:
-                            #         - "$release_name-ros-core"
-                            #         - "$release_name-ros-core-$os_code_name"
-                            # ros-base:
-                            #     aliases:
-                            #         - "$release_name-ros-base"
-                            #         - "$release_name-ros-base-$os_code_name"
-                            #         - "$release_name"
-                            # ros1-bridge:
-                            #     aliases:
-                            #         - "$release_name-ros1-bridge"
-                            #         - "$release_name-ros1-bridge-$os_code_name"
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
+                            ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+                                    - "$release_name-ros1-bridge-$os_code_name"
     galactic:
         eol: 2022-11
         os_names:
@@ -537,19 +537,19 @@ release_names:
                             - arm64v8
                         tag_names:
                             # EOL
-                            # ros-core:
-                            #     aliases:
-                            #         - "$release_name-ros-core"
-                            #         - "$release_name-ros-core-$os_code_name"
-                            # ros-base:
-                            #     aliases:
-                            #         - "$release_name-ros-base"
-                            #         - "$release_name-ros-base-$os_code_name"
-                            #         - "$release_name"
-                            # ros1-bridge:
-                            #     aliases:
-                            #         - "$release_name-ros1-bridge"
-                            #         - "$release_name-ros1-bridge-$os_code_name"
+                            ros-core:
+                                aliases:
+                                    - "$release_name-ros-core"
+                                    - "$release_name-ros-core-$os_code_name"
+                            ros-base:
+                                aliases:
+                                    - "$release_name-ros-base"
+                                    - "$release_name-ros-base-$os_code_name"
+                                    - "$release_name"
+                            ros1-bridge:
+                                aliases:
+                                    - "$release_name-ros1-bridge"
+                                    - "$release_name-ros1-bridge-$os_code_name"
     humble:
         eol: 2025-05
         os_names:
