@@ -30,8 +30,8 @@ jobs:
       matrix:
         env:
           - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
-          - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: kilted, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
+          - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
           - {HUB_REPO: ros, HUB_RELEASE: noetic, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: focal}
     runs-on: ubuntu-latest
