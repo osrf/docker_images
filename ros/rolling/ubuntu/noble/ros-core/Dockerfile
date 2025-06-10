@@ -34,7 +34,7 @@ ENV ROS_DISTRO=rolling
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-core=0.12.0-1* \
+    ros-rolling-ros-core=0.13.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
