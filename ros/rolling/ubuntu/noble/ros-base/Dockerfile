@@ -26,6 +26,6 @@ RUN colcon mixin add default \
 
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-rolling-ros-base=0.12.0-1* \
+    ros-rolling-ros-base=0.13.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
