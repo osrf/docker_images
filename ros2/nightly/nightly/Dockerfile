@@ -122,7 +122,9 @@ RUN apt-get update && rosdep update && rosdep install -y \
     --ignore-src \
     --skip-keys " \
       cyclonedds \
-      rti-connext-dds-6.0.1" \
+      fastdds \
+      rti-connext-dds-7.3.0 \
+      " \
     && rm -rf /var/lib/apt/lists/*
 
 # install nightly

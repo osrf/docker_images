@@ -7,6 +7,7 @@ RUN apt-get update && rosdep install -y \
     --from-paths /opt/ros/$ROS_DISTRO/share \
     --ignore-src \
     --skip-keys " \
+      fastdds \
       " \
     && rm -rf /var/lib/apt/lists/*
 
