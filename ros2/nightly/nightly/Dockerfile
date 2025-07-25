@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:noble-20241015 as setuper
+FROM ubuntu:noble-20250714 AS setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
@@ -61,10 +61,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/*
 
 # setup environment
-ENV ROS_DISTRO rolling
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
+ENV ROS_DISTRO=rolling
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV ROSDISTRO_INDEX_URL=https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
 
 # This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
@@ -122,7 +122,9 @@ RUN apt-get update && rosdep update && rosdep install -y \
     --ignore-src \
     --skip-keys " \
       cyclonedds \
-      rti-connext-dds-6.0.1" \
+      fastdds \
+      rti-connext-dds-7.3.0 \
+      " \
     && rm -rf /var/lib/apt/lists/*
 
 # install nightly
