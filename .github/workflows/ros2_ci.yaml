@@ -34,7 +34,7 @@ jobs:
           - windows-11-arm
           - macos-13
           - macos-latest
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.platform}}
     steps:
       - uses: actions/checkout@v5
       - name: Check and build ROS 2 image
