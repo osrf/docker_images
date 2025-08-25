@@ -27,6 +27,13 @@ jobs:
           - {HUB_REPO: ros2, HUB_RELEASE: testing}
           - {HUB_REPO: ros2, HUB_RELEASE: source}
           - {HUB_REPO: ros2, HUB_RELEASE: nightly}
+        platform:
+          - ubuntu-latest
+          - windows-latest
+          - ubuntu-24.04-arm
+          - windows-11-arm
+          - macos-13
+          - macos-latest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
