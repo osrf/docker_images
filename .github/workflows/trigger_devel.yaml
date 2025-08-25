@@ -59,7 +59,7 @@ jobs:
     needs:
       - check_files
       - check_image
-    with:
+    strategy:
       matrix:
         platform:
           - ubuntu-latest
