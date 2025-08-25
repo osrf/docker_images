@@ -59,7 +59,12 @@ jobs:
     needs:
       - check_files
       - check_image
-    runs-on: ubuntu-latest
+    with:
+      matrix:
+        platform:
+          - ubuntu-latest
+          - ubuntu-24.04-arm
+    runs-on: ${{matrix.platform}}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
