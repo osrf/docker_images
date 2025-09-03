@@ -31,7 +31,10 @@ jobs:
           - {HUB_REPO: ros, HUB_RELEASE: kilted, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
-    runs-on: ubuntu-latest
+        platform:
+          - ubuntu-latest
+          - ubuntu-24.04-arm
+    runs-on: ${{matrix.platform}}
     env:
       GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
       GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
