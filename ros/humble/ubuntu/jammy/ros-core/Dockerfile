@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -q -y --no-install-recommends \
 
 
 # Setup ROS Apt sources
-RUN curl -L -s -o /tmp/ros2-apt-source.deb https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.2.0/ros2-apt-source_1.2.0.noble_all.deb \
-    && echo "0804d9b13db770eb87019be414cd78378835228ad5fa801fc88758596dd8f7e5 /tmp/ros2-apt-source.deb" | sha256sum --strict --check \
+RUN curl -L -s -o /tmp/ros2-apt-source.deb https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.2.0/ros2-apt-source_1.2.0.jammy_all.deb \
+    && echo "767884cf4ed03116b9d64438930a832ed854147ae435279a7924dfdf60f94433 /tmp/ros2-apt-source.deb" | sha256sum --strict --check \
     && apt-get update \
     && apt-get install /tmp/ros2-apt-source.deb \
     && rm -f /tmp/ros2-apt-source.deb \
