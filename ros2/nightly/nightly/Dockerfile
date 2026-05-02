@@ -95,7 +95,7 @@ ARG TIMESTAMP
 
 # install ros2 packages
 RUN mkdir -p /opt/ros/$ROS_DISTRO
-ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
+ARG ROS2_BINARY_URL=https://github.com/ros2/ros2/releases/download/release-rolling-nightlies/ros2-rolling-nightly-linux-amd64.tar.bz2
 RUN wget -q $ROS2_BINARY_URL -O - | \
     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
 
@@ -123,7 +123,7 @@ RUN apt-get update && rosdep update && rosdep install -y \
     --skip-keys " \
       cyclonedds \
       fastdds \
-      rti-connext-dds-7.3.0 \
+      rti-connext-dds-7.7.0 \
       " \
     && rm -rf /var/lib/apt/lists/*
 
