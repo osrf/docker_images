@@ -7,6 +7,6 @@ RUN apt-get update && rosdep install -y \
     --ignore-src \
     --skip-keys " \
       fastdds \
-      rti-connext-dds-7.7.0-ros \
+      rti-connext-dds-7.7.0 \
       " \
     && rm -rf /var/lib/apt/lists/*

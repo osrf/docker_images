@@ -22,7 +22,7 @@ RUN apt-get update && rosdep install -y \
     --ignore-src \
     --skip-keys " \
         fastcdr \
-        rti-connext-dds-7.7.0-ros \
+        rti-connext-dds-7.7.0 \
         urdfdom_headers" \
     && rm -rf /var/lib/apt/lists/*
 

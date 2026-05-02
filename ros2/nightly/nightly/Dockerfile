@@ -123,7 +123,7 @@ RUN apt-get update && rosdep update && rosdep install -y \
     --skip-keys " \
       cyclonedds \
       fastdds \
-      rti-connext-dds-7.7.0-ros \
+      rti-connext-dds-7.7.0 \
       " \
     && rm -rf /var/lib/apt/lists/*
 
