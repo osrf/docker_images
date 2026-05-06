@@ -7,6 +7,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/lyrical/**'
     - 'ros/kilted/**'
     - 'ros/jazzy/**'
     - 'ros/humble/**'
@@ -15,6 +16,7 @@ on:
     - '.ci/**'
     - '.github/workflows/ros_ci.yaml'
     - 'ros/rolling/**'
+    - 'ros/lyrical/**'
     - 'ros/kilted/**'
     - 'ros/jazzy/**'
     - 'ros/humble/**'
@@ -27,7 +29,8 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
+          - {HUB_REPO: ros, HUB_RELEASE: rolling, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: resolute}
+          - {HUB_REPO: ros, HUB_RELEASE: lyrical, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: resolute}
           - {HUB_REPO: ros, HUB_RELEASE: kilted, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: jazzy, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: noble}
           - {HUB_REPO: ros, HUB_RELEASE: humble, HUB_OS_NAME: ubuntu, HUB_OS_CODE_NAME: jammy}
