@@ -34,7 +34,7 @@ Architectures: amd64, arm64v8
 GitCommit: eb5634cf92ba079897e44fb7541d3b78aa6cf717
 Directory: ros/jazzy/ubuntu/noble/ros-core
 
-Tags: jazzy-ros-base, jazzy-ros-base-noble, jazzy, latest
+Tags: jazzy-ros-base, jazzy-ros-base-noble, jazzy
 Architectures: amd64, arm64v8
 GitCommit: 0038f1c3a11aa0fc573d698b39ab5c204aad5a40
 Directory: ros/jazzy/ubuntu/noble/ros-base
@@ -65,6 +65,27 @@ Tags: kilted-perception, kilted-perception-noble
 Architectures: amd64, arm64v8
 GitCommit: b835a530495c0b411a0d15db858710a2748ee0a0
 Directory: ros/kilted/ubuntu/noble/perception
+
+################################################################################
+# Release: lyrical
+
+########################################
+# Distro: ubuntu:resolute
+
+Tags: lyrical-ros-core, lyrical-ros-core-noble, latest
+Architectures: amd64, arm64v8
+GitCommit: 179d41c4777f9a3fed7a8405825f704b9176f789
+Directory: ros/lyrical/ubuntu/resolute/ros-core
+
+Tags: lyrical-ros-base, lyrical-ros-base-noble, lyrical
+Architectures: amd64, arm64v8
+GitCommit: 179d41c4777f9a3fed7a8405825f704b9176f789
+Directory: ros/lyrical/ubuntu/resolute/ros-base
+
+Tags: lyrical-perception, lyrical-perception-noble
+Architectures: amd64, arm64v8
+GitCommit: 179d41c4777f9a3fed7a8405825f704b9176f789
+Directory: ros/lyrical/ubuntu/noble/perception
 
 
 ################################################################################
