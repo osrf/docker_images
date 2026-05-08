@@ -97,7 +97,7 @@ Directory: ros/lyrical/ubuntu/resolute/perception
 
 Tags: rolling-ros-core, rolling-ros-core-noble
 Architectures: amd64, arm64v8
-GitCommit: fd0c0c943e25f48fe199593597ea21d3f3f5935d
+GitCommit: 8cf2903c0f8813aacd3042c71d4d2d56d5068ad5
 Directory: ros/rolling/ubuntu/noble/ros-core
 
 Tags: rolling-ros-base, rolling-ros-base-noble, rolling
