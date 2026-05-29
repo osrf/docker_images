@@ -7,7 +7,6 @@ platform:
     ros2distro_name: lyrical
     user_name: ros
     maintainer_name:
-    testing_repo: true
     arch: amd64
     type: distribution
     version:
