@@ -93,20 +93,20 @@ Directory: ros/lyrical/ubuntu/resolute/perception
 # Release: rolling
 
 ########################################
-# Distro: ubuntu:noble
+# Distro: ubuntu:resolute
 
 Tags: rolling-ros-core, rolling-ros-core-noble
 Architectures: amd64, arm64v8
 GitCommit: 8cf2903c0f8813aacd3042c71d4d2d56d5068ad5
-Directory: ros/rolling/ubuntu/noble/ros-core
+Directory: ros/rolling/ubuntu/resolute/ros-core
 
 Tags: rolling-ros-base, rolling-ros-base-noble, rolling
 Architectures: amd64, arm64v8
 GitCommit: 8cf2903c0f8813aacd3042c71d4d2d56d5068ad5
-Directory: ros/rolling/ubuntu/noble/ros-base
+Directory: ros/rolling/ubuntu/resolute/ros-base
 
 Tags: rolling-perception, rolling-perception-noble
 Architectures: amd64, arm64v8
 GitCommit: 8cf2903c0f8813aacd3042c71d4d2d56d5068ad5
-Directory: ros/rolling/ubuntu/noble/perception
+Directory: ros/rolling/ubuntu/resolute/perception
 
