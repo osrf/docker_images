@@ -1,4 +1,4 @@
-FROM ubuntu:resolute-20260627
+FROM ubuntu:resolute-20260707
 
 # setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
