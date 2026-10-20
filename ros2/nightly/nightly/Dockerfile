@@ -1,5 +1,5 @@
 # multi-stage for setup
-FROM ubuntu:resolute-20260927 AS setuper
+FROM ubuntu:resolute-20261006 AS setuper
 ARG DEBIAN_FRONTEND=noninteractive
 
 # setup timezone
